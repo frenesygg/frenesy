@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Lenda da Frenesy - Sobre Nós</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+
+
+:root {
+	--preto: #000000;
+	--laranja-frenesy: #f96001;
+	--branco: #ffffff;
+	--cinza-escuro: #1a1a1a;
+	--font-titulo: 'Rajdhani', sans-serif;
+	--font-texto: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-texto);
+	background-color: var(--preto);
+	color: var(--branco);
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 15px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 20px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.3s ease;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 0;
+	transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.nav-links a:hover::after {
+	width: 100%;
+}
+
+.site-footer {
+	position: relative;
+	padding: 120px 5% 20px;
+	background-color: var(--preto);
+	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+	margin-top: 100px;
+}
+
+.footer-main {
+	padding: 40px 5% 40px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.footer-column h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+
+.footer-column.about .logo-footer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.footer-column.about .logo-footer img {
+	height: 40px;
+	margin-right: 15px;
+}
+
+.footer-column.about .logo-footer h2 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+}
+
+.footer-tagline {
+	font-size: 0.9rem;
+	color: #a0a0a0;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.social-links a {
+	color: #a0a0a0;
+	font-size: 1.5rem;
+	margin-right: 20px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-block;
+}
+
+.social-links a:hover {
+	color: var(--laranja-frenesy);
+	transform: translateY(-3px);
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #a0a0a0;
+	text-decoration: none;
+	transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-links a:hover {
+	color: var(--branco);
+	padding-left: 5px;
+}
+
+.footer-column p {
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.newsletter-form {
+	display: flex;
+	position: relative;
+	max-width: 300px;
+}
+
+.newsletter-form input {
+	flex-grow: 1;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.newsletter-form button {
+	padding: 10px 18px;
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: var(--branco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+	background-color: #d85401;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit i {
+	color: var(--laranja-frenesy);
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.section-title {
+	text-align: center;
+	font-family: var(--font-titulo);
+	font-size: 3.5rem;
+	margin-bottom: 0.5rem;
+	color: var(--branco);
+	text-transform: uppercase;
+}
+
+.section-subtitle {
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto 5rem auto;
+	color: #aaa;
+	line-height: 1.7;
+	font-size: 1.1rem;
+}
+
+.content-section {
+	padding: 120px 5%;
+	position: relative;
+	overflow: hidden;
+}
+
+.about-header {
+	height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.header-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	overflow: hidden;
+}
+
+.header-background::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('assets/img/wallpapers/Wallpaper Sant.png');
+	background-size: cover;
+	background-position: 10% 60%;
+	background-attachment: fixed;
+	filter: blur(2px);
+	transform: scale(1);
+	opacity: 100;
+	z-index: -1;
+}
+
+.header-video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.header-video-overlay video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: blur(5px);
+	opacity: 0.3;
+}
+
+.header-content {
+	z-index: 1;
+}
+
+.header-content img {
+	width: 150px;
+	margin-bottom: 1.5rem;
+}
+
+.header-content h1 {
+	font-family: var(--font-titulo);
+	font-size: 7rem;
+	text-transform: uppercase;
+	color: var(--laranja-frenesy);
+	text-shadow: 0 0 20px var(--laranja-frenesy);
+}
+
+.header-content p {
+	font-size: 1.5rem;
+	color: #ccc;
+	letter-spacing: 1px;
+}
+
+.trophy-case-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.trophy-card {
+	background-color: #111;
+	border: 1px solid #222;
+	border-radius: 8px;
+	padding: 2.5rem 2rem;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.trophy-card:hover {
+	transform: translateY(-10px);
+	border-color: var(--laranja-frenesy);
+}
+
+.trophy-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 50% 0%, rgba(249, 96, 1, 0.2), transparent 70%);
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.trophy-card:hover::before {
+	opacity: 1;
+}
+
+.trophy-icon {
+	font-size: 4rem;
+	color: var(--laranja-frenesy);
+	text-shadow: 0 0 20px var(--laranja-frenesy);
+	margin-bottom: 1rem;
+}
+
+.trophy-year {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.9rem;
+	color: #888;
+	display: block;
+}
+
+.trophy-card h3 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: 0.5rem 0;
+}
+
+.trophy-game {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	background-color: #222;
+	padding: 5px 10px;
+	border-radius: 4px;
+	display: inline-flex;
+	color: #ccc;
+}
+
+.trophy-game img {
+	height: 20px;
+}
+
+.empty-trophy-case {
+	max-width: 700px;
+	margin: 4rem auto 0 auto;
+	background-color: #111;
+	border: 1px dashed #333;
+	border-radius: 8px;
+	padding: 4rem;
+	text-align: center;
+	color: #888;
+}
+
+.empty-trophy-icon {
+	font-size: 4rem;
+	color: var(--laranja-frenesy);
+	opacity: 0.5;
+	margin-bottom: 1.5rem;
+}
+
+.empty-trophy-case h3 {
+	font-family: var(--font-titulo);
+	font-size: 2.5rem;
+	color: #ccc;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+.empty-trophy-case p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.about-section {
+	padding: 100px 5%;
+	background-color: var(--preto);
+	position: relative;
+	overflow: hidden;
+}
+
+.about-section .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	gap: 180px;
+}
+
+.about-content {
+	flex: 1;
+	text-align: center;
+	max-width: 700px;
+}
+
+.about-section .section-title {
+	font-size: 3.8rem;
+	margin-bottom: 1.5rem;
+}
+
+.about-description {
+	font-size: 1.15rem;
+	line-height: 1.8;
+	color: #bbb;
+	margin-bottom: 2.5rem;
+}
+
+.stats-grid {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-bottom: 3rem;
+	flex-wrap: wrap;
+}
+
+.stat-item {
+	text-align: center;
+	background-color: var(--cinza-escuro);
+	padding: 25px 30px;
+	border-radius: 8px;
+	border: 1px solid #222;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	min-width: 180px;
+}
+
+.stat-item:hover {
+	transform: translateY(-8px) scale(1.02);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(249, 96, 1, 0.3);
+}
+
+.stat-item i {
+	font-size: 2.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 15px;
+}
+
+.stat-item h3 {
+	font-family: var(--font-titulo);
+	font-size: 2.2rem;
+	margin-bottom: 5px;
+	color: var(--branco);
+}
+
+.stat-item p {
+	font-size: 0.95rem;
+	color: #999;
+	line-height: 1.4;
+}
+
+.cta-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--laranja-frenesy);
+	color: var(--branco);
+	padding: 15px 35px;
+	font-family: var(--font-titulo);
+	font-size: 1.1rem;
+	letter-spacing: 1px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 2px solid var(--laranja-frenesy);
+	transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+	background: transparent;
+	color: var(--laranja-frenesy);
+	transform: scale(1.05);
+}
+
+.cta-button i {
+	font-size: 1.1rem;
+}
+
+.about-image-container {
+	position: relative;
+	flex: 1;
+	max-width: 600px;
+	min-height: 400px;
+	margin-top: 40px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.about-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	filter: saturate(1.2) brightness(0.9);
+	transform: scale(1.02);
+}
+
+.image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2) 0%, rgba(249, 96, 1, 0.1) 100%);
+	z-index: 1;
+}
+
+.orange-strip {
+	position: absolute;
+	bottom: -10px;
+	left: -10px;
+	width: 80%;
+	height: 30px;
+	background-color: var(--laranja-frenesy);
+	transform: skewX(-20deg);
+	z-index: 2;
+	box-shadow: 5px 5px 20px rgba(249, 96, 1, 0.6);
+}
+
+@media (min-width: 992px) {
+	.about-section .container {
+		flex-direction: row;
+		text-align: left;
+	}
+
+	.about-content {
+		text-align: left;
+	}
+
+	.stats-grid {
+		justify-content: flex-start;
+	}
+
+	.about-image-container {
+		margin-top: 0;
+	}
+}
+
+
+#history {
+	background-color: var(--cinza-escuro);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23f96001' fill-opacity='0.1'/%3E%3C/svg%3E");
+}
+
+
+.timeline-item {
+	display: grid;
+	grid-template-columns: 1fr 50px 1fr;
+	gap: 30px;
+	margin-bottom: 50px;
+	position: relative;
+	align-items: center;
+}
+
+.timeline-image img {
+	width: 70%;
+	height: 70%;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+	display: block;
+}
+
+
+.history-timeline {
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.history-timeline::before {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 100%;
+	background-color: #333;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.timeline-content {
+	background-color: #111;
+	padding: 2rem;
+	border-radius: 8px;
+	border-left: 4px solid var(--laranja-frenesy);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+	border-left: none;
+	border-right: 4px solid var(--laranja-frenesy);
+	text-align: right;
+}
+
+.timeline-content h3 {
+	font-family: var(--font-titulo);
+	color: var(--branco);
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.timeline-content .year {
+	font-size: 1rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.timeline-content p {
+	color: #ccc;
+	line-height: 1.7;
+}
+
+.timeline-middle {
+	position: relative;
+	z-index: 2;
+}
+
+.timeline-point {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	background-color: var(--laranja-frenesy);
+	border-radius: 50%;
+	border: 4px solid #111;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+	grid-column: 3 / 4;
+}
+
+.timeline-item:nth-child(even) .timeline-image {
+	grid-column: 1 / 2;
+	grid-row: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+	grid-column: 1 / 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-image {
+	grid-column: 3 / 4;
+}
+
+
+#values {
+	position: relative;
+	z-index: 2;
+}
+
+.values-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2.5rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.value-card {
+	background: linear-gradient(145deg, #1f1f1f, #111111);
+	border: 1px solid #282828;
+	padding: 2.5rem 2rem;
+	text-align: center;
+	border-radius: 12px;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.value-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 50% -50%, rgba(249, 96, 1, 0.3), transparent 70%);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.value-card:hover {
+	transform: translateY(-10px);
+	border-color: var(--laranja-frenesy);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.value-card:hover::before {
+	opacity: 1;
+}
+
+.value-icon {
+	font-size: 3rem;
+	color: var(--laranja-frenesy);
+	text-shadow: 0 0 15px var(--laranja-frenesy);
+	margin-bottom: 1.5rem;
+	transition: transform 0.4s ease;
+}
+
+.value-card:hover .value-icon {
+	transform: scale(1.1);
+}
+
+.value-card h3 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.value-card p {
+	color: #b0b0b0;
+	line-height: 1.8;
+	font-size: 1rem;
+}
+
+
+#leadership {
+	position: relative;
+	background-color: var(--cinza-escuro);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='4' height='4' fill='%23f96001' fill-opacity='0.1'/%3E%3C/svg%3E");
+	overflow: hidden;
+}
+
+#leadership::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 200%);
+	pointer-events: none;
+}
+
+.leadership-carousel-window {
+	max-width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.leadership-carousel-track {
+	display: flex;
+	gap: 2rem;
+	transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+	padding: 1rem;
+}
+
+.person-card {
+	flex: 0 0 calc(25% - 1.5rem);
+	min-width: 300px;
+	position: relative;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: #111;
+	border: 1px solid transparent;
+	transition: all 0.4s ease;
+}
+
+.person-card:hover {
+	transform: translateY(-10px);
+	border-color: var(--laranja-frenesy);
+	box-shadow: 0 0 30px rgba(249, 96, 1, 0.4);
+}
+
+.person-image {
+	height: 450px;
+	position: relative;
+}
+
+.person-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.person-card:hover .person-image img {
+	transform: scale(1.05);
+}
+
+.person-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 2rem 1.5rem 1.5rem;
+	color: var(--branco);
+	background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, transparent);
+}
+
+.person-nickname {
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	color: var(--laranja-frenesy);
+	font-weight: 700;
+	display: block;
+}
+
+.person-info h3 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	margin: 0;
+}
+
+.person-info p {
+	margin: 5px 0 0 0;
+	color: #ccc;
+}
+
+
+.leadership-nav {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 3rem;
+}
+
+.slider-arrow {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid #555;
+	color: var(--branco);
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+	background: var(--laranja-frenesy);
+	border-color: var(--laranja-frenesy);
+}
+
+.slider-arrow:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 2000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.modal.show {
+	display: block;
+	opacity: 1;
+}
+
+.modal-content {
+	background: linear-gradient(135deg, #1a1a1a, #111);
+	margin: 8% auto;
+	padding: 40px;
+	border: 1px solid #333;
+	border-radius: 12px;
+	width: 90%;
+	max-width: 950px;
+	position: relative;
+	transform: scale(0.95);
+	transition: transform 0.4s ease;
+}
+
+.modal.show .modal-content {
+	transform: scale(1);
+}
+
+.close-modal {
+	color: #aaa;
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	font-size: 2.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+.modal-grid {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 40px;
+	align-items: center;
+}
+
+.modal-photo {
+	width: 320px;
+	height: 450px;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 3px solid var(--laranja-frenesy);
+	box-shadow: 0 0 20px rgba(249, 96, 1, 0.5);
+}
+
+.modal-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+#modal-ceo-nickname {
+	color: var(--laranja-frenesy);
+	font-size: 1.5rem;
+	font-family: var(--font-titulo);
+}
+
+.modal-info h2 {
+	font-family: var(--font-titulo);
+	font-size: 3.5rem;
+	margin: 0;
+	line-height: 1;
+}
+
+.modal-info #modal-ceo-role {
+	color: #ccc;
+	font-size: 1.2rem;
+	margin-bottom: 1.5rem;
+}
+
+.info-details {
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 1.5rem;
+	color: #aaa;
+}
+
+.info-details div {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.info-details i {
+	color: var(--laranja-frenesy);
+}
+
+.modal-info #modal-ceo-bio {
+	line-height: 1.7;
+	color: #ccc;
+	margin-bottom: 2rem;
+}
+
+.modal-socials {
+	display: flex;
+	gap: 1.5rem;
+	font-size: 1.8rem;
+}
+
+.modal-socials a {
+	color: #aaa;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.modal-socials a:hover {
+	color: var(--laranja-frenesy);
+	transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../index.html#community">Jogadores</a></li>
+                <li><a href="news.html">Notícias</a></li>
+                <li><a href="store.html">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">SOBRE A <span class="text-highlight">FRENESY</span></h2>
+                    <p class="about-description">
+                        A Frenesy começou como uma simples line de Free Fire, formada por um grupo de amigos com um sonho em comum: competir e chegar o mais longe possível. Entre vitórias e aprendizados, a equipe seguiu seu caminho até que, em 2021, a line foi encerrada. Mas a vontade de fazer algo grande nunca morreu. Agora, em 2025, o sonho voltou com força: estamos dando os primeiros passos para transformar aquela antiga ideia em uma organização de eSports de verdade. Ainda somos pequenos, mas nossa ambição não tem limites. A Frenesy é sobre isso — paixão, coragem e a vontade de fazer acontecer.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <h3>2+</h3>
+                            <p>Títulos</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <h3>10+</h3>
+                            <p>Membros Ativos</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>5+</h3>
+                            <p>Modalidades</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-container">
+                    <img src="../assets/img/logo/Static Banner Frenesy.jpg" alt="Equipe Frenesy em Ação" class="about-image">
+                    <div class="image-overlay"></div>
+                    <div class="orange-strip"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="history" class="content-section">
+            <h2 class="section-title">A JORNADA ATÉ A GLÓRIA</h2>
+            <p class="section-subtitle">Toda lenda tem um começo. A nossa foi forjada na paixão, na coragem e na vontade incansável de competir no mais alto nível.</p>
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="year">2020</span>
+                        <h3>O INÍCIO DE UM SONHO</h3>
+                        <p>A Frenesy nasceu dentro do universo competitivo de Free Fire, criada por um grupo de amigos com um objetivo em comum: vencer e chegar o mais longe possível. Com poucos recursos, mas muita vontade, a jornada começou.</p>
+                    </div>
+                    <div class="timeline-middle"><div class="timeline-point"></div></div>
+                    <div class="timeline-image">
+                        <img src="../assets/img/logo/Official Logo.jpg" alt="Primeiro logo da Frenesy">
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="../assets/img/backgrounds/Plano Frenesy.jpg"Equipe com troféu">
+                    </div>
+                    <div class="timeline-middle"><div class="timeline-point"></div></div>
+                    <div class="timeline-content">
+                        <span class="year">2021</span>
+                        <h3>A TRANSIÇÃO E NOVOS CAMINHOS</h3>
+                        <p>Em 2021, a linha competitiva de Free Fire foi encerrada, mas o sonho de criar algo maior não foi abandonado. Começava uma nova fase: a busca por transformar a ideia inicial em uma verdadeira organização de eSports.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="year">2025</span>
+                        <h3>A RENOVAÇÃO E O FUTURO</h3>
+                        <p>Em 2025, após anos de planejamento e dedicação, estamos prontos para transformar a Frenesy em uma organização de eSports completa. Ainda pequenos, mas com uma ambição ilimitada, o sonho que começou com um grupo de amigos agora está mais perto da realidade do que nunca.</p>
+                    </div>
+                    <div class="timeline-middle"><div class="timeline-point"></div></div>
+                    <div class="timeline-image">
+                        <img src="../assets/img/fans/eduarda.png" alt="Comunidade Frenesy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="values" class="content-section">
+            <h2 class="section-title">NOSSO DNA</h2>
+            <p class="section-subtitle">Os pilares que definem cada jogada, cada estratégia e cada membro da família Frenesy.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-fist-raised"></i></div>
+                    <h3>COMPETIÇÃO</h3>
+                    <p>Buscamos a vitória em tudo que fazemos. A competição está no nosso sangue e nos impulsiona a sermos melhores a cada dia.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>COMUNIDADE</h3>
+                    <p>Nossos fãs são a nossa força. Construímos um ambiente inclusivo e apaixonado, onde cada torcedor é parte do time.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>INOVAÇÃO</h3>
+                    <p>Estamos sempre à frente do jogo, explorando novas estratégias e formas de engajar nossa comunidade global.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership" class="content-section leadership-reforged">
+            <h2 class="section-title">NOSSA LIDERANÇA</h2>
+            <p class="section-subtitle">As mentes estratégicas que pavimentaram o caminho e hoje guiam a Frenesy rumo à vitória.</p>
+            
+            <div class="leadership-carousel-window">
+                <div class="leadership-carousel-track">
+
+
+
+
+                    <div class="person-card"
+                         data-name="Christopher Rissardi"
+                         data-nickname="ALIEN"
+                         data-role="CEO"
+                         data-img="../assets/img/teams/ALIEN2.jpg"
+                         data-age="21 anos"
+                         data-city="Curitiba, BR"
+                         data-bio="Responsável pela criação da Frenesy, participou de cada etapa do processo, desde a formação da comunidade até o desenvolvimento do site. Com foco em fazer acontecer, ajudou a transformar ideias em realidade."
+                         data-twitter="#" data-linkedin="https://www.linkedin.com/in/christopher-r-3293762b2/" data-instagram="#">
+                        <div class="person-image">
+                             <img src="../assets/img/teams/ALIEN2.jpg" alt="Foto de Christopher Rissardi">
+                        </div>
+                        <div class="person-info">
+                            <span class="person-nickname">ALIEN</span>
+                            <h3>Christopher Rissardi</h3>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+
+                     <div class="person-card" 
+                         data-name="Gustavo Santiago"
+                         data-nickname="Santt"
+                         data-role="Founder"
+                         data-img="../assets/img/teams/SANTT.jpg"
+                         data-age="18 anos"
+                         data-city="Pinhais, PR"
+                         data-bio="Apaixonado por e-sports desde o início, fundou a Frenesy com o objetivo de reunir pessoas apaixonadas por jogos eletrônicos e criar uma comunidade engajada."
+                         data-instagram="https://www.instagram.com/santtsz.07/">
+                        <div class="person-image">
+                            <img src="../assets/img/teams/SANTT.jpg" alt="Foto de Gustavo Santiago">
+                        </div>
+                        <div class="person-info">
+                            <span class="person-nickname">Santt</span>
+                            <h3>Gustavo Santiago</h3>
+                            <p>Founder & CEO</p>
+                        </div>
+                    </div>
+
+
+                     <div class="person-card" data-ceo="ceo3">
+                        <div class="person-image"><img src="img/background/grafite frenesy.jpg" alt="Foto do CEO 3"></div>
+                        <div class="person-info"><span class="person-nickname">NICKNAME</span><h3>Nome do Diretor</h3><p>Head de E-sports</p></div>
+                    </div>
+                    <div class="person-card" data-ceo="ceo4">
+                        <div class="person-image"><img src="img/background/grafite frenesy2.jpg" alt="Foto do CEO 4"></div>
+                        <div class="person-info"><span class="person-nickname">NICKNAME</span><h3>Outro Diretor</h3><p>Head de Marketing</p></div>
+                    </div>
+                </div>
+            </div>
+             <div class="leadership-nav">
+                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+
+
+
+<!-- 
+        <section id="trophies" class="content-section">
+            <h2 class="section-title">NOSSA GALERIA DE CONQUISTAS</h2>
+            <p class="section-subtitle">Cada troféu representa uma jornada de dedicação, estratégia e o talento incansável dos nossos atletas.</p>
+            <div class="trophy-case-grid">
+                <div class="trophy-card">
+                    <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="trophy-year">2025</span>
+                    <h3>VCT AMERICAS</h3>
+                    <p class="trophy-game">
+                        <img src="img/games/valorant.png" alt="Valorant">
+                        VALORANT
+                    </p>
+                </div>
+                <div class="trophy-card">
+                    <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="trophy-year">2025</span>
+                    <h3>IEM COLOGNE</h3>
+                    <p class="trophy-game">
+                        <img src="https://fluxogg.com.br/public/assets/imagens/jogos/cs2.svg" alt="CS:GO">
+                        CS:GO
+                    </p>
+                </div>
+
+                <div class="trophy-card">
+                    <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="trophy-year">2024</span>
+                    <h3>PRO LEAGUE BR</h3>
+                    <p class="trophy-game">
+                         <img src="img/games/free fire.png" alt="Free Fire">
+                        FREE FIRE
+                    </p>
+                </div>
+
+                <div class="trophy-card">
+                    <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="trophy-year">2024</span>
+                    <h3>CAMPEONATO NACIONAL</h3>
+                    <p class="trophy-game">
+                        <img src="https://fluxogg.com.br/public/assets/imagens/jogos/cs2.svg" alt="CS:GO">
+                        CS:GO
+                    </p>
+                </div> 
+            </div>
+        </section> -->
+
+
+        
+        <section id="trophies" class="content-section">
+            <h2 class="section-title">NOSSA FUTURA GALERIA</h2>
+            <p class="section-subtitle">Toda grande jornada começa com o primeiro passo. Este espaço está reservado para as glórias que ainda vamos conquistar.</p>
+            <div class="empty-trophy-case">
+                <div class="empty-trophy-icon"><i class="fas fa-hourglass-start"></i></div>
+                <h3>EM CONSTRUÇÃO</h3>
+                <p>Estamos trabalhando duro e treinando sem parar. Volte em breve para ver nossas primeiras conquistas!</p>
+            </div>
+        </section>
+    </main>
+    
+    <div id="ceo-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fechar">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-photo">
+                    <img id="modal-ceo-img" src="" alt="Foto do CEO">
+                </div>
+                <div class="modal-info">
+                    <p id="modal-ceo-nickname"></p>
+                    <h2 id="modal-ceo-name"></h2>
+                    <p id="modal-ceo-role"></p>
+                    <div class="info-details">
+                        <div><i class="fas fa-birthday-cake"></i> <span id="modal-ceo-age"></span></div>
+                        <div><i class="fas fa-map-marker-alt"></i> <span id="modal-ceo-city"></span></div>
+                    </div>
+                    <p id="modal-ceo-bio"></p>
+                    <div class="modal-socials">
+                        <a id="ceo-twitter" href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a id="ceo-linkedin" href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a id="ceo-instagram" href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                        <h2>FRENESY</h2>
+                    </div>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="frenesy.html">Sobre Nós</a></li>
+                        <li><a href="news.html">Notícias</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="partnerships.html">Parcerias</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- SCRIPT DO CARROSSEL DE LIDERANÇA ---
+            const track = document.querySelector('.leadership-carousel-track');
+            if (track) {
+                const prevBtn = document.querySelector('.leadership-nav .prev');
+                const nextBtn = document.querySelector('.leadership-nav .next');
+                const cards = document.querySelectorAll('.person-card');
+                
+                let currentIndex = 0;
+                let cardsPerPage = 4;
+                const totalCards = cards.length;
+                const gap = 32;
+
+                function updateCarousel() {
+                    if (window.innerWidth <= 768) cardsPerPage = 2;
+                    else if (window.innerWidth <= 1200) cardsPerPage = 3;
+                    else cardsPerPage = 4;
+                    
+                    if(cards.length > 0){
+                        const cardWidth = cards[0].offsetWidth;
+                        const moveDistance = (cardWidth + gap) * currentIndex;
+                        track.style.transform = `translateX(-${moveDistance}px)`;
+                    }
+
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex >= totalCards - cardsPerPage;
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < totalCards - cardsPerPage) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+
+                window.addEventListener('resize', updateCarousel);
+                if(cards.length > 0) updateCarousel();
+            }
+
+            // --- SCRIPT PARA O MODAL DOS CEOS ---
+            const modal = document.getElementById('ceo-modal');
+            const closeModalBtn = document.querySelector('.close-modal');
+            const ceoCards = document.querySelectorAll('.person-card');
+
+            if (modal) {
+                ceoCards.forEach(card => {
+                    // Certifica-se de que o card tem os dados necessários antes de adicionar o evento
+                    if (card.dataset.name) {
+                        card.addEventListener('click', () => {
+                            document.getElementById('modal-ceo-img').src = card.dataset.img;
+                            document.getElementById('modal-ceo-name').textContent = card.dataset.name;
+                            
+                            const nicknameEl = document.getElementById('modal-ceo-nickname');
+                            if (nicknameEl) nicknameEl.textContent = card.dataset.nickname;
+
+                            document.getElementById('modal-ceo-role').textContent = card.dataset.role;
+                            document.getElementById('modal-ceo-age').textContent = card.dataset.age;
+                            document.getElementById('modal-ceo-city').textContent = card.dataset.city;
+                            document.getElementById('modal-ceo-bio').textContent = card.dataset.bio;
+                            
+                            // --- LÓGICA MODIFICADA PARA AS REDES SOCIAIS ---
+                            const socialLinks = {
+                                twitter: { element: document.getElementById('ceo-twitter'), link: card.dataset.twitter },
+                                linkedin: { element: document.getElementById('ceo-linkedin'), link: card.dataset.linkedin },
+                                instagram: { element: document.getElementById('ceo-instagram'), link: card.dataset.instagram }
+                            };
+
+                            // Itera sobre cada rede social e a exibe ou oculta conforme necessário
+                            for (const key in socialLinks) {
+                                const social = socialLinks[key];
+                                // Verifica se o link existe, não é nulo e não é apenas um placeholder '#'
+                                if (social.link && social.link !== '#') {
+                                    social.element.href = social.link;
+                                    social.element.style.display = 'inline-block'; // Mostra o ícone
+                                } else {
+                                    social.element.style.display = 'none'; // Oculta o ícone
+                                }
+                            }
+                            
+                            modal.classList.add('show');
+                        });
+                    }
+                });
+
+                function closeModal() { modal.classList.remove('show'); }
+                closeModalBtn.onclick = closeModal;
+                window.onclick = (event) => { if (event.target == modal) { closeModal(); } }
+            }
+        });
+    </script>
+</body>
+</html>

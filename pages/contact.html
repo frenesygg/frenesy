@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+
+
+:root {
+	--preto: #000000;
+	--laranja-frenesy: #f96001;
+	--branco: #ffffff;
+	--cinza-escuro: #1a1a1a;
+	--font-titulo: 'Rajdhani', sans-serif;
+	--font-texto: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-texto);
+	background-color: var(--preto);
+	color: var(--branco);
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 15px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 20px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.3s ease;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 0;
+	transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.nav-links a:hover::after {
+	width: 100%;
+}
+
+.site-footer {
+	position: relative;
+	padding: 120px 5% 20px;
+	background-color: var(--preto);
+	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+	margin-top: 100px;
+}
+
+
+.footer-main {
+	padding: 40px 5% 40px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.footer-column h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+
+.footer-column.about .logo-footer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.footer-column.about .logo-footer img {
+	height: 40px;
+	margin-right: 15px;
+}
+
+.footer-column.about .logo-footer h2 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+}
+
+.footer-tagline {
+	font-size: 0.9rem;
+	color: #a0a0a0;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.social-links a {
+	color: #a0a0a0;
+	font-size: 1.5rem;
+	margin-right: 20px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-block;
+}
+
+.social-links a:hover {
+	color: var(--laranja-frenesy);
+	transform: translateY(-3px);
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #a0a0a0;
+	text-decoration: none;
+	transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-links a:hover {
+	color: var(--branco);
+	padding-left: 5px;
+}
+
+.footer-column p {
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.newsletter-form {
+	display: flex;
+	position: relative;
+	max-width: 300px;
+}
+
+.newsletter-form input {
+	flex-grow: 1;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.newsletter-form button {
+	padding: 10px 18px;
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: var(--branco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+	background-color: #d85401;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit i {
+	color: var(--laranja-frenesy);
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+
+.contact-header {
+	padding-top: 150px;
+	padding-bottom: 80px;
+	text-align: center;
+}
+
+.section-title {
+	font-family: var(--font-titulo);
+	font-size: 3.5rem;
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+}
+
+.section-subtitle {
+	max-width: 800px;
+	margin: 0 auto 0.5rem auto;
+	color: #aaa;
+	line-height: 1.7;
+	font-size: 1.1rem;
+}
+
+.contact-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 5%;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 6rem;
+}
+
+.contact-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+}
+
+.contact-card {
+	background-color: #111;
+	border: 1px solid #222;
+	border-radius: 8px;
+	padding: 4.0rem 2rem;
+	text-align: center;
+	transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+	transform: translateY(-10px);
+	border-color: var(--laranja-frenesy);
+}
+
+.contact-card .card-icon {
+	font-size: 3rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 1.5rem;
+}
+
+.contact-card h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.contact-card p {
+	color: #aaa;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.contact-card .contact-link {
+	display: inline-block;
+	font-weight: 600;
+	color: var(--branco);
+	text-decoration: none;
+	word-break: break-all;
+}
+
+.contact-card .contact-link:hover {
+	color: var(--laranja-frenesy);
+}
+
+.social-icons-list {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	list-style: none;
+}
+
+.social-icons-list a {
+	font-size: 2rem;
+	color: #aaa;
+	transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons-list a:hover {
+	color: var(--laranja-frenesy);
+	transform: scale(1.1);
+}
+
+.form-container {
+	background-color: var(--cinza-escuro);
+	padding: 3rem;
+	border-radius: 8px;
+	border: 1px solid #222;
+}
+
+.form-container h2 {
+	font-family: var(--font-titulo);
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.contact-form .form-group {
+	margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+	color: #ccc;
+}
+
+.contact-form .form-control {
+	width: 100%;
+	padding: 15px;
+	background-color: #111;
+	border: 1px solid #333;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form .form-control:focus {
+	outline: none;
+	border-color: var(--laranja-frenesy);
+	box-shadow: 0 0 10px rgba(249, 96, 1, 0.3);
+}
+
+.contact-form textarea.form-control {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.submit-btn {
+	display: inline-block;
+	width: 100%;
+	padding: 18px;
+	background-color: var(--laranja-frenesy);
+	border: 2px solid var(--laranja-frenesy);
+	color: var(--branco);
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+	background-color: transparent;
+	color: var(--laranja-frenesy);
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="frenesy.html">Sobre Nós</a></li>
+                <li><a href="news.html">Notícias</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-header">
+            <h1 class="section-title">FALE CONOSCO</h1>
+            <p class="section-subtitle">Quer fazer parte da nossa história, propor uma parceria ou simplesmente trocar uma ideia? Escolha um dos canais abaixo. Estamos sempre prontos para ouvir.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Comunidade</h3>
+                    <p>Faça parte da nossa família e acompanhe o dia a dia da organização em nossas redes sociais.</p>
+                    <ul class="social-icons-list">
+                        <li><a href="https://www.instagram.com/frenesy.gg/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://discord.gg/AvS5dEC3vv" target="_blank" title="Discord"><i class="fab fa-discord"></i></a></li>
+                        <li><a href="#" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <h3>Contato Geral</h3>
+                    <p>Para dúvidas, sugestões ou qualquer outro assunto, este é o nosso canal direto com você.</p>
+                    <a href="mailto:contato@frenesy.gg" class="contact-link">contato@frenesy.com.br</a>
+                </div>
+                <div class="contact-card">
+                    <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Parcerias</h3>
+                    <p>Sua marca quer crescer junto com a gente? Envie sua proposta e vamos dominar o jogo juntos.</p>
+                    <a href="mailto:parcerias@frenesy.gg" class="contact-link">parcerias@frenesy.com.br</a>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h2>Envie uma Mensagem Direta</h2>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Seu Nome</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Sua Mensagem</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                        <h2>FRENESY</h2>
+                    </div>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="frenesy.html">Sobre Nós</a></li>
+                        <li><a href="news.html">Notícias</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="partnerships.html">Parcerias</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
