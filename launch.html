@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento Oficial - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GLOBAIS (COPIADOS DO SEU SITE PARA CONSISTÊNCIA)
+           ========================================================================== */
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow: hidden; /* Impede o scroll na página de lançamento */
+        }
+        
+        /* HEADER E FOOTER SIMPLIFICADOS PARA A PÁGINA DE LANÇAMENTO */
+        .navbar { padding: 1rem 5%; background-color: transparent; position: absolute; width: 100%; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; text-decoration: none; color: var(--branco); }
+        .logo img { height: 50px; margin-right: 15px; }
+        .logo h1 { font-family: var(--font-titulo); font-size: 2rem; letter-spacing: 2px; }
+        .site-footer { position: absolute; bottom: 0; width: 100%; padding: 20px 5%; text-align: center; }
+        .footer-bottom { color: #888; font-size: 0.85rem; }
+        .creator-credit { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #777; }
+        .creator-credit i { color: var(--laranja-frenesy); }
+        .creator-credit a { color: #999; text-decoration: none; font-weight: 600; }
+
+        /* ==========================================================================
+           ESTILOS DA PÁGINA DE LANÇAMENTO
+           ========================================================================== */
+        
+        /* Efeitos de fundo do index.html */
+        .launch-hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        .arena-background {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at center, rgba(18, 18, 18, 0) 0%, var(--preto) 70%);
+        }
+        .arena-spotlight {
+            position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+            width: 150%; height: 100%;
+            background: radial-gradient(ellipse at top, rgba(249, 96, 1, 0.15), transparent 70%);
+        }
+        .graphic-lines .line { position: absolute; background: var(--laranja-frenesy); opacity: 0.5; filter: blur(5px); }
+        .line-1 { width: 2px; height: 150%; top: -25%; left: 10%; animation: streak 8s linear infinite; }
+        .line-2 { width: 1px; height: 120%; top: -10%; left: 25%; animation: streak 12s linear infinite; animation-delay: -2s; }
+        .line-3 { width: 2px; height: 150%; top: -25%; right: 10%; animation: streak 9s linear infinite; animation-delay: -4s; }
+        .line-4 { width: 1px; height: 120%; top: -10%; right: 25%; animation: streak 15s linear infinite; animation-delay: -6s; }
+        .line-3, .line-4 { animation-name: streak-rev; }
+        @keyframes streak { 0% { transform: translateY(-100%) rotate(25deg); } 100% { transform: translateY(100%) rotate(25deg); } }
+        @keyframes streak-rev { 0% { transform: translateY(-100%) rotate(-25deg); } 100% { transform: translateY(100%) rotate(-25deg); } }
+        
+        /* Conteúdo principal */
+        .launch-content {
+            position: relative;
+            z-index: 2;
+        }
+        .launch-content h1 {
+            font-family: var(--font-titulo);
+            font-size: 5rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .launch-content .highlight {
+            color: var(--laranja-frenesy);
+            text-shadow: 0 0 20px var(--laranja-frenesy);
+        }
+        .launch-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 1.5rem auto 3rem;
+        }
+
+        /* Contagem regressiva */
+        #countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .time-block {
+            background-color: rgba(10, 10, 10, 0.7);
+            border: 1px solid #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            min-width: 100px;
+        }
+        .time-value {
+            font-family: var(--font-titulo);
+            font-size: 3.5rem;
+            color: var(--laranja-frenesy);
+        }
+        .time-label {
+            font-size: 0.8rem;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        #launch-message {
+            font-family: var(--font-titulo);
+            font-size: 3rem;
+            color: var(--laranja-frenesy);
+            display: none; /* Começa escondido */
+        }
+
+        /* Redes sociais */
+        .launch-socials p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0 auto 1.5rem;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .social-links a {
+            color: #aaa;
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--laranja-frenesy);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 600px) {
+            .launch-content h1 { font-size: 3rem; }
+            .time-block { min-width: 70px; padding: 1rem; }
+            .time-value { font-size: 2.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="launch-hero">
+            <div class="arena-background"><div class="arena-spotlight"></div></div>
+            <div class="graphic-lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+                <div class="line line-4"></div>
+            </div>
+
+            <div class="launch-content">
+                <h1>A LENDA <span class="highlight">COMEÇA</span> EM</h1>
+                <p>O site oficial da Frenesy E-sports está prestes a entrar no ar. Prepare-se para uma nova era de competição, comunidade e glória.</p>
+
+                <div id="countdown-timer">
+                    <div class="time-block"><span id="days" class="time-value">00</span><div class="time-label">Dias</div></div>
+                    <div class="time-block"><span id="hours" class="time-value">00</span><div class="time-label">Horas</div></div>
+                    <div class="time-block"><span id="minutes" class="time-value">00</span><div class="time-label">Minutos</div></div>
+                    <div class="time-block"><span id="seconds" class="time-value">00</span><div class="time-label">Segundos</div></div>
+                </div>
+                <div id="launch-message">BEM-VINDO À FRENESY!</div>
+
+                <div class="launch-socials">
+                    <p>// ACOMPANHE NAS REDES SOCIAIS</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" target="_blank" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Frenesy E-sports. Todos os direitos reservados. 
+                <span class="creator-credit">
+                    <i class="fas fa-code"></i> Developed by <a href="https://instagram.com/christopherrissardi" target="_blank">alien</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+                // --- SCRIPT DA CONTAGEM REGRESSIVA ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Data de hoje
+            const today = new Date();
+
+            // Exemplo: lançar dia 12 do mês atual às 18:50
+            const launchDate = new Date(
+                today.getFullYear(),
+                today.getMonth(), // mês atual correto
+                4,  // dia
+                0,  // hora
+                14,  // minuto
+                0    // segundo
+            ).getTime();
+
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown-timer').style.display = 'none';
+                    document.getElementById('launch-message').style.display = 'block';
+                }
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>

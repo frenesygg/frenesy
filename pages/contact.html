@@ -481,38 +481,43 @@ body {
                     <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
                     <h3>Contato Geral</h3>
                     <p>Para dúvidas, sugestões ou qualquer outro assunto, este é o nosso canal direto com você.</p>
-                    <a href="mailto:contato@frenesy.gg" class="contact-link">contato@frenesy.com.br</a>
+                    <a href="mailto:frenesygg@gmail.com" class="contact-link">frenesygg@gmail.com</a>
                 </div>
                 <div class="contact-card">
                     <div class="card-icon"><i class="fas fa-handshake"></i></div>
                     <h3>Parcerias</h3>
                     <p>Sua marca quer crescer junto com a gente? Envie sua proposta e vamos dominar o jogo juntos.</p>
-                    <a href="mailto:parcerias@frenesy.gg" class="contact-link">parcerias@frenesy.com.br</a>
+                    <a href="mailto:frenesygg@gmail.com" class="contact-link">frenesygg@gmail.com</a>
                 </div>
             </div>
 
-            <div class="form-container">
-                <h2>Envie uma Mensagem Direta</h2>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Seu Nome</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Seu E-mail</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Assunto</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Sua Mensagem</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
-                </form>
-            </div>
+			<div class="form-container">
+				<h2>Envie uma Mensagem Direta</h2>
+				<form class="contact-form" action="https://formsubmit.co/3139879f5cc00dd267bea1d25e8f6b8b" method="POST">
+					<input type="hidden" name="_next" value="http://localhost:5500/pages/thanks.html">
+					<input type="hidden" name="_captcha" value="false">
+					<input type="hidden" name="_autoresponse" id="autoresponse-template">
+					<input type="hidden" name="_template" value="box">
+					<div class="form-group">
+						<label for="name">Seu Nome</label>
+						<input type="text" id="name" name="name" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Seu E-mail</label>
+						<input type="email" id="email" name="email" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="subject">Assunto</label>
+						<input type="text" id="subject" name="subject" class="form-control" required>
+						<input type="hidden" name="_subject" value="Mensagem de um Membro! - Frenesy">
+					</div>
+					<div class="form-group">
+						<label for="message">Sua Mensagem</label>
+						<textarea id="message" name="message" class="form-control" required></textarea>
+					</div>
+					<button type="submit" class="submit-btn">Enviar Mensagem</button>
+				</form>
+			</div>
         </div>
     </main>
 
@@ -568,6 +573,86 @@ body {
             </p>
         </div>
     </footer>
+
+
+
+	<script>
+
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// URL completa da sua logo. IMPORTANTE: Substitua pelo link real da sua imagem online.
+		const logoUrl = 'https://i.imgur.com/B1In7FZ.png'; // Exemplo usando uma imagem no Imgur
+
+		// Template do seu e-mail em HTML. Você pode editar os textos aqui.
+		const emailHtmlTemplate = `
+			<div style="font-family: Arial, sans-serif; background-color: #111; color: #ccc; padding: 20px;">
+				<div style="max-width: 600px; margin: 0 auto; background-color: #1a1a1a; border-radius: 8px; border: 1px solid #333; overflow: hidden;">
+					<div style="background-color: #000; text-align: center; padding: 20px;">
+						<img src="${logoUrl}" alt="Logo Frenesy" style="height: 50px;">
+					</div>
+					<div style="padding: 30px;">
+						<h1 style="font-family: 'Rajdhani', sans-serif; color: #f96001; font-size: 24px;">MENSAGEM RECEBIDA!</h1>
+						<p style="font-size: 16px; line-height: 1.6;">
+							Olá, {{name}}!
+						</p>
+						<p style="font-size: 16px; line-height: 1.6;">
+							Este é um e-mail automático para confirmar que recebemos sua mensagem. Agradecemos pelo seu contato e interesse na Frenesy E-sports!
+						</p>
+						<p style="font-size: 16px; line-height: 1.6;">
+							Nossa equipe irá analisar sua solicitação e retornará o mais breve possível.
+						</p>
+						<p style="font-size: 16px; line-height: 1.6;">
+							Atenciosamente,<br>
+							<strong>Equipe Frenesy</strong>
+						</p>
+					</div>
+					<div style="background-color: #000; text-align: center; padding: 15px; font-size: 12px; color: #888;">
+						<p>Fique por dentro de tudo em nossas redes sociais!</p>
+						<a href="https://www.instagram.com/frenesy.gg/" style="color: #f96001; text-decoration: none; margin: 0 10px;">Instagram</a>
+						<a href="https://discord.gg/AvS5dEC3vv" style="color: #f96001; text-decoration: none; margin: 0 10px;">Discord</a>
+						<p style="margin-top: 10px;">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+					</div>
+				</div>
+			</div>
+		`;
+
+		// Pega o campo oculto e insere o template HTML no seu valor
+		const autoresponseInput = document.getElementById('autoresponse-template');
+		if (autoresponseInput) {
+			autoresponseInput.value = emailHtmlTemplate;
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
 
     
 </body>

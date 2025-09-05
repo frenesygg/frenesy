@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado pelo Contato! - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GLOBAIS (COPIADOS DO SEU SITE PARA CONSISTÊNCIA)
+           ========================================================================== */
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        /* HEADER E FOOTER (IDÊNTICOS) */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: rgba(0, 0, 0, 0.8); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; margin-right: 15px; }
+        .logo h1 { font-family: var(--font-titulo); font-size: 2rem; color: var(--branco); letter-spacing: 2px; }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { padding: 0 20px; }
+        .nav-links a { color: var(--branco); text-decoration: none; font-weight: 600; }
+        .site-footer { position: relative; padding: 120px 5% 20px; background-color: var(--preto); clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%); margin-top: 100px; }
+        .footer-main { padding: 40px 5%; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-column h3 { font-family: var(--font-titulo); font-size: 1.5rem; color: var(--laranja-frenesy); margin-bottom: 20px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; border-top: 1px solid #222; color: #888; font-size: 0.85rem; }
+        .creator-credit { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #777; }
+        .creator-credit i { color: var(--laranja-frenesy); }
+        .creator-credit a { color: #999; text-decoration: none; font-weight: 600; }
+
+        /* ==========================================================================
+           ESTILOS DA PÁGINA DE AGRADECIMENTO
+           ========================================================================== */
+        .thank-you-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 0 5%;
+        }
+        .thank-you-box {
+            background-color: var(--cinza-escuro);
+            padding: 4rem;
+            border-radius: 8px;
+            border: 1px solid #222;
+            max-width: 600px;
+        }
+        .thank-you-icon {
+            font-size: 4rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 1.5rem;
+        }
+        .thank-you-box h1 {
+            font-family: var(--font-titulo);
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .thank-you-box p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+        .back-home-btn {
+            display: inline-block;
+            background-color: var(--laranja-frenesy);
+            color: var(--branco);
+            padding: 15px 35px;
+            font-family: var(--font-titulo);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid var(--laranja-frenesy);
+            transition: all 0.3s ease;
+        }
+        .back-home-btn:hover {
+            background-color: transparent;
+            color: var(--laranja-frenesy);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="frenesy.html">Sobre Nós</a></li>
+                <li><a href="news.html">Notícias</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <div class="thank-you-box">
+                <div class="thank-you-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Mensagem Enviada!</h1>
+                <p>Obrigado por entrar em contato. Recebemos sua mensagem e nossa equipe irá analisá-la o mais breve possível. #GoFrenesy</p>
+                <a href="../index.html" class="back-home-btn">VOLTAR AO INÍCIO</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

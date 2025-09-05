@@ -1549,7 +1549,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	background-position: center 20%;
+	background-position: center center; /* AJUSTADO: Garante a centralização perfeita da imagem */
 	filter: grayscale(100%);
 	transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1644,8 +1644,8 @@ body {
 
 .player-socials {
 	display: flex;
-	gap: 15px;
-	font-size: 1.2rem;
+	gap: 12px; /* AJUSTADO: Diminui o espaçamento entre os ícones */
+	font-size: 1rem; /* AJUSTADO: Diminui o tamanho dos ícones */
 }
 
 .player-socials i {
@@ -2355,6 +2355,168 @@ body {
 	border: 1px solid #444;
 }
 
+
+/* ==========================================================================
+   CSS DO MODAL DE JOGADOR COMPETITIVO (VERSÃO FINAL CORRIGIDA)
+   ========================================================================== */
+
+/* Keyframes para a animação das partículas */
+@keyframes animate-particles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); } /* Distância que as partículas viajam */
+}
+
+.player-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3000; display: flex; align-items: center; justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.player-modal.active { opacity: 1; pointer-events: auto; }
+
+.player-modal-content {
+    position: relative;
+    background-color: var(--preto); /* AJUSTADO: Fundo preto sólido */
+    border: 1px solid #333;
+    border-radius: 12px;
+    max-width: 800px; width: 90%;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.4s ease;
+    overflow: hidden; /* Essencial para as partículas não saírem */
+}
+
+/* NOVO: Animação de partículas no fundo */
+.player-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 300%; /* Altura maior para a animação ter espaço */
+    background-image: 
+        radial-gradient(circle, var(--laranja-frenesy) 1px, transparent 1px),
+        radial-gradient(circle, var(--laranja-frenesy) 1px, transparent 1px);
+		src: "/";
+    background-size: 50px 50px, 70px 70px; /* Tamanho e densidade das partículas */
+    background-position: 0 0, 30px 30px;
+    opacity: 0.45;
+    animation: animate-particles 60s linear infinite; /* Velocidade da animação */
+    z-index: 0;
+}
+
+.player-modal.active .player-modal-content { transform: scale(1); }
+
+.player-modal .modal-close-btn {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 2rem; color: #aaa; cursor: pointer;
+    background: none; border: none; transition: all 0.3s ease;
+    z-index: 2; /* Para ficar acima das partículas */
+}
+.player-modal .modal-close-btn:hover { color: var(--laranja-frenesy); transform: rotate(90deg); }
+
+.player-modal .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    padding: 2.5rem;
+    position: relative; /* Para ficar acima das partículas */
+    z-index: 1;
+}
+
+/* Coluna da Galeria */
+.player-modal .modal-gallery { position: relative; }
+.player-modal .gallery-main-photo {
+    width: 100%; aspect-ratio: 1 / 1; border-radius: 8px;
+    overflow: hidden; background-color: #000;
+}
+.player-modal .gallery-main-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; /* Mantém a proporção e preenche o espaço */
+    object-position: center 20%; /* AJUSTADO: Prioriza a parte de cima da foto (rosto) */
+}
+.player-modal .gallery-controls {
+    position: absolute; top: 50%; left: 0; width: 100%;
+    transform: translateY(-50%); display: flex;
+    justify-content: space-between; padding: 0 10px;
+}
+.player-modal .gallery-arrow {
+    background: rgba(0,0,0,0.5); border: none; color: #fff;
+    width: 40px; height: 40px; border-radius: 50%;
+    font-size: 1rem; cursor: pointer; transition: background-color 0.3s;
+}
+.player-modal .gallery-arrow:hover { background: var(--laranja-frenesy); }
+
+/* Coluna de Informações */
+.player-modal .modal-info { display: flex; flex-direction: column; justify-content: center; }
+.player-modal .modal-nick {
+    font-family: var(--font-titulo); font-size: 3.5rem;
+    color: var(--laranja-frenesy); line-height: 1;
+    text-shadow: 0 0 15px var(--laranja-frenesy);
+}
+.player-modal .modal-name { color: #ccc; margin-bottom: 1.5rem; }
+
+.player-modal .modal-stats { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+.player-modal .modal-stats .stat-item { display: flex; align-items: center; gap: 10px; }
+.player-modal .modal-stats .stat-item i { color: var(--laranja-frenesy); width: 20px; text-align: center; }
+
+/* AJUSTADO: Estilo para ícones pequenos e sem texto */
+.player-modal .modal-socials {
+    display: flex;
+    flex-direction: row; /* Ícones em linha */
+    gap: 1.5rem; /* Espaço entre os ícones */
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #222;
+}
+.player-modal .modal-socials a {
+    font-size: 1.5rem; /* Tamanho do ícone */
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.player-modal .modal-socials a:hover {
+    color: var(--laranja-frenesy);
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------- MEDIA */
 
 @media (min-width: 768px) {
@@ -2561,6 +2723,25 @@ body {
     </style>
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 <body>
     <header>
@@ -2579,6 +2760,7 @@ body {
             </ul>
         </nav>
     </header>
+
 
     <main>
         <section class="hero-arena">
@@ -2630,6 +2812,7 @@ body {
                 </div>
             </div>
         </section>
+
 
 
 
@@ -2711,12 +2894,9 @@ body {
 
 
 
-
-
         <section id="players" class="players-section">
             <h2 class="section-title">CONHEÇA NOSSOS JOGADORES</h2>
             <p class="section-subtitle">O talento por trás das vitórias. Conheça a linha de frente que carrega o nome da Frenesy em todas as batalhas.</p>
-
             <div class="player-filters">
                 <button class="active" data-filter="all">TODOS</button>
                 <button data-filter="freefire">FREE FIRE</button>
@@ -2724,79 +2904,130 @@ body {
                 <button data-filter="csgo">CS:GO</button>
                 <button data-filter="outros">OUTROS</button>
             </div>
-
             <div class="players-carousel-container">
                 <button class="slider-btn prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                
                 <div class="players-carousel-window">
                     <div class="players-grid">
-                        <a href="#" class="player-card" data-game="valorant">
-                            <div class="player-card-background" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Jair_Bolsonaro_2019_Portrait_%283x4_cropped%29.jpg/330px-Jair_Bolsonaro_2019_Portrait_%283x4_cropped%29.jpg');"></div>
+                        
+						
+						
+						<!-- <a href="#" class="player-card" data-game="freefire" data-nick="KAKASHI" data-name="Thiago Machareth" data-age="20" data-city="Além Paraíba, MG" data-titles="5" data-photos="assets/img/teams/THZIN.jpeg,assets/img/highlights/kakashi-2.jpg,assets/img/highlights/kakashi-3.jpg" data-role="Capitão" data-twitch="thzin" data-twitter="thzin" data-instagram="thiago.machareth">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/THZIN.jpeg');"></div>
                             <div class="player-card-overlay"></div>
                             <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
                             <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jair Bolsonaro</h3><p>Jogador do Valorant</p></div>
-                                <div class="player-details"><span class="player-role">Capitão (IGL)</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="player-card" data-game="valorant">
-                             <div class="player-card-background" style="background-image: url('https://imagens.ebc.com.br/GEuMESkTig2uGEiX4b14Kq9Ktzg=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2025/04/02/2025-04-02t203312z_419641593_rc2wpda4g660_rtrmadp_3_usa-trump-tariffs.jpg?itok=OClwFrJU');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/us.svg" alt="Bandeira da Argentina"><span>EUA</span></div><h3>Donald Trump</h3><p>Jogador do Valorant</p></div>
-                                <div class="player-details"><span class="player-role">Sanguinário</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-                         <a href="#" class="player-card" data-game="valorant">
-                             <div class="player-card-background" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f3/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29.jpg');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/ru.svg" alt="Bandeira do Chile"><span>RÚSSIA</span></div><h3>Vladimir Putin</h3><p>Jogador do Valorant</p></div>
-                                <div class="player-details"><span class="player-role">Chefe</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-                        <a href="#" class="player-card" data-game="valorant">
-                             <div class="player-card-background" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Benito_Mussolini_colored.jpg/640px-Benito_Mussolini_colored.jpg');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/it.svg" alt="Bandeira do Brasil"><span>ITÁLIA</span></div><h3>Mussolini</h3><p>Jogador do Valorant</p></div>
-                                <div class="player-details"><span class="player-role">Controlador</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="player-card" data-game="valorant">
-                             <div class="player-card-background" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/ca/Osama_bin_Laden_portrait.jpg');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/sa.svg" alt="Bandeira do Brasil"><span>ARABIA SAUDITA</span></div><h3>BIN LADEN</h3><p>Jogador do Valorant</p></div>
-                                <div class="player-details"><span class="player-role">Granada</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-
-
-                        <!-- <a href="#" class="player-card" data-game="csgo">
-                             <div class="player-card-background" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/ca/Osama_bin_Laden_portrait.jpg');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/sa.svg" alt="Bandeira do Brasil"><span>ARABIA SAUDITA</span></div><h3>BIN LADEN</h3><p>Jogador do CS:GO</p></div>
-                                <div class="player-details"><span class="player-role">Granada</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                                <div class="player-name">
+                                    <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+                                    <h3>KAKASHI</h3>
+                                    <p>Jogador do Free Fire</p>
+                                </div>
+                                <div class="player-details">
+                                    <span class="player-role">Capitão</span>
+                                    <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
+                                </div>
                             </div>
                         </a> -->
 
+						<a href="#" class="player-card" data-game="freefire">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
+                                <div class="player-details"><span class="player-role">Suporte</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                            </div>
+                        </a>
+
+						<a href="#" class="player-card" data-game="freefire">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
+                                <div class="player-details"><span class="player-role">Suporte</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                            </div>
+                        </a>
+						<a href="#" class="player-card" data-game="freefire">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
+                                <div class="player-details"><span class="player-role">Rush</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                            </div>
+                        </a>
+						<a href="#" class="player-card" data-game="freefire">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
+                                <div class="player-details"><span class="player-role">Rush</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                            </div>
+                        </a>
+						<a href="#" class="player-card" data-game="freefire">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
+                                <div class="player-details"><span class="player-role">Coach</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-
                 <button class="slider-btn next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </section>    
+        </section>   
+
+		<div id="playerProfileModal" class="player-modal">
+			<div class="player-modal-content">
+				
+				
+				<button class="modal-close-btn">&times;</button>
+				
+				<div class="modal-grid">
+					<div class="modal-gallery">
+						<div class="gallery-main-photo">
+							<img id="modalProfilePhoto" src="" alt="Foto do Jogador">
+						</div>
+						<div class="gallery-controls">
+							<button id="prevProfilePhotoBtn" class="gallery-arrow"><i class="fas fa-chevron-left"></i></button>
+							<button id="nextProfilePhotoBtn" class="gallery-arrow"><i class="fas fa-chevron-right"></i></button>
+						</div>
+					</div>
+
+					<div class="modal-info">
+						<h2 id="modalProfileNick" class="modal-nick"></h2>
+						<p id="modalProfileName" class="modal-name"></p>
+						
+						<div class="modal-stats">
+							<div class="stat-item"><i class="fas fa-birthday-cake"></i> <span id="modalProfileAge"></span> anos</div>
+							<div class="stat-item"><i class="fas fa-map-marker-alt"></i> <span id="modalProfileCity"></span></div>
+							<div class="stat-item"><i class="fas fa-trophy"></i> <span id="modalProfileTitles"></span> Títulos</div>
+						</div>
+
+						<div class="modal-socials">
+							<a id="modalProfileTwitch" href="#" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
+							<a id="modalProfileTwitter" href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+							<a id="modalProfileInstagram" href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
+
+
+
+
+
+
+
+
+
+		
 
 
 
@@ -2810,13 +3041,13 @@ body {
                      data-nick="ALIEN"
                      data-age="21"
                      data-location="Curitiba, PR"
-                     data-img-src="assets/img/teams/ALIEN.jpg"
+                     data-img-src="assets/img/teams/ALIEN3.jpg"
                      data-tag="CHEFE"
                      data-insignias="CEO,Free Fire"
                      data-instagram="christopherrissardi"
                      data-twitch=""
                      data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/ALIEN.jpg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/ALIEN3.jpg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">ALIEN</h3>
@@ -2880,22 +3111,6 @@ body {
                     </div>
                 </div>
 
-                <div class="member-card" 
-                     data-name="Magsuel Freitas"
-                     data-nick="magzx7"
-                     data-age="18"
-                     data-location="Mar de Espanha, MG"
-                     data-img-src="assets/img/teams/magzin.jpeg"
-                     data-tag="LENDA DO WARZONE"
-                     data-insignias="Membro,Warzone,Free Fire"
-                     data-instagram="magsuel.fs">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/magzin.jpeg');"></div>
-                    <div class="member-card-overlay"></div>
-                    <div class="member-card-content">
-                        <h3 class="member-nick">Magzx7</h3>
-                        <p class="member-name">Magsuel Freitas</p>
-                    </div>
-                </div>
 
 
                 <div class="member-card" 
@@ -2916,6 +3131,38 @@ body {
                         <p class="member-name">Thiago Machareth</p>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="member-card" 
+                     data-name="Magsuel Freitas"
+                     data-nick="magzx7"
+                     data-age="18"
+                     data-location="Mar de Espanha, MG"
+                     data-img-src="assets/img/teams/magzin.jpeg"
+                     data-tag="LENDA DO WARZONE"
+                     data-insignias="Membro,Warzone,Free Fire"
+                     data-instagram="magsuel.fs">
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/magzin.jpeg');"></div>
+                    <div class="member-card-overlay"></div>
+                    <div class="member-card-content">
+                        <h3 class="member-nick">Magzx7</h3>
+                        <p class="member-name">Magsuel Freitas</p>
+                    </div>
+                </div>
+
+
 
                 <div class="member-card" 
                      data-name="Emanuel Fernando"
@@ -3655,11 +3902,117 @@ body {
 
 
 
+            const competitivePlayerCards = document.querySelectorAll('#players .player-card');
+            const playerModal = document.getElementById('playerProfileModal');
+
+            if (playerModal && competitivePlayerCards.length > 0) {
+                const closeModalBtn = playerModal.querySelector('.modal-close-btn');
+                const modalNick = playerModal.querySelector('#modalProfileNick');
+                const modalName = playerModal.querySelector('#modalProfileName');
+                const modalAge = playerModal.querySelector('#modalProfileAge');
+                const modalCity = playerModal.querySelector('#modalProfileCity');
+                const modalTitles = playerModal.querySelector('#modalProfileTitles');
+                const modalPhoto = playerModal.querySelector('#modalProfilePhoto');
+                const prevPhotoBtn = playerModal.querySelector('#prevProfilePhotoBtn');
+                const nextPhotoBtn = playerModal.querySelector('#nextProfilePhotoBtn');
+                
+                const modalSocials = {
+                    twitch: playerModal.querySelector('#modalProfileTwitch'),
+                    twitter: playerModal.querySelector('#modalProfileTwitter'),
+                    instagram: playerModal.querySelector('#modalProfileInstagram')
+                };
+
+                let currentPhotos = [];
+                let currentPhotoIndex = 0;
+
+                function updatePhoto() {
+                    if (currentPhotos.length > 0) {
+                        modalPhoto.src = currentPhotos[currentPhotoIndex];
+                    }
+                }
+
+                nextPhotoBtn.addEventListener('click', () => {
+                    currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length;
+                    updatePhoto();
+                });
+
+                prevPhotoBtn.addEventListener('click', () => {
+                    currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
+                    updatePhoto();
+                });
+
+                competitivePlayerCards.forEach(card => {
+                    card.addEventListener('click', (event) => {
+                        event.preventDefault(); 
+                        const data = card.dataset;
+                        
+                        modalNick.textContent = data.nick || card.querySelector('.player-name h3').textContent;
+                        modalName.textContent = data.name || 'Nome não disponível';
+                        modalAge.textContent = data.age || '?';
+                        modalCity.textContent = data.city || 'Desconhecida';
+                        modalTitles.textContent = data.titles || '0';
+
+                        currentPhotos = data.photos ? data.photos.split(',') : [card.querySelector('.player-card-background').style.backgroundImage.slice(5, -2).replace(/"/g, "")];
+                        currentPhotoIndex = 0;
+                        updatePhoto();
+                        
+                        if (currentPhotos.length > 1) {
+                            prevPhotoBtn.style.display = 'block';
+                            nextPhotoBtn.style.display = 'block';
+                        } else {
+                            prevPhotoBtn.style.display = 'none';
+                            nextPhotoBtn.style.display = 'none';
+                        }
+
+                        const socialLinks = {
+                            twitch: data.twitch ? `https://www.twitch.tv/${data.twitch}` : null,
+                            twitter: data.twitter ? `https://twitter.com/${data.twitter}` : null,
+                            instagram: data.instagram ? `https://www.instagram.com/${data.instagram}` : null
+                        };
+
+                        for (const [social, linkElement] of Object.entries(modalSocials)) {
+                            if (socialLinks[social]) {
+                                linkElement.href = socialLinks[social];
+                                linkElement.style.display = 'flex';
+                            } else {
+                                linkElement.style.display = 'none';
+                            }
+                        }
+                        playerModal.classList.add('active');
+                    });
+                });
+
+                const closeModal = () => playerModal.classList.remove('active');
+                closeModalBtn.addEventListener('click', closeModal);
+                playerModal.addEventListener('click', (event) => {
+                    if (event.target === playerModal) closeModal();
+                });
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
     </script>
+
+	<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
+
+
+
+
+
 </body>
 </html>

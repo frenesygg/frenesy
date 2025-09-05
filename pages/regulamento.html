@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamento Oficial da Peneira - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+
+
+:root {
+    --preto: #000000;
+    --laranja-frenesy: #f96001;
+    --branco: #ffffff;
+    --cinza-escuro: #1a1a1a;
+    --font-titulo: 'Rajdhani', sans-serif;
+    --font-texto: 'Poppins', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-texto);
+    background-color: var(--preto);
+    color: var(--branco);
+    overflow-x: hidden;
+    /* ADICIONADO: Fundo de bolinhas igual ao index.html */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+        
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--branco);
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 15px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 20px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+
+
+.site-footer {
+	position: relative;
+	padding: 120px 5% 20px;
+	background-color: var(--preto);
+	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+	margin-top: 100px;
+}
+
+.footer-main {
+	padding: 40px 5% 40px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.footer-column h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+
+.footer-column.about .logo-footer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.footer-column.about .logo-footer img {
+	height: 40px;
+	margin-right: 15px;
+}
+
+.footer-column.about .logo-footer h2 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+}
+
+.footer-tagline {
+	font-size: 0.9rem;
+	color: #a0a0a0;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.social-links a {
+	color: #a0a0a0;
+	font-size: 1.5rem;
+	margin-right: 20px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-block;
+}
+
+.social-links a:hover {
+	color: var(--laranja-frenesy);
+	transform: translateY(-3px);
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #a0a0a0;
+	text-decoration: none;
+	transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-links a:hover {
+	color: var(--branco);
+	padding-left: 5px;
+}
+
+.footer-column p {
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.newsletter-form {
+	display: flex;
+	position: relative;
+	max-width: 300px;
+}
+
+.newsletter-form input {
+	flex-grow: 1;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.newsletter-form button {
+	padding: 10px 18px;
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: var(--branco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+	background-color: #d85401;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit i {
+	color: var(--laranja-frenesy);
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 150px 5% 100px;
+    background-color: rgba(10, 10, 10, 0.7);
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+.regulamento-header h1 {
+    font-family: var(--font-titulo);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.regulamento-header p {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 4rem;
+    font-style: italic;
+}
+
+.rule-section h2 {
+    font-family: var(--font-titulo);
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--laranja-frenesy);
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.75rem;
+}
+
+.rule-section p, .rule-section li {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.rule-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+.rule-section li {
+    padding-left: 1.5rem;
+    position: relative;
+}
+.rule-section li::before {
+    content: '\f105'; /* Ícone de seta do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--laranja-frenesy);
+    position: absolute;
+    left: 0;
+}
+
+.rule-section strong {
+    color: var(--branco);
+    font-weight: 600;
+}
+
+.rule-section .penalty {
+    color: #ff5555; /* Cor para destacar penalidades */
+    font-weight: bold;
+}
+
+.back-link {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 4rem;
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 15px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.back-link:hover {
+    border-color: var(--laranja-frenesy);
+    background-color: var(--laranja-frenesy);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="peneira-ff.html">Voltar à Peneira</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="regulamento-header">
+            <h1>Regulamento Oficial</h1>
+            <p>Peneira Free Fire Competitivo - Frenesy 2025</p>
+        </div>
+
+        <div class="regulamento-content">
+            <section class="rule-section">
+                <h2>1. INSCRIÇÃO E ELEGIBILIDADE</h2>
+                <p>A participação na peneira implica na aceitação total e irrestrita de todas as regras aqui descritas. Apenas o <strong>capitão da equipe</strong> é responsável por realizar a inscrição através do formulário oficial.</p>
+                <ul>
+                    <li><strong>Idade Mínima:</strong> Todos os jogadores devem ter, no mínimo, 16 anos completos na data de início do evento.</li>
+                    <li><strong>Composição da Equipe:</strong> As equipes devem ser compostas por 4 ou 5 jogadores (4 titulares e 1 reserva opcional).</li>
+                    <li><strong>Plataforma:</strong> Haverá seletivas separadas para as categorias <strong>Mobile</strong> e <strong>Emulador</strong>. A inscrição deve indicar claramente para qual categoria o time está aplicando.</li>
+                    <li><strong>Exclusividade:</strong> Um jogador não pode estar inscrito em mais de uma equipe, independentemente da plataforma.</li>
+                </ul>
+            </section>
+
+            <section class="rule-section">
+                <h2>2. FORMATO E PONTUAÇÃO</h2>
+                <p>A peneira será realizada em formato de salas personalizadas, com múltiplas quedas para avaliar a consistência das equipes.</p>
+                <ul>
+                    <li><strong>Fases:</strong> O torneio será dividido em fases (ex: Qualificatórias, Semifinais, Final), a depender do número de times inscritos.</li>
+                    <li><strong>Mapas:</strong> Serão utilizados os mapas competitivos oficiais do Free Fire (Bermuda, Purgatório, Kalahari).</li>
+                    <li><strong>Sistema de Pontos:</strong> A pontuação seguirá o padrão competitivo, valorizando tanto a posição final quanto o número de abates.
+                        <ul>
+                            <li><strong>Pontos por Abate:</strong> 1 ponto.</li>
+                            <li><strong>Pontos por Colocação:</strong> BOOYAH! (12 pontos), 2º (9), 3º (8), 4º (7), 5º (6), 6º (5), 7º (4), 8º (3), 9º (2), 10º-12º (1).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="rule-section">
+                <h2>3. CÓDIGO DE CONDUTA E FAIR PLAY</h2>
+                <p>A integridade da competição é nossa maior prioridade. Qualquer ato que viole o espírito esportivo resultará em penalidades severas.</p>
+                <ul>
+                    <li>É <strong>ESTRITAMENTE PROIBIDO</strong> o uso de qualquer tipo de software de terceiros, hacks, scripts, ou qualquer ferramenta que conceda vantagem indevida.</li>
+                    <li>É <strong>PROIBIDO</strong> o aproveitamento de bugs ou exploits conhecidos do jogo.</li>
+                    <li><strong>Conluio (Teaming):</strong> Qualquer forma de cooperação entre equipes adversárias para prejudicar uma terceira é proibida e levará à <span class="penalty">desclassificação de ambas as equipes</span>.</li>
+                    <li><strong>Conduta Tóxica:</strong> Ofensas, assédio, racismo ou qualquer forma de desrespeito a outros jogadores, streamers ou à organização não serão tolerados.</li>
+                </ul>
+            </section>
+
+            <section class="rule-section">
+                <h2>4. REGRAS DA PARTIDA</h2>
+                <ul>
+                    <li><strong>Check-in:</strong> As equipes devem realizar o check-in no Discord oficial da Frenesy até 30 minutos antes do horário de início da sua partida.</li>
+                    <li><strong>Desconexões (DC):</strong> Caso um jogador se desconecte antes do avião decolar, a sala poderá ser refeita (remake), a critério da organização. Desconexões após o início da partida não darão direito a remake.</li>
+                    <li><strong>Espectadores:</strong> Apenas a equipe de transmissão e administração da Frenesy terá permissão para entrar nas salas como espectadores.</li>
+                </ul>
+            </section>
+
+            <section class="rule-section">
+                <h2>5. PENALIDADES</h2>
+                <p>A violação de qualquer regra deste regulamento pode acarretar nas seguintes penalidades, a critério da administração:</p>
+                <ul>
+                    <li>Advertência verbal ou por escrito.</li>
+                    <li>Perda de pontos na partida ou na classificação geral.</li>
+                    <li><span class="penalty">Desclassificação imediata da peneira.</span></li>
+                    <li><span class="penalty">Banimento de futuros eventos organizados pela Frenesy.</span></li>
+                </ul>
+            </section>
+
+            <section class="rule-section">
+                <h2>6. CONTATO E SUPORTE</h2>
+                <p>Toda a comunicação oficial, incluindo horários, senhas das salas e suporte, será realizada exclusivamente através do nosso servidor no <strong>Discord</strong>. É obrigatório que o capitão da equipe esteja presente no servidor durante todo o evento.</p>
+            </section>
+
+            <a href="peneira-ff.html" class="back-link">&larr; Voltar para a Página da Peneira</a>
+        </div>
+    </main>
+
+        <footer class="site-footer">
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <div class="footer-column about">
+                        <div class="logo-footer">
+                            <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                            <h2>FRENESY</h2>
+                        </div>
+                        <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Navegação</h3>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="frenesy.html">Sobre Nós</a></li>
+                            <li><a href="news.html">Notícias</a></li>
+                            <li><a href="contact.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Suporte</h3>
+                        <ul class="footer-links">
+                            <li><a href="partnerships.html">Parcerias</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                            <li><a href="#">Carreiras</a></li>
+                            <li><a href="#">Termos de Uso</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>FIQUE POR DENTRO</h3>
+                        <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Seu melhor e-mail">
+                            <button type="submit" aria-label="Inscrever-se">→</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+                <p class="creator-credit">
+                    <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+                </p>
+            </div>
+        </footer>
+
+
+</body>
+</html>
