@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos e Calendário - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GERAIS (COPIADOS DO SEU SITE PARA MANTER A CONSISTÊNCIA)
+           ========================================================================== */
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        a { text-decoration: none; color: inherit; }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 5%; background-color: rgba(0, 0, 0, 0.8);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 50px; margin-right: 15px; }
+        .logo h1 {
+            font-family: var(--font-titulo); font-size: 2rem;
+            color: var(--branco); letter-spacing: 2px;
+        }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { padding: 0 20px; }
+        .nav-links a {
+            color: var(--branco); font-weight: 600;
+            transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0; left: 0; transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--laranja-frenesy); }
+        .nav-links a:hover::after { width: 100%; }
+        main { padding-top: 80px; /* Espaço para a navbar fixa */ }
+        .section-title {
+            text-align: center; font-family: var(--font-titulo);
+            font-size: 3rem; margin-bottom: 1rem; position: relative;
+            display: inline-block; left: 50%; transform: translateX(-50%);
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: ''; position: absolute; width: 60%; height: 4px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0; left: 20%;
+        }
+        .section-subtitle {
+            text-align: center; max-width: 700px;
+            margin: 0 auto 4rem auto; color: #aaa; line-height: 1.6;
+        }
+        .site-footer {
+            position: relative; padding: 120px 5% 20px;
+            background-color: var(--preto);
+            clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+            margin-top: 100px;
+        }
+        .footer-main { padding: 40px 5% 40px; }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer-column h3 {
+            font-family: var(--font-titulo); font-size: 1.5rem;
+            color: var(--laranja-frenesy); margin-bottom: 20px; letter-spacing: 1px;
+        }
+        .footer-column.about .logo-footer { display: flex; align-items: center; margin-bottom: 15px; }
+        .footer-column.about .logo-footer img { height: 40px; margin-right: 15px; }
+        .footer-column.about .logo-footer h2 { font-family: var(--font-titulo); font-size: 1.8rem; }
+        .footer-tagline { font-size: 0.9rem; color: #a0a0a0; line-height: 1.6; margin-bottom: 20px; }
+        .social-links a {
+            color: #a0a0a0; font-size: 1.5rem; margin-right: 20px;
+            transition: color 0.3s, transform 0.3s; display: inline-block;
+        }
+        .social-links a:hover { color: var(--laranja-frenesy); transform: translateY(-3px); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #a0a0a0; transition: color 0.3s, padding-left 0.3s; }
+        .footer-links a:hover { color: var(--branco); padding-left: 5px; }
+        .footer-column p { color: #a0a0a0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+        .newsletter-form { display: flex; position: relative; max-width: 300px; }
+        .newsletter-form input {
+            flex-grow: 1; padding: 12px 15px; background-color: var(--cinza-escuro);
+            border: 1px solid #444; border-radius: 5px; color: var(--branco);
+            font-family: var(--font-texto); outline: none; transition: border-color 0.3s;
+        }
+        .newsletter-form input:focus { border-color: var(--laranja-frenesy); }
+        .newsletter-form button {
+            padding: 10px 18px; background-color: var(--laranja-frenesy);
+            border: none; color: var(--branco); font-size: 1.5rem; font-weight: bold;
+            cursor: pointer; border-radius: 0 5px 5px 0; position: absolute;
+            right: 0; top: 0; height: 100%; transition: background-color 0.3s;
+        }
+        .newsletter-form button:hover { background-color: #d85401; }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; border-top: 1px solid #222;
+            color: #888; font-size: 0.85rem;
+        }
+        .creator-credit {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.75rem; color: #777;
+        }
+        .creator-credit i { color: var(--laranja-frenesy); }
+        .creator-credit a { color: #999; font-weight: 600; transition: all 0.3s ease; }
+        .creator-credit a:hover { color: var(--laranja-frenesy); }
+
+        /* ==========================================================================
+           ESTILOS ESPECÍFICOS DA PÁGINA DE EVENTOS
+           ========================================================================== */
+        .events-page-section {
+            padding: 100px 5%;
+            background-color: var(--cinza-escuro);
+        }
+        .events-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        .event-category-title {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--branco);
+            border-left: 4px solid var(--laranja-frenesy);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .event-category-title i {
+            font-size: 1.5rem;
+            color: var(--laranja-frenesy);
+        }
+        .event-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .event-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(249, 96, 1, 0.2);
+        }
+        .event-card-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .event-card-image .game-logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+        }
+        .event-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .event-card-content h4 {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            flex-grow: 1; /* Empurra os detalhes para baixo */
+        }
+        .event-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .event-detail i {
+            color: var(--laranja-frenesy);
+            width: 15px;
+            text-align: center;
+        }
+        .event-card-cta {
+            display: block;
+            background-color: var(--laranja-frenesy);
+            color: var(--branco);
+            text-align: center;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .event-card-cta:hover {
+            background-color: #d85401;
+        }
+    </style>
+</head>
+    
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#teams">Times</a></li>
+                <li><a href="index.html#players">Jogadores</a></li>
+                <li><a href="#">Eventos</a></li> <li><a href="pages/news.html">Notícias</a></li>
+                <li><a href="pages/store.html">Loja</a></li>
+                <li><a href="pages/contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="agenda" class="events-page-section">
+            <h2 class="section-title">AGENDA OFICIAL</h2>
+            <p class="section-subtitle">Fique por dentro de todos os nossos compromissos. De campeonatos a lives especiais, não perca nenhum momento da nossa jornada.</p>
+
+            <div class="events-grid">
+                
+                <div class="event-category">
+                    <h3 class="event-category-title"><i class="fas fa-trophy"></i>Próximos Campeonatos</h3>
+                    <div class="event-cards-container">
+                        
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-ff.jpg');">
+                                <img src="https://i.imgur.com/example-logo-ff.png" alt="Logo Free Fire" class="game-logo">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Final da Liga Pro de Free Fire</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>28 de Setembro, 2025</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>19:00 (BRT)</span>
+                                </div>
+                                <a href="#" class="event-card-cta">Ver Transmissão</a>
+                            </div>
+                        </div>
+
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-cs.jpg');">
+                                <img src="https://i.imgur.com/example-logo-cs.png" alt="Logo CS:GO" class="game-logo">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Copa Gamers Club - Rodada 3</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>05 de Outubro, 2025</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>21:00 (BRT)</span>
+                                </div>
+                                <a href="#" class="event-card-cta">Mais Informações</a>
+                            </div>
+                        </div>
+
+
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-cs.jpg');">
+                                <img src="https://i.imgur.com/example-logo-cs.png" alt="Logo CS:GO" class="game-logo">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Copa do TJ viadinho que dá o cuzinho</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>09 de Setembro, 2025</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>21:00 (BRT)</span>
+                                </div>
+                                <a href="https://www.instagram.com/Kaikelhp/#" class="event-card-cta">Mais Informações</a>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="event-category">
+                    <h3 class="event-category-title"><i class="fas fa-search"></i>Datas de Peneiras</h3>
+                    <div class="event-cards-container">
+                        
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-valorant.jpg');">
+                                <img src="https://i.imgur.com/example-logo-valorant.png" alt="Logo Valorant" class="game-logo">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Peneira Aberta de Valorant</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Inscrições: 01 a 10 de Outubro</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Vagas limitadas. Fique atento ao Discord.</span>
+                                </div>
+                                <a href="#" class="event-card-cta">Inscreva-se Agora</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="event-category">
+                    <h3 class="event-category-title"><i class="fas fa-video"></i>Lives Especiais do Time</h3>
+                    <div class="event-cards-container">
+                        
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-live.jpg');">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Podcast com a Line de CS:GO</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>22 de Outubro, 2025</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>20:00 (BRT)</span>
+                                </div>
+                                <a href="#" class="event-card-cta">Assistir na Twitch</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card">
+                            <div class="event-card-image" style="background-image: url('https://i.imgur.com/example-bg-live2.jpg');">
+                            </div>
+                            <div class="event-card-content">
+                                <h4>Comemorando 1 Ano de Frenesy</h4>
+                                <div class="event-detail">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>15 de Novembro, 2025</span>
+                                </div>
+                                <div class="event-detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Durante todo o dia</span>
+                                </div>
+                                <a href="#" class="event-card-cta">Ver Programação</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                        <h2>FRENESY</h2>
+                    </div>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="pages/frenesy.html">Sobre Nós</a></li>
+                        <li><a href="pages/news.html">Notícias</a></li>
+                        <li><a href="pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="pages/partnerships.html">Parcerias</a></li>
+                        <li><a href="pages/wallpapers.html">Wallpapers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
