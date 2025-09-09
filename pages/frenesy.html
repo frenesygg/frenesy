@@ -15,6 +15,7 @@
     <style>
 
 
+
 :root {
 	--preto: #000000;
 	--laranja-frenesy: #f96001;
@@ -1083,6 +1084,165 @@ body {
 	color: var(--laranja-frenesy);
 	transform: scale(1.1);
 }
+
+/* =============================================== */
+/* ========== AJUSTES PARA RESPONSIVIDADE ========== */
+/* =============================================== */
+
+@media (max-width: 768px) {
+    
+    /* --- GERAL --- */
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .content-section {
+        padding: 80px 5%;
+    }
+
+    /* --- 1. AJUSTE DO HEADER --- */
+    .about-header {
+        height: 80vh; /* Diminui a altura para caber melhor na tela */
+    }
+
+    .header-content h1 {
+        font-size: 4.5rem; /* Diminui o tamanho do título "FRENESY" */
+    }
+
+    .header-content p {
+        font-size: 1.2rem;
+    }
+    
+    .header-content img {
+        width: 120px;
+    }
+
+    /* --- 2. AJUSTE DA JORNADA ATÉ A GLÓRIA (TIMELINE) --- */
+    .history-timeline::before {
+        left: 20px; /* Move a linha do tempo para a esquerda */
+        transform: translateX(0);
+    }
+    
+    .timeline-item {
+        grid-template-columns: 1fr; /* Muda para layout de coluna única */
+        gap: 20px;
+    }
+
+    .timeline-middle {
+        display: none; /* Esconde o ponto central que não é mais necessário */
+    }
+
+    .timeline-item:nth-child(even) .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content {
+        grid-column: 1;
+        padding-left: 50px; /* Adiciona espaço para a linha */
+        border-right: none;
+        border-left: 4px solid var(--laranja-frenesy);
+        text-align: left; /* Alinha todo o texto à esquerda */
+        position: relative;
+    }
+    
+    .timeline-content::before { /* Recria o ponto da timeline */
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: -32px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--laranja-frenesy);
+        border-radius: 50%;
+        border: 4px solid #111;
+    }
+
+    .timeline-item:nth-child(even) .timeline-image,
+    .timeline-item:nth-child(odd) .timeline-image {
+        grid-column: 1;
+        grid-row: 2; /* Coloca a imagem sempre abaixo do texto */
+        margin-top: 20px;
+        padding-left: 50px;
+    }
+    
+    .timeline-image img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* --- 3. AJUSTE DA LIDERANÇA (CARROSSEL) --- */
+    .leadership-carousel-window {
+        overflow-x: auto; /* Permite rolar horizontalmente */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem no iOS */
+        scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    }
+
+    .leadership-carousel-window::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome/Safari */
+    }
+    
+    .leadership-carousel-track {
+        padding: 1rem 5%;
+        /* O transform é controlado pelo JS, mas a rolagem nativa assume o controle aqui */
+    }
+    
+    .person-card {
+        flex: 0 0 80%; /* Cada card ocupa 80% da largura da tela */
+        min-width: 0;
+    }
+
+    .leadership-nav {
+        display: none; /* Esconde as setas de navegação no mobile */
+    }
+
+    /* --- 4. AJUSTE DO MODAL DA LIDERANÇA --- */
+    .modal-content {
+        margin: 5% auto; /* Ajusta a margem para telas menores */
+        padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-grid {
+        grid-template-columns: 1fr; /* Muda para layout de coluna única */
+        gap: 20px;
+    }
+
+    .modal-photo {
+        width: 100%;
+        height: 380px; /* Ajusta a altura da foto */
+        margin: 0 auto;
+    }
+
+    .modal-info h2 {
+        font-size: 2.5rem; /* Ajusta tamanho da fonte do nome */
+    }
+
+    .modal-info {
+        text-align: center; /* Centraliza o texto no modal */
+    }
+
+    .info-details {
+        justify-content: center; /* Centraliza os detalhes (idade, cidade) */
+        flex-wrap: wrap;
+    }
+    
+    .modal-socials {
+        justify-content: center; /* Centraliza os ícones de redes sociais */
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
