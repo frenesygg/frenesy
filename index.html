@@ -2607,6 +2607,20 @@ body {
         min-height: 220px;
     }
 
+	.community-pagination button {
+		padding: 8px 15px; /* NOVO: Diminui o preenchimento */
+		font-size: 0.9rem; /* NOVO: Diminui a fonte */
+	}
+
+	.community-pagination #pageIndicator {
+		font-size: 1rem; /* NOVO: Diminui a fonte */
+		min-width: 80px; /* NOVO: Reduz a largura mínima */
+	}
+
+	.member-card-background {
+		background-position: center; /* Alinha a imagem pelo topo, centralizando o rosto */
+	}
+
 	.players-carousel-window {
         overflow-x: auto; /* Habilita o scroll horizontal */
         -webkit-overflow-scrolling: touch; /* Melhora a experiência de deslize em iOS */
@@ -2615,6 +2629,7 @@ body {
     .players-carousel-window::-webkit-scrollbar {
         display: none; /* Oculta a barra de scroll (Chrome, Safari, etc.) */
     }
+
     .players-grid {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -2687,31 +2702,29 @@ body {
 
 
 	.member-modal-content {
-        grid-template-columns: 1fr;
-        max-height: 85vh;
-        width: 95%;
-        padding: 20px;
-        overflow-y: auto;
-        text-align: center;
-    }
-    .modal-right-column {
-        align-items: center;
-    }
-    .modal-main-tag {
-        align-self: center; /* Centraliza a tag principal */
-    }
-    .modal-details {
-        align-items: center;
-        text-align: center;
-    }
-    .modal-insignias-list {
-        justify-content: center; /* Centraliza a lista de insígnias */
-    }
+		grid-template-columns: 1fr;
+		max-height: 85vh;
+		width: 90%; /* AJUSTADO: De 95% para 90% para ficar menor */
+		padding: 20px;
+		overflow-y: auto;
+		text-align: center;
+	}
 
+	.modal-photo {
+		margin: 0 auto; /* NOVO: Centraliza a foto horizontalmente */
+	}
 
-    .modal-socials {
-        justify-content: center;
-    }
+	.modal-right-column,
+	.modal-details,
+	.modal-insignias-list,
+	.modal-socials {
+		align-items: center;
+		justify-content: center;
+	}
+	.modal-main-tag {
+		align-self: center;
+	}
+
 
 	.product-carousel-window {
 		overflow-x: auto;
@@ -3590,17 +3603,17 @@ body {
                             <li><a href="index.html">Início</a></li>
                             <li><a href="pages/frenesy.html">Sobre Nós</a></li>
                             <li><a href="pages/news.html">Notícias</a></li>
-                            <li><a href="pages/contact.html">Contato</a></li>
+							<li><a href="pages/event.html">Eventos</a></li>
+
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h3>Suporte</h3>
                         <ul class="footer-links">
                             <li><a href="pages/partnerships.html">Parcerias</a></li>
+							<li><a href="pages/store.html">Loja</a></li>
 							<li><a href="pages/wallpapers.html">Wallpapers</a></li>
-
-                            <!-- <li><a href="#">Imprensa</a></li>
-                            <li><a href="#">Carreiras</a></li> -->
+                            <li><a href="pages/contact.html">Contato</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
