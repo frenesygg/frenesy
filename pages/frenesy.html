@@ -1085,9 +1085,13 @@ body {
 	transform: scale(1.1);
 }
 
-/* =============================================== */
-/* ========== AJUSTES PARA RESPONSIVIDADE ========== */
-/* =============================================== */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--branco);
+    cursor: pointer;
+    z-index: 1100;
+}
 
 @media (max-width: 768px) {
     
@@ -1265,16 +1269,39 @@ body {
         padding-top: 100px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: -100%; /* escondido */
+        background: rgba(0, 0, 0, 0.95);
+        width: 70%;
+        height: calc(100vh - 70px);
+        padding-top: 2rem;
+        transition: right 0.3s ease-in-out;
+        gap: 1.5rem;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links.active {
+        right: 0; /* aparece */
+    }
 
 
 
-
-
-
-
-
-
-
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 
 
 
@@ -1282,15 +1309,6 @@ body {
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1315,7 +1333,13 @@ body {
                 <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
                 <h1>FRENESY</h1>
             </a>
-            <ul class="nav-links">
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="../index.html#community">Jogadores</a></li>
                 <li><a href="news.html">Notícias</a></li>
@@ -1604,9 +1628,7 @@ body {
                     <h3>Suporte</h3>
                     <ul class="footer-links">
                         <li><a href="partnerships.html">Parcerias</a></li>
-                        <li><a href="#">Imprensa</a></li>
-                        <li><a href="#">Carreiras</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="wallpapers.html">Wallpapers</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1626,7 +1648,6 @@ body {
             </p>
         </div>
     </footer>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1725,6 +1746,42 @@ body {
                 window.onclick = (event) => { if (event.target == modal) { closeModal(); } }
             }
         });
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const isActive = navLinks.classList.contains("active");
+        menuToggle.innerHTML = isActive
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Fecha menu ao clicar em link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

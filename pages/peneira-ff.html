@@ -533,6 +533,59 @@ body {
     border: 0;
 }
         
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--branco);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: -100%; /* escondido */
+        background: rgba(0, 0, 0, 0.95);
+        width: 70%;
+        height: calc(100vh - 70px);
+        padding-top: 2rem;
+        transition: right 0.3s ease-in-out;
+        gap: 1.5rem;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links.active {
+        right: 0; /* aparece */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
     .info-container { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 4rem; }
@@ -548,7 +601,13 @@ body {
                 <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
                 <h1>FRENESY</h1>
             </a>
-            <ul class="nav-links">
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="frenesy.html">Sobre Nós</a></li>
                 <li><a href="store.html">Loja</a></li>
@@ -620,58 +679,81 @@ body {
     </main>
 
 
-        <footer class="site-footer">
-            <div class="footer-main">
-                <div class="footer-grid">
-                    <div class="footer-column about">
-                        <div class="logo-footer">
-                            <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
-                            <h2>FRENESY</h2>
-                        </div>
-                        <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
-                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                        <h2>FRENESY</h2>
                     </div>
-                    <div class="footer-column">
-                        <h3>Navegação</h3>
-                        <ul class="footer-links">
-                            <li><a href="../index.html">Início</a></li>
-                            <li><a href="frenesy.html">Sobre Nós</a></li>
-                            <li><a href="news.html">Notícias</a></li>
-                            <li><a href="contact.html">Contato</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Suporte</h3>
-                        <ul class="footer-links">
-                            <li><a href="partnerships.html">Parcerias</a></li>
-                            <li><a href="#">Imprensa</a></li>
-                            <li><a href="#">Carreiras</a></li>
-                            <li><a href="#">Termos de Uso</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>FIQUE POR DENTRO</h3>
-                        <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Seu melhor e-mail">
-                            <button type="submit" aria-label="Inscrever-se">→</button>
-                        </form>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="frenesy.html">Sobre Nós</a></li>
+                        <li><a href="news.html">Notícias</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="partnerships.html">Parcerias</a></li>
+                        <li><a href="wallpapers.html">Wallpapers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
-                <p class="creator-credit">
-                    <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
-                </p>
-            </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
 
+
+<script>
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const isActive = navLinks.classList.contains("active");
+        menuToggle.innerHTML = isActive
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Fecha menu ao clicar em link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+
+
+
+</script>
 
 </body>
 </html>
