@@ -1142,7 +1142,6 @@ body {
 }
 
 
-/* Carrossel de Produtos */
 .product-grid-title {
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
@@ -2071,42 +2070,6 @@ body {
 	opacity: 0.8;
 }
 
-.community-pagination {
-	text-align: center;
-	margin-top: 3rem;
-}
-
-.community-pagination button {
-	font-family: var(--font-titulo);
-	background: transparent;
-	border: 2px solid #444;
-	color: #aaa;
-	padding: 10px 25px;
-	font-size: 1rem;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	margin: 0 10px;
-}
-
-.community-pagination button:hover:not(:disabled) {
-	background-color: var(--laranja-frenesy);
-	border-color: var(--laranja-frenesy);
-	color: var(--branco);
-}
-
-.community-pagination button:disabled {
-	opacity: 0.4;
-	cursor: not-allowed;
-}
-
-.community-pagination #pageIndicator {
-	font-family: var(--font-titulo);
-	font-size: 1.2rem;
-	min-width: 100px;
-	display: inline-block;
-}
-
 .member-modal {
 	position: fixed;
 	top: 0;
@@ -2305,43 +2268,65 @@ body {
 	transform: rotate(90deg);
 }
 
-.community-pagination {
-	text-align: center;
-	margin-top: 3rem;
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem; /* espaço para separar da paginação */
 }
 
+
+
+.community-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem; 
+}
+
+/* O restante do seu código para os botões e indicador de página continua igual */
+
 .community-pagination button {
-	font-family: var(--font-titulo);
-	background-color: transparent;
-	border: 2px solid #444;
-	color: #aaa;
-	padding: 10px 25px;
-	font-size: 1rem;
-	letter-spacing: 1px;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	margin: 0 10px;
+    font-family: var(--font-titulo);
+    background-color: transparent;
+    border: 2px solid #444;
+    color: #aaa;
+    padding: 10px 25px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .community-pagination button:hover:not(:disabled) {
-	background-color: var(--laranja-frenesy);
-	border-color: var(--laranja-frenesy);
-	color: var(--branco);
+    background-color: var(--laranja-frenesy);
+    border-color: var(--laranja-frenesy);
+    color: var(--branco);
 }
 
 .community-pagination button:disabled {
-	opacity: 0.4;
-	cursor: not-allowed;
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .community-pagination #pageIndicator {
-	font-family: var(--font-titulo);
-	font-size: 1.2rem;
-	color: var(--branco);
-	display: inline-block;
-	min-width: 100px;
+    font-family: var(--font-titulo);
+    font-size: 1.2rem;
+    color: var(--branco);
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
 }
+
+
+
+
+
+
+
 
 .modal-main-tag {
 	display: inline-block;
@@ -2557,8 +2542,6 @@ body {
 
 @media (max-width: 768px) {
 
-
-
     body, html {
         max-width: 100%;
         overflow-x: hidden;
@@ -2593,11 +2576,10 @@ body {
 	.hero-content-centered p {
 		font-size: 1rem;
 	}
-	.social-stat-item {
-		flex-direction: column;
-		gap: 2px;
-		text-align: center;
-	}
+
+    .hero-social-stats-bar {
+        display: none !important;
+    }
 
     .store-hero {
         grid-template-columns: 1fr; /* Muda o layout para coluna única, empilhando a imagem e o texto */
@@ -2646,11 +2628,6 @@ body {
     .player-card {
         flex: 0 0 80%;
         margin-right: 10px;
-    }
-
-    .product-card {
-        flex: 0 0 80%;
-        min-width: auto;
     }
 
     .store-section {
@@ -2736,32 +2713,39 @@ body {
         justify-content: center;
     }
 
-    .product-carousel-window {
-        overflow-x: auto; /* Habilita scroll horizontal */
-        -webkit-overflow-scrolling: touch; /* Rolagem suave em iOS */
-        scrollbar-width: none; /* Oculta scrollbar no Firefox */
-    }
-    .product-carousel-window::-webkit-scrollbar {
-        display: none; /* Oculta scrollbar no Chrome/Safari */
-    }
+	.product-carousel-window {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		scroll-snap-type: x mandatory; /* NOVO: Habilita o snap no eixo X e força a parada */
+		scroll-padding-left: 1rem; /* NOVO: Compensa o padding do .product-grid */
+	}
 
-    .product-grid {
-        flex-wrap: nowrap; /* Força linha única */
-        overflow-x: auto;
-        padding: 1rem;
-    }
+	.product-carousel-window::-webkit-scrollbar {
+		display: none;
+	}
 
-    .product-card {
-        flex: 0 0 80%; /* Cada card ocupa 80% da tela */
-        margin-right: 10px;
-    }
+	.product-grid {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding: 1rem;
+	}
 
-    /* Esconde as setas no mobile */
+	.product-card {
+		flex: 0 0 100%;
+		margin-right: 10px;
+		scroll-snap-align: start; /* NOVO: Alinha o início de cada card com o início da janela */
+		scroll-snap-stop: always; /* NOVO: Garante que ele pare em CADA card */
+	}
+
+
+
+
+
+
     .product-slider-btn {
         display: none;
     }
-
-
 
 	.site-footer {
         clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); /* Ângulo superior mais suave */
@@ -3254,13 +3238,13 @@ body {
                      data-nick="ALIEN"
                      data-age="21"
                      data-location="Curitiba, PR"
-                     data-img-src="assets/img/teams/ALIEN3.jpg"
+                     data-img-src="assets/img/teams/ALIEN.jpg"
                      data-tag="CHEFE"
                      data-insignias="CEO,Free Fire"
                      data-instagram="christopherrissardi"
                      data-twitch=""
                      data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/ALIEN3.jpg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/ALIEN.jpg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">ALIEN</h3>
@@ -3345,12 +3329,12 @@ body {
                      data-nick="Alissonxjj"
                      data-age="18"
                      data-location="Pinhais, PR"
-                     data-img-src="assets/img/teams/Alisson.jpeg"
+                     data-img-src="assets/img/teams/ALISSON.jpeg"
                      data-tag="PATROCINADOR NITRO"
                      data-insignias="Membro,Free Fire,GTA RP,Veterano,"
                      data-instagram="alissonxs2"
                      data-tiktok="alissonxjj">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/Alisson.jpeg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/ALISSON.jpeg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">Alissonxjj</h3>
@@ -3397,11 +3381,11 @@ body {
                      data-nick="magzx7"
                      data-age="18"
                      data-location="Mar de Espanha, MG"
-                     data-img-src="assets/img/teams/magzin.jpeg"
+                     data-img-src="assets/img/teams/MAGZIN.jpeg"
                      data-tag="LENDA DO WARZONE"
                      data-insignias="Membro,Warzone,Free Fire"
                      data-instagram="magsuel.fs">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/magzin.jpeg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/MAGZIN.jpeg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">Magzx7</h3>
@@ -3416,13 +3400,13 @@ body {
                      data-nick="Emanuel"
                      data-age="19"
                      data-location="Além Paraiba, MG"
-                     data-img-src="assets/img/teams/Emanuel.jpeg"
+                     data-img-src="assets/img/teams/EMANUEL.jpeg"
                      data-tag="PROPLAYER FREE FIRE"
                      data-insignias="Free Fire"
                      data-instagram="emanuelf_12"
                      data-twitch=""
                      data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/Emanuel.jpeg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/EMANUEL.jpeg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">Emanuel</h3>
@@ -3449,7 +3433,7 @@ body {
                     </div>
                 </div>
 
-                <div class="member-card" 
+                <!-- <div class="member-card" 
                      data-name="Jogador Desconhecido"
                      data-nick="??????"
                      data-age="?? anos"
@@ -3466,67 +3450,10 @@ body {
                         <h3 class="member-nick">??????</h3>
                         <p class="member-name">Jogador Desconhecido</p>
                     </div>
-                </div>
+                </div> -->
+		
 
-                <div class="member-card" 
-                     data-name="Jogador Desconhecido"
-                     data-nick="??????"
-                     data-age="?? anos"
-                     data-location="Brazil, BR"
-                     data-img-src="assets/img/teams/unknown.png"
-                     data-tag="DESCONHECIDO"
-                     data-insignias="FIFA"
-                     data-instagram=""
-                     data-twitch=""
-                     data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                    <div class="member-card-overlay"></div>
-                    <div class="member-card-content">
-                        <h3 class="member-nick">??????</h3>
-                        <p class="member-name">Jogador Desconhecido</p>
-                    </div>
-                </div>
-
-                <div class="member-card" 
-                     data-name="Jogador Desconhecido"
-                     data-nick="??????"
-                     data-age="?? anos"
-                     data-location="Brazil, BR"
-                     data-img-src="assets/img/teams/unknown.png"
-                     data-tag="DESCONHECIDO"
-                     data-insignias="FIFA"
-                     data-instagram=""
-                     data-twitch=""
-                     data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                    <div class="member-card-overlay"></div>
-                    <div class="member-card-content">
-                        <h3 class="member-nick">??????</h3>
-                        <p class="member-name">Jogador Desconhecido</p>
-                    </div>
-                </div>
-
-                <div class="member-card" 
-                     data-name="Jogador Desconhecido"
-                     data-nick="??????"
-                     data-age="?? anos"
-                     data-location="Brazil, BR"
-                     data-img-src="assets/img/teams/unknown.png"
-                     data-tag="DESCONHECIDO"
-                     data-insignias="FIFA"
-                     data-instagram=""
-                     data-twitch=""
-                     data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                    <div class="member-card-overlay"></div>
-                    <div class="member-card-content">
-                        <h3 class="member-nick">??????</h3>
-                        <p class="member-name">Jogador Desconhecido</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="community-pagination">
+            </div> <div class="community-pagination">
                 <button id="prevPageBtn">&lt; Anterior</button>
                 <span id="pageIndicator"></span>
                 <button id="nextPageBtn">Próximo &gt;</button>

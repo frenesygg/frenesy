@@ -286,7 +286,30 @@ body {
 	font-size: 3.5rem;
 	margin-bottom: 0.5rem;
 	text-transform: uppercase;
+    display: inline-block;
+    position: relative; /* Essencial para a linha funcionar */
+    margin-bottom: 1rem; 
 }
+
+
+
+.section-title::after {
+    content: ''; /* Necessário para o pseudo-elemento aparecer */
+    position: absolute;
+    width: 60%; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background-color: var(--laranja-frenesy); /* A cor laranja */
+    bottom: 0; /* Posição da linha (na base do título) */
+    left: 20%; /* Centraliza a linha (100% - 60% = 40% / 2 = 20%) */
+}
+
+
+
+
+
+
+
+
 
 .section-subtitle {
 	max-width: 800px;
