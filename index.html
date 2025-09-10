@@ -537,6 +537,16 @@ body {
 	animation: blink 1.5s infinite;
 }
 
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--branco);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+
 .hero-data-readout {
 	margin-top: 30px;
 	font-family: 'Courier New', Courier, monospace;
@@ -2780,6 +2790,41 @@ body {
         text-align: center;
         gap: 10px;
     }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.95);
+        width: 70%;
+        height: calc(100vh - 70px);
+        padding-top: 2rem;
+        transition: right 0.3s ease;
+        gap: 1.5rem;
+    }
+
+    .nav-links li {
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -2925,22 +2970,27 @@ body {
 
     
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
-                <h1>FRENESY</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#teams">Times</a></li>
-                <li><a href="#players">Jogadores</a></li>
-                <li><a href="pages/news.html">Notícias</a></li>
-                <li><a href="pages/store.html">Loja</a></li>
-                <li><a href="pages/contact.html">Contato</a></li> </ul>
+	<header>
+		<nav class="navbar">
+			<div class="logo">
+				<img src="assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+				<h1>FRENESY</h1>
+			</div>
 
-            </ul>
-        </nav>
-    </header>
+			<div class="menu-toggle" id="menu-toggle">
+				<i class="fas fa-bars"></i>
+			</div>
+
+			<ul class="nav-links" id="nav-links">
+				<li><a href="#teams">Times</a></li>
+				<li><a href="#players">Jogadores</a></li>
+				<li><a href="pages/news.html">Notícias</a></li>
+				<li><a href="pages/store.html">Loja</a></li>
+				<li><a href="pages/contact.html">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
+
 
 
     <main>
@@ -4182,7 +4232,15 @@ body {
             }
 
 
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.innerHTML = navLinks.classList.contains("active")
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
 
 
 
