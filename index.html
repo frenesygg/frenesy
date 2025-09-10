@@ -2488,71 +2488,37 @@ body {
 
 
 
-/* ==========================================================================
-   CSS ADICIONAL PARA CORREÇÕES MOBILE
-   ========================================================================== */
-@media (max-width: 768px) {
 
-    /* * 1. AJUSTE DA IMAGEM E SEÇÃO DA LOJA
-     * -----------------------------------------------------------------
-     * O layout da loja (.store-hero) que era de duas colunas é transformado 
-     * em uma coluna única, empilhando a imagem sobre as informações.
-     * Isso resolve o problema de enquadramento da imagem da camisa.
-    */
-    .store-hero {
-        grid-template-columns: 1fr; /* Muda para layout de coluna única */
-        gap: 2rem; /* Reduz o espaçamento entre a imagem e o texto */
-    }
 
-    .hero-product-image {
-        /* Garante que o container da imagem não tenha uma altura fixa que possa cortar a imagem */
-        height: auto;
-        padding: 1rem; /* Adiciona um respiro interno */
-    }
 
-    .hero-product-image img {
-        max-width: 100%; /* Garante que a imagem nunca ultrapasse o container */
-        position: relative; /* Garante que a imagem se comporte bem dentro do flex container */
-    }
 
-    /* * 2. AJUSTE DE TÍTULOS E TEXTOS
-     * -----------------------------------------------------------------
-     * Centraliza os títulos e subtítulos das seções e diminui um pouco
-     * o tamanho da fonte para melhor legibilidade em telas menores.
-    */
-    .section-title {
-        font-size: 2.2rem; /* Reduz o tamanho do título principal da seção */
-    }
 
-    .hero-product-info h3 {
-        font-size: 2.5rem; /* Reduz o título do produto na loja */
-        text-align: center; /* Centraliza o título */
-    }
-    
-    .hero-product-info p,
-    .hero-product-info .coming-soon-tag {
-        text-align: center; /* Centraliza o parágrafo e a tag "em breve" */
-    }
 
-    .notify-form {
-        max-width: 100%; /* Faz o formulário ocupar a largura disponível */
-        justify-content: center; /* Centraliza o formulário se ele for menor */
-    }
 
-    /* * 3. AJUSTE DOS CARDS DA COMUNIDADE
-     * -----------------------------------------------------------------
-     * O grid da comunidade (.community-grid) que tinha duas colunas 
-     * agora terá apenas uma, empilhando os cards verticalmente.
-     * Isso corrige o problema dos cards ficarem muito grandes e apertados.
-    */
-    .community-grid {
-        grid-template-columns: 1fr; /* Layout de coluna única para os cards */
-        gap: 1rem; /* Reduz o espaçamento entre os cards */
-    }
 
-    .member-card {
-        height: 250px; /* Reduz a altura dos cards para um visual mais compacto */
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+	.community-grid {
+		grid-template-columns: repeat(5, 1fr);
+	}
 }
 
 
@@ -2560,22 +2526,84 @@ body {
 
 
 
+/* SUBSTITUA O BLOCO @media (max-width: 768px) EXISTENTE POR ESTE */
+@media (max-width: 768px) {
+    /* CORREÇÃO 1: AJUSTE DA SEÇÃO HERO E BARRA DE SEGUIDORES */
+    .hero-arena {
+        height: auto; /* Altura automática para caber todo o conteúdo */
+        min-height: 100vh;
+        padding-bottom: 2rem;
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    }
+    .hero-social-stats-bar {
+		position: relative; /* Remove o posicionamento absoluto que causava a sobreposição */
+        bottom: auto;
+        left: auto;
+        margin-top: 2rem; /* Adiciona espaço entre o botão e a barra */
+        background: transparent;
+        backdrop-filter: none;
+	}
+	.hero-content-centered h1 {
+		font-size: 4.5rem;
+	}
+	.hero-content-centered p {
+		font-size: 1rem;
+	}
+	.social-stat-item {
+		flex-direction: column;
+		gap: 2px;
+		text-align: center;
+	}
 
+	.players-carousel-window {
+        overflow-x: auto; /* Habilita o scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de deslize em iOS */
+        scrollbar-width: none; /* Oculta a barra de scroll (Firefox) */
+    }
+    .players-carousel-window::-webkit-scrollbar {
+        display: none; /* Oculta a barra de scroll (Chrome, Safari, etc.) */
+    }
+    .players-grid {
+        justify-content: flex-start; /* Garante que os cards comecem da esquerda */
+        padding-right: 20px; /* Adiciona um respiro no final da rolagem */
+    }
+    .players-carousel-container .slider-btn {
+        display: none; /* Oculta as setas de navegação, já que o deslize está ativo */
+    }
 
+    /* CORREÇÃO 4: MODAL DA COMUNIDADE RESPONSIVO */
+    .member-modal-content {
+        grid-template-columns: 1fr; /* Muda o layout para coluna única */
+        gap: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        max-height: 85vh; /* Garante que o modal não ocupe a tela inteira */
+    }
+    .modal-right-column {
+        align-items: center; /* Centraliza os itens da coluna da direita */
+    }
+    .modal-main-tag {
+        align-self: center; /* Centraliza a tag principal */
+    }
+    .modal-details {
+        align-items: center; /* Centraliza os detalhes (idade, localização) */
+    }
+    .modal-insignias-list {
+        justify-content: center; /* Centraliza a lista de insígnias */
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /* CORREÇÃO 5: FOOTER RESPONSIVO */
+    .site-footer {
+        clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); /* Ângulo superior mais suave */
+        margin-top: 40px;
+        padding-top: 80px;
+    }
+    .footer-bottom {
+        flex-direction: column; /* Empilha o copyright e os créditos */
+        gap: 15px;
+        text-align: center;
+    }
+}
 
 
 
