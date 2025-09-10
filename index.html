@@ -2528,8 +2528,36 @@ body {
 
 /* SUBSTITUA O BLOCO @media (max-width: 768px) EXISTENTE POR ESTE */
 @media (max-width: 768px) {
-    /* CORREÇÃO 1: AJUSTE DA SEÇÃO HERO E BARRA DE SEGUIDORES */
-    .hero-arena {
+
+
+
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 70%;
+        display: none; /* você pode ativar via JS se quiser menu hambúrguer */
+    }
+
+    .section-subtitle {
+        padding: 0 10px;
+    }
+
+
+
+
+	.hero-arena {
         height: auto; /* Altura automática para caber todo o conteúdo */
         min-height: 100vh;
         padding-bottom: 2rem;
@@ -2569,13 +2597,16 @@ body {
     }
 
     .section-title {
-        font-size: 2.2rem; /* Reduz o tamanho dos títulos principais para caber melhor na tela */
+        font-size: 2rem;
+        text-align: center;
     }
     .community-grid {
-        grid-template-columns: 1fr; /* Muda o grid de duas colunas para apenas uma */
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 1rem;
     }
     .member-card {
-        height: 250px; /* Opcional: Reduz a altura do card para um visual mais compacto */
+        height: auto;
+        min-height: 220px;
     }
 
 	.players-carousel-window {
@@ -2587,33 +2618,59 @@ body {
         display: none; /* Oculta a barra de scroll (Chrome, Safari, etc.) */
     }
     .players-grid {
-        justify-content: flex-start; /* Garante que os cards comecem da esquerda */
-        padding-right: 20px; /* Adiciona um respiro no final da rolagem */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 1rem;
     }
     .players-carousel-container .slider-btn {
         display: none; /* Oculta as setas de navegação, já que o deslize está ativo */
     }
 
-    /* CORREÇÃO 4: MODAL DA COMUNIDADE RESPONSIVO */
-    .member-modal-content {
-        grid-template-columns: 1fr; /* Muda o layout para coluna única */
-        gap: 20px;
-        padding: 30px 20px;
+
+    .player-card {
+        flex: 0 0 80%;
+        margin-right: 10px;
+    }
+
+    .product-card {
+        flex: 0 0 80%;
+        min-width: auto;
+    }
+
+
+
+
+
+	.member-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+        width: 95%;
+        padding: 20px;
+        overflow-y: auto;
         text-align: center;
-        max-height: 85vh; /* Garante que o modal não ocupe a tela inteira */
     }
     .modal-right-column {
-        align-items: center; /* Centraliza os itens da coluna da direita */
+        align-items: center;
     }
     .modal-main-tag {
         align-self: center; /* Centraliza a tag principal */
     }
     .modal-details {
-        align-items: center; /* Centraliza os detalhes (idade, localização) */
+        align-items: center;
+        text-align: center;
     }
     .modal-insignias-list {
         justify-content: center; /* Centraliza a lista de insígnias */
     }
+
+
+    .modal-socials {
+        justify-content: center;
+    }
+
+
+
+
 
 	.site-footer {
         clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); /* Ângulo superior mais suave */
@@ -2621,9 +2678,9 @@ body {
         padding-top: 80px;
     }
     .footer-bottom {
-        flex-direction: column; /* Empilha o copyright e os créditos */
-        gap: 15px;
+        flex-direction: column;
         text-align: center;
+        gap: 10px;
     }
 }
 
@@ -2851,7 +2908,6 @@ body {
                     <img src="assets/img/products/t-shirt/Frenesy Official tshirt.jpg" alt="Camisa oficial Frenesy 2025">
                 </div>
                 <div class="hero-product-info">
-                    <span class="coming-soon-tag">LANÇAMENTO EM BREVE</span>
                     <h3>COLEÇÃO OFICIAL FRENESY 2026</h3>
                     <p>Desenvolvida para performance e estilo, nossa nova coleção é feita com materiais de alta qualidade para garantir conforto máximo durante as maratonas de jogos ou no dia a dia.</p>
                     <div class="product-features">
@@ -3410,27 +3466,6 @@ body {
                                  data-title="Assault - CRIME PERFEITO - Borges | Azevedo | BIN | PL Quest | Orochi (prod. Ajaxx)"
                                  data-player="Orochi"
                                  data-game="Mainstreet Records">
-                            </div>
-
-                            <div class="clip-thumbnail" 
-                                 data-video-id="xv8NrFQqKJ8"
-                                 data-title="Iphone Branco (Prod. L3ozin)"
-                                 data-player="Borges"
-                                 data-game="Borges">
-                            </div>
-
-                            <div class="clip-thumbnail" 
-                                 data-video-id="idDCk4RTx4g"
-                                 data-title="HYLANDER"
-                                 data-player="Abbot ft.Somynem.grin"
-                                 data-game="Abbot">
-                            </div>
-                            
-                            <div class="clip-thumbnail" 
-                                 data-video-id="m-oF9RngS2A"
-                                 data-title="La Chica (Official Music Video)"
-                                 data-player="NGC Daddy"
-                                 data-game="NGC Daddy">
                             </div>
 
 
