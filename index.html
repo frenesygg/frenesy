@@ -11,6 +11,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+
+	<!-- SEO BÁSICO -->
+	<meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
+	<meta name="author" content="Frenesy">
+	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
+
+	<!-- CANONICAL -->
+	<link rel="canonical" href="https://frenesy.com.br">
+
+	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://frenesy.com.br">
+	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
+	<meta property="og:image" content="https://i.imgur.com/XI0SD0J.png">
+
+	<!-- TWITTER CARDS -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://frenesy.com.br">
+	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
+	<meta name="twitter:image" content="https://i.imgur.com/XI0SD0J.png">
+
     <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
 
     <style>
@@ -2637,7 +2660,59 @@ body {
         min-width: auto;
     }
 
+    .store-section {
+        padding: 60px 5%; /* Menos espaçamento no mobile */
+    }
 
+    .store-hero {
+        grid-template-columns: 1fr; /* Empilha imagem e texto */
+        gap: 2rem;
+        text-align: center; /* Centraliza geral */
+    }
+
+    .hero-product-image {
+        height: auto; /* Altura dinâmica */
+        max-height: 300px;
+    }
+    .hero-product-image img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .hero-product-info h3 {
+        font-size: 2rem;
+    }
+    .hero-product-info p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+    }
+
+    .product-features {
+        grid-template-columns: 1fr; /* Uma coluna no mobile */
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .feature-item {
+        justify-content: center;
+    }
+
+    /* --- NOTIFY FORM --- */
+    .notify-form {
+        flex-direction: column; /* Empilha input e botão */
+        max-width: 100%;
+        width: 100%;
+        align-items: stretch;
+        margin: 0 auto;
+    }
+    .notify-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .notify-form button {
+        border-radius: 5px;
+        width: 100%;
+    }
 
 
 
@@ -2668,7 +2743,30 @@ body {
         justify-content: center;
     }
 
+    .product-carousel-window {
+        overflow-x: auto; /* Habilita scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Rolagem suave em iOS */
+        scrollbar-width: none; /* Oculta scrollbar no Firefox */
+    }
+    .product-carousel-window::-webkit-scrollbar {
+        display: none; /* Oculta scrollbar no Chrome/Safari */
+    }
 
+    .product-grid {
+        flex-wrap: nowrap; /* Força linha única */
+        overflow-x: auto;
+        padding: 1rem;
+    }
+
+    .product-card {
+        flex: 0 0 80%; /* Cada card ocupa 80% da tela */
+        margin-right: 10px;
+    }
+
+    /* Esconde as setas no mobile */
+    .product-slider-btn {
+        display: none;
+    }
 
 
 
