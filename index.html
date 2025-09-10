@@ -2524,6 +2524,15 @@ body {
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
+
+
+
+
+
+
+
+
+	
 }
 
 @media (min-width: 1200px) {
@@ -2533,26 +2542,128 @@ body {
 }
 
 
+
+
+
+
+/* SUBSTITUA O BLOCO @media (max-width: 768px) EXISTENTE POR ESTE */
 @media (max-width: 768px) {
+    /* CORREÇÃO 1: AJUSTE DA SEÇÃO HERO E BARRA DE SEGUIDORES */
+    .hero-arena {
+        height: auto; /* Altura automática para caber todo o conteúdo */
+        min-height: 100vh;
+        padding-bottom: 2rem;
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    }
+    .hero-social-stats-bar {
+		position: relative; /* Remove o posicionamento absoluto que causava a sobreposição */
+        bottom: auto;
+        left: auto;
+        margin-top: 2rem; /* Adiciona espaço entre o botão e a barra */
+        background: transparent;
+        backdrop-filter: none;
+	}
 	.hero-content-centered h1 {
 		font-size: 4.5rem;
 	}
-
 	.hero-content-centered p {
 		font-size: 1rem;
 	}
-
-	.hero-social-stats-bar {
-		justify-content: center;
-		gap: 1.5rem 3rem;
-	}
-
 	.social-stat-item {
 		flex-direction: column;
 		gap: 2px;
 		text-align: center;
 	}
+
+    /* CORREÇÃO 3: CARROSSEL DE JOGADORES COM SCROLL/SWIPE */
+    .players-carousel-window {
+        overflow-x: auto; /* Habilita o scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de deslize em iOS */
+        scrollbar-width: none; /* Oculta a barra de scroll (Firefox) */
+    }
+    .players-carousel-window::-webkit-scrollbar {
+        display: none; /* Oculta a barra de scroll (Chrome, Safari, etc.) */
+    }
+    .players-grid {
+        justify-content: flex-start; /* Garante que os cards comecem da esquerda */
+        padding-right: 20px; /* Adiciona um respiro no final da rolagem */
+    }
+    .players-carousel-container .slider-btn {
+        display: none; /* Oculta as setas de navegação, já que o deslize está ativo */
+    }
+
+    /* CORREÇÃO 4: MODAL DA COMUNIDADE RESPONSIVO */
+    .member-modal-content {
+        grid-template-columns: 1fr; /* Muda o layout para coluna única */
+        gap: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        max-height: 85vh; /* Garante que o modal não ocupe a tela inteira */
+    }
+    .modal-right-column {
+        align-items: center; /* Centraliza os itens da coluna da direita */
+    }
+    .modal-main-tag {
+        align-self: center; /* Centraliza a tag principal */
+    }
+    .modal-details {
+        align-items: center; /* Centraliza os detalhes (idade, localização) */
+    }
+    .modal-insignias-list {
+        justify-content: center; /* Centraliza a lista de insígnias */
+    }
+
+    /* CORREÇÃO 5: FOOTER RESPONSIVO */
+    .site-footer {
+        clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); /* Ângulo superior mais suave */
+        margin-top: 40px;
+        padding-top: 80px;
+    }
+    .footer-bottom {
+        flex-direction: column; /* Empilha o copyright e os créditos */
+        gap: 15px;
+        text-align: center;
+    }
 }
+
+/* CORREÇÃO 2: OVERFLOW HORIZONTAL DOS BOTÕES DA LOJA */
+@media (max-width: 1400px) {
+	.product-slider-btn.prev {
+		left: 10px; /* Move o botão para dentro do container */
+	}
+	.product-slider-btn.next {
+		right: 10px; /* Move o botão para dentro do container */
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1400px) {
 
@@ -2792,22 +2903,22 @@ body {
             <div class="hero-social-stats-bar">
                 <div class="social-stat-item">
                     <i class="fab fa-twitch"></i>
-                    <span class="stat-count">50K+</span>
+                    <span class="stat-count">0</span>
                     <span class="stat-label">SEGUIDORES</span>
                 </div>
                 <div class="social-stat-item">
                     <i class="fab fa-twitter"></i>
-                    <span class="stat-count">80K+</span>
+                    <span class="stat-count">0</span>
                     <span class="stat-label">SEGUIDORES</span>
                 </div>
                 <div class="social-stat-item">
                     <i class="fab fa-instagram"></i>
-                    <span class="stat-count">120K+</span>
+                    <span class="stat-count">99</span>
                     <span class="stat-label">SEGUIDORES</span>
                 </div>
                 <div class="social-stat-item">
                     <i class="fab fa-youtube"></i>
-                    <span class="stat-count">30K+</span>
+                    <span class="stat-count">0</span>
                     <span class="stat-label">INSCRITOS</span>
                 </div>
             </div>
@@ -3516,44 +3627,61 @@ body {
             let currentIndex = 0;
             const cardsPerPage = 4; // Quantos cards mostrar por vez
 
-            // Função principal que atualiza a exibição (filtra e ajusta o carrossel)
-            function updateDisplay() {
-                const activeFilter = document.querySelector('.player-filters button.active').dataset.filter;
-                
-                // 1. Filtra os cards
-                let visibleCards = [];
-                allPlayerCards.forEach(card => {
-                    const cardGame = card.dataset.game;
-                    if (activeFilter === 'all' || cardGame === activeFilter) {
-                        card.style.display = 'block';
-                        visibleCards.push(card);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
 
-                // 2. Reseta e atualiza o estado do carrossel
-                const totalVisibleCards = visibleCards.length;
-                const maxIndex = Math.ceil(totalVisibleCards / cardsPerPage) - 1;
 
-                // Garante que o índice não seja maior que o máximo permitido
-                if (currentIndex > maxIndex) {
-                    currentIndex = maxIndex;
-                }
-                if (currentIndex < 0) {
-                    currentIndex = 0;
-                }
 
-                // 3. Move o slider para a posição correta
-                const cardWidth = 300; // Largura do card em pixels
-                const gap = 32; // Espaçamento (2rem = 32px)
-                const moveDistance = (cardWidth + gap) * cardsPerPage * currentIndex;
-                playersGrid.style.transform = `translateX(-${moveDistance}px)`;
 
-                // 4. Atualiza o estado dos botões (habilitado/desabilitado)
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex >= maxIndex;
-            }
+
+
+
+			// SUBSTITUA A FUNÇÃO 'updateDisplay' PELA VERSÃO ABAIXO
+			function updateDisplay() {
+				const activeFilter = document.querySelector('.player-filters button.active').dataset.filter;
+
+				// 1. Filtra os cards
+				let visibleCards = [];
+				allPlayerCards.forEach(card => {
+					const cardGame = card.dataset.game;
+					if (activeFilter === 'all' || cardGame === activeFilter) {
+						card.style.display = 'block';
+						visibleCards.push(card);
+					} else {
+						card.style.display = 'none';
+					}
+				});
+
+				// 2. Lógica de carrossel para DESKTOP (acima de 768px)
+				if (window.innerWidth > 768) {
+					const totalVisibleCards = visibleCards.length;
+					const maxIndex = Math.ceil(totalVisibleCards / cardsPerPage) - 1;
+
+					if (currentIndex > maxIndex) currentIndex = maxIndex < 0 ? 0 : maxIndex;
+					if (currentIndex < 0) currentIndex = 0;
+
+					const cardWidth = 300;
+					const gap = 32;
+					const moveDistance = (cardWidth + gap) * cardsPerPage * currentIndex;
+					playersGrid.style.transform = `translateX(-${moveDistance}px)`;
+
+					prevBtn.disabled = currentIndex === 0;
+					nextBtn.disabled = currentIndex >= maxIndex;
+				} else {
+					// Em mobile, reseta a transformação, pois usamos o scroll nativo
+					playersGrid.style.transform = 'translateX(0)';
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+
+
 
             // Adiciona evento de clique aos botões de filtro
             filterButtons.forEach(button => {
