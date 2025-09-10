@@ -232,21 +232,103 @@
             50% { text-shadow: 0 0 15px rgba(249, 96, 1, 0.8), 0 0 25px rgba(249, 96, 1, 0.8); }
         }
 
-        /* Media Queries */
+
+        /* ===================== AJUSTES PARA MOBILE ===================== */
         @media (max-width: 768px) {
-             #music-player {
+            body {
+                overflow: auto; /* Permite rolar no mobile */
+            }
+
+            .launch-hero {
+                padding: 1rem;
+            }
+
+            .launch-content h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+
+            .launch-content p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            #countdown-timer {
+                flex-wrap: wrap; /* Quebra em duas linhas */
+                gap: 0.5rem;
+            }
+
+            .time-block {
+                min-width: 70px;
+                padding: 0.8rem;
+            }
+            .time-value {
+                font-size: 2rem;
+            }
+
+            #launch-message {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+
+            /* Redes sociais mais compactas */
+            .social-links {
+                gap: 1.2rem;
+            }
+            .social-links a {
+                font-size: 1.5rem;
+            }
+
+            /* Player de música centralizado no rodapé */
+            #music-player {
+                position: fixed;
+                bottom: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: 20px;
-                width: 90%;
+                width: 95%;
+                gap: 10px;
                 justify-content: space-between;
-             }
+            }
+            #album-cover {
+                width: 40px;
+                height: 40px;
+            }
+            .song-info h3 {
+                font-size: 0.8rem;
+            }
+            .song-info p {
+                font-size: 0.7rem;
+            }
+            #play-pause-btn {
+                font-size: 1.2rem;
+            }
         }
-        @media (max-width: 600px) {
-            .launch-content h1 { font-size: 3rem; }
-            .time-block { min-width: 70px; padding: 1rem; }
-            .time-value { font-size: 2.5rem; }
+
+        @media (max-width: 480px) {
+            .launch-content h1 {
+                font-size: 2rem;
+            }
+            .time-block {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+            .time-value {
+                font-size: 1.6rem;
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </style>
 </head>
