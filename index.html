@@ -2555,6 +2555,29 @@ body {
 		text-align: center;
 	}
 
+    .store-hero {
+        grid-template-columns: 1fr; /* Muda o layout para coluna única, empilhando a imagem e o texto */
+        gap: 2rem;
+    }
+    .hero-product-info h3,
+    .hero-product-info p,
+    .hero-product-info .coming-soon-tag {
+        text-align: center; /* Centraliza todos os textos da seção */
+    }
+    .notify-form {
+        justify-content: center; /* Centraliza o formulário de notificação */
+    }
+
+    .section-title {
+        font-size: 2.2rem; /* Reduz o tamanho dos títulos principais para caber melhor na tela */
+    }
+    .community-grid {
+        grid-template-columns: 1fr; /* Muda o grid de duas colunas para apenas uma */
+    }
+    .member-card {
+        height: 250px; /* Opcional: Reduz a altura do card para um visual mais compacto */
+    }
+
 	.players-carousel-window {
         overflow-x: auto; /* Habilita o scroll horizontal */
         -webkit-overflow-scrolling: touch; /* Melhora a experiência de deslize em iOS */
@@ -2592,8 +2615,7 @@ body {
         justify-content: center; /* Centraliza a lista de insígnias */
     }
 
-    /* CORREÇÃO 5: FOOTER RESPONSIVO */
-    .site-footer {
+	.site-footer {
         clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); /* Ângulo superior mais suave */
         margin-top: 40px;
         padding-top: 80px;
