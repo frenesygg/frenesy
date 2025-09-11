@@ -144,6 +144,7 @@
             font-size: 3rem;
             color: var(--laranja-frenesy);
             display: none; /* Começa escondido */
+            margin-bottom: 3rem;
         }
 
         /* Redes sociais */
@@ -156,7 +157,7 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
         }
         .social-links a {
             color: #aaa;
@@ -246,52 +247,68 @@
             50% { text-shadow: 0 0 15px rgba(249, 96, 1, 0.8), 0 0 25px rgba(249, 96, 1, 0.8); }
         }
 
-
         @media (max-width: 768px) {
             body {
-                overflow: auto; /* Permite rolar no mobile */
+                overflow: hidden; /* trava o scroll */
+                height: 100vh;    /* garante que a tela ocupe toda a viewport */
             }
 
             .launch-hero {
+                height: 100vh; /* ocupa toda a altura da tela */
                 padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* centraliza verticalmente */
+                align-items: center;
+            }
+
+            #countdown-timer {
+                flex-wrap: wrap;
+                gap: 0.3rem; /* menor gap */
+                justify-content: center;
             }
 
             .launch-content h1 {
                 font-size: 2.5rem;
                 line-height: 1.2;
+                margin-top: -7rem;
             }
 
             .launch-content p {
                 font-size: 1rem;
                 padding: 0 10px;
-            }
-
-            #countdown-timer {
-                flex-wrap: wrap; /* Quebra em duas linhas */
-                gap: 0.5rem;
+                margin-bottom: 1rem;
             }
 
             .time-block {
-                min-width: 70px;
-                padding: 0.8rem;
+                min-width: 60px;
+                padding: 0.6rem;
             }
             .time-value {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            #launch-message {
-                font-size: 2rem;
-                padding: 0 10px;
+            #launch-message, #launch-submessage {
+                font-size: 1.8rem;
+                margin-top: 0.5rem;
             }
 
             /* Redes sociais mais compactas */
             .social-links {
-                gap: 1.2rem;
+                gap: 1rem;
             }
             .social-links a {
                 font-size: 1.5rem;
             }
-
+            .site-footer {
+                position: fixed;      /* mantém fixo na tela */
+                bottom: 70px;         /* distancia do player de música (ajuste conforme quiser) */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                text-align: center;
+                padding: 10px 0;
+            }
             /* Player de música centralizado no rodapé */
             #music-player {
                 position: fixed;
@@ -316,6 +333,7 @@
                 font-size: 1.2rem;
             }
         }
+
 
         @media (max-width: 480px) {
             .launch-content h1 {
@@ -448,9 +466,9 @@
             const launchDate = new Date(
                 today.getFullYear(),
                 today.getMonth(),
-                11,  // dia
-                0,  // hora
-                16,  // minuto
+                13,  // dia
+                13,  // hora
+                0,  // minuto
                 0    // segundo
             ).getTime();
 
