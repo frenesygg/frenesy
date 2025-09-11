@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcerias - Frenesy E-sports</title>
+    <title>Notícias - Frenesy E-sports</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="icon" href="../assets/img/logo/Frenesy nb.png" type="image/png">
+
+	<meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
+	<meta name="author" content="Frenesy">
+	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
+
+	<!-- CANONICAL -->
+	<link rel="canonical" href="https://frenesy.com.br">
+
+	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://frenesy.com.br">
+	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
+	<meta property="og:image" content="https://i.imgur.com/XI0SD0J.png">
+
+	<!-- TWITTER CARDS -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://frenesy.com.br">
+	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
+	<meta name="twitter:image" content="https://i.imgur.com/XI0SD0J.png">
+
+
+
+
+
+
+
+
 
     <style>
 
@@ -116,7 +145,6 @@ body {
 	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
 	margin-top: 100px;
 }
-
 
 .footer-main {
 	padding: 40px 5% 40px;
@@ -273,7 +301,8 @@ body {
 	color: var(--laranja-frenesy);
 }
 
-.page-header {
+
+.news-header {
 	padding-top: 150px;
 	padding-bottom: 80px;
 	text-align: center;
@@ -288,106 +317,164 @@ body {
 
 .section-subtitle {
 	max-width: 800px;
-	margin: 0 auto 5rem auto;
+	margin: 0 auto 0.5rem auto;
 	color: #aaa;
 	line-height: 1.7;
 	font-size: 1.1rem;
 }
 
-.partners-section {
-	padding-bottom: 100px;
-}
-
-.partners-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 2rem;
+.news-container {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 5%;
 }
 
-.partner-card {
-	background-color: #111;
-	border: 1px solid #222;
-	border-radius: 8px;
-	padding: 2rem;
-	height: 180px;
-	display: flex;
+#featured-article {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
 	align-items: center;
-	justify-content: center;
-	transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-card:hover {
-	transform: translateY(-10px);
-	border-color: var(--laranja-frenesy);
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.partner-card img {
-	max-width: 80%;
-	max-height: 80%;
-	filter: grayscale(100%) brightness(0.8);
-	opacity: 0.7;
-	transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.partner-card:hover img {
-	filter: grayscale(0%) brightness(1);
-	opacity: 1;
-}
-
-.cta-partner-section {
-	padding: 100px 5%;
+	margin-bottom: 4rem;
 	background-color: var(--cinza-escuro);
-	background-image: radial-gradient(ellipse at 50% 100%, rgba(249, 96, 1, 0.15), transparent 70%);
-}
-
-.cta-container {
-	max-width: 800px;
-	margin: 0 auto;
-	text-align: center;
-	background-color: rgba(0, 0, 0, 0.3);
-	border: 1px solid #222;
-	padding: 3rem;
 	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid #222;
 }
 
-.cta-container h2 {
+.featured-image a {
+	display: block;
+	height: 400px;
+}
+
+.featured-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.4s ease;
+}
+
+.featured-image a:hover img {
+	transform: scale(1.05);
+}
+
+.featured-content {
+	padding: 2rem;
+}
+
+.featured-content .article-category {
 	font-family: var(--font-titulo);
-	font-size: 2.8rem;
+	color: var(--laranja-frenesy);
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.featured-content h2 {
+	font-family: var(--font-titulo);
+	font-size: 2.5rem;
+	line-height: 1.2;
 	margin-bottom: 1rem;
 }
 
-.cta-container p {
-	color: #ccc;
-	line-height: 1.8;
-	font-size: 1.1rem;
-	margin-bottom: 2.5rem;
-}
-
-.cta-button {
-	display: inline-flex;
-	align-items: center;
-	gap: 15px;
-	background-color: var(--laranja-frenesy);
+.featured-content h2 a {
 	color: var(--branco);
-	padding: 18px 40px;
-	font-family: var(--font-titulo);
-	font-size: 1.2rem;
-	letter-spacing: 2px;
 	text-decoration: none;
-	border-radius: 5px;
-	border: 2px solid var(--laranja-frenesy);
-	transition: all 0.3s ease;
-	box-shadow: 0 5px 20px rgba(249, 96, 1, 0.4);
+	transition: color 0.3s;
 }
 
-.cta-button:hover {
-	background-color: transparent;
+.featured-content h2 a:hover {
 	color: var(--laranja-frenesy);
+}
+
+.featured-content .article-summary {
+	color: #ccc;
+	line-height: 1.7;
+	margin-bottom: 1.5rem;
+}
+
+.article-meta {
+	font-size: 0.85rem;
+	color: #888;
+}
+
+.news-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.news-card {
+	background-color: #111;
+	border: 1px solid #222;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: transform 0.3s ease, border-color 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.news-card:hover {
+	transform: translateY(-10px);
+	border-color: var(--laranja-frenesy);
+}
+
+.card-image a {
+	display: block;
+	height: 200px;
+	overflow: hidden;
+}
+
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.4s ease;
+}
+
+.card-image a:hover img {
 	transform: scale(1.05);
 }
+
+.card-content {
+	padding: 1.5rem;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-content .article-category {
+	color: var(--laranja-frenesy);
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+}
+
+.card-content h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	flex-grow: 1;
+}
+
+.card-content h3 a {
+	color: var(--branco);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.card-content h3 a:hover {
+	color: var(--laranja-frenesy);
+}
+
+@media (max-width: 900px) {
+	#featured-article {
+		grid-template-columns: 1fr;
+	}
+
+	.featured-image a {
+		height: 300px;
+	}
+}
+
+
 
 .menu-toggle {
     display: none;
@@ -396,6 +483,8 @@ body {
     cursor: pointer;
     z-index: 1100;
 }
+
+
 
 @media (max-width: 768px) {
     .menu-toggle {
@@ -428,24 +517,16 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 10px;
-    }
-
+    }	
 }
-
-
-
-
-
-
-
 
 
 
 
     </style>
 </head>
-
 <body>
+
     <header>
         <nav class="navbar">
             <a href="../index.html" class="logo">
@@ -460,47 +541,27 @@ body {
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Início</a></li>
-                <li><a href="frenesy.html">Sobre Nós</a></li>
-                <li><a href="news.html">Notícias</a></li>
-                <li><a href="partnerships.html">Parcerias</a></li>
-                <li><a href="contact.html">Contato</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="contato.html">Contato</a></li> </ul>
+
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="page-header">
-            <h1 class="section-title">NOSSOS APOIADORES</h1>
-            <p class="section-subtitle">O sonho só é possível com o apoio de quem acredita na nossa jornada. Somos imensamente gratos às marcas que caminham ao nosso lado.</p>
+        <section class="news-header">
+            <h1 class="section-title">Central de Notícias</h1>
+            <p class="section-subtitle">Fique por dentro de tudo que acontece no universo da Frenesy. Anúncios, resultados, e histórias dos nossos pro-players.</p>
+        </section>
+
+        <div class="news-container">
+            <article id="featured-article"></article>
+            
+            <div id="news-grid" class="news-grid">
+                </div>
         </div>
-
-        <section id="partners-showcase" class="partners-section">
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <!-- <img src="https://logodownload.org/wp-content/uploads/2014/04/nike-logo-1-1.png" alt="Logo do Parceiro 1"> -->
-                </div>
-                <div class="partner-card">
-                    <!-- <img src="https://logodownload.org/wp-content/uploads/2018/01/razer-logo-9.png" alt="Logo do Parceiro 3"> -->
-                </div>
-                <div class="partner-card">
-                    <!-- <img src="https://logodownload.org/wp-content/uploads/2016/11/Corinthians-logo-escudo-1.png" alt="Logo do Parceiro 4"> -->
-                </div>
-                </div>
-        </section>
-
-        <section id="cta-partner" class="cta-partner-section">
-            <div class="cta-container">
-                <h2>Gostou da nossa organização e quer nos apoiar?</h2>
-                <p>Acreditamos no poder da colaboração para construir o futuro do e-sports. Se a sua marca compartilha da nossa paixão e visão, adoraríamos conversar sobre como podemos crescer juntos. Sua parceria pode fazer toda a diferença em nossa história.</p>
-                <a href="https://www.instagram.com/frenesy.gg/" target="_blank" class="cta-button">
-                    <i class="fab fa-instagram"></i>
-                    ENTRE EM CONTATO!
-                </a>
-            </div>
-        </section>
-
     </main>
-
 
     <footer class="site-footer">
         <div class="footer-main">
@@ -522,18 +583,18 @@ body {
                     <h3>Navegação</h3>
                     <ul class="footer-links">
                         <li><a href="../index.html">Início</a></li>
-                        <li><a href="frenesy.html">Sobre Nós</a></li>
-                        <li><a href="news.html">Notícias</a></li>
-                        <li><a href="event.html">Eventos</a></li>
+                        <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Suporte</h3>
                     <ul class="footer-links">
-                        <li><a href="partnerships.html">Parcerias</a></li>
-                        <li><a href="store.html">Loja</a></li>
+                        <li><a href="parceiros.html">Parcerias</a></li>
+                        <li><a href="loja.html">Loja</a></li>
                         <li><a href="wallpapers.html">Wallpapers</a></li>
-                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -554,7 +615,53 @@ body {
         </div>
     </footer>
 
-<script>
+
+    <script src="../assets/js/news-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const featuredContainer = document.getElementById('featured-article');
+            const gridContainer = document.getElementById('news-grid');
+
+            // Pega a notícia mais recente para o destaque
+            const featuredArticle = newsData[0];
+            if (featuredArticle) {
+                featuredContainer.innerHTML = `
+                    <div class="featured-image">
+                        <a href="article.html?id=${featuredArticle.id}">
+                            <img src="${featuredArticle.image}" alt="${featuredArticle.title}">
+                        </a>
+                    </div>
+                    <div class="featured-content">
+                        <div class="article-category">${featuredArticle.category}</div>
+                        <h2><a href="article.html?id=${featuredArticle.id}">${featuredArticle.title}</a></h2>
+                        <p class="article-summary">${featuredArticle.summary}</p>
+                        <div class="article-meta">Por ${featuredArticle.author} • ${featuredArticle.date}</div>
+                    </div>
+                `;
+            }
+
+            // Pega o restante das notícias para a grade
+            const gridArticles = newsData.slice(1);
+            gridArticles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'news-card';
+                card.innerHTML = `
+                    <div class="card-image">
+                        <a href="article.html?id=${article.id}">
+                            <img src="${article.image}" alt="${article.title}">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="article-category">${article.category}</div>
+                        <h3><a href="article.html?id=${article.id}">${article.title}</a></h3>
+                        <div class="article-meta">Por ${article.author} • ${article.date}</div>
+                    </div>
+                `;
+                gridContainer.appendChild(card);
+            });
+        });
+
+
 
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
@@ -576,7 +683,15 @@ body {
     });
 
 
-</script>
 
+
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>
