@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
@@ -401,6 +402,44 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <script>
+                // Função para disparar fogos
+        function launchFireworks() {
+            const duration = 10 * 1000; // 10 segundos
+            const end = Date.now() + duration;
+
+            (function frame() {
+                // Fogos no lado esquerdo
+                confetti({
+                    particleCount: 7,
+                    colors: ['#f96001', '#ffffff', '#000000'], // cores do seu time/tema
+                    angle: 60,
+                    spread: 70,
+                    startVelocity: 45,
+                    origin: { x: 0, y: Math.random() * 0.7 } // posição Y aleatória
+                });
+
+                // Fogos no lado direito
+                confetti({
+                    particleCount: 7,
+                    colors: ['#f96001', '#ffffff', '#000000'],
+                    angle: 120,
+                    spread: 70,
+                    startVelocity: 45,
+                    origin: { x: 1, y: Math.random() * 0.7 }
+                });
+
+                // Enquanto não acabar o tempo, continua chamando
+                setTimeout(frame, 300); // solta de 300 em 300ms (pode ajustar)
+                
+            })();
+        }
+
+    </script>
+
+
     <script>
         // --- SCRIPT DA CONTAGEM REGRESSIVA ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -433,6 +472,8 @@
                     clearInterval(timer);
                     document.getElementById('countdown-timer').style.display = 'none';
                     document.getElementById('launch-message').style.display = 'block';
+                    launchFireworks(); // dispara fogos
+
                 }
             }, 1000);
             
@@ -496,6 +537,10 @@
             });
         });
 
+
     </script>
+
+
+
 </body>
 </html>
