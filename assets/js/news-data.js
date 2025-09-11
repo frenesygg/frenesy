@@ -39,7 +39,7 @@ const newsData = [
         category: "ORGANIZAÇÃO",
         author: "Frenesy Staff",
         date: "28 de Agosto, 2025",
-        image: "../assets/img/news/Loja Oficial 2026/Banner 1.png", // Crie e coloque uma imagem nessa pasta
+        image: "../assets/img/news/Loja Oficial 2026/Banner.png", // Crie e coloque uma imagem nessa pasta
         summary: "Prepare-se para vestir as cores da Frenesy! A coleção 2026 está a caminho, com uniformes, moletons e acessórios exclusivos para a nossa comunidade.",
         content: `
             <p>A espera está quase no fim! É com grande entusiasmo que anunciamos o lançamento da nossa loja oficial, um espaço dedicado inteiramente à nossa apaixonada comunidade.</p>
@@ -61,7 +61,7 @@ const newsData = [
         category: "COMPETITIVO",
         author: "Christopher Rissardi",
         date: "13 de Setembro, 2025",
-        image: "../assets/img/news/Peneira Frenesy 2025/1.jpg", // Crie e coloque uma imagem nessa pasta
+        image: "../assets/img/news/Peneira Frenesy 2025/1.png", // Crie e coloque uma imagem nessa pasta
         summary: "A Frenesy anuncia sua primeira peneira oficial para formar os times competitivos de Free Fire Mobile e Emulador. Vagas gratuitas e exclusivas!",
         content: `
             <p>É oficial, família! A <strong>Frenesy</strong> acaba de anunciar que as vagas para a <strong>1ª Peneira Competitiva de Free Fire</strong> já estão disponíveis. Essa é a chance perfeita para você que sempre sonhou em vestir a camisa da organização e mostrar o seu talento no cenário competitivo.</p>
