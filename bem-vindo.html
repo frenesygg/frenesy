@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento Oficial - Frenesy E-sports</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
+
+	<meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
+	<meta name="author" content="Frenesy">
+	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
+
+	<!-- CANONICAL -->
+	<link rel="canonical" href="https://frenesy.com.br">
+
+	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://frenesy.com.br">
+	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
+	<meta property="og:image" content="https://i.imgur.com/TouBdww.png">
+
+	<!-- TWITTER CARDS -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://frenesy.com.br">
+	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+	<meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
+	<meta name="twitter:image" content="https://i.imgur.com/TouBdww.png">
+    
+    <style>
+
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow: hidden; /* Impede o scroll na página de lançamento */
+        }
+        
+        .navbar { padding: 1rem 5%; background-color: transparent; position: absolute; width: 100%; top: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; text-decoration: none; color: var(--branco); }
+        .logo img { height: 50px; margin-right: 15px; }
+        .logo h1 { font-family: var(--font-titulo); font-size: 2rem; letter-spacing: 2px; }
+        .site-footer { position: absolute; bottom: 0; width: 100%; padding: 20px 5%; text-align: center; }
+        .footer-bottom { color: #888; font-size: 0.85rem; }
+        .creator-credit { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #777; }
+        .creator-credit i { color: var(--laranja-frenesy); }
+        .creator-credit a { color: #999; text-decoration: none; font-weight: 600; }
+
+        .launch-hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        .arena-background {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at center, rgba(18, 18, 18, 0) 0%, var(--preto) 70%);
+        }
+        .arena-spotlight {
+            position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+            width: 150%; height: 100%;
+            background: radial-gradient(ellipse at top, rgba(249, 96, 1, 0.15), transparent 70%);
+        }
+        .graphic-lines .line { position: absolute; background: var(--laranja-frenesy); opacity: 0.5; filter: blur(5px); }
+        .line-1 { width: 2px; height: 150%; top: -25%; left: 10%; animation: streak 8s linear infinite; }
+        .line-2 { width: 1px; height: 120%; top: -10%; left: 25%; animation: streak 12s linear infinite; animation-delay: -2s; }
+        .line-3 { width: 2px; height: 150%; top: -25%; right: 10%; animation: streak 9s linear infinite; animation-delay: -4s; }
+        .line-4 { width: 1px; height: 120%; top: -10%; right: 25%; animation: streak 15s linear infinite; animation-delay: -6s; }
+        .line-3, .line-4 { animation-name: streak-rev; }
+        @keyframes streak { 0% { transform: translateY(-100%) rotate(25deg); } 100% { transform: translateY(100%) rotate(25deg); } }
+        @keyframes streak-rev { 0% { transform: translateY(-100%) rotate(-25deg); } 100% { transform: translateY(100%) rotate(-25deg); } }
+        
+        /* Conteúdo principal */
+        .launch-content {
+            position: relative;
+            z-index: 2;
+        }
+        .launch-content h1 {
+            font-family: var(--font-titulo);
+            font-size: 5rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .launch-content .highlight {
+            color: var(--laranja-frenesy);
+            text-shadow: 0 0 20px var(--laranja-frenesy);
+            /* NOVO: Animação de flicker adicionada */
+            animation: flicker 3s infinite alternate;
+        }
+        .launch-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 1.5rem auto 3rem;
+        }
+
+        /* Contagem regressiva */
+        #countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .time-block {
+            background-color: rgba(10, 10, 10, 0.7);
+            border: 1px solid #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            min-width: 100px;
+        }
+        .time-value {
+            font-family: var(--font-titulo);
+            font-size: 3.5rem;
+            color: var(--laranja-frenesy);
+        }
+        .time-label {
+            font-size: 0.8rem;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+        #launch-message {
+            font-family: var(--font-titulo);
+            font-size: 3rem;
+            color: var(--laranja-frenesy);
+            display: none; /* Começa escondido */
+            margin-bottom: 3rem;
+        }
+
+        /* Redes sociais */
+        .launch-socials p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0 auto 1.5rem;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .social-links a {
+            color: #aaa;
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--laranja-frenesy);
+            transform: translateY(-5px);
+        }
+        
+        /* ==========================================================================
+           PLAYER DE MÚSICA
+           ========================================================================== */
+        #music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--cinza-escuro);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        #album-cover {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .song-info h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--branco);
+        }
+        .song-info p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: #aaa;
+        }
+        #play-pause-btn {
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        #play-pause-btn:hover {
+            color: var(--laranja-frenesy);
+        }
+        
+        /* ==========================================================================
+           NOVOS EFEITOS: Explosão e Flicker
+           ========================================================================== */
+
+        /* Efeito de explosão/raio de luz */
+        .launch-hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vmax;
+            height: 100vmax;
+            background: radial-gradient(circle, rgba(249, 96, 1, 0.2) 0%, rgba(249, 96, 1, 0) 60%);
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            animation: flash 7s ease-out infinite;
+            animation-delay: 2s;
+            z-index: 0;
+        }
+
+        @keyframes flash {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        /* Efeito de flicker no texto destacado */
+        @keyframes flicker {
+            0%, 100% { text-shadow: 0 0 20px var(--laranja-frenesy), 0 0 30px var(--laranja-frenesy); }
+            50% { text-shadow: 0 0 15px rgba(249, 96, 1, 0.8), 0 0 25px rgba(249, 96, 1, 0.8); }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow: hidden; /* trava o scroll */
+                height: 100vh;    /* garante que a tela ocupe toda a viewport */
+            }
+
+            .launch-hero {
+                height: 100vh; /* ocupa toda a altura da tela */
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* centraliza verticalmente */
+                align-items: center;
+            }
+
+            #countdown-timer {
+                flex-wrap: wrap;
+                gap: 0.3rem; /* menor gap */
+                justify-content: center;
+            }
+
+            .launch-content h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+                margin-top: -7rem;
+            }
+
+            .launch-content p {
+                font-size: 1rem;
+                padding: 0 10px;
+                margin-bottom: 1rem;
+            }
+
+            .time-block {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+            .time-value {
+                font-size: 1.8rem;
+            }
+
+            #launch-message, #launch-submessage {
+                font-size: 1.8rem;
+                margin-top: 0.5rem;
+            }
+
+            /* Redes sociais mais compactas */
+            .social-links {
+                gap: 1rem;
+            }
+            .social-links a {
+                font-size: 1.5rem;
+            }
+            .site-footer {
+                position: fixed;      /* mantém fixo na tela */
+                bottom: 70px;         /* distancia do player de música (ajuste conforme quiser) */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            /* Player de música centralizado no rodapé */
+            #music-player {
+                position: fixed;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 95%;
+                gap: 10px;
+                justify-content: space-between;
+            }
+            #album-cover {
+                width: 40px;
+                height: 40px;
+            }
+            .song-info h3 {
+                font-size: 0.8rem;
+            }
+            .song-info p {
+                font-size: 0.7rem;
+            }
+            #play-pause-btn {
+                font-size: 1.2rem;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .launch-content h1 {
+                font-size: 2rem;
+            }
+            .time-block {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+            .time-value {
+                font-size: 1.6rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="launch-hero">
+            <div class="arena-background"><div class="arena-spotlight"></div></div>
+            <div class="graphic-lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+                <div class="line line-4"></div>
+            </div>
+
+            <div class="launch-content">
+                <h1>A TROPA TÁ <span class="highlight">CHEGANDO</span> EM</h1>
+                <p>O site oficial da Frenesy E-sports está prestes a entrar no ar. Prepare-se para uma nova era de competição, comunidade e glória.</p>
+
+                <div id="countdown-timer">
+                    <div class="time-block"><span id="days" class="time-value">00</span><div class="time-label">Dias</div></div>
+                    <div class="time-block"><span id="hours" class="time-value">00</span><div class="time-label">Horas</div></div>
+                    <div class="time-block"><span id="minutes" class="time-value">00</span><div class="time-label">Minutos</div></div>
+                    <div class="time-block"><span id="seconds" class="time-value">00</span><div class="time-label">Segundos</div></div>
+                </div>
+                <div id="launch-message">BEM-VINDO À FRENESY!</div>
+
+                <div class="launch-socials">
+                    <p>// ACOMPANHE NAS REDES SOCIAIS</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" target="_blank" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" target="_blank" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" target="_blank" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <audio id="background-music" loop>
+        <source src="assets/audio/Orochi – Nuvem (feat. Shenlong, Azevedo) [prod. Kizzy].mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="music-player">
+        <img src="assets/audio/album-cover/Capa.png" alt="Capa do Álbum" id="album-cover">
+        <div class="song-info">
+             <h3>Nuvem (feat. Shenlong, Azevedo)</h3>
+            <p>Orochi</p>
+        </div>
+        <button id="play-pause-btn" aria-label="Tocar ou pausar música">
+            <i class="fas fa-play"></i>
+        </button>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <script>
+                // Função para disparar fogos
+        function launchFireworks() {
+            const duration = 10 * 1000; // 10 segundos
+            const end = Date.now() + duration;
+
+            (function frame() {
+                // Fogos no lado esquerdo
+                confetti({
+                    particleCount: 7,
+                    colors: ['#f96001', '#ffffff', '#000000'], // cores do seu time/tema
+                    angle: 60,
+                    spread: 70,
+                    startVelocity: 45,
+                    origin: { x: 0, y: Math.random() * 0.7 } // posição Y aleatória
+                });
+
+                // Fogos no lado direito
+                confetti({
+                    particleCount: 7,
+                    colors: ['#f96001', '#ffffff', '#000000'],
+                    angle: 120,
+                    spread: 70,
+                    startVelocity: 45,
+                    origin: { x: 1, y: Math.random() * 0.7 }
+                });
+
+                // Enquanto não acabar o tempo, continua chamando
+                setTimeout(frame, 300); // solta de 300 em 300ms (pode ajustar)
+                
+            })();
+        }
+
+    </script>
+
+
+    <script>
+        // --- SCRIPT DA CONTAGEM REGRESSIVA ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+
+            const launchDate = new Date(
+                today.getFullYear(),
+                today.getMonth(),
+                13,  // dia
+                13,  // hora
+                0,  // minuto
+                0    // segundo
+            ).getTime();
+
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown-timer').style.display = 'none';
+                    document.getElementById('launch-message').style.display = 'block';
+                    launchFireworks(); // dispara fogos
+
+                }
+            }, 1000);
+            
+            // --- MODIFICADO: SCRIPT DO PLAYER DE MÚSICA COM VOLUME E FADE-IN ---
+            const music = document.getElementById('background-music');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const playIcon = '<i class="fas fa-play"></i>';
+            const pauseIcon = '<i class="fas fa-pause"></i>';
+            
+            // Define o volume máximo desejado (0.2 = 20% do volume)
+            const targetVolume = 0.2; 
+            let fadeInterval;
+
+            // Inicia a música com volume 0 para o fade-in
+            music.volume = 0;
+
+            function fadeInMusic() {
+                // Cancela qualquer fade-in anterior para evitar conflitos
+                clearInterval(fadeInterval);
+                
+                music.play();
+                playPauseBtn.innerHTML = pauseIcon;
+
+                fadeInterval = setInterval(() => {
+                    // Aumenta o volume gradualmente
+                    if (music.volume < targetVolume - 0.01) {
+                        music.volume += 0.01;
+                    } else {
+                        // Ao atingir o alvo, define o volume exato e limpa o intervalo
+                        music.volume = targetVolume;
+                        clearInterval(fadeInterval);
+                    }
+                }, 50); // A cada 50ms, aumenta um pouco o volume
+            }
+
+            // Tenta iniciar a música automaticamente
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay funcionou! Inicia o fade-in.
+                    fadeInMusic();
+                }).catch(error => {
+                    // Autoplay bloqueado. O usuário precisará clicar.
+                    console.log("Autoplay bloqueado pelo navegador. Aguardando interação do usuário.");
+                    music.pause(); // Garante que a música está pausada
+                    playPauseBtn.innerHTML = playIcon; // Garante que o ícone é 'play'
+                });
+            }
+
+            playPauseBtn.addEventListener('click', () => {
+                const isPlaying = !music.paused;
+                if (isPlaying) {
+                    music.pause();
+                    clearInterval(fadeInterval); // Para o fade se estiver ocorrendo
+                    playPauseBtn.innerHTML = playIcon;
+                } else {
+                    // Ao clicar para tocar, reinicia o volume e faz o fade-in
+                    music.volume = 0;
+                    fadeInMusic();
+                }
+            });
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>
