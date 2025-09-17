@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frenesy - #GoFrenesyTeam</title>
+    
+    <title>Frenesy Esports | Time Competitivo, Loja e Comunidade Gamer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,28 +12,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <meta name="description" content="Bem-vindo ao Frenesy Esports! Conheça nossas line-ups competitivas, compre na loja oficial e junte-se à nossa comunidade gamer. #GoFrenesyTeam">
+    <meta name="author" content="Frenesy Esports">
+    <meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
 
-	<!-- SEO BÁSICO -->
-	<meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
-	<meta name="author" content="Frenesy">
-	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
+    <link rel="canonical" href="https://www.frenesy.com.br/">
 
-	<!-- CANONICAL -->
-	<link rel="canonical" href="https://frenesy.com.br">
-
-	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://frenesy.com.br">
-	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
-	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
-	<meta property="og:image" content="https://i.imgur.com/TouBdww.png">
-
-	<!-- TWITTER CARDS -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:url" content="https://frenesy.com.br">
-	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
-	<meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
-	<meta name="twitter:image" content="https://i.imgur.com/TouBdww.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Frenesy Esports">
+    <meta property="og:url" content="https://www.frenesy.com.br/">
+    <meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+    <meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
+    <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@seuusuariodotwitter"> <meta name="twitter:creator" content="@seuusuariodotwitter"> <meta name="twitter:url" content="https://www.frenesy.com.br/">
+    <meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+    <meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
+    <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
 
     <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
 
@@ -3646,14 +3646,6 @@ body {
             let currentIndex = 0;
             const cardsPerPage = 4; // Quantos cards mostrar por vez
 
-
-
-
-
-
-
-
-			// SUBSTITUA A FUNÇÃO 'updateDisplay' PELA VERSÃO ABAIXO
 			function updateDisplay() {
 				const activeFilter = document.querySelector('.player-filters button.active').dataset.filter;
 
@@ -3685,21 +3677,10 @@ body {
 					prevBtn.disabled = currentIndex === 0;
 					nextBtn.disabled = currentIndex >= maxIndex;
 				} else {
-					// Em mobile, reseta a transformação, pois usamos o scroll nativo
+					// Em mobile, reseta a transformação
 					playersGrid.style.transform = 'translateX(0)';
 				}
 			}
-
-
-
-
-
-
-
-
-
-
-
 
 
             // Adiciona evento de clique aos botões de filtro
@@ -3725,8 +3706,6 @@ body {
 
             // Inicia a exibição pela primeira vez
             updateDisplay();
-
-            // --- FIM DA LÓGICA ---
         });
 
 

@@ -1,0 +1,18 @@
+# ===============================================================
+# Regras de rastreamento para todos os robôs de busca
+# ===============================================================
+User-agent: *
+
+# Permite o acesso a todo o site por padrão
+Allow: /
+
+# Bloqueia o rastreamento de páginas que não agregam valor aos resultados de busca
+Disallow: /pages/thanks.html
+Disallow: /pages/regulamento.html
+Disallow: /pages/article.html
+
+
+# ===============================================================
+# Localização do Sitemap
+# ===============================================================
+Sitemap: https://www.frenesy.com.br/sitemap.xml
