@@ -1,6 +1,3 @@
-# ===============================================================
-# Regras de rastreamento para todos os robôs de busca
-# ===============================================================
 User-agent: *
 
 # Permite o acesso a todo o site por padrão

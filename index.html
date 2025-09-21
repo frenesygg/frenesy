@@ -34,7 +34,7 @@
     <meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
     <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
 
-    <link rel="icon" href="assets/img/logo/Frenesy nb.png" type="image/png">
+    <link rel="icon" href="assets/img/logo/favicon.ico" type="image/ico">
 
     <style>
 
@@ -2377,130 +2377,130 @@ body {
 /* ==========================================================================
    CSS DO MODAL DE JOGADOR COMPETITIVO (VERSÃO FINAL CORRIGIDA)
    ========================================================================== */
-
-/* Keyframes para a animação das partículas */
-@keyframes animate-particles {
-    from { transform: translateY(0); }
-    to { transform: translateY(-1000px); } /* Distância que as partículas viajam */
+@keyframes moveBackground {
+    from { background-position: 0 0; }
+    to { background-position: 40px 0; }
 }
 
 .player-modal {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 3000; display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     opacity: 0; pointer-events: none;
     transition: opacity 0.4s ease;
+    z-index: 3000;
 }
+
 .player-modal.active { opacity: 1; pointer-events: auto; }
+
 
 .player-modal-content {
     position: relative;
-    background-color: var(--preto); /* AJUSTADO: Fundo preto sólido */
+    background-color: var(--preto);
     border: 1px solid #333;
     border-radius: 12px;
-    max-width: 800px; width: 90%;
+    max-width: 850px;
+    width: 90%;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
     transform: scale(0.95);
-    transition: transform 0.4s ease;
-    overflow: hidden; /* Essencial para as partículas não saírem */
+    transition: transform 0.3s ease;
+    overflow: hidden;
 }
-
-/* NOVO: Animação de partículas no fundo */
-.player-modal-content::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 300%; /* Altura maior para a animação ter espaço */
-    background-image: 
-        radial-gradient(circle, var(--laranja-frenesy) 1px, transparent 1px),
-        radial-gradient(circle, var(--laranja-frenesy) 1px, transparent 1px);
-		src: "/";
-    background-size: 50px 50px, 70px 70px; /* Tamanho e densidade das partículas */
-    background-position: 0 0, 30px 30px;
-    opacity: 0.45;
-    animation: animate-particles 60s linear infinite; /* Velocidade da animação */
-    z-index: 0;
-}
-
 .player-modal.active .player-modal-content { transform: scale(1); }
 
-.player-modal .modal-close-btn {
-    position: absolute; top: 15px; right: 20px;
-    font-size: 2rem; color: #aaa; cursor: pointer;
-    background: none; border: none; transition: all 0.3s ease;
-    z-index: 2; /* Para ficar acima das partículas */
-}
-.player-modal .modal-close-btn:hover { color: var(--laranja-frenesy); transform: rotate(90deg); }
-
-.player-modal .modal-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 2rem;
-    padding: 2.5rem;
-    position: relative; /* Para ficar acima das partículas */
-    z-index: 1;
-}
-
-/* Coluna da Galeria */
-.player-modal .modal-gallery { position: relative; }
-.player-modal .gallery-main-photo {
-    width: 100%; aspect-ratio: 1 / 1; border-radius: 8px;
-    overflow: hidden; background-color: #000;
-}
-.player-modal .gallery-main-photo img {
-    width: 100%; height: 100%;
-    object-fit: cover; /* Mantém a proporção e preenche o espaço */
-    object-position: center 20%; /* AJUSTADO: Prioriza a parte de cima da foto (rosto) */
-}
-.player-modal .gallery-controls {
-    position: absolute; top: 50%; left: 0; width: 100%;
-    transform: translateY(-50%); display: flex;
-    justify-content: space-between; padding: 0 10px;
-}
-.player-modal .gallery-arrow {
-    background: rgba(0,0,0,0.5); border: none; color: #fff;
-    width: 40px; height: 40px; border-radius: 50%;
-    font-size: 1rem; cursor: pointer; transition: background-color 0.3s;
-}
-.player-modal .gallery-arrow:hover { background: var(--laranja-frenesy); }
-
-/* Coluna de Informações */
-.player-modal .modal-info { display: flex; flex-direction: column; justify-content: center; }
-.player-modal .modal-nick {
-    font-family: var(--font-titulo); font-size: 3.5rem;
-    color: var(--laranja-frenesy); line-height: 1;
-    text-shadow: 0 0 15px var(--laranja-frenesy);
-}
-.player-modal .modal-name { color: #ccc; margin-bottom: 1.5rem; }
-
-.player-modal .modal-stats { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-.player-modal .modal-stats .stat-item { display: flex; align-items: center; gap: 10px; }
-.player-modal .modal-stats .stat-item i { color: var(--laranja-frenesy); width: 20px; text-align: center; }
-
-/* AJUSTADO: Estilo para ícones pequenos e sem texto */
-.player-modal .modal-socials {
-    display: flex;
-    flex-direction: row; /* Ícones em linha */
-    gap: 1.5rem; /* Espaço entre os ícones */
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid #222;
-}
-.player-modal .modal-socials a {
-    font-size: 1.5rem; /* Tamanho do ícone */
-    color: #aaa;
-    text-decoration: none;
+.modal-close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem; color: #aaa;
+    background: none; border: none;
+    cursor: pointer; z-index: 2;
     transition: all 0.3s ease;
 }
-.player-modal .modal-socials a:hover {
+.modal-close-btn:hover { color: var(--laranja-frenesy); transform: rotate(90deg); }
+
+.modal-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* FOTO DO JOGADOR */
+.player-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background-color: #000;
+    background-size: cover;
+    background-position: center top;
+    transition: background-image 0.3s ease-in-out;
+    position: relative;
+}
+.player-logo-watermark {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    opacity: 0.1;
+    width: 80px;
+}
+
+/* CONTROLES DA GALERIA (JS adiciona dinamicamente) */
+.gallery-controls {
+    position: absolute;
+    top: 50%; left: 0;
+    width: 100%;
+    display: flex; justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+.gallery-arrow {
+    background: rgba(0,0,0,0.5);
+    border: none; color: #fff;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.gallery-arrow:hover { background: var(--laranja-frenesy); }
+
+/* INFORMAÇÕES */
+.player-nick {
+    font-family: var(--font-titulo);
+    font-size: 3rem;
+    color: var(--laranja-frenesy);
+    text-shadow: 0 0 15px var(--laranja-frenesy);
+    margin: 0;
+}
+.player-name {
+    color: #ccc;
+    margin: 0 0 1rem;
+}
+.info-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.stat-item { display: flex; flex-direction: column; }
+.stat-label { font-size: 0.8rem; color: #888; }
+.stat-value { font-weight: bold; color: #fff; }
+
+.player-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+}
+.player-socials a {
+    font-size: 1.5rem;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+.player-socials a:hover {
     color: var(--laranja-frenesy);
     transform: scale(1.2);
 }
-
-
-
+/* === BACKGROUND ELEGANTE APENAS NO LADO DIREITO === */
 
 
 
@@ -3057,18 +3057,18 @@ body {
                 <div class="product-carousel-window">
                     <div class="product-grid">
                         <div class="product-card">
-                            <div class="product-image-container"><img src="assets/img/products/blouses/Frenesy Official Sweatshirt.jpg" alt="Moletom Frenesy"></div>
-                            <div class="product-info"><h4>Moletom Frenesy</h4><span class="product-price">R$ 89,90</span></div>
+                            <div class="product-image-container"><img src="assets/img/products/blouses/Frenesy Official Sweatshirt.jpg" alt="Moletom Oficial Frenesy"></div>
+                            <div class="product-info"><h4>Moletom Oficial Frenesy</h4><span class="product-price">R$ 189,90</span></div>
                             <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         </div>
                         <div class="product-card">
                             <div class="product-image-container"><img src="assets/img/products/legs/Frenesy Official Legs.jpg" alt="Calça Frenesy"></div>
-                            <div class="product-info"><h4>Calça Frenesy</h4><span class="product-price">R$ 149,90</span></div>
+                            <div class="product-info"><h4>Calça Moletom Oficial</h4><span class="product-price">R$ 149,90</span></div>
                             <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         </div>
                         <div class="product-card">
                             <div class="product-image-container"><img src="assets/img/products/t-shirt/Frenesy Teams.jpg" alt="Camiseta Frenesy"></div>
-                            <div class="product-info"><h4>Camiseta Frenesy Team</h4><span class="product-price">R$ 119,90</span></div>
+                            <div class="product-info"><h4>Camiseta Frenesy Teams</h4><span class="product-price">R$ 89,90</span></div>
                             <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         </div>
                         <div class="product-card">
@@ -3119,9 +3119,8 @@ body {
                     <div class="players-grid">
                         
 						
-						
-						<!-- <a href="#" class="player-card" data-game="freefire" data-nick="KAKASHI" data-name="Thiago Machareth" data-age="20" data-city="Além Paraíba, MG" data-titles="5" data-photos="assets/img/teams/THZIN.jpeg,assets/img/highlights/kakashi-2.jpg,assets/img/highlights/kakashi-3.jpg" data-role="Capitão" data-twitch="thzin" data-twitter="thzin" data-instagram="thiago.machareth">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/THZIN.jpeg');"></div>
+						<!-- <a href="#" class="player-card" data-game="freefire" data-nick="KAKASHI" data-name="Thiago Machareth" data-age="20" data-city="Além Paraíba, MG" data-titles="5" data-photos="assets/img/teams/TH.png,assets/img/highlights/kakashi-2.jpg,assets/img/highlights/kakashi-3.jpg" data-role="Capitão" data-twitch="thzin" data-twitter="thzin" data-instagram="thiago.machareth">
+                            <div class="player-card-background" style="background-image: url('assets/img/teams/TH.png');"></div>
                             <div class="player-card-overlay"></div>
                             <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
                             <div class="player-card-content">
@@ -3156,6 +3155,7 @@ body {
                                 <div class="player-details"><span class="player-role">Suporte</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
                             </div>
                         </a>
+
 						<a href="#" class="player-card" data-game="freefire">
                             <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
                             <div class="player-card-overlay"></div>
@@ -3190,41 +3190,96 @@ body {
         </section>   
 
 		<div id="playerProfileModal" class="player-modal">
-			<div class="player-modal-content">
+			<div class="player-modal-content" data-tilt>
 				
+				<!-- 🔥 BACKGROUND ELEGANTE ADICIONADO -->
+				<div class="modal-background"></div>
 				
+				<!-- BOTÃO DE FECHAR -->
 				<button class="modal-close-btn">&times;</button>
-				
-				<div class="modal-grid">
-					<div class="modal-gallery">
-						<div class="gallery-main-photo">
-							<img id="modalProfilePhoto" src="" alt="Foto do Jogador">
-						</div>
-						<div class="gallery-controls">
-							<button id="prevProfilePhotoBtn" class="gallery-arrow"><i class="fas fa-chevron-left"></i></button>
-							<button id="nextProfilePhotoBtn" class="gallery-arrow"><i class="fas fa-chevron-right"></i></button>
-						</div>
+
+				<!-- CONTEÚDO PRINCIPAL -->
+				<div class="modal-main-grid">
+					<!-- SEÇÃO DE FOTO -->
+					<div class="player-image-section">
+						<div id="modalProfilePhoto" class="player-photo"></div>
+						<!-- Os botões de navegação serão adicionados via JS -->
+						<img src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo" class="player-logo-watermark">
 					</div>
 
-					<div class="modal-info">
-						<h2 id="modalProfileNick" class="modal-nick"></h2>
-						<p id="modalProfileName" class="modal-name"></p>
-						
-						<div class="modal-stats">
-							<div class="stat-item"><i class="fas fa-birthday-cake"></i> <span id="modalProfileAge"></span> anos</div>
-							<div class="stat-item"><i class="fas fa-map-marker-alt"></i> <span id="modalProfileCity"></span></div>
-							<div class="stat-item"><i class="fas fa-trophy"></i> <span id="modalProfileTitles"></span> Títulos</div>
+					<!-- SEÇÃO DE INFORMAÇÕES -->
+					<div class="player-info-section">
+						<div class="info-header">
+							<h2 id="modalProfileNick" class="player-nick"></h2>
+							<p id="modalProfileName" class="player-name"></p>
 						</div>
 
-						<div class="modal-socials">
-							<a id="modalProfileTwitch" href="#" target="_blank" title="Twitch"><i class="fab fa-twitch"></i></a>
-							<a id="modalProfileTwitter" href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-							<a id="modalProfileInstagram" href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+						<div class="info-stats-grid">
+							<div class="stat-item">
+								<span class="stat-label">Idade</span>
+								<span id="modalProfileAge" class="stat-value"></span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-label">Cidade</span>
+								<span id="modalProfileCity" class="stat-value"></span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-label">Títulos</span>
+								<span id="modalProfileTitles" class="stat-value"></span>
+							</div>
+						</div>
+
+						<div class="info-footer">
+							<div class="player-socials">
+								<a id="modalProfileTwitch" href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+								<a id="modalProfileTwitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+								<a id="modalProfileInstagram" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <section id="community" class="community-section">
             <h2 class="section-title">NOSSA COMUNIDADE</h2>
@@ -3311,13 +3366,13 @@ body {
                      data-nick="KAKASHI"
                      data-age="20"
                      data-location="Além Paraíba, MG"
-                     data-img-src="assets/img/teams/THZIN.jpeg"
+                     data-img-src="assets/img/teams/THZIN.jpg"
                      data-tag="VETERANO DO FREE FIRE"
                      data-insignias="Membro,Free Fire,FIFA,Veterano"
                      data-instagram="thiago.machareth"
                      data-twitch=""
                      data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/THZIN.jpeg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/THZIN.jpg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
                         <h3 class="member-nick">KAKASHI</h3>
@@ -3567,293 +3622,422 @@ body {
             </div>
         </footer>
 
+
+	<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+
+
     <script>
+						
+		document.addEventListener('DOMContentLoaded', () => {
 
-        document.addEventListener('DOMContentLoaded', () => {            // --- INÍCIO DA LÓGICA DO CARROSSEL E FILTRO ---
+			// --- Seletores dos Elementos ---
+			const cards = document.querySelectorAll('#players .player-card');
+			const modal = document.getElementById('playerProfileModal');
+			const filterButtons = document.querySelectorAll('.player-filters button');
+			
+			const carouselWindow = document.querySelector('.players-carousel-window');
+			const prevButton = document.querySelector('.slider-btn.prev');
+			const nextButton = document.querySelector('.slider-btn.next');
 
-            // Seleciona os elementos principais
-            const filterButtons = document.querySelectorAll('.player-filters button');
-            const allPlayerCards = document.querySelectorAll('.player-card');
-            const playersGrid = document.querySelector('.players-grid');
-            const nextBtn = document.querySelector('.slider-btn.next');
-            const prevBtn = document.querySelector('.slider-btn.prev');
+			if (!modal) return;
 
-            let currentIndex = 0;
-            const cardsPerPage = 4; // Quantos cards mostrar por vez
+			// --- LÓGICA DO CARROSSEL DE JOGADORES (CORRIGIDA) ---
+			if (carouselWindow && prevButton && nextButton && cards.length > 0) {
+				
+				const getVisibleCards = () => Array.from(cards).filter(card => card.style.display !== 'none');
 
-			function updateDisplay() {
-				const activeFilter = document.querySelector('.player-filters button.active').dataset.filter;
+				nextButton.addEventListener('click', () => {
+					const visibleCards = getVisibleCards();
+					if (visibleCards.length === 0) return;
 
-				// 1. Filtra os cards
-				let visibleCards = [];
-				allPlayerCards.forEach(card => {
-					const cardGame = card.dataset.game;
-					if (activeFilter === 'all' || cardGame === activeFilter) {
-						card.style.display = 'block';
-						visibleCards.push(card);
+					// Encontra o primeiro card que está (parcialmente ou totalmente) fora da tela à direita
+					let targetCard = null;
+					for (const card of visibleCards) {
+						if (card.offsetLeft + 1 > carouselWindow.scrollLeft + carouselWindow.offsetWidth) {
+							targetCard = card;
+							break;
+						}
+					}
+					
+					// Se encontrou um card, rola até ele. Senão, vai para o último.
+					if (targetCard) {
+						carouselWindow.scrollTo({ left: targetCard.offsetLeft, behavior: 'smooth' });
 					} else {
-						card.style.display = 'none';
+						carouselWindow.scrollTo({ left: carouselWindow.scrollWidth, behavior: 'smooth' });
 					}
 				});
 
-				// 2. Lógica de carrossel para DESKTOP (acima de 768px)
-				if (window.innerWidth > 768) {
-					const totalVisibleCards = visibleCards.length;
-					const maxIndex = Math.ceil(totalVisibleCards / cardsPerPage) - 1;
+				prevButton.addEventListener('click', () => {
+					const visibleCards = getVisibleCards();
+					if (visibleCards.length === 0) return;
 
-					if (currentIndex > maxIndex) currentIndex = maxIndex < 0 ? 0 : maxIndex;
-					if (currentIndex < 0) currentIndex = 0;
+					// Encontra o último card que está (parcialmente ou totalmente) fora da tela à esquerda
+					let targetCard = null;
+					for (let i = visibleCards.length - 1; i >= 0; i--) {
+						const card = visibleCards[i];
+						if (card.offsetLeft < carouselWindow.scrollLeft) {
+							targetCard = card;
+							break;
+						}
+					}
 
-					const cardWidth = 300;
-					const gap = 32;
-					const moveDistance = (cardWidth + gap) * cardsPerPage * currentIndex;
-					playersGrid.style.transform = `translateX(-${moveDistance}px)`;
+					// Se encontrou um card, rola até ele. Senão, volta para o início.
+					if (targetCard) {
+						carouselWindow.scrollTo({ left: targetCard.offsetLeft, behavior: 'smooth' });
+					} else {
+						carouselWindow.scrollTo({ left: 0, behavior: 'smooth' });
+					}
+				});
+			}
+			// --- FIM DA LÓGICA DO CARROSSEL ---
 
-					prevBtn.disabled = currentIndex === 0;
-					nextBtn.disabled = currentIndex >= maxIndex;
+
+			// --- LÓGICA DO FILTRO DE JOGADORES (JÁ EXISTENTE) ---
+			if (filterButtons.length > 0 && cards.length > 0) {
+				filterButtons.forEach(button => {
+					button.addEventListener('click', () => {
+						const filterValue = button.dataset.filter;
+						filterButtons.forEach(btn => btn.classList.remove('active'));
+						button.classList.add('active');
+						
+						if (carouselWindow) {
+							carouselWindow.scrollTo({ left: 0, behavior: 'smooth' });
+						}
+
+						cards.forEach(card => {
+							const cardGame = card.dataset.game;
+							if (filterValue === 'all' || cardGame === filterValue) {
+								card.style.display = 'block';
+							} else {
+								card.style.display = 'none';
+							}
+						});
+					});
+				});
+			}
+
+			// --- LÓGICA DO MODAL (JÁ EXISTENTE E MANTIDA) ---
+			const closeBtn = modal.querySelector('.modal-close-btn');
+			const modalNick = modal.querySelector('#modalProfileNick');
+			const modalName = modal.querySelector('#modalProfileName');
+			const modalAge = modal.querySelector('#modalProfileAge');
+			const modalCity = modal.querySelector('#modalProfileCity');
+			const modalTitles = modal.querySelector('#modalProfileTitles');
+			const modalPhoto = modal.querySelector('#modalProfilePhoto');
+			const modalSocials = {
+				twitch: modal.querySelector('#modalProfileTwitch'),
+				twitter: modal.querySelector('#modalProfileTwitter'),
+				instagram: modal.querySelector('#modalProfileInstagram')
+			};
+			let photos = [];
+			let currentPhotoIndex = 0;
+			let lastScrollY = 0;
+			const updatePhoto = () => {
+				if (photos.length > 0) {
+					modalPhoto.style.backgroundImage = `url('${photos[currentPhotoIndex]}')`;
+				}
+			};
+			const createPhotoControls = () => {
+				let controls = modalPhoto.querySelector('.gallery-controls');
+				if (!controls) {
+					controls = document.createElement('div');
+					controls.classList.add('gallery-controls');
+					const prev = document.createElement('button');
+					prev.classList.add('gallery-arrow');
+					prev.innerHTML = '<i class="fas fa-chevron-left"></i>';
+					const next = document.createElement('button');
+					next.classList.add('gallery-arrow');
+					next.innerHTML = '<i class="fas fa-chevron-right"></i>';
+					controls.appendChild(prev);
+					controls.appendChild(next);
+					modalPhoto.appendChild(controls);
+					prev.addEventListener('click', e => {
+						e.stopPropagation();
+						currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+						updatePhoto();
+					});
+					next.addEventListener('click', e => {
+						e.stopPropagation();
+						currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+						updatePhoto();
+					});
+				}
+				controls.style.display = photos.length > 1 ? 'flex' : 'none';
+			};
+			const closeModal = () => {
+				modal.classList.remove('active');
+				document.body.style.overflow = '';
+				window.scrollTo(0, lastScrollY);
+				setTimeout(() => {
+					if (!modal.classList.contains('active')) {
+						modalPhoto.style.backgroundImage = 'none';
+					}
+				}, 300);
+			};
+			cards.forEach(card => {
+				const socialsDiv = card.querySelector('.player-socials');
+				socialsDiv.innerHTML = '';
+				['twitch', 'twitter', 'instagram'].forEach(net => {
+					const user = card.dataset[net];
+					if (user) {
+						const a = document.createElement('a');
+						a.href = net === 'instagram' ? `https://www.instagram.com/${user}` :
+							net === 'twitter' ? `https://twitter.com/${user}` : `https://twitch.tv/${user}`;
+						a.target = "_blank";
+						a.rel = "noopener noreferrer";
+						a.innerHTML = `<i class="fa-brands fa-${net}"></i>`;
+						socialsDiv.appendChild(a);
+					}
+				});
+				card.addEventListener('click', e => {
+					if (e.target.closest('.player-socials a')) return;
+					e.preventDefault();
+					const data = card.dataset;
+					modalNick.textContent = data.nick || card.querySelector('.player-name h3').textContent;
+					modalName.textContent = data.name || 'Nome não disponível';
+					modalAge.textContent = data.age || '?';
+					modalCity.textContent = data.city || 'Desconhecida';
+					modalTitles.textContent = data.titles || '0';
+					photos = data.photos ? data.photos.split(',') :
+						[card.querySelector('.player-card-background').style.backgroundImage.slice(5, -2).replace(/"/g, '')];
+					currentPhotoIndex = 0;
+					updatePhoto();
+					createPhotoControls();
+					['twitch', 'twitter', 'instagram'].forEach(net => {
+						if (data[net]) {
+							modalSocials[net].href = net === 'instagram' ? `https://www.instagram.com/${data[net]}` :
+								net === 'twitter' ? `https://twitter.com/${data[net]}` : `https://twitch.tv/${data[net]}`;
+							modalSocials[net].style.display = 'inline-block';
+						} else {
+							modalSocials[net].style.display = 'none';
+						}
+					});
+					lastScrollY = window.scrollY;
+					document.body.style.overflow = 'hidden';
+					modal.classList.add('active');
+				});
+			});
+			closeBtn.addEventListener('click', closeModal);
+			modal.addEventListener('click', e => {
+				if (e.target === modal) {
+					closeModal();
+				}
+			});
+		});
+
+
+
+		const allThumbnails = document.querySelectorAll('.clip-thumbnail');
+		const mainVideoIframe = document.querySelector('.main-video-player iframe');
+		const clipTitleEl = document.getElementById('clip-title');
+		const clipPlayerEl = document.getElementById('clip-player');
+
+		// Função para carregar um vídeo
+		function loadVideo(thumb) {
+			// Remove a classe 'active' de todos
+			allThumbnails.forEach(t => t.classList.remove('active'));
+			
+			// Adiciona 'active' apenas no thumbnail atual
+			thumb.classList.add('active');
+			
+			// Pega os dados do thumbnail
+			const videoId = thumb.dataset.videoId;
+			const title = thumb.dataset.title;
+			const player = thumb.dataset.player;
+			const game = thumb.dataset.game;
+			
+			// Monta a URL de incorporação do YouTube
+			// Nova Linha (com som e controles visíveis)
+			const embedUrl = `https://www.youtube.com/embed/${videoId}?controls=1`;
+			
+			// Atualiza o player principal
+			mainVideoIframe.src = embedUrl;
+			
+			// Atualiza as informações do vídeo
+			clipTitleEl.textContent = title;
+			clipPlayerEl.innerHTML = `por: <span class="player-name">${player}</span> em <span class="game-name">${game}</span>`;
+		}
+
+		// Processa cada thumbnail para gerar sua imagem e adicionar o evento de clique
+		allThumbnails.forEach(thumb => {
+			const videoId = thumb.dataset.videoId;
+			if (videoId) {
+				// Gera a URL da thumbnail automaticamente
+				const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+				// Cria e adiciona a imagem e o ícone de play
+				thumb.innerHTML = `
+					<img src="${thumbnailUrl}" alt="Thumbnail do clipe ${thumb.dataset.title}">
+					<div class="play-icon"><i class="fas fa-play"></i></div>
+				`;
+			}
+
+			thumb.addEventListener('click', () => loadVideo(thumb));
+		});
+
+		// Carrega o primeiro vídeo da lista por padrão ao iniciar a página
+		if (allThumbnails.length > 0) {
+			loadVideo(allThumbnails[0]);
+		}
+
+
+		// Lógica de navegação do carrossel (mantida)
+		const clipsTrack = document.querySelector('.clips-track');
+		const prevClipBtn = document.querySelector('.clips-carousel .carousel-nav.prev');
+		const nextClipBtn = document.querySelector('.clips-carousel .carousel-nav.next');
+		let clipIndex = 0;
+
+		function moveCarousel() {
+			const gap = 16;
+			const thumbnailWidth = 160;
+			const moveDistance = (thumbnailWidth + gap) * clipIndex;
+			clipsTrack.style.transform = `translateX(-${moveDistance}px)`;
+
+			// Lógica para desabilitar botões
+			const visibleThumbs = clipsTrack.querySelectorAll('.clip-thumbnail').length;
+			const thumbsInWindow = 5; // Ajuste este número se o layout mudar
+			nextClipBtn.disabled = clipIndex >= visibleThumbs - thumbsInWindow;
+			prevClipBtn.disabled = clipIndex === 0;
+		}
+		if(nextClipBtn && prevClipBtn) {
+			nextClipBtn.addEventListener('click', () => {
+				clipIndex++;
+				moveCarousel();
+			});
+			prevClipBtn.addEventListener('click', () => {
+				clipIndex--;
+				moveCarousel();
+			});
+		}
+
+		const productGrid = document.querySelector('.product-grid');
+		const productCards = document.querySelectorAll('.product-card');
+		const nextBtn = document.querySelector('.product-slider-btn.next');
+		const prevBtn = document.querySelector('.product-slider-btn.prev');
+
+		if (productGrid) {
+			let currentIndex = 0;
+			const totalCards = productCards.length;
+			let cardsPerPage = 4; // Padrão para desktop
+
+			function updateCardsPerPage() {
+				if (window.innerWidth <= 600) {
+					cardsPerPage = 1;
+				} else if (window.innerWidth <= 900) {
+					cardsPerPage = 2;
 				} else {
-					// Em mobile, reseta a transformação
-					playersGrid.style.transform = 'translateX(0)';
+					cardsPerPage = 4;
 				}
 			}
 
+			function moveProductCarousel() {
+				const cardWidth = productCards[0].offsetWidth;
+				const gap = 32; // 2rem
+				const moveDistance = (cardWidth + gap) * currentIndex;
+				productGrid.style.transform = `translateX(-${moveDistance}px)`;
 
-            // Adiciona evento de clique aos botões de filtro
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    currentIndex = 0; // Reseta para o primeiro slide ao trocar de filtro
-                    updateDisplay();
-                });
-            });
+				prevBtn.disabled = currentIndex === 0;
+				nextBtn.disabled = currentIndex >= totalCards - cardsPerPage;
+			}
 
-            // Adiciona evento de clique aos botões de navegação do carrossel
-            nextBtn.addEventListener('click', () => {
-                currentIndex++;
-                updateDisplay();
-            });
+			nextBtn.addEventListener('click', () => {
+				if (currentIndex < totalCards - cardsPerPage) {
+					currentIndex++;
+					moveProductCarousel();
+				}
+			});
 
-            prevBtn.addEventListener('click', () => {
-                currentIndex--;
-                updateDisplay();
-            });
+			prevBtn.addEventListener('click', () => {
+				if (currentIndex > 0) {
+					currentIndex--;
+					moveProductCarousel();
+				}
+			});
 
-            // Inicia a exibição pela primeira vez
-            updateDisplay();
-        });
+			// Ajusta o carrossel ao redimensionar a janela
+			window.addEventListener('resize', () => {
+				updateCardsPerPage();
+				moveProductCarousel();
+			});
+			
+			// Inicializa
+			updateCardsPerPage();
+			moveProductCarousel();
+		}
 
+	// --- INÍCIO DA LÓGICA DA CENTRAL DE COMANDO ---
+		const divisionSelectors = document.querySelectorAll('.selector-item');
+		const intelBlocks = document.querySelectorAll('.intel-block');
+		const divisionCards = document.querySelectorAll('.division-visual-panel .game-card');
 
+		divisionSelectors.forEach(selector => {
+			selector.addEventListener('click', () => {
+				const targetDivision = selector.dataset.division;
 
-            const allThumbnails = document.querySelectorAll('.clip-thumbnail');
-            const mainVideoIframe = document.querySelector('.main-video-player iframe');
-            const clipTitleEl = document.getElementById('clip-title');
-            const clipPlayerEl = document.getElementById('clip-player');
+				// Atualiza o botão ativo
+				divisionSelectors.forEach(s => s.classList.remove('active'));
+				selector.classList.add('active');
 
-            // Função para carregar um vídeo
-            function loadVideo(thumb) {
-                // Remove a classe 'active' de todos
-                allThumbnails.forEach(t => t.classList.remove('active'));
-                
-                // Adiciona 'active' apenas no thumbnail atual
-                thumb.classList.add('active');
-                
-                // Pega os dados do thumbnail
-                const videoId = thumb.dataset.videoId;
-                const title = thumb.dataset.title;
-                const player = thumb.dataset.player;
-                const game = thumb.dataset.game;
-                
-                // Monta a URL de incorporação do YouTube
-                // Nova Linha (com som e controles visíveis)
-                const embedUrl = `https://www.youtube.com/embed/${videoId}?controls=1`;
-                
-                // Atualiza o player principal
-                mainVideoIframe.src = embedUrl;
-                
-                // Atualiza as informações do vídeo
-                clipTitleEl.textContent = title;
-                clipPlayerEl.innerHTML = `por: <span class="player-name">${player}</span> em <span class="game-name">${game}</span>`;
-            }
+				// Atualiza o bloco de "intel"
+				intelBlocks.forEach(block => {
+					if (block.id === `${targetDivision}-intel`) {
+						block.classList.add('active');
+					} else {
+						block.classList.remove('active');
+					}
+				});
 
-            // Processa cada thumbnail para gerar sua imagem e adicionar o evento de clique
-            allThumbnails.forEach(thumb => {
-                const videoId = thumb.dataset.videoId;
-                if (videoId) {
-                    // Gera a URL da thumbnail automaticamente
-                    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-                    // Cria e adiciona a imagem e o ícone de play
-                    thumb.innerHTML = `
-                        <img src="${thumbnailUrl}" alt="Thumbnail do clipe ${thumb.dataset.title}">
-                        <div class="play-icon"><i class="fas fa-play"></i></div>
-                    `;
-                }
+				// Atualiza o card de jogo visível
+				divisionCards.forEach(card => {
+					if (card.dataset.divisionCard === targetDivision) {
+						card.classList.add('active');
+					} else {
+						card.classList.remove('active');
+					}
+				});
+			});
+		});
 
-                thumb.addEventListener('click', () => loadVideo(thumb));
-            });
+		const memberCards = document.querySelectorAll('.member-card');
+		const modal = document.getElementById('memberModal');
+		const closeModalBtn = document.querySelector('.modal-close-btn');
 
-            // Carrega o primeiro vídeo da lista por padrão ao iniciar a página
-            if (allThumbnails.length > 0) {
-                loadVideo(allThumbnails[0]);
-            }
+		if (modal) {
+			memberCards.forEach(card => {
+				card.addEventListener('click', () => {
+					// 1. Pega os dados do card clicado
+					const nick = card.dataset.nick;
+					const age = card.dataset.age;
+					const location = card.dataset.location;
+					const imgSrc = card.dataset.imgSrc;
 
+					// 2. Atualiza o conteúdo do modal com os dados
+					modal.querySelector('#modalNick').textContent = nick;
+					modal.querySelector('#modalAge').textContent = age;
+					modal.querySelector('#modalLocation').textContent = location;
+					modal.querySelector('#modalPhoto img').src = imgSrc;
+					modal.querySelector('#modalPhoto img').alt = "Foto de " + nick;
 
-            // Lógica de navegação do carrossel (mantida)
-            const clipsTrack = document.querySelector('.clips-track');
-            const prevClipBtn = document.querySelector('.clips-carousel .carousel-nav.prev');
-            const nextClipBtn = document.querySelector('.clips-carousel .carousel-nav.next');
-            let clipIndex = 0;
+					// 3. Mostra o modal
+					modal.classList.add('active');
+				});
+			});
 
-            function moveCarousel() {
-                const gap = 16;
-                const thumbnailWidth = 160;
-                const moveDistance = (thumbnailWidth + gap) * clipIndex;
-                clipsTrack.style.transform = `translateX(-${moveDistance}px)`;
+			// Função para fechar o modal
+			const closeModal = () => {
+				modal.classList.remove('active');
+			}
 
-                // Lógica para desabilitar botões
-                const visibleThumbs = clipsTrack.querySelectorAll('.clip-thumbnail').length;
-                const thumbsInWindow = 5; // Ajuste este número se o layout mudar
-                nextClipBtn.disabled = clipIndex >= visibleThumbs - thumbsInWindow;
-                prevClipBtn.disabled = clipIndex === 0;
-            }
-            if(nextClipBtn && prevClipBtn) {
-                nextClipBtn.addEventListener('click', () => {
-                    clipIndex++;
-                    moveCarousel();
-                });
-                prevClipBtn.addEventListener('click', () => {
-                    clipIndex--;
-                    moveCarousel();
-                });
-            }
+			closeModalBtn.addEventListener('click', closeModal);
 
-            const productGrid = document.querySelector('.product-grid');
-            const productCards = document.querySelectorAll('.product-card');
-            const nextBtn = document.querySelector('.product-slider-btn.next');
-            const prevBtn = document.querySelector('.product-slider-btn.prev');
-
-            if (productGrid) {
-                let currentIndex = 0;
-                const totalCards = productCards.length;
-                let cardsPerPage = 4; // Padrão para desktop
-
-                function updateCardsPerPage() {
-                    if (window.innerWidth <= 600) {
-                        cardsPerPage = 1;
-                    } else if (window.innerWidth <= 900) {
-                        cardsPerPage = 2;
-                    } else {
-                        cardsPerPage = 4;
-                    }
-                }
-
-                function moveProductCarousel() {
-                    const cardWidth = productCards[0].offsetWidth;
-                    const gap = 32; // 2rem
-                    const moveDistance = (cardWidth + gap) * currentIndex;
-                    productGrid.style.transform = `translateX(-${moveDistance}px)`;
-
-                    prevBtn.disabled = currentIndex === 0;
-                    nextBtn.disabled = currentIndex >= totalCards - cardsPerPage;
-                }
-
-                nextBtn.addEventListener('click', () => {
-                    if (currentIndex < totalCards - cardsPerPage) {
-                        currentIndex++;
-                        moveProductCarousel();
-                    }
-                });
-
-                prevBtn.addEventListener('click', () => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        moveProductCarousel();
-                    }
-                });
-
-                // Ajusta o carrossel ao redimensionar a janela
-                window.addEventListener('resize', () => {
-                    updateCardsPerPage();
-                    moveProductCarousel();
-                });
-                
-                // Inicializa
-                updateCardsPerPage();
-                moveProductCarousel();
-            }
-
-        // --- INÍCIO DA LÓGICA DA CENTRAL DE COMANDO ---
-            const divisionSelectors = document.querySelectorAll('.selector-item');
-            const intelBlocks = document.querySelectorAll('.intel-block');
-            const divisionCards = document.querySelectorAll('.division-visual-panel .game-card');
-
-            divisionSelectors.forEach(selector => {
-                selector.addEventListener('click', () => {
-                    const targetDivision = selector.dataset.division;
-
-                    // Atualiza o botão ativo
-                    divisionSelectors.forEach(s => s.classList.remove('active'));
-                    selector.classList.add('active');
-
-                    // Atualiza o bloco de "intel"
-                    intelBlocks.forEach(block => {
-                        if (block.id === `${targetDivision}-intel`) {
-                            block.classList.add('active');
-                        } else {
-                            block.classList.remove('active');
-                        }
-                    });
-
-                    // Atualiza o card de jogo visível
-                    divisionCards.forEach(card => {
-                        if (card.dataset.divisionCard === targetDivision) {
-                            card.classList.add('active');
-                        } else {
-                            card.classList.remove('active');
-                        }
-                    });
-                });
-            });
-
-            const memberCards = document.querySelectorAll('.member-card');
-            const modal = document.getElementById('memberModal');
-            const closeModalBtn = document.querySelector('.modal-close-btn');
-
-            if (modal) {
-                memberCards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        // 1. Pega os dados do card clicado
-                        const nick = card.dataset.nick;
-                        const age = card.dataset.age;
-                        const location = card.dataset.location;
-                        const imgSrc = card.dataset.imgSrc;
-
-                        // 2. Atualiza o conteúdo do modal com os dados
-                        modal.querySelector('#modalNick').textContent = nick;
-                        modal.querySelector('#modalAge').textContent = age;
-                        modal.querySelector('#modalLocation').textContent = location;
-                        modal.querySelector('#modalPhoto img').src = imgSrc;
-                        modal.querySelector('#modalPhoto img').alt = "Foto de " + nick;
-
-                        // 3. Mostra o modal
-                        modal.classList.add('active');
-                    });
-                });
-
-                // Função para fechar o modal
-                const closeModal = () => {
-                    modal.classList.remove('active');
-                }
-
-                closeModalBtn.addEventListener('click', closeModal);
-
-                // Fecha o modal se clicar fora do conteúdo (no overlay)
-                modal.addEventListener('click', (event) => {
-                    if (event.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
+			// Fecha o modal se clicar fora do conteúdo (no overlay)
+			modal.addEventListener('click', (event) => {
+				if (event.target === modal) {
+					closeModal();
+				}
+			});
+		}
 
 
         // --- INÍCIO DA LÓGICA DA COMUNIDADE (VERSÃO FINAL) ---
@@ -3974,127 +4158,8 @@ body {
                 }
             }
         });
-
-
-
-
-
-            const competitivePlayerCards = document.querySelectorAll('#players .player-card');
-            const playerModal = document.getElementById('playerProfileModal');
-
-            if (playerModal && competitivePlayerCards.length > 0) {
-                const closeModalBtn = playerModal.querySelector('.modal-close-btn');
-                const modalNick = playerModal.querySelector('#modalProfileNick');
-                const modalName = playerModal.querySelector('#modalProfileName');
-                const modalAge = playerModal.querySelector('#modalProfileAge');
-                const modalCity = playerModal.querySelector('#modalProfileCity');
-                const modalTitles = playerModal.querySelector('#modalProfileTitles');
-                const modalPhoto = playerModal.querySelector('#modalProfilePhoto');
-                const prevPhotoBtn = playerModal.querySelector('#prevProfilePhotoBtn');
-                const nextPhotoBtn = playerModal.querySelector('#nextProfilePhotoBtn');
-                
-                const modalSocials = {
-                    twitch: playerModal.querySelector('#modalProfileTwitch'),
-                    twitter: playerModal.querySelector('#modalProfileTwitter'),
-                    instagram: playerModal.querySelector('#modalProfileInstagram')
-                };
-
-                let currentPhotos = [];
-                let currentPhotoIndex = 0;
-
-                function updatePhoto() {
-                    if (currentPhotos.length > 0) {
-                        modalPhoto.src = currentPhotos[currentPhotoIndex];
-                    }
-                }
-
-                nextPhotoBtn.addEventListener('click', () => {
-                    currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length;
-                    updatePhoto();
-                });
-
-                prevPhotoBtn.addEventListener('click', () => {
-                    currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
-                    updatePhoto();
-                });
-
-                competitivePlayerCards.forEach(card => {
-                    card.addEventListener('click', (event) => {
-                        event.preventDefault(); 
-                        const data = card.dataset;
-                        
-                        modalNick.textContent = data.nick || card.querySelector('.player-name h3').textContent;
-                        modalName.textContent = data.name || 'Nome não disponível';
-                        modalAge.textContent = data.age || '?';
-                        modalCity.textContent = data.city || 'Desconhecida';
-                        modalTitles.textContent = data.titles || '0';
-
-                        currentPhotos = data.photos ? data.photos.split(',') : [card.querySelector('.player-card-background').style.backgroundImage.slice(5, -2).replace(/"/g, "")];
-                        currentPhotoIndex = 0;
-                        updatePhoto();
-                        
-                        if (currentPhotos.length > 1) {
-                            prevPhotoBtn.style.display = 'block';
-                            nextPhotoBtn.style.display = 'block';
-                        } else {
-                            prevPhotoBtn.style.display = 'none';
-                            nextPhotoBtn.style.display = 'none';
-                        }
-
-                        const socialLinks = {
-                            twitch: data.twitch ? `https://www.twitch.tv/${data.twitch}` : null,
-                            twitter: data.twitter ? `https://twitter.com/${data.twitter}` : null,
-                            instagram: data.instagram ? `https://www.instagram.com/${data.instagram}` : null
-                        };
-
-                        for (const [social, linkElement] of Object.entries(modalSocials)) {
-                            if (socialLinks[social]) {
-                                linkElement.href = socialLinks[social];
-                                linkElement.style.display = 'flex';
-                            } else {
-                                linkElement.style.display = 'none';
-                            }
-                        }
-                        playerModal.classList.add('active');
-                    });
-                });
-
-                const closeModal = () => playerModal.classList.remove('active');
-                closeModalBtn.addEventListener('click', closeModal);
-                playerModal.addEventListener('click', (event) => {
-                    if (event.target === playerModal) closeModal();
-                });
-            }
-
-
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuToggle.innerHTML = navLinks.classList.contains("active")
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
     </script>
-
-	<script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
-
 
 
 
