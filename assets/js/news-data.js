@@ -46,9 +46,6 @@ const newsData = [
             <p>Enquanto aguardam o contato, convidamos você a conhecer mais sobre a nossa organização em nosso site. <a href="https://frenesy.com.br/">Clique aqui e descubra tudo o que a Frenesy tem a oferecer!</a></p>        `
     },
 
-
-
-
     {
         id: 4,
         title: "Frenesy Mobile anuncia elenco oficial de Free Fire para a temporada 2025",
@@ -85,13 +82,6 @@ const newsData = [
             <p>Com sede de vitória e foco em evolução constante, a Frenesy entra na temporada de 2025 pronta para buscar seu espaço entre as principais forças do Free Fire competitivo brasileiro.</p>
         `
     },
-
-
-
-
-
-
-
 
     {
         id: 2,
