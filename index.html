@@ -1961,39 +1961,6 @@ body {
 	background-color: #d85401;
 }
 
-.footer-bottom {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 5%;
-	border-top: 1px solid #222;
-	color: #888;
-	font-size: 0.85rem;
-}
-
-
-.creator-credit {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	font-size: 0.75rem;
-	color: #777;
-}
-
-.creator-credit i {
-	color: var(--laranja-frenesy);
-}
-
-.creator-credit a {
-	color: #999;
-	text-decoration: none;
-	font-weight: 600;
-	transition: all 0.3s ease;
-}
-
-.creator-credit a:hover {
-	color: var(--laranja-frenesy);
-}
 
 .community-section {
 	padding: 100px 5%;
@@ -2153,8 +2120,6 @@ body {
 
 
 
-
-
 /* DIV DO MODAL */
 
 /* ==========================================================================
@@ -2207,7 +2172,6 @@ body {
   height: 100%;
 }
 
-/* --- Coluna da Foto (Esquerda) --- */
 .modal-photo-container {
   position: relative;
   background-color: #050505;
@@ -2218,11 +2182,10 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center; /* AJUSTE: Centralizado completamente */
+  background-position: center; 
   transition: transform 0.3s ease;
 }
 
-/* --- Logo da Equipe (Agora no canto do modal) --- */
 .modal-team-logo {
     position: absolute;
     bottom: 15px;
@@ -2324,6 +2287,39 @@ body {
   transform: rotate(90deg);
 }
 
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.dev-icon {
+	color: var(--laranja-frenesy);
+}
 
 
 
@@ -2336,14 +2332,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-/* --- Responsividade --- */
 @media (max-width: 768px) {
   .modal-columns {
     flex-direction: column; /* Empilha as colunas */
@@ -2521,8 +2509,6 @@ body {
     color: var(--laranja-frenesy);
     transform: scale(1.2);
 }
-/* === BACKGROUND ELEGANTE APENAS NO LADO DIREITO === */
-
 
 
 
@@ -3045,25 +3031,23 @@ body {
                 </div>
 
             <div class="hero-social-stats-bar">
-
                 <div class="social-stat-item">
                     <i class="fab fa-instagram"></i>
-                    <span class="stat-count">104</span>
+                    <span class="stat-count">111</span>
                     <span class="stat-label">SEGUIDORES</span>
                 </div>
 
                 <div class="social-stat-item">
-                    <i class="fab fa-twitter"></i>
-                    <span class="stat-count">0</span>
-                    <span class="stat-label">SEGUIDORES</span>
+                    <i class="fab fa-discord"></i>
+                    <span class="stat-count">49</span>
+                    <span class="stat-label">MEMBROS</span>
                 </div>
-
 
                 <div class="social-stat-item">
                     <i class="fab fa-youtube"></i>
-                    <span class="stat-count">0</span>
+                    <span class="stat-count">5</span>
                     <span class="stat-label">INSCRITOS</span>
-                </div>
+                </div>				
             </div>
         </section>
 
@@ -3163,14 +3147,24 @@ body {
                     <div class="players-grid">
                         
 						
-						<!-- <a href="#" class="player-card" data-game="freefire" data-nick="KAKASHI" data-name="Thiago Machareth" data-age="20" data-city="Além Paraíba, MG" data-titles="5" data-photos="assets/img/teams/TH.png,assets/img/highlights/kakashi-2.jpg,assets/img/highlights/kakashi-3.jpg" data-role="Capitão" data-twitch="thzin" data-twitter="thzin" data-instagram="thiago.machareth">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/TH.png');"></div>
+						<a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤVitãoBalla" 
+							data-name="Victor Gabriel" 
+							data-age="20" 
+							data-city="Recife, PE" 
+							data-titles="1" 
+							data-photos="assets/img/team_frenesy/Vitão.jpg,assets/img/teams/Vitão.jpg" 
+							data-role="Capitão" 
+							data-instagram="Vitaosemmidia">
+
+                            <div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Vitão.jpg');"></div>
                             <div class="player-card-overlay"></div>
                             <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
                             <div class="player-card-content">
                                 <div class="player-name">
                                     <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
-                                    <h3>KAKASHI</h3>
+                                    <h3>FㅤVitãoBalla</h3>
                                     <p>Jogador do Free Fire</p>
                                 </div>
                                 <div class="player-details">
@@ -3178,55 +3172,199 @@ body {
                                     <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
                                 </div>
                             </div>
+                        </a>
+
+
+						<a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤEVERTONʷᵐ" 
+							data-name="Everton Silva" 
+							data-age="15" 
+							data-city="Juazeiro do Norte, CE" 
+							data-titles="1" 
+							data-photos="assets/img/team_frenesy/Everton.jpg" 
+							data-role="Suporte" 
+							data-instagram="everton__awm">
+
+                            <div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Everton.jpg');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name">
+                                    <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+                                    <h3>FㅤEVERTONʷᵐ</h3>
+                                    <p>Jogador do Free Fire</p>
+                                </div>
+                                <div class="player-details">
+                                    <span class="player-role">Suporte</span>
+                                    <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
+                                </div>
+                            </div>
+                        </a>
+
+
+						<a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤHYPE.xp" 
+							data-name="Lucas Guilherme" 
+							data-age="16" 
+							data-city="Goiania, GO" 
+							data-titles="1" 
+							data-photos="assets/img/team_frenesy/Hype.png" 
+							data-role="" 
+							data-instagram="lucas_062.xr">
+
+							<div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Hype.png');"></div>
+							<div class="player-card-overlay"></div>
+							<img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+							<div class="player-card-content">
+								<div class="player-name">
+									<div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+									<h3>FㅤHYPE.xp</h3>
+                                    <p>Jogador do Free Fire</p>
+								</div>
+								<div class="player-details">
+									<span class="player-role">Rush</span>
+									<div class="player-socials">
+										<i class="fa-brands fa-twitch"></i>
+										<i class="fa-brands fa-twitter"></i>
+										<i class="fa-brands fa-instagram"></i>
+									</div>
+								</div>
+							</div>
+						</a>
+
+
+						<a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤBIELZN9" 
+							data-name="Gabriel Alves" 
+							data-age="13" 
+							data-city="Não Divulgada!" 
+							data-titles="1" 
+							data-photos="assets/img/team_frenesy/Biel.png" 
+							data-role="Rush" 
+							data-instagram="">
+
+                            <div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Biel.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name">
+                                    <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+                                    <h3>FㅤBIELZN9</h3>
+                                    <p>Jogador do Free Fire</p>
+                                </div>
+                                <div class="player-details">
+                                    <span class="player-role">Rush</span>
+                                    <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
+                                </div>
+                            </div>
+                        </a>
+
+
+
+						<a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤDNZIN" 
+							data-name="Danilo da Silva" 
+							data-age="16" 
+							data-city="Itaeté, BA" 
+							data-titles="1" 
+							data-photos="assets/img/team_frenesy/Dn.jpg" 
+							data-role="Rush" 
+							data-instagram="dnzin_hz">
+
+                            <div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Dn.jpg');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name">
+                                    <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+                                    <h3>FㅤDNZIN</h3>
+                                    <p>Jogador do Free Fire</p>
+                                </div>
+                                <div class="player-details">
+                                    <span class="player-role">Rush</span>
+                                    <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
+                                </div>
+                            </div>
+                        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<!-- <a href="#" class="player-card" 
+							data-game="freefire" 
+							data-nick="FㅤKAKASHI" 
+							data-name="Thiago Machareth" 
+							data-age="20" 
+							data-city="Além Paraíba, MG" 
+							data-titles="5" 
+							data-photos="assets/img/team_frenesy/Thzin.png,assets/img/Teams/THZIN2.png" 
+							data-role="Capitão" 
+							data-instagram="thiago.machareth">
+
+                            <div class="player-card-background" style="background-image: url('assets/img/team_frenesy/Thzin.png');"></div>
+                            <div class="player-card-overlay"></div>
+                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
+                            <div class="player-card-content">
+                                <div class="player-name">
+                                    <div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div>
+                                    <h3>FㅤKAKASHI</h3>
+                                    <p>Jogador do Free Fire</p>
+                                </div>
+                                <div class="player-details">
+                                    <span class="player-role">COACH</span>
+                                    <div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div>
+                                </div>
+                            </div>
                         </a> -->
-
-						<a href="#" class="player-card" data-game="freefire">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
-                                <div class="player-details"><span class="player-role">Suporte</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-
-						<a href="#" class="player-card" data-game="freefire">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
-                                <div class="player-details"><span class="player-role">Suporte</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-
-						<a href="#" class="player-card" data-game="freefire">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
-                                <div class="player-details"><span class="player-role">Rush</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-						<a href="#" class="player-card" data-game="freefire">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
-                                <div class="player-details"><span class="player-role">Rush</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
-						<a href="#" class="player-card" data-game="freefire">
-                            <div class="player-card-background" style="background-image: url('assets/img/teams/unknown.png');"></div>
-                            <div class="player-card-overlay"></div>
-                            <img class="card-brand-logo" src="assets/img/logo/Frenesy nb.png" alt="Frenesy Logo">
-                            <div class="player-card-content">
-                                <div class="player-name"><div class="player-nationality"><img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil"><span>BRASIL</span></div><h3>Jogador Misterioso</h3><p>Jogador do Free Fire</p></div>
-                                <div class="player-details"><span class="player-role">Coach</span><div class="player-socials"><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-instagram"></i></div></div>
-                            </div>
-                        </a>
                     </div>
                 </div>
                 <button class="slider-btn next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
@@ -3372,7 +3510,7 @@ body {
                      data-age="20"
                      data-location="São Paulo, SP"
                      data-img-src="assets/img/teams/BOOT.jpg"
-                     data-tag="PAULISTA NATO"
+                     data-tag="MEMBRO FRENESY"
                      data-instagram="30.sw_"
                      data-twitch=""
                      data-facebook="">
@@ -3383,6 +3521,50 @@ body {
                         <p class="member-name">Kauan Pereira</p>
                     </div>
                 </div>
+
+
+                <div class="member-card" 
+                     data-name="Thiago Pereira"
+                     data-nick="AKASHI"
+                     data-age="20"
+                     data-location="Curitiba, PR"
+                     data-img-src="assets/img/teams/Thiago.jpg"
+                     data-tag="MEMBRO FRENESY"
+                     data-instagram="__thiago.p"
+                     data-twitch=""
+                     data-facebook="">
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/Thiago.jpg');"></div>
+                    <div class="member-card-overlay"></div>
+                    <div class="member-card-content">
+                        <h3 class="member-nick">AKASHI</h3>
+                        <p class="member-name">Thiago Pereira</p>
+                    </div>
+                </div>
+
+
+
+                <div class="member-card" 
+                     data-name="Thiago Machareth"
+                     data-nick="KAKASHI"
+                     data-age="20"
+                     data-location="Além Paraíba, MG"
+                     data-img-src="assets/img/teams/THZIN.jpg"
+                     data-tag="MEMBRO FRENESY"
+                     data-instagram="thiago.machareth"
+                     data-twitch=""
+                     data-facebook="">
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/THZIN.jpg');"></div>
+                    <div class="member-card-overlay"></div>
+                    <div class="member-card-content">
+                        <h3 class="member-nick">KAKASHI</h3>
+                        <p class="member-name">Thiago Machareth</p>
+                    </div>
+                </div>
+
+
+
+
+
 
                 <div class="member-card" 
                      data-name="Alisson Alves"
@@ -3401,39 +3583,26 @@ body {
                     </div>
                 </div>
 
+
                 <div class="member-card" 
-                     data-name="Thiago Machareth"
-                     data-nick="KAKASHI"
-                     data-age="20"
-                     data-location="Além Paraíba, MG"
-                     data-img-src="assets/img/teams/THZIN.jpg"
-                     data-tag="VETERANO DO FREE FIRE"
-                     data-instagram="thiago.machareth"
+                     data-name="Filipe Medeiros"
+                     data-nick="Leppe"
+                     data-age="18"
+                     data-location="Pinhais, PR"
+                     data-img-src="assets/img/teams/LEPPE.jpeg"
+                     data-tag="MEMBRO FRENESY"
+                     data-instagram="ofilipemed"
                      data-twitch=""
                      data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/THZIN.jpg');"></div>
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/LEPPE.jpeg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
-                        <h3 class="member-nick">KAKASHI</h3>
-                        <p class="member-name">Thiago Machareth</p>
+                        <h3 class="member-nick">Leppe</h3>
+                        <p class="member-name">Filipe Medeiros</p>
                     </div>
                 </div>
 
-                <div class="member-card" 
-                     data-name="Magsuel Freitas"
-                     data-nick="magzx7"
-                     data-age="18"
-                     data-location="Mar de Espanha, MG"
-                     data-img-src="assets/img/teams/MAGZIN.jpeg"
-                     data-tag="LENDA DO WARZONE"
-                     data-instagram="magsuel.fs">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/MAGZIN.jpeg');"></div>
-                    <div class="member-card-overlay"></div>
-                    <div class="member-card-content">
-                        <h3 class="member-nick">Magzx7</h3>
-                        <p class="member-name">Magsuel Freitas</p>
-                    </div>
-                </div>
+
 
                 <div class="member-card" 
                      data-name="Emanuel Fernando"
@@ -3441,7 +3610,7 @@ body {
                      data-age="19"
                      data-location="Além Paraiba, MG"
                      data-img-src="assets/img/teams/EMANUEL.jpeg"
-                     data-tag="PROPLAYER FREE FIRE"
+                     data-tag="MEMBRO FRENESY"
                      data-instagram="emanuelf_12"
                      data-twitch=""
                      data-facebook="">
@@ -3453,21 +3622,20 @@ body {
                     </div>
                 </div>
 
+
                 <div class="member-card" 
-                     data-name="Filipe Medeiros"
-                     data-nick="Leppe"
+                     data-name="Magsuel Freitas"
+                     data-nick="magzx7"
                      data-age="18"
-                     data-location="Pinhais, PR"
-                     data-img-src="assets/img/teams/LEPPE.jpeg"
-                     data-tag="PROPLAYER FREE FIRE"
-                     data-instagram="ofilipemed"
-                     data-twitch=""
-                     data-facebook="">
-                    <div class="member-card-background" style="background-image: url('assets/img/teams/LEPPE.jpeg');"></div>
+                     data-location="Mar de Espanha, MG"
+                     data-img-src="assets/img/teams/MAGZIN.jpeg"
+                     data-tag="MEMBRO FRENESY"
+                     data-instagram="magsuel.fs">
+                    <div class="member-card-background" style="background-image: url('assets/img/teams/MAGZIN.jpeg');"></div>
                     <div class="member-card-overlay"></div>
                     <div class="member-card-content">
-                        <h3 class="member-nick">Leppe</h3>
-                        <p class="member-name">Filipe Medeiros</p>
+                        <h3 class="member-nick">Magzx7</h3>
+                        <p class="member-name">Magsuel Freitas</p>
                     </div>
                 </div>
 
@@ -3489,7 +3657,6 @@ body {
                     </div>
                 </div>
 		
-
                 <!-- <div class="member-card" 
                      data-name="Jogador Desconhecido"
                      data-nick="??????"
@@ -3508,22 +3675,6 @@ body {
                         <p class="member-name">Jogador Desconhecido</p>
                     </div>
                 </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             </div> <div class="community-pagination">
                 <button id="prevPageBtn">&lt; Anterior</button>
@@ -3666,7 +3817,7 @@ body {
                             <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
                             <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     <div class="footer-column">
@@ -3684,7 +3835,7 @@ body {
                             <li><a href="pages/parceiros.html">Parcerias</a></li>
 							<li><a href="pages/loja.html">Loja</a></li>
 							<li><a href="pages/wallpapers.html">Wallpapers</a></li>
-                            <li><a href="pages/contato.html">Contato</a></li>
+                            <li><a href="pages/politicas.html">Políticas</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -3697,12 +3848,12 @@ body {
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
-                <p class="creator-credit">
-                    <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
-                </p>
-            </div>
+			<div class="footer-bottom">
+				<p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+				<p class="creator-credit">
+					<i class="fas fa-code dev-icon"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+				</p>
+			</div>
         </footer>
 
 

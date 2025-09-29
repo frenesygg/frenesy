@@ -37,7 +37,6 @@
     <style>
 
 
-
 :root {
 	--preto: #000000;
 	--laranja-frenesy: #f96001;
@@ -356,6 +355,49 @@ body {
 	z-index: -1;
 }
 
+
+
+.signatures-section {
+	max-width: 800px;
+	margin: 80px auto 0;
+	padding-top: 40px;
+	display: flex;
+	justify-content: space-around;
+	gap: 40px;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.signature-block {
+	width: 280px;
+}
+.signature-block img {
+	max-height: 130px;  
+	width: auto;       
+	margin-bottom: 5px;
+}
+.signature-line {
+	height: 60px; 
+	border-bottom: 1px solid #555;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.signature-block p {
+	font-weight: 600;
+	color: var(--branco);
+	margin: 0;
+}
+.signature-block span {
+	font-size: 0.9rem;
+	color: #888;
+}
+
+
+
+
+
+
 .header-video-overlay {
 	position: absolute;
 	top: 0;
@@ -508,7 +550,7 @@ body {
 }
 
 .about-section {
-	padding: 100px 5%;
+	padding: 115px 5%;
 	background-color: var(--preto);
 	position: relative;
 	overflow: hidden;
@@ -538,7 +580,7 @@ body {
 	font-size: 1.15rem;
 	line-height: 1.8;
 	color: #bbb;
-	margin-bottom: 2.5rem;
+	margin-bottom: 3.5rem;
 }
 
 .stats-grid {
@@ -997,21 +1039,33 @@ body {
 }
 
 .modal-content {
-	background: linear-gradient(135deg, #1a1a1a, #111);
+	background-color: #000; /* Fundo alterado para preto */
 	margin: 8% auto;
 	padding: 40px;
 	border: 1px solid #333;
 	border-radius: 12px;
 	width: 90%;
 	max-width: 950px;
-	position: relative;
+	position: relative; /* Essencial para posicionar a logo internamente */
 	transform: scale(0.95);
 	transition: transform 0.4s ease;
+    overflow: hidden; /* Garante que elementos filhos respeitem o border-radius */
 }
 
 .modal.show .modal-content {
 	transform: scale(1);
 }
+
+.modal-logo-watermark {
+    position: absolute;
+    bottom: 20px;
+    left: 850px;
+    width: 70px;  /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    opacity: 0.4; /* Deixa a logo sutil, como uma marca d'água */
+    pointer-events: none; /* Impede que a imagem atrapalhe cliques */
+}
+
 
 .close-modal {
 	color: #aaa;
@@ -1023,6 +1077,7 @@ body {
 	cursor: pointer;
 	background: none;
 	border: none;
+    z-index: 10; /* Garante que o botão de fechar fique na frente */
 }
 
 .modal-grid {
@@ -1037,8 +1092,8 @@ body {
 	height: 450px;
 	border-radius: 8px;
 	overflow: hidden;
-	border: 3px solid var(--laranja-frenesy);
-	box-shadow: 0 0 20px rgba(249, 96, 1, 0.5);
+	/* border: 3px solid var(--laranja-frenesy);
+	box-shadow: 0 0 20px rgba(249, 96, 1, 0.5); */
 }
 
 .modal-photo img {
@@ -1452,15 +1507,13 @@ body {
             </div>
         </section>
 
-        <section id="leadership" class="content-section leadership-reforged">
+
+		<section id="leadership" class="content-section leadership-reforged">
             <h2 class="section-title">NOSSA LIDERANÇA</h2>
             <p class="section-subtitle">As mentes estratégicas que pavimentaram o caminho e hoje guiam a Frenesy rumo à vitória.</p>
             
             <div class="leadership-carousel-window">
                 <div class="leadership-carousel-track">
-
-
-
 
                     <div class="person-card"
                          data-name="Christopher Rissardi"
@@ -1500,15 +1553,6 @@ body {
                         </div>
                     </div>
 
-
-                     <!-- <div class="person-card" data-ceo="ceo3">
-                        <div class="person-image"><img src="img/background/grafite frenesy.jpg" alt="Foto do CEO 3"></div>
-                        <div class="person-info"><span class="person-nickname">NICKNAME</span><h3>Nome do Diretor</h3><p>Head de E-sports</p></div>
-                    </div>
-                    <div class="person-card" data-ceo="ceo4">
-                        <div class="person-image"><img src="img/background/grafite frenesy2.jpg" alt="Foto do CEO 4"></div>
-                        <div class="person-info"><span class="person-nickname">NICKNAME</span><h3>Outro Diretor</h3><p>Head de Marketing</p></div>
-                    </div> -->
                 </div>
             </div>
              <div class="leadership-nav">
@@ -1517,6 +1561,62 @@ body {
             </div>
         </section>
 
+        <div id="ceo-modal" class="modal">
+            <div class="modal-content">
+                <img src="../assets/img/logo/Frenesy nb.png" class="modal-logo-watermark" alt="Logo Frenesy">
+                
+                <button class="close-modal" aria-label="Fechar">&times;</button>
+                <div class="modal-grid">
+                    <div class="modal-photo">
+                        <img id="modal-ceo-img" src="" alt="Foto do CEO">
+                    </div>
+                    <div class="modal-info">
+                        <p id="modal-ceo-nickname"></p>
+                        <h2 id="modal-ceo-name"></h2>
+                        <p id="modal-ceo-role"></p>
+                        <div class="info-details">
+                            <div><i class="fas fa-birthday-cake"></i> <span id="modal-ceo-age"></span></div>
+                            <div><i class="fas fa-map-marker-alt"></i> <span id="modal-ceo-city"></span></div>
+                        </div>
+                        <p id="modal-ceo-bio"></p>
+                        <div class="modal-socials">
+                            <a id="ceo-twitter" href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a id="ceo-linkedin" href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a id="ceo-instagram" href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <section class="signatures-section">
+            <div class="signature-block">
+                <div class="signature-line">
+                    <img src="../assets/img/assinatura/Santiago.png" alt="Assinatura de Gustavo Marques Santiago">
+                </div>
+                <p>Gustavo Santiago</p>
+                <span>Presidente/Fundador</span>
+            </div>
+            <div class="signature-block">
+                <div class="signature-line">
+                    <img src="../assets/img/assinatura/Assinatura.png" alt="Assinatura de Gustavo Marques Santiago">
+                </div>
+                <p>Christopher Ryan Rissardi</p>
+                <span>CEO</span>
+            </div>
+        </section> -->
 
 
 
@@ -1618,7 +1718,7 @@ body {
                         <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
                         <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1636,7 +1736,7 @@ body {
                         <li><a href="parceiros.html">Parcerias</a></li>
                         <li><a href="loja.html">Loja</a></li>
                         <li><a href="wallpapers.html">Wallpapers</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="politicas.html">Políticas</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1773,22 +1873,6 @@ body {
             menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
         });
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 </body>

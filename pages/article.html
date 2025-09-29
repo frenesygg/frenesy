@@ -12,438 +12,352 @@
     
     <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
-	<meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
-	<meta name="author" content="Frenesy">
-	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
+    <meta name="description" content="Frenesy Esports - O time de eSports que representa paixão, performance e comunidade. Confira nossa equipe, produtos oficiais, novidades e venha fazer parte da revolução gamer.">
+    <meta name="author" content="Frenesy">
+    <meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
 
-	<!-- CANONICAL -->
-	<link rel="canonical" href="https://frenesy.com.br">
+    <link rel="canonical" href="https://frenesy.com.br">
 
-	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://frenesy.com.br">
-	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
-	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
-	<meta property="og:image" content="https://i.imgur.com/XI0SD0J.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frenesy.com.br">
+    <meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+    <meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
+    <meta property="og:image" content="https://i.imgur.com/XI0SD0J.png">
 
-	<!-- TWITTER CARDS -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:url" content="https://frenesy.com.br">
-	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
-	<meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
-	<meta name="twitter:image" content="https://i.imgur.com/XI0SD0J.png">
-
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frenesy.com.br">
+    <meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
+    <meta name="twitter:description" content="Junte-se ao Frenesy Esports e vista nossas cores. Loja oficial, comunidade gamer e a melhor performance do cenário competitivo.">
+    <meta name="twitter:image" content="https://i.imgur.com/XI0SD0J.png">
 
     <style>
-
-
-
-:root {
-	--preto: #000000;
-	--laranja-frenesy: #f96001;
-	--branco: #ffffff;
-	--cinza-escuro: #1a1a1a;
-	--font-titulo: 'Rajdhani', sans-serif;
-	--font-texto: 'Poppins', sans-serif;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	font-family: var(--font-texto);
-	background-color: var(--preto);
-	color: var(--branco);
-	overflow-x: hidden;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-}
-
-/* HEADER E FOOTER (IDÊNTICOS) */
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 5%;
-	background-color: rgba(0, 0, 0, 0.8);
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-	backdrop-filter: blur(10px);
-}
-
-.logo {
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-}
-
-.logo img {
-	height: 50px;
-	margin-right: 15px;
-}
-
-.logo h1 {
-	font-family: var(--font-titulo);
-	font-size: 2rem;
-	color: var(--branco);
-	letter-spacing: 2px;
-}
-
-.nav-links {
-	list-style: none;
-	display: flex;
-}
-
-.nav-links li {
-	padding: 0 20px;
-}
-
-.nav-links a {
-	color: var(--branco);
-	text-decoration: none;
-	font-weight: 600;
-	transition: color 0.3s ease;
-	position: relative;
-	padding-bottom: 5px;
-}
-
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 3px;
-	background-color: var(--laranja-frenesy);
-	bottom: 0;
-	left: 0;
-	transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-	color: var(--laranja-frenesy);
-}
-
-.nav-links a:hover::after {
-	width: 100%;
-}
-
-
-
-
-
-
-.site-footer {
-	position: relative;
-	padding: 120px 5% 20px;
-	background-color: var(--preto);
-	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
-	margin-top: 100px;
-}
-
-.footer-main {
-	padding: 40px 5% 40px;
-}
-
-.footer-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 40px;
-}
-
-.footer-column h3 {
-	font-family: var(--font-titulo);
-	font-size: 1.5rem;
-	color: var(--laranja-frenesy);
-	margin-bottom: 20px;
-	letter-spacing: 1px;
-}
-
-.footer-column.about .logo-footer {
-	display: flex;
-	align-items: center;
-	margin-bottom: 15px;
-}
-
-.footer-column.about .logo-footer img {
-	height: 40px;
-	margin-right: 15px;
-}
-
-.footer-column.about .logo-footer h2 {
-	font-family: var(--font-titulo);
-	font-size: 1.8rem;
-}
-
-.footer-tagline {
-	font-size: 0.9rem;
-	color: #a0a0a0;
-	line-height: 1.6;
-	margin-bottom: 20px;
-}
-
-.social-links a {
-	color: #a0a0a0;
-	font-size: 1.5rem;
-	margin-right: 20px;
-	transition: color 0.3s, transform 0.3s;
-	display: inline-block;
-}
-
-.social-links a:hover {
-	color: var(--laranja-frenesy);
-	transform: translateY(-3px);
-}
-
-.footer-links {
-	list-style: none;
-}
-
-.footer-links li {
-	margin-bottom: 12px;
-}
-
-.footer-links a {
-	color: #a0a0a0;
-	text-decoration: none;
-	transition: color 0.3s, padding-left 0.3s;
-}
-
-.footer-links a:hover {
-	color: var(--branco);
-	padding-left: 5px;
-}
-
-.footer-column p {
-	color: #a0a0a0;
-	font-size: 0.9rem;
-	line-height: 1.6;
-	margin-bottom: 20px;
-}
-
-.newsletter-form {
-	display: flex;
-	position: relative;
-	max-width: 300px;
-}
-
-.newsletter-form input {
-	flex-grow: 1;
-	padding: 12px 15px;
-	background-color: var(--cinza-escuro);
-	border: 1px solid #444;
-	border-radius: 5px;
-	color: var(--branco);
-	font-family: var(--font-texto);
-	outline: none;
-	transition: border-color 0.3s;
-}
-
-.newsletter-form input:focus {
-	border-color: var(--laranja-frenesy);
-}
-
-.newsletter-form button {
-	padding: 10px 18px;
-	background-color: var(--laranja-frenesy);
-	border: none;
-	color: var(--branco);
-	font-size: 1.5rem;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 0 5px 5px 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 100%;
-	transition: background-color 0.3s;
-}
-
-.newsletter-form button:hover {
-	background-color: #d85401;
-}
-
-.footer-bottom {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 5%;
-	border-top: 1px solid #222;
-	color: #888;
-	font-size: 0.85rem;
-}
-
-.creator-credit {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	font-size: 0.75rem;
-	color: #777;
-}
-
-.creator-credit i {
-	color: var(--laranja-frenesy);
-}
-
-.creator-credit a {
-	color: #999;
-	text-decoration: none;
-	font-weight: 600;
-	transition: all 0.3s ease;
-}
-
-.creator-credit a:hover {
-	color: var(--laranja-frenesy);
-}
-
-.article-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 150px 5% 80px;
-}
-
-.article-header {
-	text-align: center;
-	margin-bottom: 2rem;
-}
-
-.article-category {
-	font-family: var(--font-titulo);
-	color: var(--laranja-frenesy);
-	margin-bottom: 1rem;
-}
-
-.article-title {
-	font-family: var(--font-titulo);
-	font-size: 3.5rem;
-	line-height: 1.1;
-	margin-bottom: 1.5rem;
-}
-
-.article-meta {
-	color: #888;
-}
-
-.article-banner {
-	width: 100%;
-	height: 400px;
-	margin-bottom: 3rem;
-	border-radius: 8px;
-	overflow: hidden;
-}
-
-.article-banner img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.article-content {
-	font-size: 1.1rem;
-	line-height: 1.8;
-	color: #ccc;
-}
-
-.article-content p {
-	margin-bottom: 1.5rem;
-}
-
-.article-content h2 {
-	font-family: var(--font-titulo);
-	font-size: 2rem;
-	margin-top: 2.5rem;
-	margin-bottom: 1rem;
-	color: var(--laranja-frenesy);
-}
-
-.article-content blockquote {
-	border-left: 4px solid var(--laranja-frenesy);
-	padding-left: 1.5rem;
-	margin: 2rem 0;
-	font-style: italic;
-	color: #aaa;
-}
-
-.article-content a {
-	color: var(--laranja-frenesy);
-	text-decoration: none;
-}
-
-.back-link {
-	display: inline-block;
-	margin-top: 3rem;
-	color: var(--branco);
-	text-decoration: none;
-	font-weight: 600;
-}
-
-.back-link i {
-	margin-right: 8px;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    color: var(--branco);
-    cursor: pointer;
-    z-index: 1100;
-}
-
-
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        position: fixed;
-        top: 70px;
-        right: -100%; /* escondido */
-        background: rgba(0, 0, 0, 0.95);
-        width: 70%;
-        height: calc(100vh - 70px);
-        padding-top: 2rem;
-        transition: right 0.3s ease-in-out;
-        gap: 1.5rem;
-        z-index: 1000;
-    }
-
-    .nav-links li {
-        text-align: center;
-    }
-
-    .nav-links.active {
-        right: 0; /* aparece */
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .logo h1 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--branco);
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            padding: 0 20px;
+        }
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--laranja-frenesy);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .site-footer {
+            position: relative;
+            padding: 120px 5% 20px;
+            background-color: var(--preto);
+            clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+            margin-top: 100px;
+        }
+        .footer-main {
+            padding: 40px 5% 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer-column h3 {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .footer-column.about .logo-footer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .footer-column.about .logo-footer img {
+            height: 40px;
+            margin-right: 15px;
+        }
+        .footer-column.about .logo-footer h2 {
+            font-family: var(--font-titulo);
+            font-size: 1.8rem;
+        }
+        .footer-tagline {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            color: #a0a0a0;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        .social-links a:hover {
+            color: var(--laranja-frenesy);
+            transform: translateY(-3px);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--branco);
+            padding-left: 5px;
+        }
+        .footer-column p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .newsletter-form {
+            display: flex;
+            position: relative;
+            max-width: 300px;
+        }
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            background-color: var(--cinza-escuro);
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--branco);
+            font-family: var(--font-texto);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .newsletter-form input:focus {
+            border-color: var(--laranja-frenesy);
+        }
+        .newsletter-form button {
+            padding: 10px 18px;
+            background-color: var(--laranja-frenesy);
+            border: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            transition: background-color 0.3s;
+        }
+        .newsletter-form button:hover {
+            background-color: #d85401;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 0.85rem;
+        }
+        .creator-credit {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #777;
+        }
+        .creator-credit i {
+            color: var(--laranja-frenesy);
+        }
+        .creator-credit a {
+            color: #999;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .creator-credit a:hover {
+            color: var(--laranja-frenesy);
+        }
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 150px 5% 80px;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .article-category {
+            font-family: var(--font-titulo);
+            color: var(--laranja-frenesy);
+            margin-bottom: 1rem;
+        }
+        .article-title {
+            font-family: var(--font-titulo);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .article-meta {
+            color: #888;
+        }
+        .article-banner {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .article-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content h2 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--laranja-frenesy);
+        }
+        .article-content blockquote {
+            border-left: 4px solid var(--laranja-frenesy);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #aaa;
+        }
+        .article-content a {
+            color: var(--laranja-frenesy);
+            text-decoration: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link i {
+            margin-right: 8px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--branco);
+            cursor: pointer;
+            z-index: 1100;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(0, 0, 0, 0.95);
+                width: 70%;
+                height: calc(100vh - 70px);
+                padding-top: 2rem;
+                transition: right 0.3s ease-in-out;
+                gap: 1.5rem;
+                z-index: 1000;
+            }
+            .nav-links li {
+                text-align: center;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -454,18 +368,15 @@ body {
                 <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
                 <h1>FRENESY</h1>
             </a>
-
             <div class="menu-toggle" id="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-
-
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="loja.html">Loja</a></li>
-                <li><a href="contato.html">Contato</a></li> </ul>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -474,7 +385,6 @@ body {
         <div id="article-container" class="article-container">
             </div>
     </main>
-
 
     <footer class="site-footer">
         <div class="footer-main">
@@ -489,7 +399,7 @@ body {
                         <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
                         <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -507,7 +417,7 @@ body {
                         <li><a href="parceiros.html">Parcerias</a></li>
                         <li><a href="loja.html">Loja</a></li>
                         <li><a href="wallpapers.html">Wallpapers</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="politicas.html">Políticas</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -528,39 +438,66 @@ body {
         </div>
     </footer>
 
-
     <script src="../assets/js/news-data.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('article-container');
-            
-            // Pega o 'id' da notícia pela URL (ex: article.html?id=1)
             const params = new URLSearchParams(window.location.search);
             const articleId = parseInt(params.get('id'));
-
-            // Encontra a notícia correspondente no nosso "banco de dados"
             const article = newsData.find(item => item.id === articleId);
 
             if (article) {
-                // Atualiza o título da página
+                // --- INÍCIO DAS ALTERAÇÕES ---
+
+                // 1. Atualiza o <title> da página
                 document.title = `${article.title} - Frenesy E-sports`;
 
-                // Insere o conteúdo da notícia no container
+                // 2. Função para atualizar as meta tags
+                const updateMetaTag = (selector, attribute, value) => {
+                    const tag = document.querySelector(selector);
+                    if (tag) {
+                        tag.setAttribute(attribute, value);
+                    }
+                };
+                
+                // **IMPORTANTE**: Para que as imagens funcionem no preview, elas precisam ter um URL completo (ex: https://frenesy.com.br/assets/...).
+                // O código abaixo assume que a URL base é a do site.
+                const baseUrl = window.location.origin;
+                const imageUrl = new URL(article.image.replace('..', ''), baseUrl).href;
+                const pageUrl = window.location.href;
+
+                // Atualiza as principais meta tags
+                updateMetaTag('meta[name="description"]', 'content', article.summary);
+                updateMetaTag('link[rel="canonical"]', 'href', pageUrl);
+
+                // Open Graph (Facebook, WhatsApp, etc.)
+                updateMetaTag('meta[property="og:title"]', 'content', article.title);
+                updateMetaTag('meta[property="og:description"]', 'content', article.summary);
+                updateMetaTag('meta[property="og:image"]', 'content', imageUrl);
+                updateMetaTag('meta[property="og:url"]', 'content', pageUrl);
+
+                // Twitter Cards
+                updateMetaTag('meta[name="twitter:title"]', 'content', article.title);
+                updateMetaTag('meta[name="twitter:description"]', 'content', article.summary);
+                updateMetaTag('meta[name="twitter:image"]', 'content', imageUrl);
+                updateMetaTag('meta[name="twitter:url"]', 'content', pageUrl);
+
+                // --- FIM DAS ALTERAÇÕES ---
+
+
+                // Insere o conteúdo da notícia no container (código original)
                 container.innerHTML = `
                     <header class="article-header">
                         <div class="article-category">${article.category}</div>
                         <h1 class="article-title">${article.title}</h1>
                         <div class="article-meta">Por ${article.author} • ${article.date}</div>
                     </header>
-
                     <div class="article-banner">
                         <img src="${article.image}" alt="${article.title}">
                     </div>
-
                     <div class="article-content">
                         ${article.content}
                     </div>
-
                     <a href="noticias.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar para Notícias</a>
                 `;
             } else {
@@ -568,38 +505,24 @@ body {
             }
         });
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+        // Script do menu (código original)
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        const isActive = navLinks.classList.contains("active");
-        menuToggle.innerHTML = isActive
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
-
-    // Fecha menu ao clicar em link
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            const isActive = navLinks.classList.contains("active");
+            menuToggle.innerHTML = isActive
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
-    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
     </script>
 </body>
 </html>
