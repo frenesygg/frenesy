@@ -1,13 +1,10 @@
 User-agent: *
 
-# Permite o acesso a todo o site por padrão
+# Permite o acesso a todo o site
 Allow: /
 
-# Bloqueia o rastreamento de páginas que não agregam valor aos resultados de busca
-Disallow: /pages/thanks.html
-Disallow: /pages/regulamento.html
-Disallow: /pages/article.html
-
+# Nenhuma página é bloqueada
+# Disallow: 
 
 # ===============================================================
 # Localização do Sitemap
