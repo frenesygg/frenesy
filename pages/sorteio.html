@@ -25,14 +25,14 @@
     <meta property="og:url" content="https://frenesy.com.br/pages/sorteador-freefire.html">
     <meta property="og:title" content="Melhor Sorteador de Times e Grupos Free Fire - Frenesy Esports">
     <meta property="og:description" content="Sorteie times e grupos para Free Fire de forma rápida e prática! Ideal para x1, 2x2, 4x4 e muito mais, garantindo partidas equilibradas e diversão garantida.">
-    <meta property="og:image" content="https://frenesy.com.br/assets/media/sorteador_freefire.png">
+    <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
 
     <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://frenesy.com.br/pages/sorteador-freefire.html">
     <meta name="twitter:title" content="Melhor Sorteador de Times e Grupos Free Fire - Frenesy Esports">
     <meta name="twitter:description" content="O melhor sorteador de Free Fire! Crie x1, 2x2, 4x4 e outros grupos de forma rápida, justa e divertida para suas partidas.">
-    <meta name="twitter:image" content="https://frenesy.com.br/assets/media/sorteador_freefire.png">
+    <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
 
     <style>
 :root {
@@ -1053,12 +1053,12 @@ input:checked+.slider:before {
                                 <div class="control-group">
                                     <label for="game-mode-select"><i class="fas fa-gamepad"></i>Modo de Jogo</label>
                                     <select id="game-mode-select">
-                                        <option value="1"selected>1v1</option>
-                                        <option value="2">2v2</option>
-                                        <option value="3">3v3</option>
-                                        <option value="4" >4v4</option>
-                                        <option value="5">5v5</option>
-                                        <option value="6">6v6</option>
+                                        <option value="1"selected>1x1</option>
+                                        <option value="2">2x2</option>
+                                        <option value="3">3x3</option>
+                                        <option value="4">4x4</option>
+                                        <option value="5">5x5</option>
+                                        <option value="6">6x6</option>
                                     </select>
                                 </div>
                                 <div class="control-group">
@@ -1282,7 +1282,7 @@ input:checked+.slider:before {
         for (let i = 1; i <= numPlayers; i++) {
             const input = document.createElement('input');
             input.type = 'text';
-            input.placeholder = `Nome do Jogador ${i}`;
+            input.placeholder = `Nome do Jogador/Time ${i}`;
             input.className = 'player-name-input';
             playerNamesContainer.appendChild(input);
         }
