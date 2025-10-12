@@ -262,6 +262,20 @@ body {
 	transition: all 0.3s ease;
 }
 
+/* Estilo para a data na miniatura do clipe */
+.clip-date {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para legibilidade */
+    color: var(--branco);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7rem; /* Tamanho bem pequeno */
+    font-weight: 600;
+    z-index: 2; /* Garante que fique acima da imagem */
+}
+
 .games-logos img:hover {
 	opacity: 1;
 	filter: grayscale(0%);
@@ -3064,19 +3078,19 @@ body {
             <div class="hero-social-stats-bar">
                 <div class="social-stat-item">
                     <i class="fab fa-instagram"></i>
-                    <span class="stat-count">115</span>
+                    <span class="stat-count">119</span>
                     <span class="stat-label">SEGUIDORES</span>
                 </div>
 
                 <div class="social-stat-item">
                     <i class="fab fa-discord"></i>
-                    <span class="stat-count">57</span>
+                    <span class="stat-count">58</span>
                     <span class="stat-label">MEMBROS</span>
                 </div>
 
                 <div class="social-stat-item">
                     <i class="fab fa-youtube"></i>
-                    <span class="stat-count">5</span>
+                    <span class="stat-count">6</span>
                     <span class="stat-label">INSCRITOS</span>
                 </div>				
             </div>
@@ -3765,6 +3779,7 @@ body {
 
 
         <section id="highlights" class="highlights-section">
+			
             <h2 class="section-title">FRENESY PLAYS OF THE WEEK</h2>
             <p class="section-subtitle">As jogadas que definem campeonatos. Reviva os momentos mais insanos dos nossos pro-players.</p>
 
@@ -3786,32 +3801,13 @@ body {
                         <div class="clips-track">
 
 
-                            <div class="clip-thumbnail" 
-                                 data-video-id="lW9ep22YmlM"
-                                 data-title="Royalty [Official Vídeo]"
-                                 data-player="Egzod & Maestro Chives"
-                                 data-game="Egzod">
+							<div class="clip-thumbnail" 
+								data-video-id="v84f7Y5CdZI"
+								data-title="BOOYAH ÉPICO! A JOGADA QUE GARANTIU O TOP 1 PARA A FRENESY!"
+								data-player="Magic Squad"
+								data-game="Frenesy"
+								data-date="12 OUT 2025">
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							
                         </div>
                     </div>
                     <button class="carousel-nav next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
@@ -4128,13 +4124,16 @@ body {
 		// Processa cada thumbnail para gerar sua imagem e adicionar o evento de clique
 		allThumbnails.forEach(thumb => {
 			const videoId = thumb.dataset.videoId;
+			const date = thumb.dataset.date; // NOVO: Lê o atributo data-date
+
 			if (videoId) {
-				// Gera a URL da thumbnail automaticamente
 				const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-				// Cria e adiciona a imagem e o ícone de play
+				
+				// MODIFICADO: Adiciona a data dentro da miniatura se ela existir
 				thumb.innerHTML = `
 					<img src="${thumbnailUrl}" alt="Thumbnail do clipe ${thumb.dataset.title}">
 					<div class="play-icon"><i class="fas fa-play"></i></div>
+					${date ? `<span class="clip-date">${date}</span>` : ''}
 				`;
 			}
 
