@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Passe de Elite e Prêmios - Frenesy Esports</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+
+    <meta name="description" content="Sorteador de prêmios e Passe de Elite para Free Fire! Cole sua lista de nomes, escolha o número de ganhadores e sorteie de forma rápida, justa e compartilhável.">
+    <meta name="author" content="Frenesy">
+    <meta name="keywords" content="sorteador de passe de elite, sorteador de prêmios, sorteio free fire, sorteador de nomes, giveaway FF, Frenesy Esports">
+
+    <link rel="canonical" href="https://frenesy.com.br/pages/sorteador-passe.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frenesy.com.br/pages/sorteador-passe.html">
+    <meta property="og:title" content="Sorteador de Passe de Elite e Prêmios - Frenesy Esports">
+    <meta property="og:description" content="O melhor sorteador de prêmios para suas giveaways! Sorteie Passes de Elite e outros itens de forma justa, rápida e com link de validação.">
+    <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frenesy.com.br/pages/sorteador-passe.html">
+    <meta name="twitter:title" content="Sorteador de Passe de Elite e Prêmios - Frenesy Esports">
+    <meta name="twitter:description" content="Realize sorteios de Passes de Elite e outros prêmios de forma profissional. Cole a lista, escolha os ganhadores e compartilhe o resultado verificado.">
+    <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
+
+    <style>
+:root {
+	--preto: #000000;
+	--laranja-frenesy: #f96001;
+	--branco: #ffffff;
+	--cinza-escuro: #1a1a1a;
+	--cinza-card: #111;
+	--cinza-borda: #222;
+	--font-titulo: 'Rajdhani', sans-serif;
+	--font-texto: 'Poppins', sans-serif;
+	--input-height: 47px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-texto);
+	background-color: var(--preto);
+	color: var(--branco);
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%E>");
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 15px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 20px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	font-weight: 600;
+	transition: color 0.3s ease;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 0;
+	transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.nav-links a:hover::after {
+	width: 100%;
+}
+
+main {
+	padding-top: 80px;
+}
+
+.section-title {
+	text-align: center;
+	font-family: var(--font-titulo);
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-bottom: 10px;
+}
+
+.section-title::after {
+	content: '';
+	position: absolute;
+	width: 60%;
+	height: 4px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 20%;
+}
+
+.section-subtitle {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto 4rem auto;
+	color: #aaa;
+	line-height: 1.6;
+}
+
+
+.site-footer {
+	position: relative;
+	padding: 120px 5% 20px;
+	background-color: var(--preto);
+	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+	margin-top: 100px;
+}
+
+.footer-main {
+	padding: 40px 5% 40px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.footer-column h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+
+.footer-column.about .logo-footer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.footer-column.about .logo-footer img {
+	height: 40px;
+	margin-right: 15px;
+}
+
+.footer-column.about .logo-footer h2 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+}
+
+.footer-tagline {
+	font-size: 0.9rem;
+	color: #a0a0a0;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.social-links a {
+	color: #a0a0a0;
+	font-size: 1.5rem;
+	margin-right: 20px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-block;
+}
+
+.social-links a:hover {
+	color: var(--laranja-frenesy);
+	transform: translateY(-3px);
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #a0a0a0;
+	text-decoration: none;
+	transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-links a:hover {
+	color: var(--branco);
+	padding-left: 5px;
+}
+
+.footer-column p {
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.newsletter-form {
+	display: flex;
+	position: relative;
+	max-width: 300px;
+}
+
+.newsletter-form input {
+	flex-grow: 1;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.newsletter-form button {
+	padding: 10px 18px;
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: var(--branco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+	background-color: #d85401;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit i {
+	color: var(--laranja-frenesy);
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+
+.page-section {
+	padding: 100px 5%;
+}
+
+.menu-toggle {
+	display: none;
+	font-size: 1.8rem;
+	color: var(--branco);
+	cursor: pointer;
+	z-index: 1100;
+}
+
+#notification-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 2000;
+}
+
+.notification {
+	padding: 12px 18px;
+	margin-bottom: 12px;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-family: var(--font-texto);
+	color: var(--branco);
+	background-color: var(--cinza-card);
+	border-left: 5px solid var(--laranja-frenesy);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transform: translateX(50px);
+	animation: slideIn 0.4s forwards, fadeOut 0.4s 3s forwards;
+}
+
+.notification.success { border-left-color: #28a745; }
+.notification.error { border-left-color: #dc3545; }
+.notification.info { border-left-color: var(--laranja-frenesy); }
+
+@keyframes slideIn {
+	from { opacity: 0; transform: translateX(50px); }
+	to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+	from { opacity: 1; transform: translateX(0); }
+	to { opacity: 0; transform: translateX(50px); }
+}
+
+
+/* === ESTILOS DO SORTEADOR === */
+.sorter-section {
+	background-color: var(--cinza-escuro);
+	padding-bottom: 100px;
+}
+
+.sorter-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	background-color: var(--cinza-card);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+}
+
+.sorter-controls {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	padding: 2rem;
+}
+
+.control-step {
+	margin-bottom: 2rem;
+}
+
+.control-step:last-child {
+	margin-bottom: 0;
+}
+
+.control-step-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--cinza-borda);
+	padding-bottom: 10px;
+}
+
+.step-number {
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	height: 30px;
+	width: 30px;
+	display: grid;
+	place-items: center;
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.control-step-header h4 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--branco);
+}
+
+.step-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.control-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.control-group label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+	color: #ccc;
+}
+
+.control-group label i {
+	color: var(--laranja-frenesy);
+	width: 16px;
+	text-align: center;
+}
+
+.control-group input,
+.control-group select,
+.control-group textarea {
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+	width: 100%;
+}
+.control-group input, .control-group select {
+    height: var(--input-height);
+}
+.control-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+
+.control-group input:focus,
+.control-group select:focus,
+.control-group textarea:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.btn {
+	height: var(--input-height);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	text-align: center;
+	padding: 12px 20px;
+	border-radius: 5px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+	font-family: var(--font-texto);
+	width: 100%;
+	font-size: 1rem;
+}
+
+.btn:hover {
+	background-color: #d85401;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn-secondary {
+	background-color: #333;
+}
+
+.btn-secondary:hover {
+	background-color: #444;
+}
+
+.number-input-wrapper {
+	display: flex;
+	align-items: center;
+	height: var(--input-height);
+}
+
+.number-input-wrapper input[type="number"] {
+	height: 100%;
+	text-align: center;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	-moz-appearance: textfield;
+}
+
+.number-input-wrapper input::-webkit-outer-spin-button,
+.number-input-wrapper input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.num-btn {
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: white;
+	width: 45px;
+	height: 100%;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.num-btn:hover {
+	background-color: #d85401;
+}
+
+.num-btn.minus {
+	border-radius: 5px 0 0 5px;
+}
+
+.num-btn.plus {
+	border-radius: 0 5px 5px 0;
+}
+
+.sorter-actions {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+#results-wrapper {
+	margin-top: 2rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+	padding: 2rem;
+}
+
+#draw-info-header {
+	text-align: center;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--cinza-borda);
+	padding-bottom: 1.5rem;
+}
+
+#draw-info-header h2 {
+	font-family: var(--font-titulo);
+	color: var(--laranja-frenesy);
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+#draw-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: #ccc;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+#draw-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+#draw-stats .stat-value {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--branco);
+}
+
+#draw-stats .stat-label {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.results-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.results-header h3 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+}
+
+.results-actions {
+	display: flex;
+	gap: 1rem;
+}
+
+.results-actions .btn {
+	padding: 8px 15px;
+	font-size: 0.9rem;
+	width: auto;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.results-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+
+.winners-card {
+    background-color: #111;
+	border: 1px solid #222;
+	border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.winners-card h4 {
+    font-family: var(--font-titulo);
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	color: var(--laranja-frenesy);
+	border-bottom: 2px solid var(--cinza-borda);
+	padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.winners-list {
+    list-style: none;
+    padding: 0;
+}
+
+.winner-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--laranja-frenesy);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.winner-item:last-child {
+    margin-bottom: 0;
+}
+.winner-item:hover {
+    transform: translateX(5px);
+    background-color: rgba(249, 96, 1, 0.1);
+}
+
+.winner-rank {
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+    color: #ccc;
+    margin: 0 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.winner-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--branco);
+}
+
+#share-container {
+	margin-top: 2.5rem;
+	background-color: #111;
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+	padding: 1.5rem;
+}
+
+.share-link-wrapper {
+	display: flex;
+	gap: 10px;
+	margin-top: 1rem;
+}
+
+.share-link-wrapper input {
+	flex-grow: 1;
+	background-color: var(--cinza-escuro);
+	color: #ccc;
+	height: var(--input-height);
+}
+
+#copy-link-btn {
+	width: 120px;
+	flex-shrink: 0;
+}
+
+.share-token-preview {
+	margin-top: 1.5rem;
+	color: #aaa;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #222;
+	padding: 10px;
+	border-radius: 5px;
+	min-height: 42px;
+}
+
+.share-token-preview code {
+	background: none;
+	padding: 0;
+}
+
+.share-token-preview button {
+	background: none;
+	border: none;
+	color: var(--laranja-frenesy);
+	cursor: pointer;
+	font-size: 1.1rem;
+	margin-left: 12px;
+}
+
+.token-copy-feedback {
+	color: var(--laranja-frenesy);
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+#shared-view-footer {
+	text-align: center;
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--cinza-borda);
+	color: #888;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+	.menu-toggle { display: block; }
+	.nav-links {
+		flex-direction: column; position: fixed; top: 70px; right: -100%;
+		background: rgba(0, 0, 0, 0.95); width: 70%; height: calc(100vh - 70px);
+		padding-top: 2rem; transition: right 0.3s ease-in-out; gap: 1.5rem; z-index: 1000;
+	}
+	.nav-links.active { right: 0; }
+	.logo img { height: 40px; }
+	.logo h1 { font-size: 1.5rem; }
+	.section-title { font-size: 2rem; }
+	.section-subtitle { padding: 0 1rem; font-size: 0.9rem; }
+	.footer-grid { grid-template-columns: 1fr; gap: 20px; }
+	.footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
+	.newsletter-form { flex-direction: column; max-width: 100%; }
+	.newsletter-form button { position: static; width: 100%; border-radius: 5px; margin-top: 10px; height: var(--input-height); }
+	.sorter-container { padding: 1rem; }
+	.control-step-header h4 { font-size: 1.2rem; }
+	.step-grid { grid-template-columns: 1fr; gap: 1rem; }
+	.sorter-actions { grid-template-columns: 1fr; }
+	#draw-info-header h2 { font-size: 1.8rem; }
+    #draw-stats { gap: 1rem; }
+	.results-header { flex-direction: column; text-align: center; }
+	.results-actions { flex-direction: column; width: 100%; }
+	.results-grid { grid-template-columns: 1fr; }
+    .winners-card h4 { font-size: 1.5rem; }
+    .winner-rank { margin: 0 1rem; }
+	.winner-name { font-size: 1rem; }
+	.share-link-wrapper { flex-direction: column; }
+	#copy-link-btn { width: 100%; }
+}
+
+    </style>
+</head>
+    
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports"><h1>FRENESY</h1>
+            </a>
+            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sorteador" class="page-section sorter-section">
+            <h2 class="section-title">SORTEADOR DE PRÊMIOS</h2>
+            <p class="section-subtitle">Crie sorteios para suas giveaways de forma fácil e rápida. Defina o prêmio, cole a lista de participantes, escolha a quantidade de ganhadores e gere o resultado instantaneamente.</p>
+            
+            <div class="sorter-container">
+                <div id="setup-container">
+                    <div class="sorter-controls">
+                        <div class="control-step">
+                            <div class="control-step-header">
+                                <span class="step-number">1</span><h4>Detalhes do Sorteio</h4>
+                            </div>
+                            <div class="step-grid">
+                                <div class="control-group">
+                                    <label for="item-name-input"><i class="fas fa-gift"></i>Nome do Prêmio</label>
+                                    <input type="text" id="item-name-input" placeholder="Ex: Passe de Elite">
+                                </div>
+                                <div class="control-group">
+                                    <label for="num-winners"><i class="fas fa-trophy"></i>Nº de Ganhadores</label>
+                                    <div class="number-input-wrapper">
+                                        <button class="num-btn minus" onclick="stepWinnerCount(-1)">-</button>
+                                        <input type="number" id="num-winners" min="1" max="100" value="1">
+                                        <button class="num-btn plus" onclick="stepWinnerCount(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-step">
+                            <div class="control-step-header">
+                                <span class="step-number">2</span><h4>Lista de Participantes</h4>
+                            </div>
+                            <div class="control-group">
+                                <label for="participants-textarea"><i class="fas fa-paste"></i>Cole os nomes abaixo (um por linha)</label>
+                                <textarea id="participants-textarea" placeholder="Nome 1&#10;Nome 2&#10;Nome 3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sorter-actions">
+                        <button id="draw-btn" class="btn"><i class="fas fa-random"></i> Realizar Sorteio</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-undo"></i> Resetar Tudo</button>
+                    </div>
+                </div>
+
+                <div id="results-wrapper" style="display: none;">
+                    <div id="draw-info-header"></div>
+                    <div class="results-header">
+                        <h3 id="results-title">Resultado do Sorteio</h3>
+                        <div class="results-actions" id="results-actions">
+                            <button id="copy-results-btn" class="btn btn-secondary"><i class="fas fa-copy"></i> Copiar Resultado</button>
+                        </div>
+                    </div>
+                    <div id="results-container" class="results-grid"></div>
+                    <div id="shared-view-footer"></div>
+                </div>
+
+                <div id="share-container" style="display: none;">
+                    <div class="control-group">
+                        <label for="organizer-name"><i class="fas fa-user-check"></i>Seu nome (Organizador)</label>
+                        <input type="text" id="organizer-name" placeholder="Digite seu nome para validar o sorteio">
+                    </div>
+                    <div class="control-group">
+                        <button id="generate-share-link-btn" class="btn" style="margin-top: 1rem;"><i class="fas fa-link"></i> Gerar Link de Compartilhamento</button>
+                    </div>
+                    <div id="share-link-output" style="display: none; margin-top: 1.5rem;">
+                        <label>Link Gerado</label>
+                        <div class="share-link-wrapper">
+                           <input type="text" id="share-link-display" readonly>
+                           <button id="copy-link-btn" class="btn">Copiar</button>
+                        </div>
+                        <div class="share-token-preview">
+                            <span id="token-preview-text">
+                                ID Sorteio: <code id="token-preview"></code>
+                            </span>
+                            <button id="copy-full-token-btn" title="Copiar Token Completo"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="notification-container"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main"> <div class="footer-grid"> <div class="footer-column about"> <div class="logo-footer"> <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy"> <h2>FRENESY</h2> </div> <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p> <div class="social-links"> <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a> <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a> <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a> <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a> </div> </div> <div class="footer-column"> <h3>Navegação</h3> <ul class="footer-links"> <li><a href="../index.html">Início</a></li> <li><a href="sobre-nos.html">Sobre Nós</a></li> <li><a href="noticias.html">Notícias</a></li> <li><a href="eventos.html">Eventos</a></li> </ul> </div> <div class="footer-column"> <h3>Suporte</h3> <ul class="footer-links"> <li><a href="parceiros.html">Parcerias</a></li> <li><a href="loja.html">Loja</a></li> <li><a href="wallpapers.html">Wallpapers</a></li> <li><a href="politicas.html">Políticas</a></li> </ul> </div> <div class="footer-column"> <h3>FIQUE POR DENTRO</h3> <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p> <form class="newsletter-form"> <input type="email" placeholder="Seu melhor e-mail"> <button type="submit" aria-label="Inscrever-se">→</button> </form> </div> </div> </div> <div class="footer-bottom"> <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p> <p class="creator-credit"> <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a> </p> </div>
+    </footer>
+
+<script>
+    // --- LÓGICA DO MENU HAMBÚRGUER ---
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => { navLinks.classList.toggle("active"); menuToggle.innerHTML = navLinks.classList.contains("active") ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; });
+    document.querySelectorAll(".nav-links a").forEach(link => { link.addEventListener("click", () => { navLinks.classList.remove("active"); menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; }); });
+
+    // --- ELEMENTOS DO DOM ---
+    const itemNameInput = document.getElementById('item-name-input');
+    const numWinnersInput = document.getElementById('num-winners');
+    const participantsTextarea = document.getElementById('participants-textarea');
+    
+    const setupContainer = document.getElementById('setup-container');
+    const resultsWrapper = document.getElementById('results-wrapper');
+    const drawInfoHeader = document.getElementById('draw-info-header');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsTitle = document.getElementById('results-title');
+    const resultsActions = document.getElementById('results-actions');
+    const sharedViewFooter = document.getElementById('shared-view-footer');
+    
+    const drawBtn = document.getElementById('draw-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    
+    const copyResultsBtn = document.getElementById('copy-results-btn');
+    const shareContainer = document.getElementById('share-container');
+    const organizerNameInput = document.getElementById('organizer-name');
+    const generateShareLinkBtn = document.getElementById('generate-share-link-btn');
+    const shareLinkOutput = document.getElementById('share-link-output');
+    const shareLinkDisplay = document.getElementById('share-link-display');
+    const copyLinkBtn = document.getElementById('copy-link-btn');
+    const tokenPreviewText = document.getElementById('token-preview-text');
+    const tokenPreview = document.getElementById('token-preview');
+    const copyFullTokenBtn = document.getElementById('copy-full-token-btn');
+
+    let currentDrawData = {};
+    let fullToken = '';
+
+    // --- FUNÇÃO DE NOTIFICAÇÃO ---
+    function showNotification(message, type = "error") {
+        const container = document.getElementById("notification-container");
+        const notif = document.createElement("div");
+        notif.className = `notification ${type}`;
+        notif.innerText = message;
+        container.appendChild(notif);
+        setTimeout(() => { notif.remove(); }, 3500);
+    }
+
+    // --- FUNÇÕES AUXILIARES ---
+    function stepWinnerCount(step) {
+        let input = numWinnersInput;
+        let currentValue = parseInt(input.value);
+        let newValue = currentValue + step;
+        if (newValue >= 1 && newValue <= 100) {
+            input.value = newValue;
+        }
+    }
+    
+    // --- LÓGICA PRINCIPAL DO SORTEIO ---
+    drawBtn.addEventListener('click', () => {
+        const itemName = itemNameInput.value.trim();
+        if (!itemName) {
+            showNotification('Por favor, defina um nome para o prêmio.');
+            itemNameInput.focus();
+            return;
+        }
+
+        const participants = participantsTextarea.value
+            .split('\n')
+            .map(name => name.trim())
+            .filter(name => name !== '');
+        
+        if (participants.length === 0) {
+            showNotification('Por favor, adicione pelo menos um participante.');
+            participantsTextarea.focus();
+            return;
+        }
+
+        const numWinners = parseInt(numWinnersInput.value);
+
+        if (participants.length < numWinners) {
+            showNotification(`O número de participantes (${participants.length}) não pode ser menor que o número de ganhadores (${numWinners}).`);
+            return;
+        }
+
+        // --- Lógica do Sorteio ---
+        let shuffledParticipants = [...participants].sort(() => Math.random() - 0.5);
+        let winners = shuffledParticipants.slice(0, numWinners);
+        let winProbability = (100 / participants.length).toFixed(2);
+
+        currentDrawData = {
+            type: 'giveaway',
+            itemName,
+            organizer: '',
+            winners,
+            participantsCount: participants.length,
+            winProbability: winProbability
+        };
+
+        displayResults(currentDrawData);
+    });
+    
+    function displayResults(drawData) {
+        // --- CABEÇALHO COM ESTATÍSTICAS ---
+        drawInfoHeader.innerHTML = `
+            <h2>${drawData.itemName}</h2>
+            <div id="draw-stats">
+                <div class="stat">
+                    <span class="stat-value">${drawData.participantsCount}</span>
+                    <span class="stat-label">Participantes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">${drawData.winProbability}%</span>
+                    <span class="stat-label">Chance por Pessoa</span>
+                </div>
+                ${drawData.organizer ? `
+                <div class="stat">
+                    <span class="stat-value">${drawData.organizer}</span>
+                    <span class="stat-label">Organizador</span>
+                </div>` : ''}
+            </div>
+        `;
+        
+        // --- CARD DE GANHADORES ---
+        resultsTitle.textContent = `Ganhador(es) do Sorteio`;
+        let htmlContent = `
+            <div class="winners-card">
+                <h4><i class="fas fa-medal"></i>Resultado Final</h4>
+                <ul class="winners-list">
+                    ${drawData.winners.map((winner, index) => `
+                        <li class="winner-item">
+                            <span class="winner-rank">#${index + 1}</span>
+                            <span class="winner-name">${winner}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+        resultsContainer.innerHTML = htmlContent;
+        
+        resultsWrapper.style.display = 'block';
+        shareContainer.style.display = 'block';
+        resultsActions.style.display = 'flex';
+        sharedViewFooter.innerHTML = '';
+        shareLinkOutput.style.display = 'none';
+        organizerNameInput.value = drawData.organizer || '';
+
+        resultsWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+
+    // --- AÇÕES DE RESET E COPIAR ---
+    resetBtn.addEventListener('click', () => {
+        itemNameInput.value = '';
+        numWinnersInput.value = '1';
+        participantsTextarea.value = '';
+        organizerNameInput.value = '';
+
+        resultsWrapper.style.display = 'none';
+        shareContainer.style.display = 'none';
+        
+        if (window.location.search) {
+            window.history.pushState({}, document.title, window.location.pathname);
+        }
+        setupContainer.style.display = 'block';
+    });
+
+    copyResultsBtn.addEventListener('click', () => {
+        let textToCopy = `🎉 Resultado do Sorteio: ${currentDrawData.itemName} 🎉\n\n`;
+        textToCopy += `Organizador: ${currentDrawData.organizer || 'Não definido'}\n`;
+        textToCopy += `Total de Participantes: ${currentDrawData.participantsCount}\n`;
+        textToCopy += `Chance de Ganhar por Pessoa: ${currentDrawData.winProbability}%\n\n`;
+        textToCopy += `--- Ganhador(es) ---\n`;
+        
+        currentDrawData.winners.forEach((winner, index) => {
+            textToCopy += `${index + 1}. ${winner}\n`;
+        });
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showNotification('Resultado copiado para a área de transferência!', 'success');
+        });
+    });
+
+    // --- LÓGICA DE COMPARTILHAMENTO ---
+    generateShareLinkBtn.addEventListener('click', () => {
+        const organizerName = organizerNameInput.value.trim();
+        if (!organizerName) {
+            showNotification('Por favor, digite o nome do organizador para validar.');
+            return;
+        }
+
+        currentDrawData.organizer = organizerName;
+        const dataString = JSON.stringify(currentDrawData);
+        fullToken = btoa(unescape(encodeURIComponent(dataString)));
+        
+        const shareUrl = `${window.location.origin}${window.location.pathname}?data=${fullToken}`;
+        
+        shareLinkDisplay.value = shareUrl;
+        tokenPreview.textContent = `${fullToken.substring(0, 10)}...${fullToken.slice(-10)}`;
+        shareLinkOutput.style.display = 'block';
+
+        // ATUALIZA O CABEÇALHO PARA EXIBIR O NOME DO ORGANIZADOR
+        // *** ESTA É A PARTE CORRIGIDA ***
+        drawInfoHeader.innerHTML = `
+            <h2>${currentDrawData.itemName}</h2>
+            <div id="draw-stats">
+                <div class="stat">
+                    <span class="stat-value">${currentDrawData.participantsCount}</span>
+                    <span class="stat-label">Participantes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">${currentDrawData.winProbability}%</span>
+                    <span class="stat-label">Chance por Pessoa</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">${currentDrawData.organizer}</span>
+                    <span class="stat-label">Organizador</span>
+                </div>
+            </div>
+        `;
+    });
+
+    copyLinkBtn.addEventListener('click', () => {
+        shareLinkDisplay.select();
+        navigator.clipboard.writeText(shareLinkDisplay.value).then(() => {
+            copyLinkBtn.textContent = 'Copiado!';
+            setTimeout(() => { copyLinkBtn.textContent = 'Copiar'; }, 2000);
+        });
+    });
+
+    copyFullTokenBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(fullToken).then(() => {
+            const originalText = tokenPreviewText.innerHTML;
+            tokenPreviewText.innerHTML = `<span class="token-copy-feedback">Token copiado!</span>`;
+            setTimeout(() => {
+                tokenPreviewText.innerHTML = originalText;
+                document.getElementById('token-preview').textContent = `${fullToken.substring(0, 10)}...${fullToken.slice(-10)}`;
+            }, 2000);
+        });
+    });
+    
+    // --- LÓGICA DE CARREGAMENTO DE SORTEIO VIA LINK ---
+    window.addEventListener('load', () => {
+        const params = new URLSearchParams(window.location.search);
+        const data = params.get('data');
+
+        if (data) {
+            try {
+                const decodedString = decodeURIComponent(escape(atob(data)));
+                const drawData = JSON.parse(decodedString);
+                
+                if (drawData.type === 'giveaway') {
+                    currentDrawData = drawData;
+                    setupContainer.style.display = 'none';
+                    shareContainer.style.display = 'none';
+                    resultsActions.style.display = 'none';
+                    
+                    displayResults(drawData);
+                    
+                    sharedViewFooter.innerHTML = `<p>Este é um resultado de sorteio verificado gerado pelo Sorteador da Frenesy Esports.</p>`;
+
+                } else {
+                     throw new Error("Tipo de sorteio inválido.");
+                }
+                
+            } catch (error) {
+                console.error("Erro ao decodificar os dados do sorteio:", error);
+                resultsWrapper.style.display = 'block';
+                resultsContainer.innerHTML = '<p>Ocorreu um erro ao carregar os dados do sorteio. O link pode estar inválido ou corrompido.</p>';
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Sorteador de Times e Grupos Free Fire - Frenesy Esports</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+
+    <meta name="description" content="Sorteador de times e grupos para Free Fire! Sorteie de forma rápida e prática partidas de x1, 2x2, 4x4 e outros formatos, garantindo equilíbrio e diversão para todos.">
+    <meta name="author" content="Frenesy">
+    <meta name="keywords" content="sorteador de times free fire, sorteador de grupos FF, x1 FF, 2x2 FF, 4x4 FF, sorteio de jogadores Free Fire, melhor sorteador FF, Frenesy Esports, grupos Free Fire, times Free Fire">
+
+    <link rel="canonical" href="https://frenesy.com.br/pages/sorteador-freefire.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frenesy.com.br/pages/sorteador-freefire.html">
+    <meta property="og:title" content="Melhor Sorteador de Times e Grupos Free Fire - Frenesy Esports">
+    <meta property="og:description" content="Sorteie times e grupos para Free Fire de forma rápida e prática! Ideal para x1, 2x2, 4x4 e muito mais, garantindo partidas equilibradas e diversão garantida.">
+    <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frenesy.com.br/pages/sorteador-freefire.html">
+    <meta name="twitter:title" content="Melhor Sorteador de Times e Grupos Free Fire - Frenesy Esports">
+    <meta name="twitter:description" content="O melhor sorteador de Free Fire! Crie x1, 2x2, 4x4 e outros grupos de forma rápida, justa e divertida para suas partidas.">
+    <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
+
+    <style>
+:root {
+	--preto: #000000;
+	--laranja-frenesy: #f96001;
+	--branco: #ffffff;
+	--cinza-escuro: #1a1a1a;
+	--cinza-card: #111;
+	--cinza-borda: #222;
+	--font-titulo: 'Rajdhani', sans-serif;
+	--font-texto: 'Poppins', sans-serif;
+	--input-height: 47px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-texto);
+	background-color: var(--preto);
+	color: var(--branco);
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%E>");
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 50px;
+	margin-right: 15px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 20px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	font-weight: 600;
+	transition: color 0.3s ease;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 0;
+	transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: var(--laranja-frenesy);
+}
+
+.nav-links a:hover::after {
+	width: 100%;
+}
+
+main {
+	padding-top: 80px;
+}
+
+.section-title {
+	text-align: center;
+	font-family: var(--font-titulo);
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-bottom: 10px;
+}
+
+.section-title::after {
+	content: '';
+	position: absolute;
+	width: 60%;
+	height: 4px;
+	background-color: var(--laranja-frenesy);
+	bottom: 0;
+	left: 20%;
+}
+
+.section-subtitle {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto 4rem auto;
+	color: #aaa;
+	line-height: 1.6;
+}
+
+
+.site-footer {
+	position: relative;
+	padding: 120px 5% 20px;
+	background-color: var(--preto);
+	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+	margin-top: 100px;
+}
+
+.footer-main {
+	padding: 40px 5% 40px;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.footer-column h3 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+
+.footer-column.about .logo-footer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.footer-column.about .logo-footer img {
+	height: 40px;
+	margin-right: 15px;
+}
+
+.footer-column.about .logo-footer h2 {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+}
+
+.footer-tagline {
+	font-size: 0.9rem;
+	color: #a0a0a0;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.social-links a {
+	color: #a0a0a0;
+	font-size: 1.5rem;
+	margin-right: 20px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-block;
+}
+
+.social-links a:hover {
+	color: var(--laranja-frenesy);
+	transform: translateY(-3px);
+}
+
+.footer-links {
+	list-style: none;
+}
+
+.footer-links li {
+	margin-bottom: 12px;
+}
+
+.footer-links a {
+	color: #a0a0a0;
+	text-decoration: none;
+	transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-links a:hover {
+	color: var(--branco);
+	padding-left: 5px;
+}
+
+.footer-column p {
+	color: #a0a0a0;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.newsletter-form {
+	display: flex;
+	position: relative;
+	max-width: 300px;
+}
+
+.newsletter-form input {
+	flex-grow: 1;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.newsletter-form button {
+	padding: 10px 18px;
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: var(--branco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+	background-color: #d85401;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 5%;
+	border-top: 1px solid #222;
+	color: #888;
+	font-size: 0.85rem;
+}
+
+.creator-credit {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.75rem;
+	color: #777;
+}
+
+.creator-credit i {
+	color: var(--laranja-frenesy);
+}
+
+.creator-credit a {
+	color: #999;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.creator-credit a:hover {
+	color: var(--laranja-frenesy);
+}
+
+
+.page-section {
+	padding: 100px 5%;
+}
+
+.menu-toggle {
+	display: none;
+	font-size: 1.8rem;
+	color: var(--branco);
+	cursor: pointer;
+	z-index: 1100;
+}
+
+#notification-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 2000;
+}
+
+.notification {
+	padding: 12px 18px;
+	margin-bottom: 12px;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-family: var(--font-texto);
+	color: var(--branco);
+	background-color: var(--cinza-card);
+	border-left: 5px solid var(--laranja-frenesy);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transform: translateX(50px);
+	animation: slideIn 0.4s forwards, fadeOut 0.4s 3s forwards;
+}
+
+/* cores dinâmicas */
+.notification.success {
+	border-left-color: #28a745;
+	/* verde sucesso */
+}
+
+.notification.error {
+	border-left-color: #dc3545;
+	/* vermelho erro */
+}
+
+.notification.info {
+	border-left-color: var(--laranja-frenesy);
+}
+
+/* animações */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+}
+
+
+/* === ESTILOS DO SORTEADOR (RENOVADO) === */
+.sorter-section {
+	background-color: var(--cinza-escuro);
+	padding-bottom: 100px;
+}
+
+.sorter-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	background-color: var(--cinza-card);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+}
+
+.sorter-controls {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	padding: 2rem;
+}
+
+.control-step {
+	margin-bottom: 2rem;
+}
+
+.control-step:last-child {
+	margin-bottom: 0;
+}
+
+.control-step-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--cinza-borda);
+	padding-bottom: 10px;
+}
+
+.step-number {
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	height: 30px;
+	width: 30px;
+	display: grid;
+	place-items: center;
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.control-step-header h4 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	color: var(--branco);
+}
+
+.step-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.control-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.control-group label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 0.5rem;
+	font-weight: 600;
+	color: #ccc;
+}
+
+.control-group label i {
+	color: var(--laranja-frenesy);
+	width: 16px;
+	text-align: center;
+}
+
+.control-group input,
+.control-group select {
+	height: var(--input-height);
+	padding: 0 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+	font-family: var(--font-texto);
+	outline: none;
+	transition: border-color 0.3s;
+	width: 100%;
+}
+
+.control-group input:focus,
+.control-group select:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.btn {
+	height: var(--input-height);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	text-align: center;
+	padding: 12px 20px;
+	border-radius: 5px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+	font-family: var(--font-texto);
+	width: 100%;
+	font-size: 1rem;
+}
+
+.btn:hover {
+	background-color: #d85401;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn-secondary {
+	background-color: #333;
+}
+
+.btn-secondary:hover {
+	background-color: #444;
+}
+
+.number-input-wrapper {
+	display: flex;
+	align-items: center;
+	height: var(--input-height);
+}
+
+.number-input-wrapper input[type="number"] {
+	height: 100%;
+	text-align: center;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	-moz-appearance: textfield;
+}
+
+.number-input-wrapper input::-webkit-outer-spin-button,
+.number-input-wrapper input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.num-btn {
+	background-color: var(--laranja-frenesy);
+	border: none;
+	color: white;
+	width: 45px;
+	height: 100%;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.num-btn:hover {
+	background-color: #d85401;
+}
+
+.num-btn.minus {
+	border-radius: 5px 0 0 5px;
+}
+
+.num-btn.plus {
+	border-radius: 0 5px 5px 0;
+}
+
+.toggle-switch {
+	height: var(--input-height);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 15px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.toggle-switch.disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.toggle-switch-label {
+	font-weight: 600;
+	color: #ccc;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 28px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #333;
+	transition: .4s;
+	border-radius: 28px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+input:checked+.slider {
+	background-color: var(--laranja-frenesy);
+}
+
+input:checked+.slider:before {
+	transform: translateX(22px);
+}
+
+#player-names-container {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+#player-names-container input {
+	width: 100%;
+	padding: 10px;
+	background-color: var(--cinza-escuro);
+	border: 1px solid #444;
+	border-radius: 5px;
+	color: var(--branco);
+}
+
+#player-names-container input:focus {
+	border-color: var(--laranja-frenesy);
+	outline: none;
+}
+
+.sorter-actions {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+#results-wrapper {
+	margin-top: 2rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+	padding: 2rem;
+}
+
+#draw-info-header {
+	text-align: center;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--cinza-borda);
+	padding-bottom: 1.5rem;
+}
+
+#draw-info-header h2 {
+	font-family: var(--font-titulo);
+	color: var(--laranja-frenesy);
+	font-size: 2.5rem;
+}
+
+#draw-info-header p {
+	color: #ccc;
+	font-size: 1rem;
+}
+
+.results-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.results-header h3 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+}
+
+.results-actions {
+	display: flex;
+	gap: 1rem;
+}
+
+.results-actions .btn {
+	padding: 8px 15px;
+	font-size: 0.9rem;
+	width: auto;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.results-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.result-card {
+	background-color: #111;
+	border: 1px solid #222;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 20px;
+}
+
+.result-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(249, 96, 1, 0.2);
+}
+
+.result-card h4 {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	line-height: 1.2;
+	margin-bottom: 15px;
+	color: var(--laranja-frenesy);
+	border-bottom: 2px solid var(--cinza-borda);
+	padding-bottom: 10px;
+}
+
+.result-card h5 {
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	margin-top: 10px;
+	color: #ddd;
+}
+
+.result-card ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.result-card li {
+	padding: 8px 0;
+	border-bottom: 1px solid #333;
+}
+
+.result-card li:last-of-type {
+	border-bottom: none;
+}
+
+.matchup {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 12px 0;
+	font-weight: 600;
+}
+
+.vs-separator {
+	font-family: var(--font-titulo);
+	color: var(--laranja-frenesy);
+	font-size: 1.5rem;
+	align-self: center;
+}
+
+/* === NOVOS ESTILOS DO BRACKET (DIAGRAMA) === */
+#bracket-wrapper {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cinza-borda);
+	overflow-x: auto;
+	padding-bottom: 1.5rem;
+}
+#bracket-container {
+    display: flex;
+    min-width: fit-content;
+}
+.bracket-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+}
+.bracket-round-title {
+    font-family: var(--font-titulo);
+    font-size: 1.2rem;
+    color: var(--laranja-frenesy);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.bracket-match {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 15px 0;
+}
+.bracket-match:first-child {
+    margin-top: 0;
+}
+.bracket-match:last-child {
+    margin-bottom: 0;
+}
+/* Linha horizontal saindo da partida */
+.bracket-match::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    width: 25px;
+    height: 2px;
+    background: #444;
+}
+/* Linha vertical conectando as partidas */
+.bracket-match:not(:only-child)::before {
+    content: '';
+    position: absolute;
+    right: -25px;
+    width: 2px;
+    background: #444;
+}
+.bracket-match:nth-child(odd)::before {
+    top: 50%;
+    height: calc(100% + 20px); /* 100% da altura + margens */
+}
+.bracket-match:nth-child(even)::before {
+    bottom: 50%;
+    height: 100%;
+}
+/* Remove a linha de baixo do último elemento par */
+.bracket-match:nth-child(even):last-child::before{
+    display: none;
+}
+/* Oculta conectores da última rodada (Final) */
+.bracket-round:last-of-type .bracket-match::after,
+.bracket-round:last-of-type .bracket-match::before {
+    display: none;
+}
+
+.bracket-participant {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 200px;
+    padding: 0 12px;
+    background-color: var(--cinza-escuro);
+    border: 1px solid #333;
+    font-size: 0.9rem;
+    color: #ccc;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bracket-participant.bye {
+    color: #666;
+    font-style: italic;
+}
+.bracket-participant:first-of-type {
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+}
+.bracket-participant:last-of-type {
+    border-radius: 0 0 5px 5px;
+}
+
+#share-container {
+	margin-top: 2.5rem;
+	background-color: #111;
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+	padding: 1.5rem;
+}
+
+.share-link-wrapper {
+	display: flex;
+	gap: 10px;
+	margin-top: 1rem;
+}
+
+.share-link-wrapper input {
+	flex-grow: 1;
+	background-color: var(--cinza-escuro);
+	color: #ccc;
+	height: var(--input-height);
+}
+
+#copy-link-btn {
+	width: 120px;
+	flex-shrink: 0;
+}
+
+.share-token-preview {
+	margin-top: 1.5rem;
+	color: #aaa;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #222;
+	padding: 10px;
+	border-radius: 5px;
+	min-height: 42px;
+}
+
+.share-token-preview code {
+	background: none;
+	padding: 0;
+}
+
+.share-token-preview button {
+	background: none;
+	border: none;
+	color: var(--laranja-frenesy);
+	cursor: pointer;
+	font-size: 1.1rem;
+	margin-left: 12px;
+}
+
+.token-copy-feedback {
+	color: var(--laranja-frenesy);
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+#shared-view-footer {
+	text-align: center;
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--cinza-borda);
+	color: #888;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+	.menu-toggle {
+		display: block;
+	}
+
+	.nav-links {
+		flex-direction: column;
+		position: fixed;
+		top: 70px;
+		right: -100%;
+		background: rgba(0, 0, 0, 0.95);
+		width: 70%;
+		height: calc(100vh - 70px);
+		padding-top: 2rem;
+		transition: right 0.3s ease-in-out;
+		gap: 1.5rem;
+		z-index: 1000;
+	}
+
+	.nav-links.active {
+		right: 0;
+	}
+
+	.logo img {
+		height: 40px;
+	}
+
+	.logo h1 {
+		font-size: 1.5rem;
+	}
+
+	/* === SECTIONS === */
+	.section-title {
+		font-size: 2rem;
+	}
+
+	.section-subtitle {
+		padding: 0 1rem;
+		font-size: 0.9rem;
+	}
+
+	/* === FOOTER === */
+	.footer-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.footer-bottom {
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+
+	.newsletter-form {
+		flex-direction: column;
+		max-width: 100%;
+	}
+
+	.newsletter-form button {
+		position: static;
+		width: 100%;
+		border-radius: 5px;
+		margin-top: 10px;
+		height: var(--input-height);
+	}
+
+	/* === SORTEADOR === */
+	.sorter-container {
+		padding: 1rem;
+	}
+
+	.control-step-header h4 {
+		font-size: 1.2rem;
+	}
+
+	.step-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	#player-names-container {
+		grid-template-columns: 1fr;
+	}
+
+	.sorter-actions {
+		grid-template-columns: 1fr;
+	}
+
+	/* === RESULTADOS === */
+	#draw-info-header h2 {
+		font-size: 1.8rem;
+	}
+
+	.results-header {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.results-actions {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.results-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.result-card h4 {
+		font-size: 1.2rem;
+	}
+
+	.result-card h5 {
+		font-size: 1rem;
+	}
+    
+    .bracket-participant {
+        width: 150px;
+        font-size: 0.8rem;
+    }
+    .bracket-round {
+        margin-right: 30px;
+    }
+
+	/* === COMPARTILHAR === */
+	.share-link-wrapper {
+		flex-direction: column;
+	}
+
+	#copy-link-btn {
+		width: 100%;
+	}
+}
+
+    </style>
+</head>
+    
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports"><h1>FRENESY</h1>
+            </a>
+            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sorteador" class="page-section sorter-section">
+            <h2 class="section-title">SORTEADOR DE TIMES</h2>
+            <p class="section-subtitle">Crie sorteios para seus campeonatos de forma fácil e rápida. Defina os jogadores, escolha o formato e gere os confrontos, grupos e chaves instantaneamente.</p>
+            
+            <div class="sorter-container">
+                <div id="setup-container">
+                    <div class="sorter-controls">
+                        <div class="control-step">
+                            <div class="control-step-header">
+                                <span class="step-number">1</span><h4>Detalhes do Torneio</h4>
+                            </div>
+                            <div class="step-grid">
+                                <div class="control-group">
+                                    <label for="tournament-name-input"><i class="fas fa-trophy"></i>Nome do Torneio</label>
+                                    <input type="text" id="tournament-name-input" placeholder="Ex: X1 dos Crias">
+                                </div>
+                                <div class="control-group">
+                                    <label for="num-players"><i class="fas fa-users"></i>Nº de Jogadores</label>
+                                    <div class="number-input-wrapper">
+                                        <button class="num-btn minus" onclick="stepPlayerCount(-1)">-</button>
+                                        <input type="number" id="num-players" min="2" max="48" value="2">
+                                        <button class="num-btn plus" onclick="stepPlayerCount(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-step">
+                            <div class="control-step-header">
+                                <span class="step-number">2</span><h4>Opções de Sorteio</h4>
+                            </div>
+                            <div class="step-grid">
+                                <div class="control-group">
+                                    <label for="game-mode-select"><i class="fas fa-gamepad"></i>Modo de Jogo</label>
+                                    <select id="game-mode-select">
+                                        <option value="1"selected>1x1</option>
+                                        <option value="2">2x2</option>
+                                        <option value="3">3x3</option>
+                                        <option value="4">4x4</option>
+                                        <option value="5">5x5</option>
+                                        <option value="6">6x6</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label><i class="fas fa-layer-group"></i>Fase de Grupos?</label>
+                                    <label class="toggle-switch" id="group-stage-label">
+                                        <span class="toggle-switch-label">Ativar</span>
+                                        <div class="switch">
+                                            <input type="checkbox" id="group-stage-toggle">
+                                            <span class="slider"></span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="control-group" id="num-groups-wrapper" style="display: none;">
+                                    <label for="num-groups"><i class="fas fa-list-ol"></i>Nº de Grupos</label>
+                                    <div class="number-input-wrapper">
+                                        <button class="num-btn minus" onclick="stepGroupCount(-1)">-</button>
+                                        <input type="number" id="num-groups" min="2" value="2">
+                                        <button class="num-btn plus" onclick="stepGroupCount(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-step">
+                            <div class="control-step-header">
+                                <span class="step-number">3</span><h4>Confirmar</h4>
+                            </div>
+                            <div class="step-grid">
+                                <div class="control-group">
+                                    <button id="confirm-players-btn" class="btn"><i class="fas fa-check-circle"></i>Confirmar e Listar Jogadores</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="player-names-container"></div>
+                    
+                    <div class="sorter-actions" id="sorter-actions" style="display: none;">
+                        <button id="draw-btn" class="btn"><i class="fas fa-random"></i> Realizar Sorteio</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-undo"></i> Resetar</button>
+                    </div>
+                </div>
+
+                <div id="results-wrapper" style="display: none;">
+                    <div id="draw-info-header"></div>
+                    <div class="results-header">
+                        <h3 id="results-title">Resultado do Sorteio</h3>
+                        <div class="results-actions">
+                            <button id="copy-results-btn" class="btn btn-secondary"><i class="fas fa-copy"></i> Copiar Resultados</button>
+                        </div>
+                    </div>
+                    <div id="results-container"></div>
+
+                    <div id="bracket-wrapper" style="display: none;">
+                        <div id="bracket-container"></div>
+                    </div>
+
+                    <div id="shared-view-footer"></div>
+                </div>
+
+                <div id="share-container" style="display: none;">
+                    <div class="control-group">
+                        <label for="organizer-name"><i class="fas fa-user-check"></i>Seu nome (Organizador)</label>
+                        <input type="text" id="organizer-name" placeholder="Digite seu nome para validar o sorteio">
+                    </div>
+                    <div class="control-group">
+                        <button id="generate-share-link-btn" class="btn" style="margin-top: 1rem;"><i class="fas fa-link"></i> Gerar Link de Compartilhamento</button>
+                    </div>
+                    <div id="share-link-output" style="display: none; margin-top: 1.5rem;">
+                        <label>Link Gerado</label>
+                        <div class="share-link-wrapper">
+                           <input type="text" id="share-link-display" readonly>
+                           <button id="copy-link-btn" class="btn">Copiar</button>
+                        </div>
+                        <div class="share-token-preview">
+                            <span id="token-preview-text">
+                                ID Sorteio: <code id="token-preview"></code>
+                            </span>
+                            <button id="copy-full-token-btn" title="Copiar Token Completo"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="notification-container"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-main"> <div class="footer-grid"> <div class="footer-column about"> <div class="logo-footer"> <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy"> <h2>FRENESY</h2> </div> <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p> <div class="social-links"> <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a> <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a> <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a> <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a> </div> </div> <div class="footer-column"> <h3>Navegação</h3> <ul class="footer-links"> <li><a href="../index.html">Início</a></li> <li><a href="sobre-nos.html">Sobre Nós</a></li> <li><a href="noticias.html">Notícias</a></li> <li><a href="eventos.html">Eventos</a></li> </ul> </div> <div class="footer-column"> <h3>Suporte</h3> <ul class="footer-links"> <li><a href="parceiros.html">Parcerias</a></li> <li><a href="loja.html">Loja</a></li> <li><a href="wallpapers.html">Wallpapers</a></li> <li><a href="politicas.html">Políticas</a></li> </ul> </div> <div class="footer-column"> <h3>FIQUE POR DENTRO</h3> <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p> <form class="newsletter-form"> <input type="email" placeholder="Seu melhor e-mail"> <button type="submit" aria-label="Inscrever-se">→</button> </form> </div> </div> </div> <div class="footer-bottom"> <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p> <p class="creator-credit"> <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a> </p> </div>
+    </footer>
+
+<script>
+    // --- LÓGICA DO MENU HAMBÚRGUER ---
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => { navLinks.classList.toggle("active"); menuToggle.innerHTML = navLinks.classList.contains("active") ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; });
+    document.querySelectorAll(".nav-links a").forEach(link => { link.addEventListener("click", () => { navLinks.classList.remove("active"); menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; }); });
+
+    // --- LÓGICA DO SORTEADOR ---
+    const tournamentNameInput = document.getElementById('tournament-name-input');
+    const numPlayersInput = document.getElementById('num-players');
+    const gameModeSelect = document.getElementById('game-mode-select');
+    const groupStageToggle = document.getElementById('group-stage-toggle');
+    const groupStageLabel = document.getElementById('group-stage-label');
+    const numGroupsWrapper = document.getElementById('num-groups-wrapper');
+    const numGroupsInput = document.getElementById('num-groups');
+    const confirmPlayersBtn = document.getElementById('confirm-players-btn');
+    const playerNamesContainer = document.getElementById('player-names-container');
+    const sorterActions = document.getElementById('sorter-actions');
+    
+    const setupContainer = document.getElementById('setup-container');
+    const resultsWrapper = document.getElementById('results-wrapper');
+    const drawInfoHeader = document.getElementById('draw-info-header');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsTitle = document.getElementById('results-title');
+    const sharedViewFooter = document.getElementById('shared-view-footer');
+    
+    const drawBtn = document.getElementById('draw-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    
+    const copyResultsBtn = document.getElementById('copy-results-btn');
+    const shareContainer = document.getElementById('share-container');
+    const organizerNameInput = document.getElementById('organizer-name');
+    const generateShareLinkBtn = document.getElementById('generate-share-link-btn');
+    const shareLinkOutput = document.getElementById('share-link-output');
+    const shareLinkDisplay = document.getElementById('share-link-display');
+    const copyLinkBtn = document.getElementById('copy-link-btn');
+    const tokenPreviewText = document.getElementById('token-preview-text');
+    const tokenPreview = document.getElementById('token-preview');
+    const copyFullTokenBtn = document.getElementById('copy-full-token-btn');
+
+    // --- ELEMENTOS DO BRACKET ---
+    const bracketWrapper = document.getElementById('bracket-wrapper');
+    const bracketContainer = document.getElementById('bracket-container');
+
+    let currentDrawData = {};
+    let fullToken = '';
+
+    function showNotification(message, type = "info") {
+        const container = document.getElementById("notification-container");
+        const notif = document.createElement("div");
+        notif.className = `notification ${type}`;
+        notif.innerText = message;
+        container.appendChild(notif);
+        setTimeout(() => { notif.remove(); }, 3500);
+    }
+
+    // --- Funções Auxiliares ---
+    function stepPlayerCount(step) {
+        let input = numPlayersInput;
+        let currentValue = parseInt(input.value);
+        let newValue = currentValue + step;
+        if (newValue >= 2 && newValue <= 48) {
+            input.value = newValue;
+        }
+    }
+
+    function stepGroupCount(step) {
+        let input = numGroupsInput;
+        let currentValue = parseInt(input.value);
+        let newValue = currentValue + step;
+        if (newValue >= 2) {
+            input.value = newValue;
+        }
+    }
+    
+    function getPlayerNames() {
+        const inputs = document.querySelectorAll('.player-name-input');
+        const names = Array.from(inputs).map(input => input.value.trim()).filter(name => name !== '');
+        if (names.length !== parseInt(numPlayersInput.value)) {
+            showNotification('Por favor, preencha o nome de todos os jogadores.', 'error');
+            return null;
+        }
+        return names;
+    }
+
+    function displayResults(title, htmlContent, drawData) {
+        resultsTitle.textContent = title;
+        resultsContainer.innerHTML = htmlContent ? `<div class="results-grid">${htmlContent}</div>` : '';
+        resultsWrapper.style.display = 'block';
+        sharedViewFooter.innerHTML = '';
+        shareContainer.style.display = 'block';
+        shareLinkOutput.style.display = 'none';
+        organizerNameInput.value = '';
+        
+        bracketWrapper.style.display = 'none';
+        bracketContainer.innerHTML = '';
+        if (drawData.bracket && drawData.bracket.length > 0) {
+            renderBracket(drawData.bracket, drawData.bracket.length);
+        }
+
+        currentDrawData = drawData;
+        window.scrollTo({ top: resultsWrapper.offsetTop - 100, behavior: 'smooth' });
+    }
+
+    // --- Lógica de UI Interativa ---
+    function updateGroupStageUI() {
+        const teamSize = parseInt(gameModeSelect.value);
+        if (teamSize > 1) {
+            groupStageLabel.classList.add('disabled');
+            groupStageToggle.checked = true;
+            groupStageToggle.disabled = true;
+            numGroupsWrapper.style.display = 'block';
+        } else {
+            groupStageLabel.classList.remove('disabled');
+            groupStageToggle.disabled = false;
+            numGroupsWrapper.style.display = groupStageToggle.checked ? 'block' : 'none';
+        }
+    }
+
+    gameModeSelect.addEventListener('change', updateGroupStageUI);
+    groupStageToggle.addEventListener('change', updateGroupStageUI);
+
+    confirmPlayersBtn.addEventListener('click', () => {
+        const numPlayers = parseInt(numPlayersInput.value);
+        if (isNaN(numPlayers) || numPlayers < 2 || numPlayers > 48) {
+            showNotification('Por favor, insira um número de jogadores válido (entre 2 e 48).', 'error');
+            return;
+        }
+        
+        playerNamesContainer.innerHTML = '';
+        for (let i = 1; i <= numPlayers; i++) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = `Nome do Jogador/Time ${i}`;
+            input.className = 'player-name-input';
+            playerNamesContainer.appendChild(input);
+        }
+        sorterActions.style.display = 'grid';
+        resultsWrapper.style.display = 'none';
+        shareContainer.style.display = 'none';
+    });
+
+    // --- NOVAS FUNÇÕES DE GERAÇÃO E RENDERIZAÇÃO DO BRACKET ---
+    function generateBracketData(participants) {
+        if (!participants || participants.length < 2) return [];
+
+        // Garante que o número de participantes seja uma potência de 2 para um bracket perfeito
+        let numParticipants = participants.length;
+        let rounds = Math.ceil(Math.log2(numParticipants));
+        let bracketSize = Math.pow(2, rounds);
+        let byes = bracketSize - numParticipants;
+
+        // Adiciona os BYEs
+        let firstRound = [...participants];
+        for (let i = 0; i < byes; i++) {
+            firstRound.push('BYE');
+        }
+        
+        // Embaralha para distribuir os BYEs aleatoriamente
+        firstRound = firstRound.sort(() => Math.random() - 0.5);
+
+        let bracket = [firstRound];
+
+        for (let i = 1; i < rounds; i++) {
+            let nextRound = [];
+            let currentRound = bracket[i-1];
+            for(let j = 0; j < currentRound.length; j += 2) {
+                // Se um dos oponentes for BYE, o outro avança
+                if (currentRound[j] === 'BYE') {
+                    nextRound.push(currentRound[j+1]);
+                } else if (currentRound[j+1] === 'BYE') {
+                    nextRound.push(currentRound[j]);
+                } else {
+                    nextRound.push(null); // Placeholder para vencedor
+                }
+            }
+            bracket.push(nextRound);
+        }
+        return bracket;
+    }
+
+    function getRoundName(roundIndex, totalRounds) {
+        const roundsLeft = totalRounds - roundIndex;
+        if (roundsLeft === 1) return 'Final';
+        if (roundsLeft === 2) return 'Semifinais';
+        if (roundsLeft === 3) return 'Quartas de Final';
+        if (roundsLeft === 4) return 'Oitavas de Final';
+        return `Rodada ${roundIndex + 1}`;
+    }
+
+    function renderBracket(bracketData) {
+        bracketContainer.innerHTML = '';
+        if (!bracketData || bracketData.length === 0) return;
+        
+        const totalRounds = bracketData.length;
+
+        bracketData.forEach((round, roundIndex) => {
+            const roundEl = document.createElement('div');
+            roundEl.className = 'bracket-round';
+
+            const titleEl = document.createElement('div');
+            titleEl.className = 'bracket-round-title';
+            titleEl.textContent = getRoundName(roundIndex, totalRounds);
+            roundEl.appendChild(titleEl);
+
+            for (let i = 0; i < round.length; i += 2) {
+                const matchEl = document.createElement('div');
+                matchEl.className = 'bracket-match';
+
+                const p1 = document.createElement('div');
+                p1.className = 'bracket-participant';
+                p1.textContent = round[i] || 'A definir';
+                if(round[i] === 'BYE') p1.classList.add('bye');
+
+                const p2 = document.createElement('div');
+                p2.className = 'bracket-participant';
+                p2.textContent = round[i + 1] || 'A definir';
+                 if(round[i+1] === 'BYE') p2.classList.add('bye');
+
+                matchEl.appendChild(p1);
+                matchEl.appendChild(p2);
+                roundEl.appendChild(matchEl);
+            }
+            bracketContainer.appendChild(roundEl);
+        });
+        bracketWrapper.style.display = 'block';
+    }
+    
+    // --- Lógica Principal do Sorteio ---
+    drawBtn.addEventListener('click', () => {
+        const tournamentName = tournamentNameInput.value.trim();
+        if (!tournamentName) {
+            showNotification('Por favor, defina um nome para o torneio.', 'error');
+            return;
+        }
+
+        const players = getPlayerNames();
+        if (!players) return;
+
+        const teamSize = parseInt(gameModeSelect.value);
+        const isGroupStage = teamSize > 1 || groupStageToggle.checked;
+        const numGroups = parseInt(numGroupsInput.value);
+        
+        if (players.length % teamSize !== 0) {
+            showNotification(`O nº de jogadores (${players.length}) deve ser um múltiplo de ${teamSize} para o modo ${teamSize}x${teamSize}.`, 'error');
+            return;
+        }
+        const numTeams = players.length / teamSize;
+
+        let htmlContent = '';
+        let title = '';
+        let drawData = { tournamentName, teamSize };
+        let bracketParticipants = [];
+
+        if (isGroupStage) {
+            if (isNaN(numGroups) || numGroups < 2) {
+                showNotification(`Nº de grupos deve ser 2 ou mais.`, 'error');
+                return;
+            }
+            title = `Fase de Grupos - ${teamSize}v${teamSize}`;
+            let shuffledPlayers = [...players].sort(() => Math.random() - 0.5);
+            let teams = [];
+            for (let i = 0; i < shuffledPlayers.length; i += teamSize) {
+                teams.push(shuffledPlayers.slice(i, i + teamSize));
+            }
+
+            let groups = Array.from({ length: numGroups }, () => []);
+            teams.forEach((team, index) => {
+                groups[index % numGroups].push(team);
+            });
+
+            groups.forEach((group, index) => {
+                htmlContent += `<div class="result-card"><h4>Grupo ${index + 1}</h4>`;
+                group.forEach(team => {
+                    htmlContent += `<ul>${team.map(p => `<li>${p}</li>`).join('')}</ul>`;
+                });
+                htmlContent += `</div>`;
+            });
+            drawData.type = 'groups';
+            drawData.results = groups;
+            
+            let groupNames = Array.from({ length: numGroups }, (_, i) => `Grupo ${i + 1}`);
+            bracketParticipants = groupNames.sort(() => Math.random() - 0.5);
+
+        } else { // Confrontos Diretos
+            title = `Confrontos Diretos - ${teamSize}x${teamSize}`;
+            let shuffledPlayers = [...players].sort(() => Math.random() - 0.5);
+            let teams = [];
+            for (let i = 0; i < shuffledPlayers.length; i += teamSize) {
+                teams.push(shuffledPlayers.slice(i, i + teamSize));
+            }
+            
+            teams.forEach(team => {
+                let teamName = team.join(' / ');
+                bracketParticipants.push(teamName);
+            });
+            htmlContent = ''; // Não mostra mais cards de confronto, apenas o bracket
+            drawData.type = 'matchup';
+            drawData.results = teams;
+        }
+        
+        drawData.bracket = generateBracketData(bracketParticipants);
+        displayResults(title, htmlContent, drawData);
+    });
+
+    resetBtn.addEventListener('click', () => {
+        tournamentNameInput.value = '';
+        numPlayersInput.value = '2';
+        gameModeSelect.value = '1';
+        groupStageToggle.checked = false;
+        numGroupsInput.value = '2';
+
+        playerNamesContainer.innerHTML = '';
+        sorterActions.style.display = 'none';
+        resultsWrapper.style.display = 'none';
+        shareContainer.style.display = 'none';
+        bracketWrapper.style.display = 'none';
+        if (window.location.search) {
+            window.history.pushState({}, document.title, window.location.pathname);
+        }
+        updateGroupStageUI();
+    });
+
+    copyResultsBtn.addEventListener('click', () => {
+        let textToCopy = `Torneio: ${currentDrawData.tournamentName}\n`;
+        textToCopy += `Organizador: ${currentDrawData.organizer || 'Não definido'}\n\n`;
+        textToCopy += `${resultsTitle.textContent.toUpperCase()}\n\n`;
+        
+        if (currentDrawData.type === 'groups') {
+            currentDrawData.results.forEach((group, index) => {
+                textToCopy += `--- Grupo ${index + 1} ---\n`;
+                group.forEach((team, teamIndex) => {
+                    textToCopy += `Time ${teamIndex + 1}: ${team.join(' / ')}\n`;
+                });
+                textToCopy += '\n';
+            });
+        }
+        
+        if (currentDrawData.bracket && currentDrawData.bracket.length > 0) {
+            textToCopy += `--- CHAVEAMENTO ---\n`;
+            const firstRound = currentDrawData.bracket[0];
+            for (let i = 0; i < firstRound.length; i += 2) {
+                textToCopy += `${firstRound[i]} vs ${firstRound[i+1]}\n`;
+            }
+        }
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showNotification('Resultados e Chaves copiados!', 'success');
+        });
+    });
+
+    generateShareLinkBtn.addEventListener('click', () => {
+        const organizerName = organizerNameInput.value.trim();
+        if (!organizerName) { showNotification('Por favor, digite o nome do organizador.', 'error'); return; }
+
+        currentDrawData.organizer = organizerName;
+        const dataString = JSON.stringify(currentDrawData);
+        fullToken = btoa(unescape(encodeURIComponent(dataString)));
+        
+        const shareUrl = `${window.location.origin}${window.location.pathname}?data=${fullToken}`;
+        
+        shareLinkDisplay.value = shareUrl;
+        tokenPreview.textContent = `${fullToken.substring(0, 10)}...${fullToken.slice(-10)}`;
+        shareLinkOutput.style.display = 'block';
+    });
+
+    copyLinkBtn.addEventListener('click', () => {
+        shareLinkDisplay.select();
+        navigator.clipboard.writeText(shareLinkDisplay.value).then(() => {
+            copyLinkBtn.textContent = 'Copiado!';
+            setTimeout(() => { copyLinkBtn.textContent = 'Copiar'; }, 2000);
+        });
+    });
+
+    copyFullTokenBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(fullToken).then(() => {
+            const originalText = tokenPreviewText.innerHTML;
+            tokenPreviewText.innerHTML = `<span class="token-copy-feedback">Copiado com sucesso!</span>`;
+            setTimeout(() => {
+                tokenPreviewText.innerHTML = originalText;
+                document.getElementById('token-preview').textContent = `${fullToken.substring(0, 10)}...${fullToken.slice(-10)}`;
+            }, 2000);
+        });
+    });
+    
+    // --- Lógica de Carregamento de Link ---
+    window.addEventListener('load', () => {
+        const params = new URLSearchParams(window.location.search);
+        const data = params.get('data');
+
+        if (data) {
+            try {
+                const decodedString = decodeURIComponent(escape(atob(data)));
+                const drawData = JSON.parse(decodedString);
+                
+                let title = '';
+                let htmlContent = '';
+                currentDrawData = drawData;
+
+                if (drawData.type === 'groups') {
+                    title = `Fase de Grupos - ${drawData.teamSize}v${drawData.teamSize}`;
+                    drawData.results.forEach((group, index) => {
+                        htmlContent += `<div class="result-card"><h4>Grupo ${index + 1}</h4>`;
+                        group.forEach(team => {
+                            htmlContent += `<ul>${team.map(p => `<li>${p}</li>`).join('')}</ul>`;
+                        });
+                        htmlContent += `</div>`;
+                    });
+                } else if (drawData.type === 'matchup') {
+                    title = `Confrontos Diretos - ${drawData.teamSize}x${drawData.teamSize}`;
+                    htmlContent = ''; // Não mostra cards
+                }
+                
+                setupContainer.style.display = 'none';
+                shareContainer.style.display = 'none';
+                
+                drawInfoHeader.innerHTML = `<h2>${drawData.tournamentName}</h2><p>Organizado por: <strong>${drawData.organizer}</strong></p>`;
+                resultsTitle.textContent = title;
+                resultsContainer.innerHTML = htmlContent ? `<div class="results-grid">${htmlContent}</div>` : '';
+                
+                if(drawData.bracket) {
+                    renderBracket(drawData.bracket);
+                }
+
+                sharedViewFooter.innerHTML = `<p>&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>`;
+                resultsWrapper.style.display = 'block';
+                
+            } catch (error) {
+                console.error("Erro ao decodificar os dados do sorteio:", error);
+                showNotification('Link de sorteio inválido ou corrompido.', 'error');
+            }
+        }
+        updateGroupStageUI();
+    });
+
+</script>
+</body>
+</html>
