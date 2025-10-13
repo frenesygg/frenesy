@@ -62,11 +62,11 @@ const newsData = [
             <p>O elenco é formado por cinco atletas que chegam com funções bem definidas e entrosamento construído nos treinos. Confira:</p>
 
             <ul>
-                <li><strong>FㅤVitãoBalla</strong> (Victor Gabriel, 20 anos – Recife/PE) – <em>Capitão</em>. Responsável pela liderança e pela tomada de decisões estratégicas durante as partidas.</li>
-                <li><strong>FㅤEVERTONʷᵐ</strong> (Everton Silva, 15 anos – Juazeiro do Norte/CE) – <em>Suporte</em>. Conhecido por sua leitura de jogo e capacidade de segurar a retaguarda em momentos decisivos.</li>
-                <li><strong>FㅤHYPE.xp</strong> (Lucas Guilherme, 16 anos – Goiânia/GO) – <em>Rush</em>. Jogador agressivo, especialista em abrir espaço nas rotações e iniciar confrontos.</li>
-                <li><strong>FㅤBIELZN9</strong> (Gabriel Alves, 13 anos – cidade não divulgada) – <em>Rush</em>. Apesar da pouca idade, demonstra maturidade competitiva e reflexos rápidos.</li>
-                <li><strong>FㅤDNZIN</strong> (Danilo da Silva, 16 anos – Itaeté/BA) – <em>Rush</em>. Reconhecido por sua constância em duelos e pela frieza em momentos de pressão.</li>
+                <li><strong>FㅤVitãoBalla</strong> (Victor Gabriel, 20 anos) – <em>Capitão</em>. Responsável pela liderança e pela tomada de decisões estratégicas durante as partidas.</li>
+                <li><strong>FㅤEVERTONʷᵐ</strong> (Everton Silva, 15 anos) – <em>Suporte</em>. Conhecido por sua leitura de jogo e capacidade de segurar a retaguarda em momentos decisivos.</li>
+                <li><strong>FㅤHYPE.xp</strong> (Lucas Guilherme, 16 anos) – <em>Rush</em>. Jogador agressivo, especialista em abrir espaço nas rotações e iniciar confrontos.</li>
+                <li><strong>FㅤBIELZN9</strong> (Gabriel Alves, 13 anos) – <em>Rush</em>. Apesar da pouca idade, demonstra maturidade competitiva e reflexos rápidos.</li>
+                <li><strong>FㅤDNZIN</strong> (Danilo da Silva, 16 anos) – <em>Rush</em>. Reconhecido por sua constância em duelos e pela frieza em momentos de pressão.</li>
             </ul>
 
             <h2>Objetivos para a temporada</h2>
