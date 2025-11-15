@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://www.frenesy.com.br/</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -35,6 +35,12 @@
     <loc>https://www.frenesy.com.br/pages/sobre-nos.html</loc>
     <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.frenesy.com.br/pages/times.html</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -85,5 +91,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
   </url>
-
 </urlset>
