@@ -1,487 +1,975 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nossos Times - Frenesy Esports</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Times - Frenesy Esports</title>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-	<link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+    <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
-	<meta name="description" content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
-	<meta name="author" content="Frenesy">
-	<meta name="keywords" content="times Frenesy Esports, jogadores Frenesy, time de Valorant, time de Free Fire, pro players, esports Brasil">
+    <meta name="description"
+        content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
+    <meta name="author" content="Frenesy">
+    <meta name="keywords"
+        content="times Frenesy Esports, jogadores Frenesy, time de Valorant, time de Free Fire, pro players, esports Brasil">
 
-	<link rel="canonical" href="https://frenesy.com.br/pages/times.html">
+    <link rel="canonical" href="https://frenesy.com.br/pages/times.html">
 
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://frenesy.com.br/pages/times.html">
-	<meta property="og:title" content="Nossos Times - Frenesy Esports">
-	<meta property="og:description" content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
-	<meta property="og:image" content="https://frenesy.com.br/assets/media/sobre_frenesy.png">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:url" content="https://frenesy.com.br/pages/times.html">
-	<meta name="twitter:title" content="Nossos Times - Frenesy Esports">
-	<meta name="twitter:description" content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
-	<meta name="twitter:image" content="https://frenesy.com.br/assets/media/sobre_frenesy.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frenesy.com.br/pages/times.html">
+    <meta property="og:title" content="Nossos Times - Frenesy Esports">
+    <meta property="og:description"
+        content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
+    <meta property="og:image" content="https://frenesy.com.br/assets/media/sobre_frenesy.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frenesy.com.br/pages/times.html">
+    <meta name="twitter:title" content="Nossos Times - Frenesy Esports">
+    <meta name="twitter:description"
+        content="Conheça os times competitivos da Frenesy Esports. Veja nossos jogadores de Valorant, Free Fire e outras modalidades.">
+    <meta name="twitter:image" content="https://frenesy.com.br/assets/media/sobre_frenesy.png">
 
     <style>
-/* --- ESTILOS GLOBAIS (da v1) --- */
-:root {
-	--preto: #000000;
-	--laranja-frenesy: #f96001;
-	--branco: #ffffff;
-	--cinza-escuro: #1a1a1a;
-	--font-titulo: 'Rajdhani', sans-serif;
-	--font-texto: 'Poppins', sans-serif;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-	font-family: var(--font-texto);
-	background-color: var(--preto);
-	color: var(--branco);
-	overflow-x: hidden;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-}
+        /* --- ESTILOS GLOBAIS (da v1) --- */
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
 
-/* --- NAVBAR (da v1) --- */
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 5%;
-	background-color: rgba(0, 0, 0, 0.8);
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-	backdrop-filter: blur(10px);
-}
-.logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 50px; margin-right: 15px; }
-.logo h1 { font-family: var(--font-titulo); font-size: 2rem; color: var(--branco); letter-spacing: 2px; }
-.nav-links { list-style: none; display: flex; }
-.nav-links li { padding: 0 20px; }
-.nav-links a {
-	color: var(--branco);
-	text-decoration: none;
-	font-weight: 600;
-	transition: color 0.3s ease;
-	position: relative;
-	padding-bottom: 5px;
-}
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 3px;
-	background-color: var(--laranja-frenesy);
-	bottom: 0;
-	left: 0;
-	transition: width 0.3s ease;
-}
-.nav-links a:hover { color: var(--laranja-frenesy); }
-.nav-links a:hover::after { width: 100%; }
-.menu-toggle { display: none; font-size: 1.8rem; color: var(--branco); cursor: pointer; z-index: 1100; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* --- FOOTER (da v1) --- */
-.site-footer {
-	position: relative;
-	padding: 120px 5% 20px;
-	background-color: var(--preto);
-	clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
-	margin-top: 100px;
-}
-.footer-main { padding: 40px 5% 40px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-.footer-column h3 { font-family: var(--font-titulo); font-size: 1.5rem; color: var(--laranja-frenesy); margin-bottom: 20px; letter-spacing: 1px; }
-.footer-column.about .logo-footer { display: flex; align-items: center; margin-bottom: 15px; }
-.footer-column.about .logo-footer img { height: 40px; margin-right: 15px; }
-.footer-column.about .logo-footer h2 { font-family: var(--font-titulo); font-size: 1.8rem; }
-.footer-tagline { font-size: 0.9rem; color: #a0a0a0; line-height: 1.6; margin-bottom: 20px; }
-.social-links a { color: #a0a0a0; font-size: 1.5rem; margin-right: 20px; transition: color 0.3s, transform 0.3s; display: inline-block; }
-.social-links a:hover { color: var(--laranja-frenesy); transform: translateY(-3px); }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 12px; }
-.footer-links a { color: #a0a0a0; text-decoration: none; transition: color 0.3s, padding-left 0.3s; }
-.footer-links a:hover { color: var(--branco); padding-left: 5px; }
-.footer-column p { color: #a0a0a0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
-.newsletter-form { display: flex; position: relative; max-width: 300px; }
-.newsletter-form input {
-	flex-grow: 1; padding: 12px 15px; background-color: var(--cinza-escuro); border: 1px solid #444;
-	border-radius: 5px; color: var(--branco); font-family: var(--font-texto); outline: none; transition: border-color 0.3s;
-}
-.newsletter-form input:focus { border-color: var(--laranja-frenesy); }
-.newsletter-form button {
-	padding: 10px 18px; background-color: var(--laranja-frenesy); border: none; color: var(--branco);
-	font-size: 1.5rem; font-weight: bold; cursor: pointer; border-radius: 0 5px 5px 0;
-	position: absolute; right: 0; top: 0; height: 100%; transition: background-color 0.3s;
-}
-.newsletter-form button:hover { background-color: #d85401; }
-.footer-bottom {
-	display: flex; justify-content: space-between; align-items: center;
-	padding: 20px 5%; border-top: 1px solid #222; color: #888; font-size: 0.85rem;
-}
-.creator-credit { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #777; }
-.creator-credit i { color: var(--laranja-frenesy); }
-.creator-credit a { color: #999; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
-.creator-credit a:hover { color: var(--laranja-frenesy); }
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* --- CARD DE JOGADOR (person-card - da v1) --- */
-.person-card {
-	flex-basis: 300px; /* Tamanho base */
-	flex-grow: 1;
-	max-width: 350px;
-	position: relative;
-	border-radius: 12px;
-	overflow: hidden;
-	cursor: pointer;
-	background-color: #111;
-	border: 1px solid transparent;
-	transition: all 0.4s ease;
-}
-.person-card:hover {
-	transform: translateY(-10px);
-	border-color: var(--laranja-frenesy);
-	box-shadow: 0 0 30px rgba(249, 96, 1, 0.4);
-}
-.person-image { height: 450px; position: relative; }
-.person-image img { width: 100%; height: 110%; object-fit: cover; transition: transform 0.5s ease; }
-.person-card:hover .person-image img { transform: scale(1.05); }
-.person-info {
-	position: absolute; bottom: 0; left: 0; width: 100%;
-	padding: 2rem 1.5rem 1.5rem; color: var(--branco);
-	background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, transparent);
-}
-.person-nickname { font-family: var(--font-titulo); font-size: 1.2rem; color: var(--laranja-frenesy); font-weight: 700; display: block; }
-.person-info h3 { font-family: var(--font-titulo); font-size: 2rem; margin: 0; }
-.person-info p { margin: 5px 0 0 0; color: #ccc; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
 
-/* --- MODAL DE JOGADOR (player-modal - da v1) --- */
-.modal {
-	display: none; position: fixed; left: 0; top: 0;
-	width: 100%; height: 100%; overflow: auto;
-	background-color: rgba(0, 0, 0, 0.8);
-	backdrop-filter: blur(10px);
-	opacity: 0; transition: opacity 0.4s ease;
-}
-.modal.show { display: block; opacity: 1; }
-.modal-content {
-	background-color: #000; margin: 8% auto; padding: 40px;
-	border: 1px solid #333; border-radius: 12px;
-	width: 90%; position: relative;
-	transform: scale(0.95); transition: transform 0.4s ease;
-    overflow: hidden;
-}
-.modal.show .modal-content { transform: scale(1); }
-.close-modal {
-	color: #aaa; position: absolute; top: 15px; right: 25px;
-	font-size: 2.5rem; font-weight: bold; cursor: pointer;
-	background: none; border: none; z-index: 10;
-}
-/* Modal de Time (Nível 1) */
-.team-modal {
-	z-index: 2000;
-}
-.team-modal .modal-content {
-	max-width: 1200px; /* Maior para caber a grade */
-	margin: 5% auto; /* Menor margem no topo */
-}
-/* Modal de Jogador (Nível 2) */
-#player-modal {
-	z-index: 2001; /* Fica SOBRE o modal do time */
-}
-#player-modal .modal-content {
-	max-width: 950px;
-}
+        /* --- NAVBAR (da v1) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-/* Grid e Foto do Modal de Jogador */
-.modal-grid { display: grid; grid-template-columns: 320px 1fr; gap: 40px; align-items: center; }
-.modal-photo { width: 320px; height: 450px; border-radius: 8px; overflow: hidden; }
-.modal-photo img { width: 100%; height: 100%; object-fit: cover; }
-#modal-player-nickname { color: var(--laranja-frenesy); font-size: 1.5rem; font-family: var(--font-titulo); }
-.modal-info h2 { font-family: var(--font-titulo); font-size: 3.5rem; margin: 0; line-height: 1; }
-.modal-info #modal-player-role { color: #ccc; font-size: 1.2rem; margin-bottom: 1.5rem; }
-.info-details { display: flex; gap: 2rem; margin-bottom: 1.5rem; color: #aaa; }
-.info-details div { display: flex; align-items: center; gap: 8px; }
-.info-details i { color: var(--laranja-frenesy); }
-.modal-info #modal-player-bio { line-height: 1.7; color: #ccc; margin-bottom: 2rem; }
-.modal-socials { display: flex; gap: 1.5rem; font-size: 1.8rem; }
-.modal-socials a { color: #aaa; text-decoration: none; transition: all 0.3s ease; }
-.modal-socials a:hover { color: var(--laranja-frenesy); transform: scale(1.1); }
-.modal-titles { margin-top: 1.5rem; margin-bottom: 1.5rem; color: #ccc; }
-.modal-titles h4 { font-family: var(--font-titulo); color: var(--laranja-frenesy); font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1rem; }
-.modal-titles ul { list-style: none; padding-left: 0; }
-.modal-titles li { position: relative; padding-left: 25px; margin-bottom: 8px; }
-.modal-titles li::before {
-	content: '\f091'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-	color: var(--laranja-frenesy); position: absolute; left: 0; top: 2px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
 
-/* --- ESTILOS DE PLACEHOLDER (da v1) --- */
-.empty-placeholder {
-	max-width: 700px; margin: 4rem auto 0 auto; background-color: #111;
-	border: 1px dashed #333; border-radius: 8px; padding: 4rem;
-	text-align: center; color: #888;
-}
-.empty-placeholder-icon { font-size: 4rem; color: var(--laranja-frenesy); opacity: 0.5; margin-bottom: 1.5rem; }
-.empty-placeholder h3 { font-family: var(--font-titulo); font-size: 2.5rem; color: #ccc; text-transform: uppercase; margin-bottom: 1rem; }
-.empty-placeholder p { font-size: 1.1rem; line-height: 1.7; max-width: 500px; margin: 0 auto; }
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
 
-/* --- HEADER DA PÁGINA (da v1) --- */
-/* --- HEADER DA PÁGINA (da v1) --- */
-.teams-page-header {
-    padding-top: 120px; 
-    padding-bottom: 40px; /* Mantém próximo aos filtros */
-    text-align: center;
-    
-    /* --- CORREÇÃO 2: Novo Header --- */
-    position: relative;
-    background-image: url('../assets/img/wallpapers/Wallpaper Sant.png'); /* Caminho da imagem de 'sobre-nos' */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efeito Parallax */
-    z-index: 1;
-}
+        .logo h1 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--branco);
+            letter-spacing: 2px;
+        }
 
-/* Filtros de Categoria (Mantido como estava para garantir o espaçamento) */
-.team-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 0 5% 40px; /* 0 em cima (próximo ao header), 40px em baixo (espaço para os cards) */
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-.section-title { font-family: var(--font-titulo); font-size: 3.5rem; margin-bottom: 0.5rem; color: var(--branco); text-transform: uppercase; }
-.section-subtitle { max-width: 800px; margin: 0 auto 5rem auto; color: #aaa; line-height: 1.7; font-size: 1.1rem; }
-.teams-page-header .section-title { margin-bottom: 1rem; }
-.teams-page-header .section-subtitle { margin-bottom: 0; }
+        .nav-links li {
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--laranja-frenesy);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--branco);
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* --- FOOTER (da v1) --- */
+        .site-footer {
+            position: relative;
+            padding: 120px 5% 20px;
+            background-color: var(--preto);
+            clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+            margin-top: 100px;
+        }
+
+        .footer-main {
+            padding: 40px 5% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-column.about .logo-footer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-column.about .logo-footer img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .footer-column.about .logo-footer h2 {
+            font-family: var(--font-titulo);
+            font-size: 1.8rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #a0a0a0;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--laranja-frenesy);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--branco);
+            padding-left: 5px;
+        }
+
+        .footer-column p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            position: relative;
+            max-width: 300px;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            background-color: var(--cinza-escuro);
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--branco);
+            font-family: var(--font-texto);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--laranja-frenesy);
+        }
+
+        .newsletter-form button {
+            padding: 10px 18px;
+            background-color: var(--laranja-frenesy);
+            border: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d85401;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .creator-credit {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .creator-credit i {
+            color: var(--laranja-frenesy);
+        }
+
+        .creator-credit a {
+            color: #999;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .creator-credit a:hover {
+            color: var(--laranja-frenesy);
+        }
+
+        /* --- CARD DE JOGADOR (person-card - da v1) --- */
+        .person-card {
+            flex-basis: 300px;
+            /* Tamanho base */
+            flex-grow: 1;
+            max-width: 350px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #111;
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+        }
+
+        .person-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--laranja-frenesy);
+            box-shadow: 0 0 30px rgba(249, 96, 1, 0.4);
+        }
+
+        .person-image {
+            height: 450px;
+            position: relative;
+        }
+
+        .person-image img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .person-card:hover .person-image img {
+            transform: scale(1.05);
+        }
+
+        .person-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1.5rem 1.5rem;
+            color: var(--branco);
+            background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, transparent);
+        }
+
+        .person-nickname {
+            font-family: var(--font-titulo);
+            font-size: 1.2rem;
+            color: var(--laranja-frenesy);
+            font-weight: 700;
+            display: block;
+        }
+
+        .person-info h3 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .person-info p {
+            margin: 5px 0 0 0;
+            color: #ccc;
+        }
+
+        /* --- MODAL DE JOGADOR (player-modal - da v1) --- */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #000;
+            margin: 8% auto;
+            padding: 40px;
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.4s ease;
+            overflow: hidden;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 10;
+        }
+
+        /* Modal de Time (Nível 1) */
+        .team-modal {
+            z-index: 2000;
+        }
+
+        .team-modal .modal-content {
+            max-width: 1450px;
+            /* Maior para caber a grade */
+            margin: 5% auto;
+            /* Menor margem no topo */
+        }
+
+        /* Modal de Jogador (Nível 2) */
+        #player-modal {
+            z-index: 2001;
+            /* Fica SOBRE o modal do time */
+        }
+
+        #player-modal .modal-content {
+            max-width: 950px;
+        }
+
+        /* Grid e Foto do Modal de Jogador */
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .modal-photo {
+            width: 320px;
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #modal-player-nickname {
+            color: var(--laranja-frenesy);
+            font-size: 1.5rem;
+            font-family: var(--font-titulo);
+        }
+
+        .modal-info h2 {
+            font-family: var(--font-titulo);
+            font-size: 3.5rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .modal-info #modal-player-role {
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-details {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            color: #aaa;
+        }
+
+        .info-details div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-details i {
+            color: var(--laranja-frenesy);
+        }
+
+        .modal-info #modal-player-bio {
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .modal-socials {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-socials a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .modal-socials a:hover {
+            color: var(--laranja-frenesy);
+            transform: scale(1.1);
+        }
+
+        .modal-titles {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .modal-titles h4 {
+            font-family: var(--font-titulo);
+            color: var(--laranja-frenesy);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .modal-titles ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .modal-titles li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+
+        .modal-titles li::before {
+            content: '\f091';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--laranja-frenesy);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* --- ESTILOS DE PLACEHOLDER (da v1) --- */
+        .empty-placeholder {
+            max-width: 700px;
+            margin: 4rem auto 0 auto;
+            background-color: #111;
+            border: 1px dashed #333;
+            border-radius: 8px;
+            padding: 4rem;
+            text-align: center;
+            color: #888;
+        }
+
+        .empty-placeholder-icon {
+            font-size: 4rem;
+            color: var(--laranja-frenesy);
+            opacity: 0.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .empty-placeholder h3 {
+            font-family: var(--font-titulo);
+            font-size: 2.5rem;
+            color: #ccc;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .empty-placeholder p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER DA PÁGINA (da v1) --- */
+        /* --- HEADER DA PÁGINA (da v1) --- */
+        .teams-page-header {
+            padding-top: 120px;
+            padding-bottom: 40px;
+            /* Mantém próximo aos filtros */
+            text-align: center;
+
+            /* --- CORREÇÃO 2: Novo Header --- */
+            position: relative;
+            background-image: url('../assets/img/wallpapers/Wallpaper Sant.png');
+            /* Caminho da imagem de 'sobre-nos' */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Efeito Parallax */
+            z-index: 1;
+        }
+
+        /* Filtros de Categoria (Mantido como estava para garantir o espaçamento) */
+        .team-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0 5% 40px;
+            /* 0 em cima (próximo ao header), 40px em baixo (espaço para os cards) */
+        }
+
+        .section-title {
+            font-family: var(--font-titulo);
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--branco);
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            max-width: 800px;
+            margin: 0 auto 5rem auto;
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .teams-page-header .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .teams-page-header .section-subtitle {
+            margin-bottom: 0;
+        }
 
 
 
-/* Filtros de Categoria */
-.team-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 0 5% 40px;
-}
-.filter-btn {
-    background-color: var(--cinza-escuro);
-    color: var(--branco);
-    border: 1px solid #333;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: var(--font-titulo);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-.filter-btn:hover {
-    background-color: var(--laranja-frenesy);
-    border-color: var(--laranja-frenesy);
-}
-.filter-btn.active {
-    background-color: var(--laranja-frenesy);
-    border-color: var(--laranja-frenesy);
-    box-shadow: 0 0 15px rgba(249, 96, 1, 0.4);
-}
+        /* Filtros de Categoria */
+        .team-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0 5% 40px;
+        }
 
-/* Container principal dos grids */
-.team-grid-container {
-    padding: 50px 5% 80px;
-}
+        .filter-btn {
+            background-color: var(--cinza-escuro);
+            color: var(--branco);
+            border: 1px solid #333;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-titulo);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
 
-/* Grid dos Cards de Time */
-.team-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    max-width: 1400px; /* CORREÇÃO 3: Aumentado de 1000px para 1400px */
-    margin: 0 auto;
-}
+        .filter-btn:hover {
+            background-color: var(--laranja-frenesy);
+            border-color: var(--laranja-frenesy);
+        }
 
-/* Card de Time (Novo) */
-.team-card {
-    position: relative;
-    height: 380px; /* diminui o card */
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #111;
-    border: 1px solid #222;
-    transition: all 0.4s ease;
-	display: block; /* Para o filtro JS */
-}
-.team-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--laranja-frenesy);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-.team-card-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: transform 0.5s ease;
-    object-position: center 65%; /* sobe o enquadramento */
-    transform: scale(1); /* dá um zoom natural */
+        .filter-btn.active {
+            background-color: var(--laranja-frenesy);
+            border-color: var(--laranja-frenesy);
+            box-shadow: 0 0 15px rgba(249, 96, 1, 0.4);
+        }
 
-}
+        /* Container principal dos grids */
+        .team-grid-container {
+            padding: 50px 5% 80px;
+        }
 
-.team-card:hover .team-card-bg {
-    transform: scale(1.05);
-}
-.team-card-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 45%; /* só o fundo escurecido */
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,1) 10%,
-        rgba(0,0,0,0.7) 70%,
-        transparent 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-}
-.team-card-logo {
-    position: absolute;
-    top: 15px;
-    left: relative;
-    transform: translateX(-50%);
-    width: 70px;
-    height: auto;
-    z-index: 3;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-    transform: none;
+        /* Grid dos Cards de Time */
+        .team-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            /* CORREÇÃO 3: Aumentado de 1000px para 1400px */
+            margin: 0 auto;
+        }
 
-}
-.team-card-content {
-    position: absolute;
-    bottom: 0;
-    left: auto;
-    width: 100%;
-    padding: 30px;
-    z-index: 3;
-    text-align: center;
-}
-.team-card-content h3 {
-    font-family: var(--font-titulo);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-.team-card-button {
-    display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	background: var(--laranja-frenesy);
-	color: var(--branco);
-	padding: 12px 30px;
-	font-family: var(--font-titulo);
-	font-size: 1rem;
-	letter-spacing: 1px;
-	text-decoration: none;
-	border-radius: 5px;
-	border: 2px solid var(--laranja-frenesy);
-	transition: all 0.3s ease;
-    cursor: pointer;
-}
-.team-card-button:hover {
-	background: transparent;
-	color: var(--laranja-frenesy);
-	transform: scale(1.05);
-}
+        /* Card de Time (Novo) */
+        .team-card {
+            position: relative;
+            height: 380px;
+            /* diminui o card */
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #111;
+            border: 1px solid #222;
+            transition: all 0.4s ease;
+            display: block;
+            /* Para o filtro JS */
+        }
 
-/* Conteúdo DENTRO do Modal de Time */
-.team-modal-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto 3rem auto;
-    text-align: center;
-    position: relative;
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--laranja-frenesy);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
 
-}
+        .team-card-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease;
+            object-position: center 65%;
+            /* sobe o enquadramento */
+            transform: scale(1);
+            /* dá um zoom natural */
 
-.team-modal-header h2 {
-    font-family: var(--font-titulo);
-    font-size: 2.8rem;
-    text-transform: uppercase;
-}
-.team-modal-header p {
-    font-size: 1.1rem;
-    color: #aaa;
-    line-height: 1.7;
-}
+        }
 
-/* Grid de Jogadores DENTRO do Modal */
-.team-modal-player-grid {
-    display: flex; /* Usando flex para centralizar melhor */
-	flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem; /* CORREÇÃO 4: Aumentado de 2rem para 3rem */
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .team-card:hover .team-card-bg {
+            transform: scale(1.05);
+        }
 
-/* --- FIM: NOVOS ESTILOS (v2) --- */
+        .team-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            /* só o fundo escurecido */
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 1) 10%,
+                    rgba(0, 0, 0, 0.7) 70%,
+                    transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .team-card-logo {
+            position: absolute;
+            top: 15px;
+            left: relative;
+            transform: translateX(-50%);
+            width: 70px;
+            height: auto;
+            z-index: 3;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+            transform: none;
+
+        }
+
+        .team-card-content {
+            position: absolute;
+            bottom: 0;
+            left: auto;
+            width: 100%;
+            padding: 30px;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .team-card-content h3 {
+            font-family: var(--font-titulo);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .team-card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--laranja-frenesy);
+            color: var(--branco);
+            padding: 12px 30px;
+            font-family: var(--font-titulo);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid var(--laranja-frenesy);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-card-button:hover {
+            background: transparent;
+            color: var(--laranja-frenesy);
+            transform: scale(1.05);
+        }
+
+        /* Conteúdo DENTRO do Modal de Time */
+        .team-modal-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            position: relative;
+
+        }
+
+        .team-modal-header h2 {
+            font-family: var(--font-titulo);
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+
+        .team-modal-header p {
+            font-size: 1.1rem;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        /* Grid de Jogadores DENTRO do Modal */
+        .team-modal-player-grid {
+            display: flex; /* <--- ESTA LINHA É ESSENCIAL PARA FICAREM LADO A LADO */
+            flex-wrap: wrap; /* Permite que se adaptem se a tela for muito pequena */
+            justify-content: center;
+            align-items: stretch; /* Garante que todos tenham a mesma altura */
+            gap: 15px; 
+            width: 100%;
+        }
+
+        .team-modal-player-grid .person-card {
+            flex-basis: 22%; /* Ocupa aprox 1/4 da linha */
+            max-width: 340px; /* Limite visual para não ficar gigante */
+            min-width: 200px; /* Limite mínimo para não esmagar */
+            flex-grow: 1;
+        }
+
+        /* --- FIM: NOVOS ESTILOS (v2) --- */
 
 
-/* --- MEDIA QUERIES (da v1, com ajustes) --- */
-@media (max-width: 768px) {
-    .section-title { font-size: 2.5rem; }
-    .section-subtitle { font-size: 1rem; margin-bottom: 3rem; }
-	.teams-page-header { padding-top: 120px; }
+        /* --- MEDIA QUERIES (da v1, com ajustes) --- */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
 
-	/* Filtros */
-	.team-filters { padding: 30px 5% 0; }
-	.filter-btn { font-size: 0.9rem; padding: 10px 15px; }
+            .team-modal-player-grid .person-card {
+                    flex-basis: 100%; /* 1 por linha no celular */
+            }
 
-    /* Modais */
-    .modal-content {
-        margin: 5% auto; padding: 20px;
-        max-height: 90vh; overflow-y: auto;
-    }
-    .modal-grid { grid-template-columns: 1fr; gap: 20px; }
-    .modal-photo { width: 100%; height: 380px; margin: 0 auto; }
-    .modal-info h2 { font-size: 2.5rem; }
-    .modal-info { text-align: center; }
-    .info-details { justify-content: center; flex-wrap: wrap; }
-    .modal-socials { justify-content: center; }
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 3rem;
+            }
 
-	/* Header do Modal de Time */
-	.team-modal-header h2 { font-size: 2.2rem; }
+            .teams-page-header {
+                padding-top: 120px;
+            }
 
-    /* Footer e Nav */
-    .newsletter-form { margin: 0 auto; }
-    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-    .site-footer { clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%); padding-top: 100px; }
-    .menu-toggle { display: block; }
-    .nav-links {
-        flex-direction: column; position: fixed; top: 70px; right: -100%;
-        background: rgba(0, 0, 0, 0.95); width: 70%; height: calc(100vh - 70px);
-        padding-top: 2rem; transition: right 0.3s ease-in-out; gap: 1.5rem; z-index: 1000;
-    }
-    .nav-links li { text-align: center; }
-    .nav-links.active { right: 0; }
-}
+            /* Filtros */
+            .team-filters {
+                padding: 30px 5% 0;
+            }
+
+            .filter-btn {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+
+            /* Modais */
+            .modal-content {
+                margin: 5% auto;
+                padding: 20px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .modal-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .modal-photo {
+                width: 100%;
+                height: 380px;
+                margin: 0 auto;
+            }
+
+            .modal-info h2 {
+                font-size: 2.5rem;
+            }
+
+            .modal-info {
+                text-align: center;
+            }
+
+            .info-details {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .modal-socials {
+                justify-content: center;
+            }
+
+            /* Header do Modal de Time */
+            .team-modal-header h2 {
+                font-size: 2.2rem;
+            }
+
+            /* Footer e Nav */
+            .newsletter-form {
+                margin: 0 auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .site-footer {
+                clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 100%, 0 100%);
+                padding-top: 100px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(0, 0, 0, 0.95);
+                width: 70%;
+                height: calc(100vh - 70px);
+                padding-top: 2rem;
+                transition: right 0.3s ease-in-out;
+                gap: 1.5rem;
+                z-index: 1000;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .team-modal-player-grid .person-card {
+                flex-basis: 45%; /* Coloca 2 por linha em tablets/laptops menores */
+            }
+        }   
+
+
+
     </style>
 </head>
 
@@ -498,7 +986,8 @@ body {
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html">Início</a></li>
-                <li><a href="times.html">Times</a></li> <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="times.html">Times</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="loja.html">Loja</a></li>
             </ul>
         </nav>
@@ -521,7 +1010,9 @@ body {
             <div class="team-card-grid">
 
                 <div class="team-card" data-category="freefire">
-                    <img src="../assets/img/wallpapers/Desktop/Wallpaper Rich Desktop.png" alt="Background Free Fire" class="team-card-bg"> <div class="team-card-overlay"></div>
+                    <img src="../assets/img/wallpapers/Desktop/Wallpaper Rich Desktop.png" alt="Background Free Fire"
+                        class="team-card-bg">
+                    <div class="team-card-overlay"></div>
                     <div class="team-card-content">
                         <h3>FRENESY</h3>
                         <button class="team-card-button" data-modal-id="freefire-team-modal">
@@ -531,7 +1022,8 @@ body {
                 </div>
 
                 <div class="team-card" data-category="freefire">
-                    <img src="../assets/img/teams-logo/frenzy.jpg" alt="Background Free Fire" class="team-card-bg"> <div class="team-card-overlay"></div>
+                    <img src="../assets/img/teams-logo/frenzy.jpg" alt="Background Free Fire" class="team-card-bg">
+                    <div class="team-card-overlay"></div>
                     <div class="team-card-content">
                         <h3>FRENZY</h3>
                         <button class="team-card-button" data-modal-id="freefire-frenzy-team-modal">
@@ -540,42 +1032,38 @@ body {
                     </div>
                 </div>
 
-                </div>
+            </div>
         </section>
 
     </main>
-    
+
 
     <div id="freefire-team-modal" class="modal team-modal">
         <div class="modal-content">
             <button class="close-modal" aria-label="Fechar">&times;</button>
-            
+
             <div class="team-modal-header">
                 <h2>FRENESY</h2>
-                <p>Onde tudo começou. Nossa line de Free Fire carrega a história da Frenesy, combinando agressividade no rush com um posicionamento estratégico letal. Prontos para o BOOYAH!</p>
+                <p>Onde tudo começou. Nossa line de Free Fire carrega a história da Frenesy, combinando agressividade no
+                    rush com um posicionamento estratégico letal. Prontos para o BOOYAH!</p>
             </div>
 
             <div class="team-modal-player-grid">
-                
-                <div class="person-card"
-                     data-name="Everton Silva"
-                     data-nickname="FㅤEVERTONʷᵐ"
-                     data-role="Suporte / CPT"
-                     data-img="../assets/img/team_frenesy/Everton.png"
-                     data-age="15 anos"
-                     data-city="Juazeiro do Norte, CE"
-                     data-bio="Everton é o suporte que segura tudo com calma e mente fria. Como CPT, mantém o time alinhado e sempre no timing certo. É um dos melhores jogadores de AWM que já vimos. Quando a partida aperta, é ele quem coloca ordem no jogo."
-                     data-titles="Em breve! "
-                     data-instagram="https://www.instagram.com/everton__awm">
+
+                <div class="person-card" data-name="Everton Silva" data-nickname="FㅤEVERTONʷᵐ" data-role="Suporte / CPT"
+                    data-img="../assets/img/team_frenesy/Everton.png" data-age="15 anos"
+                    data-city="Juazeiro do Norte, CE"
+                    data-bio="Everton é o suporte que segura tudo com calma e mente fria. Como CPT, mantém o time alinhado e sempre no timing certo. É um dos melhores jogadores de AWM que já vimos. Quando a partida aperta, é ele quem coloca ordem no jogo."
+                    data-titles="Em breve! " data-instagram="https://www.instagram.com/everton__awm">
                     <div class="person-image">
-                         <img src="../assets/img/team_frenesy/Everton.png" alt="Foto de Everton">
+                        <img src="../assets/img/team_frenesy/Everton.png" alt="Foto de Everton">
                     </div>
                     <div class="person-info">
                         <span class="person-nickname">FㅤEVERTONʷᵐ</span>
                         <h3>Everton Silva</h3>
                     </div>
                 </div>
-<!-- 
+                <!-- 
                 <div class="person-card"
                      data-name="Lucas Guilherme"
                      data-nickname="FㅤHYPE.xp"
@@ -595,16 +1083,10 @@ body {
                     </div>
                 </div> -->
 
-                <div class="person-card"
-                     data-name="Gabriel Alves"
-                     data-nickname="FㅤBIELZN9"
-                     data-role="Rush"
-                     data-img="../assets/img/team_frenesy/Biel.png"
-                     data-age="13 anos"
-                     data-city="Não Divulgado!"
-                     data-bio="Biel é o granadeiro que resolve rápido. No rush, sempre abre caminho e complica qualquer defesa. De UMP na mão, mostra a mira leve e a sensibilidade que só ele tem. Um prodígio que muda partida com uma jogada."
-                     data-titles="Em breve!"
-                     data-instagram="https://www.instagram.com/bielznfxp7o/">
+                <div class="person-card" data-name="Gabriel Alves" data-nickname="FㅤBIELZN9" data-role="Rush"
+                    data-img="../assets/img/team_frenesy/Biel.png" data-age="13 anos" data-city="Não Divulgado!"
+                    data-bio="Biel é o granadeiro que resolve rápido. No rush, sempre abre caminho e complica qualquer defesa. De UMP na mão, mostra a mira leve e a sensibilidade que só ele tem. Um prodígio que muda partida com uma jogada."
+                    data-titles="Em breve!" data-instagram="https://www.instagram.com/bielznfxp7o/">
                     <div class="person-image">
                         <img src="../assets/img/team_frenesy/Biel.png" alt="Foto de Omen">
                     </div>
@@ -613,17 +1095,11 @@ body {
                         <h3>Gabriel Alves</h3>
                     </div>
                 </div>
-            
-                <div class="person-card"
-                     data-name="Danilo da Silva"
-                     data-nickname="FㅤDNZIN"
-                     data-role="Rush"
-                     data-img="../assets/img/team_frenesy/Dn.png"
-                     data-age="16 anos"
-                     data-city="Não Divulgado!"
-                     data-bio="DN é o cara da resenha que nunca perde o foco. No rush, entra com confiança e faz jogada que levanta o time. Mantém o clima leve, mas entrega desempenho de gente grande. Um jogador diferenciado, sempre pronto pra fazer a diferença."
-                     data-titles="Em breve!"
-                     data-instagram="https://www.instagram.com/dnzin.hz/">
+
+                <div class="person-card" data-name="Danilo da Silva" data-nickname="FㅤDNZIN" data-role="Rush"
+                    data-img="../assets/img/team_frenesy/Dn.png" data-age="16 anos" data-city="Não Divulgado!"
+                    data-bio="DN é o cara da resenha que nunca perde o foco. No rush, entra com confiança e faz jogada que levanta o time. Mantém o clima leve, mas entrega desempenho de gente grande. Um jogador diferenciado, sempre pronto pra fazer a diferença."
+                    data-titles="Em breve!" data-instagram="https://www.instagram.com/dnzin.hz/">
                     <div class="person-image">
                         <img src="../assets/img/team_frenesy/Dn.png" alt="Foto de Omen">
                     </div>
@@ -632,32 +1108,41 @@ body {
                         <h3>Danilo da Silva</h3>
                     </div>
                 </div>
-            </div></div>
+            </div>
+        </div>
     </div>
 
 
     <div id="freefire-frenzy-team-modal" class="modal team-modal">
         <div class="modal-content">
             <button class="close-modal" aria-label="Fechar">&times;</button>
-            
+
             <div class="team-modal-header">
                 <h2>FRENZY</h2>
-                <p>Nossa segunda line de Free Fire, focada em revelar novos talentos e dominar o cenário de acesso. Prontos para o BOOYAH!</p>
+                <p>Nossa segunda line de Free Fire, focada em revelar novos talentos e dominar o cenário de acesso.
+                    Prontos para o BOOYAH!</p>
             </div>
 
             <div class="team-modal-player-grid">
-                
-                <div class="person-card"
-                     data-name="Victor Gabriel"
-                     data-nickname="FㅤVitãoBalla"
-                     data-role="Rush/CPT"
-                     data-img="../assets/img/team_frenesy/Vitão.png" data-age="20 anos"
-                     data-city="Recife, PE"
-                     data-bio="Vitão é o capitão que decide. No rush, entra com precisão e talento de outro nível. Suas calls são sempre certeiras, guiando o time nos momentos mais tensos. É ele quem levanta a tropa e mantém tudo nos trilhos, o verdadeiro cérebro da Frenzy."
-                     data-titles="Em Breve!"
-                     data-instagram="https://www.instagram.com/Vitaosemmidia">
+
+                <div class="person-card" data-name="Ronaldo Nascimento" data-nickname="FㅤFHOST9" data-role="Rush/CPT"
+                    data-img="../assets/img/team_frenesy/Fhost9.png" data-age="22 anos" data-city="Recife, PE"
+                    data-bio="Fhost é o rush rápido e preciso que mantém a cabeça no lugar. Lê o jogo num piscar, coordena o time sem caos e vira o ponto seguro da tropa. Quando ele chama, a jogada entra e o time acompanha." data-titles="Em Breve!" data-instagram="https://www.instagram.com/f_fhost9">
                     <div class="person-image">
-                         <img src="../assets/img/team_frenesy/Vitão.png" alt="Foto de Vitão">
+                        <img src="../assets/img/team_frenesy/Fhost9.png" alt="Foto de Ronaldo">
+                    </div>
+                    <div class="person-info">
+                        <span class="person-nickname">FㅤFHOST9</span>
+                        <h3>Ronaldo Nascimento</h3>
+                    </div>
+                </div>
+
+                <div class="person-card" data-name="Victor Gabriel" data-nickname="FㅤVitãoBalla" data-role="Rush"
+                    data-img="../assets/img/team_frenesy/Vitão.png" data-age="20 anos" data-city="Recife, PE"
+                    data-bio="Vitão é o cara que rusha, entra com precisão e talento de outro nível. Suas calls são sempre certeiras, guiando o time nos momentos mais tensos. É ele quem levanta a tropa e mantém tudo nos trilhos, o verdadeiro cérebro da Frenzy."
+                    data-titles="Em Breve!" data-instagram="https://www.instagram.com/Vitaosemmidia">
+                    <div class="person-image">
+                        <img src="../assets/img/team_frenesy/Vitão.png" alt="Foto de Vitão">
                     </div>
                     <div class="person-info">
                         <span class="person-nickname">FㅤVitãoBalla</span>
@@ -665,15 +1150,11 @@ body {
                     </div>
                 </div>
 
-                <div class="person-card"
-                     data-name="Marcus Vinicius"
-                     data-nickname="FㅤFOGUINN"
-                     data-role="Rush"
-                     data-img="../assets/img/team_frenesy/Vn.png" data-age="17 anos"
-                     data-city="Salvador, BA"
-                     data-bio="Foguin é sagaz e decisivo. No rush, lê a jogada rápido e resolve partida como poucos. Sempre pronto pra elevar o nível do time, entrega talento puro e impacto real em cada avanço. Um jogador que faz diferença de verdade."
-                     data-titles="Em Breve!"
-                     data-instagram="https://www.instagram.com/foguinho_00f/">
+
+                <div class="person-card" data-name="Marcus Vinicius" data-nickname="FㅤFOGUINN" data-role="Rush"
+                    data-img="../assets/img/team_frenesy/Vn.png" data-age="17 anos" data-city="Salvador, BA"
+                    data-bio="Foguin é incendiário e decisivo. No rush, lê a jogada rápido e resolve partida como poucos. Sempre pronto pra elevar o nível do time, entrega talento puro e impacto real em cada avanço. Um jogador que faz diferença de verdade."
+                    data-titles="Em Breve!" data-instagram="https://www.instagram.com/foguinho_00f/">
                     <div class="person-image">
                         <img src="../assets/img/team_frenesy/Vn.png" alt="Foto de Foguinho">
                     </div>
@@ -682,21 +1163,36 @@ body {
                         <h3>Marcus Vinicius</h3>
                     </div>
                 </div>
+
                 
+                <div class="person-card" data-name="Douglas Henrique" data-nickname="FㅤLKZIN" data-role="Suporte"
+                    data-img="../assets/img/team_frenesy/Lkzin.png" data-age="17 anos" data-city="Belo Horizonte, MG"
+                    data-bio="Lkzin é o suporte que sustenta a line sem tremer. Joga limpo, pensa rápido e mantém tudo no eixo mesmo quando o jogo aperta. Sempre atento e constante, vira o cara que segura a base e faz o time render."
+                    data-titles="Em Breve!" data-instagram="https://www.instagram.com/dou.glas2424/">
+                    <div class="person-image">
+                        <img src="../assets/img/team_frenesy/Lkzin.png" alt="Foto de Lkzin">
+                    </div>
+                    <div class="person-info">
+                        <span class="person-nickname">FㅤLKZIN</span>
+                        <h3>Douglas Henrique</h3>
+                    </div>
                 </div>
+                
+            </div>
         </div>
     </div>
 
-    
+
     <div id="cs2-team-modal" class="modal team-modal">
         <div class="modal-content">
             <button class="close-modal" aria-label="Fechar">&times;</button>
-            
+
             <div class="team-modal-header">
-                <img src="https://logodownload.org/wp-content/uploads/2023/09/cs2-logo-counter-strike-2.png" alt="Logo CS2" style="width: 250px;">
+                <img src="https://logodownload.org/wp-content/uploads/2023/09/cs2-logo-counter-strike-2.png"
+                    alt="Logo CS2" style="width: 250px;">
                 <h2>COUNTER-STRIKE 2</h2>
             </div>
-            
+
             <div class="empty-placeholder">
                 <div class="empty-placeholder-icon"><i class="fas fa-users"></i></div>
                 <h3>TIME EM FORMAÇÃO</h3>
@@ -725,9 +1221,12 @@ body {
                     <p id="modal-player-bio"></p>
                     <div class="modal-titles" id="modal-player-titles"></div>
                     <div class="modal-socials">
-                        <a id="player-twitter" href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a id="player-linkedin" href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a id="player-instagram" href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a id="player-twitter" href="#" target="_blank" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                        <a id="player-linkedin" href="#" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a id="player-instagram" href="#" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -744,10 +1243,14 @@ body {
                     </div>
                     <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@frenesy.gg" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
-						<a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@frenesy.gg" aria-label="Tiktok" title="Tiktok"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i
+                                class="fab fa-discord"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -781,7 +1284,8 @@ body {
         <div class="footer-bottom">
             <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
             <p class="creator-credit">
-                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi"
+                    target="_blank" title="Ver portfólio">alien</a>
             </p>
         </div>
     </footer>
@@ -821,7 +1325,7 @@ body {
                 button.addEventListener('click', () => {
                     const modalId = button.dataset.modalId;
                     const modal = document.getElementById(modalId);
-                    if(modal) {
+                    if (modal) {
                         modal.classList.add('show');
                     }
                 });
@@ -842,7 +1346,7 @@ body {
                         playerModal.querySelector('#modal-player-age').textContent = card.dataset.age;
                         playerModal.querySelector('#modal-player-city').textContent = card.dataset.city;
                         playerModal.querySelector('#modal-player-bio').textContent = card.dataset.bio;
-                        
+
                         // Lógica de Títulos
                         const titlesData = card.dataset.titles;
                         const titlesContainer = playerModal.querySelector('#modal-player-titles');
@@ -874,7 +1378,7 @@ body {
                                 }
                             }
                         }
-                        
+
                         playerModal.classList.add('show');
                     });
                 });
@@ -900,7 +1404,7 @@ body {
             // --- SCRIPT: Menu Mobile (da v1) ---
             const menuToggle = document.getElementById("menu-toggle");
             const navLinks = document.getElementById("nav-links");
-            if(menuToggle) {
+            if (menuToggle) {
                 menuToggle.addEventListener("click", () => {
                     navLinks.classList.toggle("active");
                     const isActive = navLinks.classList.contains("active");
@@ -919,4 +1423,5 @@ body {
         });
     </script>
 </body>
+
 </html>

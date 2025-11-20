@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apoie a Causa - Frenesy Esports</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+
+	<!-- SEO -->
+	<meta name="description" content="Apoie a Frenesy Esports! Ajude nosso time a conquistar novos campeonatos e elevar o nível do cenário competitivo.">
+	<meta name="author" content="Frenesy">
+	
+    <!-- ESTILOS -->
+    <style>
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --cinza-medio: #2a2a2a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            /* Background de bolinhas mantido no body, mas será coberto na seção hero */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: none; 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--branco);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--laranja-frenesy);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* --- NOVA SEÇÃO HERO (LAYOUT LADO A LADO) --- */
+        .hero-wrapper {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center;
+            gap: 17%;
+            padding: 160px 5% 20px 5%; /* Espaço do header fixo */
+            min-height: 100vh; /* Ocupa quase toda a tela */
+            
+            /* Fundo preto sólido para remover as bolinhas nesta área */
+            background-color: var(--preto); 
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Coluna da Esquerda (Texto) */
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        /* Coluna da Direita (Card Pix) */
+        .hero-donate {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-family: var(--font-titulo);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .section-subtitle {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- BARRA DE PROGRESSO (Movida para a esquerda) --- */
+        .progress-section {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-family: var(--font-titulo);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .progress-bg {
+            width: 100%;
+            height: 25px;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d85401, var(--laranja-frenesy));
+            width: 0%;
+            border-radius: 12px;
+            position: relative;
+            transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 0 15px rgba(249, 96, 1, 0.5);
+        }
+
+        .meta-text {
+            margin-top: 10px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .meta-highlight {
+            color: var(--laranja-frenesy);
+            font-weight: bold;
+        }
+
+        /* --- CARD PIX ACRÍLICO --- */
+        .pix-card {
+            /* Efeito Acrílico / Glassmorphism */
+            background: rgba(255, 255, 255, 0.03); /* Fundo muito transparente */
+            backdrop-filter: blur(15px); /* O Desfoque mágico */
+            -webkit-backdrop-filter: blur(15px); /* Safari */
+            border: 1px solid rgba(249, 96, 1, 0.5); /* Borda sutil */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra suave */
+            
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            width: 100%;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .pix-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--laranja-frenesy);
+            box-shadow: 0 10px 40px rgba(249, 96, 1, 0.1);
+        }
+
+        .pix-card h3 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(249, 96, 1, 0.3);
+        }
+
+        .qrcode-box {
+            background-color: var(--branco);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .qrcode-box img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        .pix-key-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .pix-key-input {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            flex-grow: 1;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        .copy-btn {
+            background: var(--laranja-frenesy);
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #d85401;
+        }
+
+        /* --- GRID DE OBJETIVOS --- */
+        .goals-section {
+            padding: 80px 5%;
+            position: relative;
+            background-color: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(5px);
+            /* Borda removida conforme solicitado */
+            border-top: none; 
+        }
+
+        .goals-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: var(--font-titulo);
+            font-size: 2.5rem;
+        }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .goal-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .goal-card:hover {
+            border-color: var(--laranja-frenesy);
+            transform: translateY(-5px);
+        }
+
+        .goal-icon {
+            font-size: 3rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 20px;
+        }
+
+        .goal-card h4 {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .goal-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- NOVA SEÇÃO: COMPARTILHAR --- */
+        .share-section {
+            padding: 130px 5%;
+            background-color: rgba(255, 0, 0, 0); 
+            text-align: center;
+            position: relative;
+        }
+        
+        .share-title {
+            font-family: var(--font-titulo);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--branco);
+        }
+        
+        .share-desc {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-share-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #111;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            background: var(--laranja-frenesy);
+            border-color: var(--laranja-frenesy);
+        }
+
+        .social-btn.whatsapp:hover { background: #25D366; border-color: #25D366; }
+        .social-btn.discord:hover { background: #5865F2; border-color: #5865F2; }
+        .social-btn.twitter:hover { background: #1DA1F2; border-color: #1DA1F2; }
+
+        /* --- FOOTER --- */
+        .site-footer {
+            position: relative; padding: 120px 5% 20px;
+            background-color: var(--preto);
+            clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+            margin-top: 50px;
+        }
+        .footer-main { padding: 40px 5% 40px; }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer-column h3 {
+            font-family: var(--font-titulo); font-size: 1.5rem;
+            color: var(--laranja-frenesy); margin-bottom: 20px; letter-spacing: 1px;
+        }
+        .footer-column.about .logo-footer { display: flex; align-items: center; margin-bottom: 15px; }
+        .footer-column.about .logo-footer img { height: 40px; margin-right: 15px; }
+        .footer-column.about .logo-footer h2 { font-family: var(--font-titulo); font-size: 1.8rem; }
+        .footer-tagline { font-size: 0.9rem; color: #a0a0a0; line-height: 1.6; margin-bottom: 20px; }
+        .social-links a {
+            color: #a0a0a0; font-size: 1.5rem; margin-right: 20px;
+            transition: color 0.3s, transform 0.3s; display: inline-block;
+        }
+        .social-links a:hover { color: var(--laranja-frenesy); transform: translateY(-3px); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #a0a0a0; transition: color 0.3s, padding-left 0.3s; }
+        .footer-links a:hover { color: var(--branco); padding-left: 5px; }
+        .footer-column p { color: #a0a0a0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+        .newsletter-form { display: flex; position: relative; max-width: 300px; }
+        .newsletter-form input {
+            flex-grow: 1; padding: 12px 15px; background-color: var(--cinza-escuro);
+            border: 1px solid #444; border-radius: 5px; color: var(--branco);
+            font-family: var(--font-texto); outline: none; transition: border-color 0.3s;
+        }
+        .newsletter-form input:focus { border-color: var(--laranja-frenesy); }
+        .newsletter-form button {
+            padding: 10px 18px; background-color: var(--laranja-frenesy);
+            border: none; color: var(--branco); font-size: 1.5rem; font-weight: bold;
+            cursor: pointer; border-radius: 0 5px 5px 0; position: absolute;
+            right: 0; top: 0; height: 100%; transition: background-color 0.3s;
+        }
+        .newsletter-form button:hover { background-color: #d85401; }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; border-top: 1px solid #222;
+            color: #888; font-size: 0.85rem;
+        }
+        .creator-credit {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.75rem; color: #777;
+        }
+        .creator-credit i { color: var(--laranja-frenesy); }
+        .creator-credit a { color: #999; font-weight: 600; transition: all 0.3s ease; }
+        .creator-credit a:hover { color: var(--laranja-frenesy); }
+
+        /* --- MOBILE / RESPONSIVO --- */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--branco);
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        @media (max-width: 900px) {
+            /* Muda layout para coluna em tablets/celulares */
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+                gap: 50px;
+            }
+            
+            .hero-content, .hero-donate {
+                max-width: 100%;
+            }
+
+            .section-title { font-size: 3rem; }
+            
+            /* Menu Mobile */
+            .menu-toggle { display: block; }
+            .nav-links {
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(0, 0, 0, 0.95);
+                width: 70%;
+                height: calc(100vh - 70px);
+                padding-top: 2rem;
+                transition: right 0.3s ease-in-out;
+                gap: 1.5rem;
+                z-index: 1000;
+                text-align: center;
+            }
+            .nav-links.active { right: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy" onerror="this.style.display='none'"> 
+                <h1>FRENESY</h1>
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="doacoes.html" class="active">Apoie</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="hero-wrapper">
+            <!-- LADO ESQUERDO: TEXTO -->
+            <div class="hero-content">
+                <h1 class="section-title">FAÇA PARTE <br><span style="color: var(--laranja-frenesy);">DO SONHO</span></h1>
+                <p class="section-subtitle">
+                    A Frenesy é movida pela paixão e pela comunidade. Cada contribuição nos ajuda a manter a estrutura, 
+                    pagar inscrições em campeonatos e levar nosso time ao topo. Sua ajuda é o nosso "buff" na vida real!
+                </p>
+
+                <!-- BARRA DE PROGRESSO (Integrada aqui) -->
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>META MENSAL</span>
+                        <span id="progress-text">R$ 0 / R$ 100</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" id="progress-bar"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <p class="meta-text">
+                            <span class="meta-highlight" id="percent-text">1%</span> concluído. Obrigado pelo apoio!
+                        </p>
+                        <p style="font-size: 0.7rem; color: #666; margin-top: 12px; font-style: italic; text-align: right;">
+                            * Valores atualizados manualmente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LADO DIREITO: CARD DE DOAÇÃO ACRÍLICO -->
+            <div class="hero-donate">
+                <div class="pix-card">
+                    <h3><i class="fa-brands fa-pix"></i> APOIE AGORA</h3>
+                    <p style="margin-bottom: 20px; color: #ccc; font-size: 0.9rem;">
+                        Escaneie o QR Code ou copie a chave. <br>O valor cai na hora para o time.
+                    </p>
+                    
+                    <div class="qrcode-box">
+                        <!-- Placeholder QR Code -->
+                        <img src="/assets/img/icons/Donate.png" alt="QR Code Pix">
+                    </div>
+
+                    <div class="pix-key-container">
+                        <input type="text" class="pix-key-input" value="2bc8a064-330c-47dc-90fb-b1e0c323aa31" id="pix-key" readonly>
+                        <button class="copy-btn" id="copy-btn" title="Copiar Chave">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p id="copy-feedback" style="color: var(--laranja-frenesy); font-size: 0.8rem; margin-top: 10px; opacity: 0; transition: opacity 0.3s;">Chave copiada!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRID DE OBJETIVOS (Abaixo da dobra) -->
+        <section class="goals-section">
+            <h2 class="goals-title">PARA ONDE VAI O APOIO?</h2>
+            <div class="goals-grid">
+                
+                <div class="goal-card">
+                    <i class="fas fa-trophy goal-icon"></i>
+                    <h4>Campeonatos</h4>
+                    <p>Custos, inscrições e suporte para participação em torneios.</p>
+                </div>
+
+                <div class="goal-card">
+                    <i class="fas fa-headset goal-icon"></i>
+                    <h4>Equipamentos</h4>
+                    <p>Compra e manutenção de periféricos e estrutura para os players.</p>
+                </div>
+
+                <div class="goal-card">
+                    <i class="fas fa-cogs goal-icon"></i>
+                    <h4>Operacional</h4>
+                    <p>Serviços essenciais para manter o projeto funcionando e crescendo.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- NOVA SEÇÃO: COMPARTILHAR -->
+        <section class="share-section">
+            <h2 class="share-title">NÃO PODE DOAR AGORA?</h2>
+            <p class="share-desc">
+                Se não for possível fazer uma doação nesse momento, compartilhe o projeto nas redes sociais. 
+                Divulgar nosso sonho é um "support" incrível e somos imensamente gratos por isso!
+            </p>
+
+            <div style="max-width: 500px; margin: 0 auto 30px auto;">
+                <div class="pix-key-container">
+                    <input type="text" class="pix-key-input" value="https://frenesy.com.br/" id="share-link" readonly>
+                    <button class="copy-btn" id="copy-link-btn" title="Copiar Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+                <p id="link-feedback" style="color: var(--laranja-frenesy); font-size: 0.8rem; margin-top: 5px; opacity: 0; transition: opacity 0.3s;">Link copiado!</p>
+            </div>
+
+            <div class="social-share-grid">
+                <a href="https://api.whatsapp.com/send?text=%F0%9F%94%A5%20MANO%2C%20PARA%20TUDO!%0AVocê%20já%20conhece%20a%20Frenesy%20Esports%3F%20O%20time%20tá%20crescendo%2C%20competindo%2C%20evoluindo%20e%20construindo%20um%20projeto%20insano%20no%20cenário!%20%0A%0ASe%20você%20curte%20jogo%2C%20competição%2C%20resenha%20e%20energia%20de%20time%20brabo%2C%20vem%20com%20a%20gente!%0ASó%20de%20compartilhar%20você%20já%20ajuda%20demais%20a%20fortalecer%20o%20corre!%20%F0%9F%92%AA%E2%9A%A1%0A%0A%F0%9F%91%89%20Entra%20no%20site%20e%20cola%20com%20a%20tropa%3A%20https%3A%2F%2Ffrenesy.com.br%2F%0A%0AVem%20fazer%20parte%20do%20sonho.%20Bora%20subir%20juntos!%20%F0%9F%A7%A1%F0%9F%96%A4"
+                    target="_blank" 
+                    class="social-btn whatsapp" 
+                    aria-label="Compartilhar no WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="https://discord.gg/AvS5dEC3vv" target="_blank" class="social-btn discord" aria-label="Entrar no Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Apoie%20a%20Frenesy%20Esports!%20O%20futuro%20do%20cenário%20competitivo.&url=https://frenesy.com.br/" target="_blank" class="social-btn twitter" aria-label="Compartilhar no Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy">
+                        <h2>FRENESY</h2>
+                    </div>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@frenesy.gg" aria-label="Tiktok" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+						<a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="parceiros.html">Parcerias</a></li>
+                        <li><a href="loja.html">Loja</a></li>
+                        <li><a href="wallpapers.html">Wallpapers</a></li>
+                        <li><a href="politicas.html">Políticas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank" title="Ver portfólio">alien</a>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // --- LÓGICA DA BARRA DE PROGRESSO ---
+        const currentDonation = 0.00;
+        const goalAmount = 500.00;
+
+        function animateProgress() {
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const percentText = document.getElementById('percent-text');
+
+            const formatMoney = (val) => val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            progressText.innerText = `${formatMoney(currentDonation)} / ${formatMoney(goalAmount)}`;
+            
+            let percentage = (currentDonation / goalAmount) * 100;
+            if (percentage > 100) percentage = 100;
+
+            // Força o texto para refletir o HTML inicial solicitado, mas mantém a lógica para o futuro
+            percentText.innerText = "0%"; // Valor fixo solicitado
+            
+            setTimeout(() => {
+                progressBar.style.width = "0%"; // Valor fixo solicitado
+            }, 300);
+        }
+
+        // --- LÓGICA DE COPIAR CHAVE PIX ---
+        const copyBtn = document.getElementById('copy-btn');
+        const pixInput = document.getElementById('pix-key');
+        const feedback = document.getElementById('copy-feedback');
+
+        copyBtn.addEventListener('click', () => {
+            pixInput.select();
+            pixInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(pixInput.value).then(() => {
+                feedback.style.opacity = "1";
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                copyBtn.style.backgroundColor = "#2ecc71";
+                setTimeout(() => {
+                    feedback.style.opacity = "0";
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.style.backgroundColor = "";
+                }, 2000);
+            });
+        });
+
+        // --- LÓGICA DE COPIAR LINK DO SITE ---
+        const copyLinkBtn = document.getElementById('copy-link-btn');
+        const linkInput = document.getElementById('share-link');
+        const linkFeedback = document.getElementById('link-feedback');
+
+        copyLinkBtn.addEventListener('click', () => {
+            linkInput.select();
+            linkInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(linkInput.value).then(() => {
+                linkFeedback.style.opacity = "1";
+                copyLinkBtn.innerHTML = '<i class="fas fa-check"></i>';
+                copyLinkBtn.style.backgroundColor = "#2ecc71";
+                setTimeout(() => {
+                    linkFeedback.style.opacity = "0";
+                    copyLinkBtn.innerHTML = '<i class="fas fa-link"></i>';
+                    copyLinkBtn.style.backgroundColor = "";
+                }, 2000);
+            });
+        });
+
+        // --- MENU MOBILE ---
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            const isActive = navLinks.classList.contains("active");
+            menuToggle.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        window.addEventListener('load', animateProgress);
+    </script>
+</body>
+</html>
