@@ -475,6 +475,149 @@
         .creator-credit a:hover { color: var(--laranja-frenesy); }
 
         /* --- MOBILE / RESPONSIVO --- */
+
+
+
+
+
+
+
+        /* --- HUB DE DOAÇÕES (NOVO) --- */
+        .donation-hub-section {
+            padding: 60px 5%;
+            background-color: #000000
+        }
+
+        .hub-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Divide em 2 colunas iguais */
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- LADO ESQUERDO: HALL DA FAMA --- */
+        .hall-fame-box h3, .history-box h3 {
+            font-family: var(--font-titulo);
+            font-size: 2rem;
+            color: var(--branco);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--laranja-frenesy);
+            padding-left: 15px;
+        }
+
+        .top-ranks {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .rank-card {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #111, #0a0a0a);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cores dos Ranks */
+        .rank-card.gold { border-color: #ffffff; box-shadow: 0 0 15px rgba(255, 215, 0, 0.1); }
+        .rank-card.silver { border-color: #ffffff; box-shadow: 0 0 10px rgba(192, 192, 192, 0.05); }
+        .rank-card.bronze { border-color: #ffffff; box-shadow: 0 0 10px rgba(205, 127, 50, 0.05); }
+
+        .rank-position {
+            font-family: var(--font-titulo);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-right: 20px;
+            line-height: 1;
+            width: 40px; 
+            text-align: center;
+        }
+
+        .rank-card.gold .rank-position { color: #f96001; }
+        .rank-card.silver .rank-position { color: #f96001; }
+        .rank-card.bronze .rank-position { color: #f96001; }
+
+        .rank-info h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .rank-info span {
+            color: var(--laranja-frenesy);
+            font-weight: 700;
+            font-family: var(--font-titulo);
+            font-size: 1.1rem;
+        }
+
+        /* --- LADO DIREITO: HISTÓRICO (LISTA COMPLETA) --- */
+        .history-box {
+            background-color: #0e0e0e;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            height: 400px; /* Altura fixa */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho da Tabela */
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Área de Scroll */
+        .history-list {
+            overflow-y: auto; /* Permite rolar se a lista for grande */
+            flex-grow: 1;
+            padding-right: 10px; /* Espaço para scrollbar */
+        }
+
+        /* Custom Scrollbar (Estética Gamer) */
+        .history-list::-webkit-scrollbar { width: 6px; }
+        .history-list::-webkit-scrollbar-track { background: #111; }
+        .history-list::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        .history-list::-webkit-scrollbar-thumb:hover { background: var(--laranja-frenesy); }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+            transition: background 0.2s;
+        }
+
+        .history-item:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .h-name { color: #ccc; font-size: 0.95rem; }
+        .h-date { color: #555; font-size: 0.8rem; margin-left: auto; margin-right: 15px; align-self: center;}
+        .h-value { color: var(--laranja-frenesy); font-family: var(--font-titulo); font-weight: 600; }
+
+
+
+
+
+
+
+
+
+        
         .menu-toggle {
             display: none;
             font-size: 1.8rem;
@@ -522,6 +665,18 @@
                 text-align: center;
             }
             .nav-links.active { right: 0; }
+
+
+            .hub-container { grid-template-columns: 1fr; gap: 50px; }
+            .history-box { height: 350px; }
+
+
+
+
+
+
+
+
         }
     </style>
 </head>
@@ -603,7 +758,29 @@
             </div>
         </div>
 
-        <!-- GRID DE OBJETIVOS (Abaixo da dobra) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section class="goals-section">
             <h2 class="goals-title">PARA ONDE VAI O APOIO?</h2>
             <div class="goals-grid">
@@ -628,6 +805,72 @@
 
             </div>
         </section>
+
+
+        <section class="donation-hub-section">
+            <div class="hub-container">
+                
+                <div class="hall-fame-box">
+                    <h3><i class="fas fa-crown"></i> Hall da Fama</h3>
+                    
+                    <div class="top-ranks">
+                        <div class="rank-card gold">
+                            <div class="rank-position">1</div>
+                            <div class="rank-info">
+                                <h4>Christopher Rissardi</h4>
+                                <span>R$ 50,00</span>
+                            </div>
+                            <i class="fas fa-trophy" style="position: absolute; right: 20px; color: rgba(249, 96, 1, 0.5); font-size: 2.5rem;"></i>
+                        </div>
+
+                        <div class="rank-card silver">
+                            <div class="rank-position">2</div>
+                            <div class="rank-info">
+                                <h4></h4>
+                                <span>R$ 0,00</span>
+                            </div>
+                        </div>
+
+                        <div class="rank-card bronze">
+                            <div class="rank-position">3</div>
+                            <div class="rank-info">
+                                <h4></h4>
+                                <span>R$ 0,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history-box">
+                    <h3><i class="fas fa-list"></i> Histórico</h3>
+                    
+                    <div class="history-header">
+                        <span>Doador</span>
+                        <div style="display: flex; gap: 15px;">
+                            <span>Data</span>
+                            <span>Valor</span>
+                        </div>
+                    </div>
+
+                    <div class="history-list">
+                        <div class="history-item">
+                            <span class="h-name">Christopher Rissardi</span>
+                            <span class="h-date">31/10/2025</span>
+                            <span class="h-value">R$ 50,00</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 12px; font-style: italic; text-align: center;">
+                    * Valores atualizados manualmente.
+                </p>
+
+
+            </div>
+        </section>
+
 
 
         <!-- NOVA SEÇÃO: COMPARTILHAR -->
@@ -664,6 +907,39 @@
                 </a>
             </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
 
