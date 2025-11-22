@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria da Comunidade - Frenesy Esports</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+
+    <!-- SEO -->
+    <meta name="description" content="Galeria de fotos da comunidade Frenesy Esports. Confira os momentos marcantes, eventos presenciais, parcerias e a nossa torcida.">
+    <meta name="author" content="Frenesy">
+    <meta name="keywords" content="fotos frenesy, galeria esports, comunidade frenesy, eventos gamer fotos, time de esports, torcida organizada">
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GERAIS (Herdados de eventos.html)
+           ========================================================================== */
+        :root {
+            --preto: #000000;
+            --laranja-frenesy: #f96001;
+            --branco: #ffffff;
+            --cinza-escuro: #1a1a1a;
+            --font-titulo: 'Rajdhani', sans-serif;
+            --font-texto: 'Poppins', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-texto);
+            background-color: var(--preto);
+            color: var(--branco);
+            overflow-x: hidden;
+            /* Padrão de fundo sutil igual ao original */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        /* NAVBAR */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 5%; background-color: rgba(0, 0, 0, 0.9);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 50px; margin-right: 15px; }
+        .logo h1 {
+            font-family: var(--font-titulo); font-size: 2rem;
+            color: var(--branco); letter-spacing: 2px;
+        }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { padding: 0 20px; }
+        .nav-links a {
+            color: var(--branco); font-weight: 600;
+            transition: color 0.3s ease; position: relative; padding-bottom: 5px;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0; left: 0; transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--laranja-frenesy); }
+        .nav-links a:hover::after { width: 100%; }
+        
+        /* MENU MOBILE */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--branco);
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* MAIN SETUP */
+        main { padding-top: 80px; min-height: 80vh; }
+        
+        /* TITULOS */
+        .section-title {
+            text-align: center; font-family: var(--font-titulo);
+            font-size: 3rem; margin-bottom: 1rem; position: relative;
+            display: inline-block; left: 50%; transform: translateX(-50%);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .section-title::after {
+            content: ''; position: absolute; width: 60%; height: 4px;
+            background-color: var(--laranja-frenesy);
+            bottom: 0; left: 20%;
+        }
+        .section-subtitle {
+            text-align: center; max-width: 700px;
+            margin: 0 auto 3rem auto; color: #aaa; line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .site-footer {
+            position: relative;
+            padding: 120px 5% 20px;
+            background-color: var(--preto);
+            clip-path: polygon(0 8%, 50% 0, 100% 8%, 100% 100%, 0 100%);
+            margin-top: 100px;
+        }
+
+        .footer-main {
+            padding: 40px 5% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            font-family: var(--font-titulo);
+            font-size: 1.5rem;
+            color: var(--laranja-frenesy);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-column.about .logo-footer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-column.about .logo-footer img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .footer-column.about .logo-footer h2 {
+            font-family: var(--font-titulo);
+            font-size: 1.8rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #a0a0a0;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--laranja-frenesy);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--branco);
+            padding-left: 5px;
+        }
+
+        .footer-column p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            position: relative;
+            max-width: 300px;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            background-color: var(--cinza-escuro);
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--branco);
+            font-family: var(--font-texto);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--laranja-frenesy);
+        }
+
+        .newsletter-form button {
+            padding: 10px 18px;
+            background-color: var(--laranja-frenesy);
+            border: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d85401;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .creator-credit {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .creator-credit i {
+            color: var(--laranja-frenesy);
+        }
+
+        .creator-credit a {
+            color: #999;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .creator-credit a:hover {
+            color: var(--laranja-frenesy);
+        }
+
+        .community-section {
+            padding: 100px 5%;
+            position: relative;
+            background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 10) 900%);
+        }
+
+        /* ==========================================================================
+           ESTILOS DA GALERIA (NOVO)
+           ========================================================================== */
+        
+        .gallery-section {
+            padding: 50px 5% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Grid de Imagens (Masonry Simulado ou Grid Flexível) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 15px;
+        }
+
+        /* Item Individual da Galeria */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background-color: #111;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Classes para variar o tamanho e dar dinamismo ao grid */
+        .gallery-item.wide { grid-column: span 2; }
+        .gallery-item.tall { grid-row: span 2; }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        /* Overlay ao passar o mouse */
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: var(--branco);
+            font-family: var(--font-titulo);
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: fadeIn 0.3s;
+        }
+
+        .lightbox-content-wrapper {
+            position: relative;
+            max-width: 90%;
+            max-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin-top: 15px;
+            color: #ccc;
+            font-family: var(--font-texto);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Botões de Navegação */
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: var(--branco);
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 2rem;
+            transition: color 0.3s, background 0.3s;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-btn:hover {
+            color: var(--laranja-frenesy);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2001;
+        }
+
+        .close-btn:hover {
+            color: var(--laranja-frenesy);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            
+            .nav-links {
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(0, 0, 0, 0.95);
+                width: 70%;
+                height: calc(100vh - 70px);
+                padding-top: 2rem;
+                transition: right 0.3s ease-in-out;
+                gap: 1.5rem;
+                z-index: 1000;
+                border-left: 1px solid #333;
+            }
+            .nav-links.active { right: 0; }
+            
+            .section-title { font-size: 2.2rem; }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                grid-auto-rows: 150px;
+            }
+            
+            .gallery-item.wide, .gallery-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .prev { left: 10px; padding: 10px; font-size: 1.5rem; width: 40px; height: 40px; }
+            .next { right: 10px; padding: 10px; font-size: 1.5rem; width: 40px; height: 40px; }
+        }
+
+    </style>
+</head>
+    
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50x50?text=F';">
+                <h1>FRENESY</h1>
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="wallpapers.html">Wallpapers</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h2 class="section-title">GALERIA FRENESY</h2>
+            <p class="section-subtitle">
+                Nossa força vem da nossa união. Confira os melhores momentos dos nossos eventos e
+                encontros.
+            </p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="/assets/img/gallery/IMG-20251120-WA0039.jpg" alt="Encontro Galático" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Staff Frenesy</span>
+                    </div>
+                </div>
+<!-- 
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&q=80&w=400" alt="Computadores RGB" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Área de Treino</span>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=400" alt="Jogador com headset" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">MVP da Partida</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=400" alt="Jogador com headset" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">MVP da Partida</span>
+                    </div>
+                </div> -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        
+        <button class="lightbox-btn prev" onclick="changeImage(-1)">&#10094;</button>
+        
+        <div class="lightbox-content-wrapper">
+            <div style="text-align: center;">
+                <img id="lightbox-img" class="lightbox-img" src="" alt="Imagem ampliada">
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+
+        <button class="lightbox-btn next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column about">
+                    <div class="logo-footer">
+                        <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy" onerror="this.src='https://via.placeholder.com/50x50?text=F';">
+                        <h2>FRENESY</h2>
+                    </div>
+                    <p class="footer-tagline">Forjados na competição, movidos pela paixão. Nós dominamos o jogo.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/frenesy.gg/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@frenesy.gg" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@frenesygg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+						<a href="https://discord.gg/AvS5dEC3vv" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="parceiros.html">Parcerias</a></li>
+                        <li><a href="loja.html">Loja</a></li>
+                        <li><a href="wallpapers.html">Wallpapers</a></li>
+                        <li><a href="politicas.html">Políticas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>FIQUE POR DENTRO</h3>
+                    <p>Receba as últimas notícias e drops exclusivos da Frenesy.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor e-mail">
+                        <button type="submit" aria-label="Inscrever-se">→</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2025 Frenesy E-sports. Todos os direitos reservados.</p>
+            <p class="creator-credit">
+                <i class="fas fa-code"></i> Developed by<a href="https://instagram.com/christopherrissardi" target="_blank">alien</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ========================
+        // SCRIPT MENU MOBILE
+        // ========================
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            const isActive = navLinks.classList.contains("active");
+            menuToggle.innerHTML = isActive
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // ========================
+        // SCRIPT LIGHTBOX (GALERIA)
+        // ========================
+        
+        // Coletar todas as imagens da galeria
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        let currentIndex = 0;
+
+        // Função para abrir o Lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Previne scroll no fundo
+        }
+
+        // Função para fechar o Lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restaura scroll
+        }
+
+        // Atualiza a imagem e legenda baseada no índice atual
+        function updateLightboxImage() {
+            const item = galleryItems[currentIndex];
+            const img = item.querySelector('img');
+            const caption = item.querySelector('.gallery-caption').innerText;
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.innerText = caption;
+        }
+
+        // Navegar para próxima ou anterior (n = 1 ou -1)
+        function changeImage(n) {
+            currentIndex += n;
+
+            // Loop infinito
+            if (currentIndex >= galleryItems.length) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = galleryItems.length - 1;
+            }
+
+            updateLightboxImage();
+        }
+
+        // Fechar ao clicar fora da imagem (no fundo escuro)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content-wrapper')) {
+                closeLightbox();
+            }
+        });
+
+        // Navegação por Teclado
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+
+    </script>
+</body>
+</html>
