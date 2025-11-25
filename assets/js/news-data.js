@@ -3,48 +3,48 @@
 
 const newsData = [
 
-    {
-        id: 3,
-        title: "Recrutamento Frenesy: Abrimos 3 Vagas para Times Competitivos de Free Fire!",
-        category: "RECRUTAMENTO",
-        author: "Christopher Rissardi",
-        date: "30 de Setembro, 2025",
-        image: "../assets/img/news/Recrutamento 2025/Banner.png", // Insira a imagem do recrutamento aqui.
-        summary: "A Frenesy está recrutando 3 times de Free Fire: um feminino (mobile/emulador), um masculino mobile e um masculino emulador. Não é peneira! A vaga é para times já formados e focados no competitivo.",
-        content: `
-            <p>Atenção, comunidade! A <strong>Frenesy</strong> está com uma oportunidade imperdível para times de Free Fire que buscam um lugar no cenário competitivo. Em vez de uma peneira, estamos abrindo <strong>3 vagas exclusivas</strong> para times já formados, que serão avaliados com base em seu desempenho e comprometimento.</p>
+    // {
+    //     id: 3,
+    //     title: "Recrutamento Frenesy: Abrimos 3 Vagas para Times Competitivos de Free Fire!",
+    //     category: "RECRUTAMENTO",
+    //     author: "Christopher Rissardi",
+    //     date: "30 de Setembro, 2025",
+    //     image: "../assets/img/news/Recrutamento 2025/Banner.png", // Insira a imagem do recrutamento aqui.
+    //     summary: "A Frenesy está recrutando 3 times de Free Fire: um feminino (mobile/emulador), um masculino mobile e um masculino emulador. Não é peneira! A vaga é para times já formados e focados no competitivo.",
+    //     content: `
+    //         <p>Atenção, comunidade! A <strong>Frenesy</strong> está com uma oportunidade imperdível para times de Free Fire que buscam um lugar no cenário competitivo. Em vez de uma peneira, estamos abrindo <strong>3 vagas exclusivas</strong> para times já formados, que serão avaliados com base em seu desempenho e comprometimento.</p>
 
-            <h2>Quais são as vagas?</h2>
-            <p>Estamos buscando preencher 3 vagas para equipes completas, cada uma focada em uma modalidade específica:</p>
-            <ul>
-                <li><strong>Time Feminino</strong>: 1 vaga (pode ser mobile ou emulador).</li>
-                <li><strong>Time Masculino Mobile</strong>: 1 vaga.</li>
-                <li><strong>Time Masculino Emulador</strong>: 1 vaga.</li>
-            </ul>
-            <p>Cada equipe deverá ser composta por até <strong>6 membros</strong> (incluindo reservas), garantindo flexibilidade e força para os campeonatos. Procuramos times que já possuam entrosamento e que estejam prontos para levar o jogo a sério.</p>
+    //         <h2>Quais são as vagas?</h2>
+    //         <p>Estamos buscando preencher 3 vagas para equipes completas, cada uma focada em uma modalidade específica:</p>
+    //         <ul>
+    //             <li><strong>Time Feminino</strong>: 1 vaga (pode ser mobile ou emulador).</li>
+    //             <li><strong>Time Masculino Mobile</strong>: 1 vaga.</li>
+    //             <li><strong>Time Masculino Emulador</strong>: 1 vaga.</li>
+    //         </ul>
+    //         <p>Cada equipe deverá ser composta por até <strong>6 membros</strong> (incluindo reservas), garantindo flexibilidade e força para os campeonatos. Procuramos times que já possuam entrosamento e que estejam prontos para levar o jogo a sério.</p>
 
-            <h2>O que esperamos dos times?</h2>
-            <p>A Frenesy valoriza a integridade e o jogo limpo. Por isso, é fundamental que todos os times interessados cumpram as seguintes regras:</p>
-            <ul>
-                <li>Foco total no cenário <strong>competitivo</strong>.</li>
-                <li>Comprometimento e disciplina nos treinos e jogos.</li>
-                <li><strong>Proibido</strong> o uso de cheats, hacks, bugs ou qualquer outro método de trapaça.</li>
-                <li>Desejo de crescer e representar a nossa organização com profissionalismo.</li>
-            </ul>
+    //         <h2>O que esperamos dos times?</h2>
+    //         <p>A Frenesy valoriza a integridade e o jogo limpo. Por isso, é fundamental que todos os times interessados cumpram as seguintes regras:</p>
+    //         <ul>
+    //             <li>Foco total no cenário <strong>competitivo</strong>.</li>
+    //             <li>Comprometimento e disciplina nos treinos e jogos.</li>
+    //             <li><strong>Proibido</strong> o uso de cheats, hacks, bugs ou qualquer outro método de trapaça.</li>
+    //             <li>Desejo de crescer e representar a nossa organização com profissionalismo.</li>
+    //         </ul>
 
-            <h2>Como será a avaliação?</h2>
-            <p>O processo de seleção não será uma peneira tradicional, mas sim uma <strong>avaliação minuciosa</strong> do desempenho e do potencial de cada equipe. Iremos analisar o histórico, a performance em partidas e a sinergia do time. Queremos conhecer a história de cada line e entender se ela se alinha aos nossos objetivos.</p>
+    //         <h2>Como será a avaliação?</h2>
+    //         <p>O processo de seleção não será uma peneira tradicional, mas sim uma <strong>avaliação minuciosa</strong> do desempenho e do potencial de cada equipe. Iremos analisar o histórico, a performance em partidas e a sinergia do time. Queremos conhecer a história de cada line e entender se ela se alinha aos nossos objetivos.</p>
 
-            <h2>Como se candidatar?</h2>
-            <p>Se a sua equipe se encaixa no perfil que estamos buscando e tem o que é preciso para representar a Frenesy, entre em contato diretamente pelo WhatsApp para mais informações e para dar início à sua avaliação. Basta clicar no botão abaixo:</p>
-            <div style="text-align:center; margin: 20px 0;">
-                <a href="https://wa.me/5541992072338?text=Tenho%20interesse%2Fgostaria%20de%20saber%20mais%20sobre%20a%20vaga%20de%20recrutamento%20de%20time%20da%20Frenesy!" target="_blank" style="display:inline-block; background-color:#f96001; color:#fff; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:16px;">
-                    Falar com o recrutador no WhatsApp
-                </a>
-            </div>
-            <p>Estamos ansiosos para encontrar as próximas estrelas do Free Fire competitivo. Venha fazer parte da nossa história!</p>
-            <p>Enquanto aguardam o contato, convidamos você a conhecer mais sobre a nossa organização em nosso site. <a href="https://frenesy.com.br/">Clique aqui e descubra tudo o que a Frenesy tem a oferecer!</a></p>        `
-    },
+    //         <h2>Como se candidatar?</h2>
+    //         <p>Se a sua equipe se encaixa no perfil que estamos buscando e tem o que é preciso para representar a Frenesy, entre em contato diretamente pelo WhatsApp para mais informações e para dar início à sua avaliação. Basta clicar no botão abaixo:</p>
+    //         <div style="text-align:center; margin: 20px 0;">
+    //             <a href="https://wa.me/5541992072338?text=Tenho%20interesse%2Fgostaria%20de%20saber%20mais%20sobre%20a%20vaga%20de%20recrutamento%20de%20time%20da%20Frenesy!" target="_blank" style="display:inline-block; background-color:#f96001; color:#fff; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:16px;">
+    //                 Falar com o recrutador no WhatsApp
+    //             </a>
+    //         </div>
+    //         <p>Estamos ansiosos para encontrar as próximas estrelas do Free Fire competitivo. Venha fazer parte da nossa história!</p>
+    //         <p>Enquanto aguardam o contato, convidamos você a conhecer mais sobre a nossa organização em nosso site. <a href="https://frenesy.com.br/">Clique aqui e descubra tudo o que a Frenesy tem a oferecer!</a></p>        `
+    // },
 
     {
         id: 4,
@@ -62,7 +62,6 @@ const newsData = [
             <p>O elenco é formado por cinco atletas que chegam com funções bem definidas e entrosamento construído nos treinos. Confira:</p>
 
             <ul>
-                <li><strong>FㅤVitãoBalla</strong> (Victor Gabriel, 20 anos) – <em>Capitão</em>. Responsável pela liderança e pela tomada de decisões estratégicas durante as partidas.</li>
                 <li><strong>FㅤEVERTONʷᵐ</strong> (Everton Silva, 15 anos) – <em>Suporte</em>. Conhecido por sua leitura de jogo e capacidade de segurar a retaguarda em momentos decisivos.</li>
                 <li><strong>FㅤHYPE.xp</strong> (Lucas Guilherme, 16 anos) – <em>Rush</em>. Jogador agressivo, especialista em abrir espaço nas rotações e iniciar confrontos.</li>
                 <li><strong>FㅤBIELZN9</strong> (Gabriel Alves, 13 anos) – <em>Rush</em>. Apesar da pouca idade, demonstra maturidade competitiva e reflexos rápidos.</li>
