@@ -147,13 +147,13 @@
             margin-bottom: 3rem;
         }
 
-        /* Redes sociais */
         .launch-socials p {
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.9rem;
             color: #888;
-            margin: 0 auto 1.5rem;
+            margin: 3.5rem auto 1.5rem;
         }
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -168,6 +168,31 @@
             color: var(--laranja-frenesy);
             transform: translateY(-5px);
         }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--laranja-frenesy);
+            color: var(--branco);
+            padding: 20px 45px;
+            font-family: var(--font-titulo);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid var(--laranja-frenesy);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(249, 96, 1, 0.4);
+        }
+
+        .btn-main:hover {
+            background-color: transparent;
+            color: var(--laranja-frenesy);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(249, 96, 1, 0.5);
+        }
+
+
+
         
         /* ==========================================================================
            PLAYER DE MÚSICA
@@ -371,8 +396,8 @@
             </div>
 
             <div class="launch-content">
-                <h1>A TROPA TÁ <span class="highlight">CHEGANDO</span> EM</h1>
-                <p>O site oficial da Frenesy E-sports está prestes a entrar no ar. Prepare-se para uma nova era de competição, comunidade e glória.</p>
+                <h1>A TROPA <span class="highlight">CHEGOU</span> EM</h1>
+                <p>O site oficial da Frenesy E-sports já esta no ar. Prepare-se para uma nova era de competição, comunidade e glória.</p>
 
                 <div id="countdown-timer">
                     <div class="time-block"><span id="days" class="time-value">00</span><div class="time-label">Dias</div></div>
@@ -381,6 +406,12 @@
                     <div class="time-block"><span id="seconds" class="time-value">00</span><div class="time-label">Segundos</div></div>
                 </div>
                 <div id="launch-message">BEM-VINDO À FRENESY!</div>
+
+                <div class="launch-status">
+                    <a href="https://frenesy.com.br" class="btn-main">ACESSAR SITE OFICIAL</a>
+                    <br>
+                </div>
+
 
                 <div class="launch-socials">
                     <p>// ACOMPANHE NAS REDES SOCIAIS</p>
@@ -466,8 +497,8 @@
             const launchDate = new Date(
                 today.getFullYear(),
                 today.getMonth(),
-                13,  // dia
-                13,  // hora
+                0,  // dia
+                0,  // hora
                 0,  // minuto
                 0    // segundo
             ).getTime();
