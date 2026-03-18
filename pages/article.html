@@ -461,9 +461,9 @@
                     } else {
                         // Cria a tag se ela não existir (para OG/Twitter mais complexos)
                         const newTag = document.createElement('meta');
-                        newTag.setAttribute(selector.startsWith('meta[property') ? 'property' : 'name', selector.match(/'"['"]/)[1]);
+                        newTag.setAttribute(selector.startsWith('meta[property') ? 'property' : 'name', selector.match(/"(.*?)"/)[1]);
                         newTag.setAttribute(attribute, value);
-                        document.head.appendChild(newTag);
+                    document.head.appendChild(newTag); 
                     }
                 };
 
