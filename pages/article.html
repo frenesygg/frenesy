@@ -12,27 +12,19 @@
 
 	<link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
-	<!-- SEO -->
-	<meta name="description" content="Confira as últimas notícias da Frenesy Esports! Atualizações sobre campeonatos, resultados, novos jogadores, bastidores e tudo que movimenta a comunidade gamer.">
-	<meta name="author" content="Frenesy">
-	<meta name="keywords" content="notícias Frenesy Esports, novidades esports, atualizações Frenesy, frenesi, contratações esports, campeonatos Frenesy, resultados de jogos, imprensa Frenesy, esports brasil, valorant notícias, cs2 notícias, league of legends notícias">
-
-	<!-- CANONICAL -->
-	<link rel="canonical" href="https://frenesy.com.br/pages/noticias.html">
-
-	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://frenesy.com.br/pages/noticias.html">
-	<meta property="og:title" content="Notícias Frenesy Esports - Atualizações e Novidades">
-	<meta property="og:description" content="Fique ligado nas notícias da Frenesy Esports: campeonatos, novos talentos, bastidores e tudo sobre nossa jornada no cenário competitivo.">
-	<meta property="og:image" content="https://frenesy.com.br/assets/media/noticias_banner.png">
-
-	<!-- TWITTER CARDS -->
+	<!-- SEO DINÂMICO (será preenchido via JavaScript) -->
+	<meta name="description" content="">
+	<meta name="author" content="Frenesy Esports">
+	<link rel="canonical" href="">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Frenesy Esports">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:url" content="https://frenesy.com.br/pages/noticias.html">
-	<meta name="twitter:title" content="Notícias Frenesy Esports - Atualizações e Novidades">
-	<meta name="twitter:description" content="Descubra as últimas notícias da Frenesy Esports: resultados, novidades e bastidores do time. #GoFrenesyTeam">
-	<meta name="twitter:image" content="https://frenesy.com.br/assets/media/noticias_banner.png">
+	<!-- Outras tags OG e Twitter serão preenchidas via JS -->
+	<script type="application/ld+json" id="article-schema"></script>
 
     <style>
         :root {
@@ -451,45 +443,94 @@
             const article = newsData.find(item => item.id === articleId);
 
             if (article) {
-                // --- INÍCIO DAS ALTERAÇÕES ---
+                // --- INÍCIO DA OTIMIZAÇÃO DE SEO DINÂMICO ---
 
-                // 1. Atualiza o <title> da página
-                document.title = `${article.title} - Frenesy E-sports`;
+                // 1. Atualiza o <title> da página dinamicamente
+                document.title = `${article.title} - Frenesy Esports`;
 
-                // 2. Função para atualizar as meta tags
+                // 2. Define as URLs base para imagens e a página
+                const baseUrl = 'https://frenesy.com.br';
+                const pageUrl = `${baseUrl}/pages/article.html?id=${article.id}`;
+                const imageUrl = new URL(article.image.replace('..', ''), baseUrl).href;
+
+                // 3. Função auxiliar para atualizar meta tags
                 const updateMetaTag = (selector, attribute, value) => {
                     const tag = document.querySelector(selector);
                     if (tag) {
                         tag.setAttribute(attribute, value);
+                    } else {
+                        // Cria a tag se ela não existir (para OG/Twitter mais complexos)
+                        const newTag = document.createElement('meta');
+                        newTag.setAttribute(selector.startsWith('meta[property') ? 'property' : 'name', selector.match(/'"['"]/)[1]);
+                        newTag.setAttribute(attribute, value);
+                        document.head.appendChild(newTag);
                     }
                 };
-                
-                // **IMPORTANTE**: Para que as imagens funcionem no preview, elas precisam ter um URL completo (ex: https://frenesy.com.br/assets/...).
-                // O código abaixo assume que a URL base é a do site.
-                const baseUrl = window.location.origin;
-                const imageUrl = new URL(article.image.replace('..', ''), baseUrl).href;
-                const pageUrl = window.location.href;
 
-                // Atualiza as principais meta tags
+                // 4. Atualiza todas as meta tags de SEO
                 updateMetaTag('meta[name="description"]', 'content', article.summary);
                 updateMetaTag('link[rel="canonical"]', 'href', pageUrl);
 
                 // Open Graph (Facebook, WhatsApp, etc.)
+                updateMetaTag('meta[property="og:locale"]', 'content', 'pt_BR');
                 updateMetaTag('meta[property="og:title"]', 'content', article.title);
                 updateMetaTag('meta[property="og:description"]', 'content', article.summary);
                 updateMetaTag('meta[property="og:image"]', 'content', imageUrl);
+                updateMetaTag('meta[property="og:image:secure_url"]', 'content', imageUrl);
+                updateMetaTag('meta[property="og:image:alt"]', 'content', article.title);
+                updateMetaTag('meta[property="og:image:width"]', 'content', '1200');
+                updateMetaTag('meta[property="og:image:height"]', 'content', '630');
                 updateMetaTag('meta[property="og:url"]', 'content', pageUrl);
 
                 // Twitter Cards
+                updateMetaTag('meta[name="twitter:site"]', 'content', '@frenesygg');
+                updateMetaTag('meta[name="twitter:creator"]', 'content', '@frenesygg');
                 updateMetaTag('meta[name="twitter:title"]', 'content', article.title);
                 updateMetaTag('meta[name="twitter:description"]', 'content', article.summary);
                 updateMetaTag('meta[name="twitter:image"]', 'content', imageUrl);
+                updateMetaTag('meta[name="twitter:image:alt"]', 'content', article.title);
                 updateMetaTag('meta[name="twitter:url"]', 'content', pageUrl);
 
-                // --- FIM DAS ALTERAÇÕES ---
+                // 5. Cria e insere os Dados Estruturados (Schema.org) para o artigo
+                const monthMap = {
+                    'Janeiro': 'January', 'Fevereiro': 'February', 'Março': 'March', 'Abril': 'April', 'Maio': 'May', 'Junho': 'June',
+                    'Julho': 'July', 'Agosto': 'August', 'Setembro': 'September', 'Outubro': 'October', 'Novembro': 'November', 'Dezembro': 'December'
+                };
+                const dateString = article.date.replace(/(\d+)\s+de\s+(\w+),\s+(\d+)/, (match, day, month, year) => {
+                    const englishMonth = monthMap[month];
+                    return `${englishMonth} ${day}, ${year}`;
+                });
+                const isoDate = new Date(dateString).toISOString();
 
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@type": "NewsArticle",
+                    "headline": article.title,
+                    "image": [imageUrl],
+                    "datePublished": isoDate,
+                    "dateModified": isoDate,
+                    "author": [{
+                        "@type": "Person",
+                        "name": article.author,
+                        "url": baseUrl
+                    }],
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Frenesy Esports",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": `${baseUrl}/assets/img/logo/Frenesy%20nb.png`
+                        }
+                    },
+                    "description": article.summary,
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": pageUrl
+                    }
+                };
+                document.getElementById('article-schema').textContent = JSON.stringify(schema, null, 2);
 
-                // Insere o conteúdo da notícia no container (código original)
+                // 6. Insere o conteúdo HTML do artigo no corpo da página
                 container.innerHTML = `
                     <header class="article-header">
                         <div class="article-category">${article.category}</div>
