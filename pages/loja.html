@@ -13,9 +13,10 @@
     <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
     <!-- SEO -->
-    <meta name="description" content="Loja Oficial Frenesy Esports! Camisetas, moletons, bonés e acessórios gamers exclusivos. Vista as cores da Frenesy e mostre sua paixão pelo cenário competitivo.">
+    <meta name="description" content="Loja Oficial Frenesy Esports! Camisetas, moletons, bonÃ©s e acessórios gamers exclusivos. Vista as cores da Frenesy e mostre sua paixão pelo cenário competitivo.">
     <meta name="author" content="Frenesy">
-    <meta name="keywords" content="loja Frenesy Esports, produtos oficiais Frenesy, roupas gamer, frenesi, camisetas esports, moletom gamer, boné Frenesy, merchandising esports, acessórios gamer, loja de roupas esports, comprar produtos Frenesy">
+    <meta name="keywords" content="loja Frenesy Esports, produtos oficiais Frenesy, roupas gamer, frenesi, camisetas esports, moletom gamer, bonÃ© Frenesy, merchandising esports, acessórios gamer, loja de roupas esports, comprar produtos Frenesy">
+    <meta name="robots" content="index, follow">
 
     <!-- CANONICAL -->
     <link rel="canonical" href="https://frenesy.com.br/pages/loja.html">
@@ -24,7 +25,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://frenesy.com.br/pages/loja.html">
     <meta property="og:title" content="Loja Oficial Frenesy Esports - Produtos Gamer Exclusivos">
-    <meta property="og:description" content="Conheça a Loja Oficial Frenesy Esports! Produtos exclusivos como camisetas, moletons, bonés e acessórios para vestir sua paixão gamer.">
+    <meta property="og:description" content="ConheÃ§a a Loja Oficial Frenesy Esports! Produtos exclusivos como camisetas, moletons, bonÃ©s e acessórios para vestir sua paixão gamer.">
     <meta property="og:image" content="https://frenesy.com.br/assets/media/loja_frenesy.png">
 
     <!-- TWITTER CARDS -->
@@ -34,7 +35,30 @@
     <meta name="twitter:description" content="Garanta já os produtos oficiais Frenesy Esports! Camisetas, moletons e acessórios exclusivos para quem vive o mundo gamer.">
     <meta name="twitter:image" content="https://frenesy.com.br/assets/media/loja_frenesy.png">
 
-
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Loja Oficial Frenesy Esports",
+      "description": "Produtos oficiais da organização Frenesy Esports, incluindo uniformes, vestuário e acessórios gamers.",
+      "url": "https://frenesy.com.br/pages/loja.html",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Uniforme Oficial Frenesy"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Moletom Frenesy Black Edition"
+          }
+        ]
+      }
+    }
+    </script>
 
 
     <style>
@@ -611,6 +635,29 @@ body {
 }
 
 
+.coming-soon-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(5px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--branco);
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+}
+
+.product-card:hover .coming-soon-overlay {
+	opacity: 1;
+}
 
 @media (max-width: 768px) {
     .menu-toggle {
@@ -707,6 +754,7 @@ body {
                         <p class="product-category">VESTUÁRIO</p>
                         <h3>Camiseta Oficial 2026</h3>
                         <p class="product-description">Tecido Dry-Fit de alta performance com corte ergonômico, ideal para longas sessões de jogo e uso casual.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 119,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -719,6 +767,7 @@ body {
                         <p class="product-category">VESTUÁRIO</p>
                         <h3>Moletom Oficial</h3>
                         <p class="product-description">Feito com algodão premium e interior flanelado para máximo conforto. Perfeito para os dias mais frios.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 189,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -731,6 +780,7 @@ body {
                         <p class="product-category">VESTUÁRIO</p>
                         <h3>Calça Moletom Oficial</h3>
                         <p class="product-description">Design moderno e confortável, com tecido flexível que garante total liberdade de movimento.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 149,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -743,6 +793,8 @@ body {
                         <p class="product-category">VESTUÁRIO</p>
                         <h3>Camiseta "Teams"</h3>
                         <p class="product-description">Mostre seu orgulho pela equipe com esta camiseta de algodão macio e estampa de alta durabilidade.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
+
                         <div class="product-footer">
                             <span class="product-price">R$ 89,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -756,6 +808,8 @@ body {
                         <p class="product-category">ACESSÓRIOS</p>
                         <h3>Boné Oficial Aba Curva</h3>
                         <p class="product-description">Clássico e versátil, com logo bordado em alta definição e ajuste perfeito para qualquer ocasião.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
+
                         <div class="product-footer">
                             <span class="product-price">R$ 99,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -768,6 +822,7 @@ body {
                         <p class="product-category">ACESSÓRIOS</p>
                         <h3>Garrafa Térmica</h3>
                         <p class="product-description">Mantenha sua bebida na temperatura ideal por horas. Essencial para se manter hidratado durante as partidas.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 69,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -780,6 +835,7 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad Cyborg (Speed)</h3>
                         <p class="product-description">Superfície de microfibra otimizada para movimentos rápidos e precisos. Base de borracha antiderrapante.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 79,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -792,6 +848,8 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad Default (Control)</h3>
                         <p class="product-description">Textura especial para máximo controle e mira estável, ideal para snipers e jogadores táticos.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
+
                         <div class="product-footer">
                             <span class="product-price">R$ 79,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -804,6 +862,8 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad Fantasy (Speed)</h3>
                         <p class="product-description">Superfície de microfibra otimizada para movimentos rápidos e precisos. Base de borracha antiderrapante.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
+
                         <div class="product-footer">
                             <span class="product-price">R$ 79,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -816,6 +876,7 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad High (Speed)</h3>
                         <p class="product-description">Superfície de microfibra otimizada para movimentos rápidos e precisos. Base de borracha antiderrapante.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 79,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -828,6 +889,7 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad Legendary (Control)</h3>
                         <p class="product-description">Textura especial para máximo controle e mira estável, ideal para snipers e jogadores táticos.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 149,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>
@@ -840,6 +902,7 @@ body {
                         <p class="product-category">MOUSEPAD</p>
                         <h3>Mousepad OG (Hybrid)</h3>
                         <p class="product-description">O equilíbrio perfeito entre velocidade e controle. Superfície híbrida para todos os estilos de jogo.</p>
+                        <div class="coming-soon-overlay"><span>EM BREVE</span></div>
                         <div class="product-footer">
                             <span class="product-price">R$ 149,90</span>
                             <span class="coming-soon-tag">EM BREVE</span>

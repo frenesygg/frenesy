@@ -17,17 +17,14 @@
 	<meta name="author" content="Frenesy">
 	<meta name="keywords" content="Frenesy, esports, frenesi, time de esports, organização gamer, jogadores competitivos, loja gamer, frenesi esports, loja de roupas gamer, comunidade de esports, torneios de jogos, valorant, cs2, league of legends">
 
-	<!-- CANONICAL -->
 	<link rel="canonical" href="https://frenesy.com.br">
 
-	<!-- OPEN GRAPH (FACEBOOK / LINKEDIN) -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://frenesy.com.br">
 	<meta property="og:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
 	<meta property="og:description" content="Conheça o time Frenesy Esports, acesse nossa loja oficial, descubra novidades e viva a experiência gamer em outro nível. #GoFrenesyTeam">
 	<meta property="og:image" content="https://i.imgur.com/TouBdww.png">
 
-	<!-- TWITTER CARDS -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:url" content="https://frenesy.com.br">
 	<meta name="twitter:title" content="Frenesy Esports - Performance, Estilo e Comunidade">
@@ -50,7 +47,7 @@
             font-family: var(--font-texto);
             background-color: var(--preto);
             color: var(--branco);
-            overflow: hidden; /* Impede o scroll na página de lançamento */
+            overflow: hidden;
         }
         
         .navbar { padding: 1rem 5%; background-color: transparent; position: absolute; width: 100%; top: 0; z-index: 1000; }
@@ -73,15 +70,18 @@
             overflow: hidden;
             padding: 2rem;
         }
+
         .arena-background {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: radial-gradient(circle at center, rgba(18, 18, 18, 0) 0%, var(--preto) 70%);
         }
+
         .arena-spotlight {
             position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
             width: 150%; height: 100%;
             background: radial-gradient(ellipse at top, rgba(249, 96, 1, 0.15), transparent 70%);
         }
+
         .graphic-lines .line { position: absolute; background: var(--laranja-frenesy); opacity: 0.5; filter: blur(5px); }
         .line-1 { width: 2px; height: 150%; top: -25%; left: 10%; animation: streak 8s linear infinite; }
         .line-2 { width: 1px; height: 120%; top: -10%; left: 25%; animation: streak 12s linear infinite; animation-delay: -2s; }
@@ -91,7 +91,6 @@
         @keyframes streak { 0% { transform: translateY(-100%) rotate(25deg); } 100% { transform: translateY(100%) rotate(25deg); } }
         @keyframes streak-rev { 0% { transform: translateY(-100%) rotate(-25deg); } 100% { transform: translateY(100%) rotate(-25deg); } }
         
-        /* Conteúdo principal */
         .launch-content {
             position: relative;
             z-index: 2;
@@ -115,7 +114,6 @@
             margin: 1.5rem auto 3rem;
         }
 
-        /* Contagem regressiva */
         #countdown-timer {
             display: flex;
             justify-content: center;
@@ -191,12 +189,6 @@
             box-shadow: 0 10px 25px rgba(249, 96, 1, 0.5);
         }
 
-
-
-        
-        /* ==========================================================================
-           PLAYER DE MÚSICA
-           ========================================================================== */
         #music-player {
             position: fixed;
             bottom: 30px;
@@ -239,12 +231,7 @@
         #play-pause-btn:hover {
             color: var(--laranja-frenesy);
         }
-        
-        /* ==========================================================================
-           NOVOS EFEITOS: Explosão e Flicker
-           ========================================================================== */
 
-        /* Efeito de explosão/raio de luz */
         .launch-hero::after {
             content: '';
             position: absolute;
