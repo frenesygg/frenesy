@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteador Free Fire e Times de eSports | Sorteio 1x1, 4x4 e Prêmios Oficial Frenesy</title>
+    <title>Sorteador Free Fire e Times de eSports | Sorteio 1x1, 4x4, Prêmios e Importação Excel Oficial Frenesy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +12,13 @@
 
     <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
+    <!-- SheetJS (XLSX, XLS, CSV Parser & Generator) -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
     <!-- SEO COMPLETO -->
-    <meta name="description" content="O melhor Sorteador de Times e Prêmios de eSports! Crie sorteios rápidos para Free Fire (X1 dos Crias, 4x4, 2x2, grupos), Valorant, CS2 e sorteios de Passes de Elite e Diamantes. 100% grátis e verificado.">
+    <meta name="description" content="Sorteador oficial de times e prêmios de eSports! Sorteie partidas de Free Fire (X1 dos Crias, 4x4, 2x2, grupos), Valorant, CS2 e prêmios. Importe planilhas Excel (.XLSX, .XLS, .CSV) de jogadores facilmente.">
     <meta name="author" content="Frenesy Esports">
-    <meta name="keywords" content="sorteador free fire, sorteador esports, sorteador de times, sorteador de grupos ff, sorteador x1, sorteador 4x4, sorteador de times gamer, gerador de line ff, sorteador de passe de elite, sorteio de diamantes, sorteador valorant, sorteador cs2, frenesy esports sorteador, sorteador de nomes gamer, sorteador de campeonatos">
+    <meta name="keywords" content="sorteador free fire, sorteador esports, importar excel free fire, importar csv torneio, sorteador de times, sorteador de grupos ff, sorteador x1, sorteador 4x4, gerador de line ff, sorteador de passe de elite, sorteio de diamantes, sorteador valorant, sorteador cs2, frenesy esports sorteador">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="Portuguese">
     <meta name="revisit-after" content="3 days">
@@ -29,7 +32,7 @@
     <meta property="og:site_name" content="Frenesy Esports">
     <meta property="og:url" content="https://frenesy.com.br/pages/sorteio.html">
     <meta property="og:title" content="Sorteador Free Fire e Times de eSports | Frenesy Oficial">
-    <meta property="og:description" content="Sorteie times de Free Fire (X1, 4x4, grupos), Valorant, CS2 e realize sorteios de Passes de Elite e Diamantes de forma profissional.">
+    <meta property="og:description" content="Sorteie times de Free Fire (X1, 4x4, grupos), Valorant, CS2 e realize sorteios de Passes de Elite com suporte a importação de planilhas Excel / CSV.">
     <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
     <meta property="og:image:secure_url" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
     <meta property="og:image:alt" content="Sorteador de Times e Prêmios de eSports Frenesy">
@@ -42,7 +45,7 @@
     <meta name="twitter:creator" content="@frenesygg">
     <meta name="twitter:url" content="https://frenesy.com.br/pages/sorteio.html">
     <meta name="twitter:title" content="Sorteador Free Fire e Times de eSports | Frenesy Oficial">
-    <meta name="twitter:description" content="O melhor sorteador de eSports! Crie partidas de X1, 4x4, grupos e sorteios de Passes de Elite com validação oficial.">
+    <meta name="twitter:description" content="O melhor sorteador de eSports com importação automática de planilhas Excel / CSV para campeonatos e sorteios de Passes.">
     <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
     <meta name="twitter:image:alt" content="Sorteador de Times e Prêmios de eSports Frenesy">
 
@@ -52,11 +55,11 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Sorteador de Times e Prêmios de eSports - Frenesy",
-        "alternateName": ["Sorteador Free Fire", "Sorteador Frenesy", "Sorteador 4x4 FF"],
+        "alternateName": ["Sorteador Free Fire", "Sorteador Frenesy", "Sorteador 4x4 FF Excel"],
         "applicationCategory": "GameApplication",
         "operatingSystem": "All",
         "url": "https://frenesy.com.br/pages/sorteio.html",
-        "description": "Ferramenta oficial e gratuita de sorteio de times para Free Fire, Valorant, CS2 e sorteios de Passes de Elite e Diamantes.",
+        "description": "Ferramenta oficial e gratuita de sorteio de times para Free Fire, Valorant, CS2 e sorteios de Passes de Elite com suporte a importação de arquivos Excel (.xlsx, .xls) e CSV.",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -78,6 +81,14 @@
         "mainEntity": [
             {
                 "@type": "Question",
+                "name": "Como importar planilhas Excel (.XLSX, .CSV) no Sorteador de Free Fire?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Basta clicar no botão 'Importar Planilha (Excel / CSV)' e selecionar o seu arquivo. A planilha deve ter as colunas com 'Nome' e 'Nickname' (ou apenas os nicks dos jogadores). O sistema preenche a lista e calcula os times automaticamente."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "Como funciona o Sorteador de Free Fire da Frenesy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -89,15 +100,7 @@
                 "name": "Como sortear Passe de Elite e Diamantes?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Na aba 'Sorteador de Prêmios', selecione o item desejado (como Passe de Elite ou Diamantes), cole a lista de participantes e clique em Sortear. O sistema gera os vencedores com ID de verificação transparente."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "O Sorteador de eSports da Frenesy é gratuito?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sim! A ferramenta é 100% gratuita para toda a comunidade gamer, sem limites de sorteios ou necessidade de cadastro."
+                    "text": "Na aba 'Sorteador de Prêmios', selecione o item desejado (como Passe de Elite ou Diamantes), cole ou importe a lista de participantes e clique em Sortear. O sistema gera os vencedores com ID de verificação transparente."
                 }
             }
         ]
@@ -114,6 +117,7 @@
 	--cinza-card: #1a1a1a;
 	--cinza-borda: #2d2d2d;
 	--cinza-claro: #a0a0a0;
+	--verde-excel: #107c41;
 	--font-titulo: 'Rajdhani', sans-serif;
 	--font-texto: 'Poppins', sans-serif;
 	--input-height: 48px;
@@ -188,7 +192,7 @@ a {
 }
 
 .nav-links a::after {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 0;
 	height: 3px;
@@ -253,14 +257,14 @@ main {
 }
 
 .section-subtitle {
-	max-width: 800px;
+	max-width: 850px;
 	margin: 0 auto 2rem auto;
 	color: #aaa;
 	line-height: 1.6;
 	font-size: 1.05rem;
 }
 
-/* TAB NAVIGATION */
+/* TAB NAVIGATION (TIMES vs PRÊMIOS) */
 .sorter-tabs {
 	display: flex;
 	justify-content: center;
@@ -302,7 +306,7 @@ main {
 
 /* CONTAINER PRINCIPAL */
 .sorter-container {
-	max-width: 1050px;
+	max-width: 1080px;
 	margin: 0 auto;
 	padding: 0 5% 4rem;
 }
@@ -315,7 +319,7 @@ main {
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* SELETOR DE JOGOS */
+/* SELETOR DE JOGOS (ESPORTS) */
 .game-selector-title {
 	font-family: var(--font-titulo);
 	font-size: 1.4rem;
@@ -476,9 +480,105 @@ main {
 }
 
 .input-hint {
-	font-size: 0.8rem;
+	font-size: 0.82rem;
 	color: #888;
-	margin-top: 2px;
+	margin-top: 4px;
+}
+
+/* EXCEL & CSV IMPORT BOX */
+.excel-import-card {
+	background: linear-gradient(145deg, #101e14 0%, #151515 100%);
+	border: 1px dashed #107c41;
+	border-radius: 10px;
+	padding: 1.25rem 1.5rem;
+	margin-bottom: 1.25rem;
+	position: relative;
+	transition: border-color 0.3s, background-color 0.3s;
+}
+
+.excel-import-card.dragover {
+	border-color: #2ecc71;
+	background-color: rgba(46, 204, 113, 0.1);
+}
+
+.excel-header-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 10px;
+}
+
+.excel-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-family: var(--font-titulo);
+	font-size: 1.2rem;
+	color: #2ecc71;
+	font-weight: 700;
+}
+
+.excel-actions {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.btn-excel {
+	background-color: var(--verde-excel);
+	color: #ffffff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 0.85rem;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-excel:hover {
+	background-color: #0e6b37;
+	transform: translateY(-2px);
+}
+
+.btn-template {
+	background-color: #2a2a2a;
+	color: #ccc;
+	border: 1px solid #444;
+	padding: 8px 14px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 0.85rem;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: all 0.2s;
+}
+
+.btn-template:hover {
+	background-color: #383838;
+	color: #fff;
+	border-color: #666;
+}
+
+.excel-guide-text {
+	font-size: 0.85rem;
+	color: #bbb;
+	line-height: 1.5;
+}
+
+.excel-guide-text code {
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #2ecc71;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.8rem;
 }
 
 /* NUMBER CONTROLS */
@@ -863,7 +963,7 @@ input:checked + .slider:before {
 
 /* FAQ SECTION */
 .faq-section {
-	max-width: 1050px;
+	max-width: 1080px;
 	margin: 2rem auto 5rem;
 	padding: 0 5%;
 }
@@ -1078,6 +1178,9 @@ input:checked + .slider:before {
 	.section-title { font-size: 2.2rem; }
 	.sorter-tabs { flex-direction: column; }
 	.sorter-card-box { padding: 1.5rem; }
+	.excel-header-row { flex-direction: column; align-items: flex-start; }
+	.excel-actions { width: 100%; }
+	.excel-actions button { flex-grow: 1; justify-content: center; }
 	.results-header { flex-direction: column; align-items: stretch; text-align: center; }
 	.results-actions { justify-content: center; }
 	.results-actions .btn { width: 100%; }
@@ -1110,7 +1213,7 @@ input:checked + .slider:before {
             <div class="sorter-badge"><i class="fas fa-shield-alt"></i> Ferramenta Oficial Gamer</div>
             <h1 class="section-title">SORTEADOR DE <span>E-SPORTS</span></h1>
             <p class="section-subtitle">
-                A plataforma oficial da <strong>Frenesy Esports</strong> para sorteio de times, confrontos de Free Fire (X1 dos Crias, 4x4, 2x2, grupos), Valorant, CS2 e sorteios de Passes de Elite e Diamantes.
+                A plataforma oficial da <strong>Frenesy Esports</strong> para sorteio de times, confrontos de Free Fire (X1 dos Crias, 4x4, 2x2, grupos), Valorant, CS2 e sorteios de Passes de Elite com suporte a importação de planilhas Excel e CSV.
             </p>
 
             <!-- TABS DE NAVEGAÇÃO -->
@@ -1202,11 +1305,35 @@ input:checked + .slider:before {
                     </div>
                 </div>
 
-                <!-- ENTRADA DOS JOGADORES -->
+                <!-- ENTRADA DOS JOGADORES + IMPORTAÇÃO DE PLANILHA -->
                 <div class="control-step">
                     <div class="control-step-header">
                         <span class="step-number">3</span>
                         <h4>Jogadores Participantes</h4>
+                    </div>
+
+                    <!-- CARD DE IMPORTAÇÃO EXCEL / CSV -->
+                    <div class="excel-import-card" id="excel-dropzone-teams">
+                        <div class="excel-header-row">
+                            <div class="excel-title">
+                                <i class="fas fa-file-excel"></i> Importar Planilha de Jogadores
+                            </div>
+                            <div class="excel-actions">
+                                <input type="file" id="excel-file-teams" accept=".xlsx, .xls, .csv, .txt" style="display: none;" onchange="handleFileUpload(event, 'teams')">
+                                <button type="button" class="btn-excel" onclick="document.getElementById('excel-file-teams').click()">
+                                    <i class="fas fa-upload"></i> Escolher Planilha (.XLSX / .CSV)
+                                </button>
+                                <button type="button" class="btn-template" onclick="downloadSpreadsheetTemplate('xlsx')">
+                                    <i class="fas fa-download"></i> Baixar Modelo .XLSX
+                                </button>
+                                <button type="button" class="btn-template" onclick="downloadSpreadsheetTemplate('csv')">
+                                    <i class="fas fa-file-csv"></i> Modelo .CSV
+                                </button>
+                            </div>
+                        </div>
+                        <p class="excel-guide-text">
+                            <strong>Estrutura aceita:</strong> Planilha com as colunas <code>Nome</code> e <code>Nickname</code> (ou apenas a coluna de <code>Nickname</code> / <code>Tag</code>). Se a planilha tiver cabeçalho, ele será detectado e ignorado automaticamente.
+                        </p>
                     </div>
 
                     <div style="display: flex; gap: 10px; margin-bottom: 1rem; flex-wrap: wrap;">
@@ -1220,9 +1347,9 @@ input:checked + .slider:before {
 
                     <div class="control-group">
                         <label for="players-raw-textarea">
-                            <i class="fas fa-clipboard-list"></i> Cole a lista de jogadores / nicks (1 por linha):
+                            <i class="fas fa-clipboard-list"></i> Lista de jogadores / nicks (1 por linha):
                         </label>
-                        <textarea id="players-raw-textarea" placeholder="Cole aqui os nicks copiados do WhatsApp ou Discord...&#10;Exemplo:&#10;FㅤNOBRU&#10;FㅤCEROL&#10;FㅤBAK&#10;FㅤGHOST" oninput="updatePlayersCount()"></textarea>
+                        <textarea id="players-raw-textarea" placeholder="Cole aqui os nicks copiados do WhatsApp/Discord ou use a importação de planilha acima...&#10;Exemplo:&#10;FㅤNOBRU (Bruno Goes)&#10;FㅤCEROL (Lucio Lima)&#10;FㅤBAK (Gabriel Lessa)&#10;FㅤGHOST (Arthur Ramos)" oninput="updatePlayersCount()"></textarea>
                         <div class="input-hint" id="players-count-indicator">Total: 0 jogadores identificados.</div>
                     </div>
 
@@ -1297,11 +1424,32 @@ input:checked + .slider:before {
                         <h4>Participantes</h4>
                     </div>
 
+                    <!-- CARD DE IMPORTAÇÃO EXCEL / CSV PARA PRÊMIOS -->
+                    <div class="excel-import-card" id="excel-dropzone-prizes">
+                        <div class="excel-header-row">
+                            <div class="excel-title">
+                                <i class="fas fa-file-excel"></i> Importar Lista de Inscritos
+                            </div>
+                            <div class="excel-actions">
+                                <input type="file" id="excel-file-prizes" accept=".xlsx, .xls, .csv, .txt" style="display: none;" onchange="handleFileUpload(event, 'prizes')">
+                                <button type="button" class="btn-excel" onclick="document.getElementById('excel-file-prizes').click()">
+                                    <i class="fas fa-upload"></i> Escolher Planilha (.XLSX / .CSV)
+                                </button>
+                                <button type="button" class="btn-template" onclick="downloadSpreadsheetTemplate('xlsx')">
+                                    <i class="fas fa-download"></i> Baixar Modelo .XLSX
+                                </button>
+                            </div>
+                        </div>
+                        <p class="excel-guide-text">
+                            Importe facilmente a lista de inscritos do formulário ou sorteio. Aceita colunas com <code>Nome</code>, <code>Nickname</code> ou <code>E-mail/Telefone</code>.
+                        </p>
+                    </div>
+
                     <div class="control-group">
                         <label for="prizes-raw-textarea">
-                            <i class="fas fa-users"></i> Cole a lista de participantes (1 por linha ou separados por vírgula):
+                            <i class="fas fa-users"></i> Lista de participantes (1 por linha ou importados):
                         </label>
-                        <textarea id="prizes-raw-textarea" placeholder="Cole os nicks de todos os inscritos...&#10;Player1&#10;Player2&#10;Player3..." oninput="updatePrizesCount()"></textarea>
+                        <textarea id="prizes-raw-textarea" placeholder="Cole os nicks de todos os inscritos ou importe uma planilha acima...&#10;Player1&#10;Player2&#10;Player3..." oninput="updatePrizesCount()"></textarea>
                         <div class="input-hint" id="prizes-count-indicator">Total: 0 participantes.</div>
                     </div>
 
@@ -1352,16 +1500,26 @@ input:checked + .slider:before {
 
         <!-- SEÇÃO FAQ (OTIMIZAÇÃO SEO GOOGLE) -->
         <section class="faq-section">
-            <h3 class="faq-title">Perguntas Frequentes sobre Sorteios de eSports</h3>
+            <h3 class="faq-title">Perguntas Frequentes sobre Sorteios e Importação de Planilhas</h3>
             
             <div class="faq-grid">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Como importar uma planilha Excel (.XLSX / .CSV) de jogadores?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Basta clicar no botão <strong>Escolher Planilha (.XLSX / .CSV)</strong> ou baixar nosso modelo pronto clicando em <strong>Baixar Modelo .XLSX</strong>. A planilha pode ter as colunas <code>Nome</code> e <code>Nickname</code> (ou apenas nicks). O sorteador processa instantaneamente todos os inscritos e faz a contagem automática.
+                    </div>
+                </div>
+
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-question">
                         <span>Como organizar e sortear partidas de Free Fire (X1 e 4x4)?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Basta selecionar a logo do Free Fire, escolher o formato desejado (X1 dos Crias, 2x2 ou 4x4 Squad vs Squad), colar a lista de nicks dos jogadores e clicar em <strong>Realizar Sorteio</strong>. O sistema gera automaticamente os confrontos balanceados e você pode copiar diretamente com 1 clique para o seu grupo de WhatsApp ou Discord.
+                        Basta selecionar a logo do Free Fire, escolher o formato desejado (X1 dos Crias, 2x2 ou 4x4 Squad vs Squad), colar ou importar a lista de nicks dos jogadores e clicar em <strong>Realizar Sorteio</strong>. O sistema gera automaticamente os confrontos balanceados e você pode copiar diretamente com 1 clique para o seu grupo de WhatsApp ou Discord.
                     </div>
                 </div>
 
@@ -1381,7 +1539,7 @@ input:checked + .slider:before {
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Clique na aba <strong>Sorteador de Prêmios & Passes</strong>, selecione o preset desejado (ex: Passe de Elite ou 1080 Dimas), defina a quantidade de ganhadores e cole a lista de participantes. O sorteio revelará os ganhadores com um código de autenticação único.
+                        Clique na aba <strong>Sorteador de Prêmios & Passes</strong>, selecione o preset desejado (ex: Passe de Elite ou 1080 Dimas), defina a quantidade de ganhadores e cole ou importe a lista de participantes. O sorteio revelará os ganhadores com um código de autenticação único.
                     </div>
                 </div>
 
@@ -1463,57 +1621,57 @@ input:checked + .slider:before {
         });
 
         // ESTADO GLOBAL
-        let currentGame = "freefire";
-        let currentTab = "teams";
+        let currentGame = 'freefire';
+        let currentTab = 'teams';
         let currentDrawResult = null;
 
         const gamePresets = {
             freefire: {
-                name: "Free Fire",
+                name: 'Free Fire',
                 modes: [
-                    { value: 1, label: "1x1 (X1 dos Crias)" },
-                    { value: 2, label: "2x2 (Duplas Apostadas)" },
-                    { value: 4, label: "4x4 (Squad vs Squad / Gladiadores)" },
-                    { value: 6, label: "6x6 (Sexteto / Formato Amplo)" },
-                    { value: 12, label: "Tabela de Queda (12 por time)" }
+                    { value: 1, label: '1x1 (X1 dos Crias)' },
+                    { value: 2, label: '2x2 (Duplas Apostadas)' },
+                    { value: 4, label: '4x4 (Squad vs Squad / Gladiadores)' },
+                    { value: 6, label: '6x6 (Sexteto / Formato Amplo)' },
+                    { value: 12, label: 'Tabela de Queda (12 por time)' }
                 ],
                 defaultMode: 4,
-                defaultTitle: "4x4 dos Crias Frenesy"
+                defaultTitle: '4x4 dos Crias Frenesy'
             },
             valorant: {
-                name: "VALORANT",
+                name: 'VALORANT',
                 modes: [
-                    { value: 1, label: "1v1 (Duelo de Mira / Deathmatch)" },
-                    { value: 2, label: "2v2 (Wingman / Spike Rush)" },
-                    { value: 5, label: "5v5 (Competitivo / Scrim)" }
+                    { value: 1, label: '1v1 (Duelo de Mira / Deathmatch)' },
+                    { value: 2, label: '2v2 (Wingman / Spike Rush)' },
+                    { value: 5, label: '5v5 (Competitivo / Scrim)' }
                 ],
                 defaultMode: 5,
-                defaultTitle: "Mix Competitivo VALORANT"
+                defaultTitle: 'Mix Competitivo VALORANT'
             },
             cs2: {
-                name: "Counter-Strike 2",
+                name: 'Counter-Strike 2',
                 modes: [
-                    { value: 1, label: "1v1 (Aim Map / AWP)" },
-                    { value: 2, label: "2v2 (Braço Direito / Wingman)" },
-                    { value: 5, label: "5v5 (Mix Competitivo CS2)" }
+                    { value: 1, label: '1v1 (Aim Map / AWP)' },
+                    { value: 2, label: '2v2 (Braço Direito / Wingman)' },
+                    { value: 5, label: '5v5 (Mix Competitivo CS2)' }
                 ],
                 defaultMode: 5,
-                defaultTitle: "Torneio CS2 Frenesy"
+                defaultTitle: 'Torneio CS2 Frenesy'
             },
             custom: {
-                name: "Personalizado",
+                name: 'Personalizado',
                 modes: [
-                    { value: 1, label: "1 vs 1" },
-                    { value: 2, label: "2 vs 2" },
-                    { value: 3, label: "3 vs 3" },
-                    { value: 4, label: "4 vs 4" },
-                    { value: 5, label: "5 vs 5" },
-                    { value: 6, label: "6 vs 6" },
-                    { value: 8, label: "8 vs 8" },
-                    { value: 10, label: "10 vs 10" }
+                    { value: 1, label: '1 vs 1' },
+                    { value: 2, label: '2 vs 2' },
+                    { value: 3, label: '3 vs 3' },
+                    { value: 4, label: '4 vs 4' },
+                    { value: 5, label: '5 vs 5' },
+                    { value: 6, label: '6 vs 6' },
+                    { value: 8, label: '8 vs 8' },
+                    { value: 10, label: '10 vs 10' }
                 ],
                 defaultMode: 2,
-                defaultTitle: "Torneio de eSports Frenesy"
+                defaultTitle: 'Torneio de eSports Frenesy'
             }
         };
 
@@ -1530,32 +1688,32 @@ input:checked + .slider:before {
         // ALTERNAÇÃO DE ABAS
         function switchMainTab(tab) {
             currentTab = tab;
-            document.getElementById("tab-teams").classList.toggle("active", tab === "teams");
-            document.getElementById("tab-prizes").classList.toggle("active", tab === "prizes");
-            document.getElementById("section-teams-sorter").style.display = tab === "teams" ? "block" : "none";
-            document.getElementById("section-prizes-sorter").style.display = tab === "prizes" ? "block" : "none";
-            document.getElementById("results-wrapper").style.display = "none";
+            document.getElementById('tab-teams').classList.toggle('active', tab === 'teams');
+            document.getElementById('tab-prizes').classList.toggle('active', tab === 'prizes');
+            document.getElementById('section-teams-sorter').style.display = tab === 'teams' ? 'block' : 'none';
+            document.getElementById('section-prizes-sorter').style.display = tab === 'prizes' ? 'block' : 'none';
+            document.getElementById('results-wrapper').style.display = 'none';
         }
 
         // SELETOR DE JOGOS
         function selectGame(gameKey) {
             currentGame = gameKey;
-            document.querySelectorAll(".game-card").forEach(card => {
-                card.classList.toggle("active", card.dataset.game === gameKey);
+            document.querySelectorAll('.game-card').forEach(card => {
+                card.classList.toggle('active', card.dataset.game === gameKey);
             });
 
             const config = gamePresets[gameKey];
-            const modeSelect = document.getElementById("game-mode-select");
-            modeSelect.innerHTML = "";
+            const modeSelect = document.getElementById('game-mode-select');
+            modeSelect.innerHTML = '';
             config.modes.forEach(mode => {
-                const opt = document.createElement("option");
+                const opt = document.createElement('option');
                 opt.value = mode.value;
                 opt.textContent = mode.label;
                 if (mode.value === config.defaultMode) opt.selected = true;
                 modeSelect.appendChild(opt);
             });
 
-            const nameInput = document.getElementById("tournament-name-input");
+            const nameInput = document.getElementById('tournament-name-input');
             if (!nameInput.value || Object.values(gamePresets).some(p => p.defaultTitle === nameInput.value)) {
                 nameInput.value = config.defaultTitle;
             }
@@ -1564,21 +1722,21 @@ input:checked + .slider:before {
         }
 
         function handleGameModeChange() {
-            const mode = parseInt(document.getElementById("game-mode-select").value);
-            const groupStageContainer = document.getElementById("group-stage-container");
-            const groupToggle = document.getElementById("group-stage-toggle");
+            const mode = parseInt(document.getElementById('game-mode-select').value);
+            const groupStageContainer = document.getElementById('group-stage-container');
+            const groupToggle = document.getElementById('group-stage-toggle');
             
             if (mode > 1) {
-                groupStageContainer.style.display = "flex";
+                groupStageContainer.style.display = 'flex';
             } else {
-                groupStageContainer.style.display = "flex";
+                groupStageContainer.style.display = 'flex';
             }
             toggleGroupStage();
         }
 
         function toggleGroupStage() {
-            const isChecked = document.getElementById("group-stage-toggle").checked;
-            document.getElementById("num-groups-wrapper").style.display = isChecked ? "block" : "none";
+            const isChecked = document.getElementById('group-stage-toggle').checked;
+            document.getElementById('num-groups-wrapper').style.display = isChecked ? 'block' : 'none';
         }
 
         function stepCount(inputId, step, min, max) {
@@ -1599,43 +1757,189 @@ input:checked + .slider:before {
         }
 
         function updatePlayersCount() {
-            const text = document.getElementById("players-raw-textarea").value;
+            const text = document.getElementById('players-raw-textarea').value;
             const count = parsePlayers(text).length;
-            document.getElementById("players-count-indicator").textContent = `Total: ${count} jogadores identificados.`;
+            document.getElementById('players-count-indicator').textContent = `Total: ${count} jogadores identificados.`;
         }
 
         function loadSamplePlayers() {
             const samples = [
-                "FㅤNOBRUʷᵐ", "FㅤCEROL.xp", "FㅤBAK9", "FㅤGHOST",
-                "FㅤTWO9", "FㅤDACRUZ", "FㅤJORDAN", "FㅤSINCE",
-                "FㅤTHZIN", "FㅤKAIQUE", "FㅤSANTT", "FㅤLEPPE",
-                "FㅤALIEN", "FㅤAKASHI", "FㅤEMANUEL", "FㅤMAGZX7"
+                'FㅤNOBRU (Bruno Goes)', 'FㅤCEROL (Lucio Lima)', 'FㅤBAK (Gabriel Lessa)', 'FㅤGHOST (Arthur Ramos)',
+                'FㅤTWO9 (Victor Santos)', 'FㅤDACRUZ (Matheus Silva)', 'FㅤJORDAN (Jordan Silva)', 'FㅤSINCE (Rodrigo F.)',
+                'FㅤTHZIN (Thiago M.)', 'FㅤITACHI (Kaike Lima)', 'FㅤSANTT (Gustavo S.)', 'FㅤLEPPE (Filipe M.)',
+                'FㅤALIEN (Christopher R.)', 'FㅤAKASHI (Thiago P.)', 'FㅤEMANUEL (Emanuel F.)', 'FㅤMAGZX7 (Magsuel F.)'
             ];
-            document.getElementById("players-raw-textarea").value = samples.join("
-");
+            document.getElementById('players-raw-textarea').value = samples.join('
+');
             updatePlayersCount();
-            showNotification("16 jogadores de exemplo carregados!");
+            showNotification('16 jogadores de exemplo carregados!');
         }
 
         function clearPlayerList() {
-            document.getElementById("players-raw-textarea").value = "";
+            document.getElementById('players-raw-textarea').value = '';
             updatePlayersCount();
+        }
+
+        // =========================================================================
+        // IMPORTAÇÃO E EXPORTAÇÃO DE PLANILHAS (EXCEL .XLSX / .XLS / .CSV)
+        // =========================================================================
+        function handleFileUpload(event, targetType) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const fileName = file.name.toLowerCase();
+            const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls') || fileName.endsWith('.csv');
+
+            if (isExcel && typeof XLSX !== 'undefined') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(data, { type: 'array' });
+                        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                        const rows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+                        const extractedList = [];
+
+                        rows.forEach((row, idx) => {
+                            if (!row || row.length === 0) return;
+                            
+                            // Extrai os valores das primeiras 2 colunas
+                            const col1 = (row[0] !== undefined && row[0] !== null) ? String(row[0]).trim() : '';
+                            const col2 = (row[1] !== undefined && row[1] !== null) ? String(row[1]).trim() : '';
+
+                            if (!col1 && !col2) return;
+
+                            // Ignora cabeçalho típico se for a 1ª linha
+                            if (idx === 0) {
+                                const low1 = col1.toLowerCase();
+                                const low2 = col2.toLowerCase();
+                                if (low1 === 'nome' || low1 === 'name' || low1 === 'jogador' || low2 === 'nick' || low2 === 'nickname' || low2 === 'tag') {
+                                    return; // Pula cabeçalho
+                                }
+                            }
+
+                            // Formatação inteligente
+                            if (col1 && col2) {
+                                // Ex: Nickname (Nome) ou Nome - Nickname
+                                extractedList.push(`${col2} (${col1})`);
+                            } else if (col1) {
+                                extractedList.push(col1);
+                            } else if (col2) {
+                                extractedList.push(col2);
+                            }
+                        });
+
+                        if (extractedList.length === 0) {
+                            showNotification('Nenhum jogador encontrado no arquivo selecionado.');
+                            return;
+                        }
+
+                        if (targetType === 'teams') {
+                            document.getElementById('players-raw-textarea').value = extractedList.join('
+');
+                            updatePlayersCount();
+                            showNotification(`✅ Sucesso! ${extractedList.length} jogadores importados da planilha.`);
+                        } else {
+                            document.getElementById('prizes-raw-textarea').value = extractedList.join('
+');
+                            updatePrizesCount();
+                            showNotification(`✅ Sucesso! ${extractedList.length} participantes importados da planilha.`);
+                        }
+
+                    } catch(err) {
+                        console.error('Erro ao ler planilha:', err);
+                        showNotification('Erro ao processar planilha. Certifique-se de que o formato seja válido.');
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                // Fallback para arquivo TXT ou CSV simples via texto puro
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const text = e.target.result;
+                    const lines = text.split(/[
+]+/).map(l => l.trim()).filter(l => l.length > 0);
+                    if (targetType === 'teams') {
+                        document.getElementById('players-raw-textarea').value = lines.join('
+');
+                        updatePlayersCount();
+                        showNotification(`✅ ${lines.length} jogadores importados.`);
+                    } else {
+                        document.getElementById('prizes-raw-textarea').value = lines.join('
+');
+                        updatePrizesCount();
+                        showNotification(`✅ ${lines.length} participantes importados.`);
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            // Limpa o input file para permitir selecionar o mesmo arquivo novamente se desejar
+            event.target.value = '';
+        }
+
+        // DOWNLOAD DE MODELO DE PLANILHA PRONTO
+        function downloadSpreadsheetTemplate(format) {
+            const templateData = [
+                ["Nome", "Nickname", "Discord / WhatsApp (Opcional)"],
+                ["Bruno Goes", "FㅤNOBRUʷᵐ", "(11) 99999-9999"],
+                ["Lucio Lima", "FㅤCEROL.xp", "(21) 99999-9999"],
+                ["Gabriel Lessa", "FㅤBAK9", "bak#1234"],
+                ["Arthur Ramos", "FㅤGHOST", "@ghost_ff"],
+                ["Victor Santos", "FㅤTWO9", "(11) 98888-8888"],
+                ["Matheus Silva", "FㅤDACRUZ", "(31) 97777-7777"],
+                ["Jordan Silva", "FㅤJORDAN", "(41) 96666-6666"],
+                ["Rodrigo Fernandes", "FㅤSINCE", "since#0001"],
+                ["Kaike Lima", "FㅤITACHI", "@kaikelhp"],
+                ["Gustavo Santiago", "FㅤSANTT", "@santtsz"],
+                ["Filipe Medeiros", "FㅤLEPPE", "@leppe"],
+                ["Christopher Rissardi", "FㅤALIEN", "@christopher"]
+            ];
+
+            if (format === 'xlsx' && typeof XLSX !== 'undefined') {
+                const ws = XLSX.utils.aoa_to_sheet(templateData);
+                // Ajusta larguras de coluna
+                ws['!cols'] = [{ wch: 24 }, { wch: 20 }, { wch: 28 }];
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Jogadores");
+                XLSX.writeFile(wb, "modelo_sorteador_frenesy.xlsx");
+                showNotification('Modelo Excel (.xlsx) baixado com sucesso!');
+            } else {
+                // Formato CSV
+                let csvContent = "Nome,Nickname,Contato
+";
+                templateData.slice(1).forEach(row => {
+                    csvContent += `"${row[0]}","${row[1]}","${row[2]}"
+`;
+                });
+                const blob = new Blob(["﻿" + csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "modelo_sorteador_frenesy.csv";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showNotification('Modelo CSV (.csv) baixado com sucesso!');
+            }
         }
 
         // EXECUÇÃO DO SORTEIO DE TIMES
         function executeTeamDraw() {
-            const tournamentName = document.getElementById("tournament-name-input").value.trim() || "Torneio Frenesy Esports";
-            const rawText = document.getElementById("players-raw-textarea").value;
+            const tournamentName = document.getElementById('tournament-name-input').value.trim() || 'Torneio Frenesy Esports';
+            const rawText = document.getElementById('players-raw-textarea').value;
             const players = parsePlayers(rawText);
 
             if (players.length < 2) {
-                showNotification("Adicione pelo menos 2 jogadores para realizar o sorteio.");
+                showNotification('Adicione pelo menos 2 jogadores para realizar o sorteio.');
                 return;
             }
 
-            const teamSize = parseInt(document.getElementById("game-mode-select").value);
-            const isGroupStage = document.getElementById("group-stage-toggle").checked;
-            const numGroups = parseInt(document.getElementById("num-groups").value);
+            const teamSize = parseInt(document.getElementById('game-mode-select').value);
+            const isGroupStage = document.getElementById('group-stage-toggle').checked;
+            const numGroups = parseInt(document.getElementById('num-groups').value);
 
             // Embaralhamento seguro
             const shuffled = [...players];
@@ -1650,15 +1954,15 @@ input:checked + .slider:before {
                 teams.push(shuffled.slice(i, i + teamSize));
             }
 
-            let htmlContent = "";
+            let htmlContent = '';
             let drawData = {
-                type: isGroupStage ? "groups" : "teams",
+                type: isGroupStage ? 'groups' : 'teams',
                 game: gamePresets[currentGame].name,
                 tournamentName,
                 teamSize,
-                timestamp: new Date().toLocaleString("pt-BR"),
-                organizer: "Frenesy Esports",
-                hash: "FNY-" + Math.random().toString(36).substring(2, 9).toUpperCase()
+                timestamp: new Date().toLocaleString('pt-BR'),
+                organizer: 'Frenesy Esports',
+                hash: 'FNY-' + Math.random().toString(36).substring(2, 9).toUpperCase()
             };
 
             if (isGroupStage) {
@@ -1679,7 +1983,7 @@ input:checked + .slider:before {
                         htmlContent += `
                             <div class="team-block">
                                 <div class="team-block-title">Time ${tIdx + 1} (${t.length} Jogadores)</div>
-                                <ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join("")}</ul>
+                                <ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join('')}</ul>
                             </div>
                         `;
                     });
@@ -1702,13 +2006,13 @@ input:checked + .slider:before {
                             <div class="matchup-box">
                                 <div class="team-block">
                                     <div class="team-block-title">🔵 TIME 1</div>
-                                    <ul class="team-members-list">${teamA.map(p => `<li>• ${p}</li>`).join("")}</ul>
+                                    <ul class="team-members-list">${teamA.map(p => `<li>• ${p}</li>`).join('')}</ul>
                                 </div>
                                 <div class="matchup-vs">VS</div>
                                 ${teamB ? `
                                 <div class="team-block" style="border-left-color: #388bfd;">
                                     <div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div>
-                                    <ul class="team-members-list">${teamB.map(p => `<li>• ${p}</li>`).join("")}</ul>
+                                    <ul class="team-members-list">${teamB.map(p => `<li>• ${p}</li>`).join('')}</ul>
                                 </div>
                                 ` : `
                                 <div class="team-block">
@@ -1728,39 +2032,39 @@ input:checked + .slider:before {
 
         // PRÊMIOS
         function setPrizePreset(preset) {
-            document.getElementById("prize-name-input").value = preset;
+            document.getElementById('prize-name-input').value = preset;
         }
 
         function updatePrizesCount() {
-            const text = document.getElementById("prizes-raw-textarea").value;
+            const text = document.getElementById('prizes-raw-textarea').value;
             const count = parsePlayers(text).length;
-            document.getElementById("prizes-count-indicator").textContent = `Total: ${count} participantes.`;
+            document.getElementById('prizes-count-indicator').textContent = `Total: ${count} participantes.`;
         }
 
         function resetPrizeForm() {
-            document.getElementById("prize-name-input").value = "";
-            document.getElementById("prizes-raw-textarea").value = "";
-            document.getElementById("num-winners").value = "1";
+            document.getElementById('prize-name-input').value = '';
+            document.getElementById('prizes-raw-textarea').value = '';
+            document.getElementById('num-winners').value = '1';
             updatePrizesCount();
-            document.getElementById("results-wrapper").style.display = "none";
+            document.getElementById('results-wrapper').style.display = 'none';
         }
 
         function executePrizeDraw() {
-            const prizeName = document.getElementById("prize-name-input").value.trim() || "Prêmio Oficial Frenesy Esports";
-            const rawText = document.getElementById("prizes-raw-textarea").value;
+            const prizeName = document.getElementById('prize-name-input').value.trim() || 'Prêmio Oficial Frenesy Esports';
+            const rawText = document.getElementById('prizes-raw-textarea').value;
             let participants = parsePlayers(rawText);
 
             if (participants.length === 0) {
-                showNotification("Por favor, cole a lista de participantes do sorteio.");
+                showNotification('Por favor, cole ou importe a lista de participantes do sorteio.');
                 return;
             }
 
-            const uniqueWinners = document.getElementById("unique-winners-toggle").checked;
+            const uniqueWinners = document.getElementById('unique-winners-toggle').checked;
             if (uniqueWinners) {
                 participants = [...new Set(participants)];
             }
 
-            const numWinners = Math.min(parseInt(document.getElementById("num-winners").value) || 1, participants.length);
+            const numWinners = Math.min(parseInt(document.getElementById('num-winners').value) || 1, participants.length);
 
             // Shuffling
             const shuffled = [...participants];
@@ -1780,7 +2084,7 @@ input:checked + .slider:before {
                     <ul class="winners-list">
             `;
 
-            const medals = ["🥇", "🥈", "🥉"];
+            const medals = ['🥇', '🥈', '🥉'];
             winners.forEach((winner, idx) => {
                 const badge = medals[idx] || `#${idx + 1}`;
                 htmlContent += `
@@ -1795,12 +2099,12 @@ input:checked + .slider:before {
             htmlContent += `</ul></div>`;
 
             const drawData = {
-                type: "prize",
+                type: 'prize',
                 prizeName,
                 winners,
                 totalParticipants: participants.length,
-                timestamp: new Date().toLocaleString("pt-BR"),
-                hash: "GIVEAWAY-" + Math.random().toString(36).substring(2, 9).toUpperCase()
+                timestamp: new Date().toLocaleString('pt-BR'),
+                hash: 'GIVEAWAY-' + Math.random().toString(36).substring(2, 9).toUpperCase()
             };
 
             renderResults(drawData, htmlContent);
@@ -1809,9 +2113,9 @@ input:checked + .slider:before {
         // RENDERIZAÇÃO DE RESULTADOS
         function renderResults(drawData, htmlContent) {
             currentDrawResult = drawData;
-            const header = document.getElementById("draw-info-header");
+            const header = document.getElementById('draw-info-header');
             
-            if (drawData.type === "prize") {
+            if (drawData.type === 'prize') {
                 header.innerHTML = `
                     <h3>🎁 ${drawData.prizeName}</h3>
                     <p><i class="fas fa-users"></i> ${drawData.totalParticipants} Participantes • <i class="fas fa-clock"></i> Sorteado em ${drawData.timestamp}</p>
@@ -1823,28 +2127,28 @@ input:checked + .slider:before {
                 `;
             }
 
-            document.getElementById("results-container").innerHTML = `<div class="results-grid">${htmlContent}</div>`;
-            document.getElementById("results-wrapper").style.display = "block";
-            document.getElementById("share-box").style.display = "none";
+            document.getElementById('results-container').innerHTML = `<div class="results-grid">${htmlContent}</div>`;
+            document.getElementById('results-wrapper').style.display = 'block';
+            document.getElementById('share-box').style.display = 'none';
 
             // Scroll suave
-            document.getElementById("results-wrapper").scrollIntoView({ behavior: "smooth" });
-            showNotification("Sorteio realizado com sucesso!");
+            document.getElementById('results-wrapper').scrollIntoView({ behavior: 'smooth' });
+            showNotification('Sorteio realizado com sucesso!');
         }
 
         function resetAllTeams() {
-            document.getElementById("tournament-name-input").value = "";
-            document.getElementById("players-raw-textarea").value = "";
+            document.getElementById('tournament-name-input').value = '';
+            document.getElementById('players-raw-textarea').value = '';
             updatePlayersCount();
-            document.getElementById("results-wrapper").style.display = "none";
+            document.getElementById('results-wrapper').style.display = 'none';
         }
 
         // COPIAR FORMATAÇÃO PARA WHATSAPP / DISCORD
         function copyFormattedResults() {
             if (!currentDrawResult) return;
 
-            let text = "";
-            if (currentDrawResult.type === "prize") {
+            let text = ``;
+            if (currentDrawResult.type === 'prize') {
                 text += `🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁
 `;
                 text += `🏆 *Prêmio:* ${currentDrawResult.prizeName}
@@ -1874,13 +2178,13 @@ input:checked + .slider:before {
 
 `;
 
-                if (currentDrawResult.type === "groups") {
+                if (currentDrawResult.type === 'groups') {
                     currentDrawResult.groups.forEach((grp, gIdx) => {
                         const letter = String.fromCharCode(65 + gIdx);
                         text += `🛡️ *GRUPO ${letter}:*
 `;
                         grp.forEach((t, tIdx) => {
-                            text += `🔹 Time ${tIdx + 1}: ${t.join(", ")}
+                            text += `🔹 Time ${tIdx + 1}: ${t.join(', ')}
 `;
                         });
                         text += `
@@ -1893,10 +2197,10 @@ input:checked + .slider:before {
                         const t2 = currentDrawResult.teams[i + 1];
                         text += `⚔️ *CONFRONTO ${matchNum}:*
 `;
-                        text += `🔵 Time 1: ${t1.join(", ")}
+                        text += `🔵 Time 1: ${t1.join(', ')}
 `;
                         if (t2) {
-                            text += `🔴 Time 2: ${t2.join(", ")}
+                            text += `🔴 Time 2: ${t2.join(', ')}
 `;
                         } else {
                             text += `⭐ BYE (Passa direto)
@@ -1917,7 +2221,7 @@ input:checked + .slider:before {
             text += `#GoFrenesy`;
 
             navigator.clipboard.writeText(text).then(() => {
-                showNotification("Resultados copiados! Pronto para colar no WhatsApp ou Discord.");
+                showNotification('Resultados copiados! Pronto para colar no WhatsApp ou Discord.');
             });
         }
 
@@ -1928,44 +2232,44 @@ input:checked + .slider:before {
             const token = btoa(unescape(encodeURIComponent(dataStr)));
             const url = `${window.location.origin}${window.location.pathname}?data=${token}`;
             
-            document.getElementById("share-link-input").value = url;
-            document.getElementById("token-id-preview").textContent = currentDrawResult.hash || token.substring(0, 10);
-            document.getElementById("share-box").style.display = "block";
-            document.getElementById("share-box").scrollIntoView({ behavior: "smooth" });
+            document.getElementById('share-link-input').value = url;
+            document.getElementById('token-id-preview').textContent = currentDrawResult.hash || token.substring(0, 10);
+            document.getElementById('share-box').style.display = 'block';
+            document.getElementById('share-box').scrollIntoView({ behavior: 'smooth' });
         }
 
         function copyShareUrl() {
-            const input = document.getElementById("share-link-input");
+            const input = document.getElementById('share-link-input');
             input.select();
             navigator.clipboard.writeText(input.value).then(() => {
-                const btn = document.getElementById("copy-link-btn");
-                btn.textContent = "Copiado!";
-                setTimeout(() => btn.textContent = "Copiar Link", 2000);
-                showNotification("Link verificado copiado!");
+                const btn = document.getElementById('copy-link-btn');
+                btn.textContent = 'Copiado!';
+                setTimeout(() => btn.textContent = 'Copiar Link', 2000);
+                showNotification('Link verificado copiado!');
             });
         }
 
         // FAQ ACCORDION
         function toggleFaq(element) {
-            element.classList.toggle("active");
+            element.classList.toggle('active');
         }
 
         // CARREGAR VIA URL (DEEP LINKING)
-        window.addEventListener("DOMContentLoaded", () => {
-            selectGame("freefire");
+        window.addEventListener('DOMContentLoaded', () => {
+            selectGame('freefire');
 
             const params = new URLSearchParams(window.location.search);
-            const tabParam = params.get("tab");
-            if (tabParam === "premio" || tabParam === "prizes") {
-                switchMainTab("prizes");
+            const tabParam = params.get('tab');
+            if (tabParam === 'premio' || tabParam === 'prizes') {
+                switchMainTab('prizes');
             }
 
-            const dataParam = params.get("data");
+            const dataParam = params.get('data');
             if (dataParam) {
                 try {
                     const decoded = decodeURIComponent(escape(atob(dataParam)));
                     const drawData = JSON.parse(decoded);
-                    if (drawData.type === "prize") {
+                    if (drawData.type === 'prize') {
                         let html = `<div class="result-card" style="grid-column: 1 / -1;"><ul class="winners-list">`;
                         drawData.winners.forEach((w, i) => {
                             html += `
@@ -1978,14 +2282,14 @@ input:checked + .slider:before {
                         });
                         html += `</ul></div>`;
                         renderResults(drawData, html);
-                    } else if (drawData.type === "teams" || drawData.type === "groups") {
-                        let html = "";
+                    } else if (drawData.type === 'teams' || drawData.type === 'groups') {
+                        let html = '';
                         if (drawData.groups) {
                             drawData.groups.forEach((grp, gIdx) => {
                                 const letter = String.fromCharCode(65 + gIdx);
                                 html += `<div class="result-card"><div class="result-card-title"><span>GRUPO ${letter}</span></div><div class="matchup-box">`;
                                 grp.forEach((t, tIdx) => {
-                                    html += `<div class="team-block"><div class="team-block-title">Time ${tIdx+1}</div><ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join("")}</ul></div>`;
+                                    html += `<div class="team-block"><div class="team-block-title">Time ${tIdx+1}</div><ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join('')}</ul></div>`;
                                 });
                                 html += `</div></div>`;
                             });
@@ -1997,9 +2301,9 @@ input:checked + .slider:before {
                                     <div class="result-card">
                                         <div class="result-card-title"><span>CONFRONTO ${Math.floor(i/2)+1}</span></div>
                                         <div class="matchup-box">
-                                            <div class="team-block"><div class="team-block-title">TIME 1</div><ul class="team-members-list">${t1.map(p => `<li>• ${p}</li>`).join("")}</ul></div>
+                                            <div class="team-block"><div class="team-block-title">TIME 1</div><ul class="team-members-list">${t1.map(p => `<li>• ${p}</li>`).join('')}</ul></div>
                                             <div class="matchup-vs">VS</div>
-                                            ${t2 ? `<div class="team-block"><div class="team-block-title">TIME 2</div><ul class="team-members-list">${t2.map(p => `<li>• ${p}</li>`).join("")}</ul></div>` : `<div class="team-block">BYE</div>`}
+                                            ${t2 ? `<div class="team-block"><div class="team-block-title">TIME 2</div><ul class="team-members-list">${t2.map(p => `<li>• ${p}</li>`).join('')}</ul></div>` : `<div class="team-block">BYE</div>`}
                                         </div>
                                     </div>
                                 `;
