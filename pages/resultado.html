@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Oficial do Torneio | Frenesy Esports</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
+
+    <!-- SEO -->
+    <meta name="description" content="Página oficial de resultado e chaveamento do torneio de eSports autenticado pela Frenesy Esports.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://frenesy.com.br/pages/resultado.html">
+
+    <style>
+:root {
+	--preto: #000000;
+	--laranja-frenesy: #f96001;
+	--laranja-hover: #ff7722;
+	--branco: #ffffff;
+	--cinza-escuro: #141414;
+	--cinza-card: #1a1a1a;
+	--cinza-borda: #2d2d2d;
+	--cinza-claro: #a0a0a0;
+	--font-titulo: 'Rajdhani', sans-serif;
+	--font-texto: 'Poppins', sans-serif;
+	--input-height: 48px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-texto);
+	background-color: var(--preto);
+	color: var(--branco);
+	overflow-x: hidden;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* NAVBAR */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 5%;
+	background-color: rgba(0, 0, 0, 0.85);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 48px;
+	margin-right: 12px;
+}
+
+.logo h1 {
+	font-family: var(--font-titulo);
+	font-size: 2rem;
+	color: var(--branco);
+	letter-spacing: 2px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	padding: 0 18px;
+}
+
+.nav-links a {
+	color: var(--branco);
+	font-weight: 600;
+	transition: color 0.3s ease;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+	color: var(--laranja-frenesy);
+}
+
+main {
+	padding-top: 110px;
+	min-height: 80vh;
+}
+
+.result-view-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 5% 4rem;
+}
+
+/* CARD DE CABEÇALHO DO RESULTADO */
+.official-badge-header {
+	background: linear-gradient(145deg, #1c1511 0%, #151515 100%);
+	border: 2px solid var(--laranja-frenesy);
+	border-radius: 12px;
+	padding: 2.5rem;
+	text-align: center;
+	box-shadow: 0 15px 35px rgba(249, 96, 1, 0.2);
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.official-stamp {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	padding: 6px 18px;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 1.2rem;
+}
+
+.official-title {
+	font-family: var(--font-titulo);
+	font-size: 2.8rem;
+	color: var(--branco);
+	text-transform: uppercase;
+	margin-bottom: 0.8rem;
+	line-height: 1.2;
+}
+
+.official-details-grid {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	color: #ccc;
+	font-size: 1rem;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.detail-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.detail-item i {
+	color: var(--laranja-frenesy);
+}
+
+/* ACTION BUTTONS */
+.result-view-actions {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 2.5rem;
+}
+
+.btn {
+	height: var(--input-height);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	padding: 12px 24px;
+	border-radius: 6px;
+	font-weight: 700;
+	font-family: var(--font-titulo);
+	font-size: 1.05rem;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	background-color: var(--laranja-hover);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(249, 96, 1, 0.3);
+}
+
+.btn-secondary {
+	background-color: #2a2a2a;
+	border: 1px solid #3d3d3d;
+}
+
+.btn-secondary:hover {
+	background-color: #383838;
+}
+
+/* SEÇÃO DE CHAVEAMENTO ESTILO COPA DO MUNDO */
+.bracket-box {
+	background-color: var(--cinza-card);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 12px;
+	padding: 2rem;
+	margin-bottom: 2.5rem;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.bracket-title {
+	font-family: var(--font-titulo);
+	font-size: 1.8rem;
+	color: var(--laranja-frenesy);
+	margin-bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-bottom: 1px solid var(--cinza-borda);
+	padding-bottom: 10px;
+}
+
+.bracket-tree {
+	display: flex;
+	gap: 2rem;
+	overflow-x: auto;
+	padding: 1rem 0;
+	justify-content: space-between;
+}
+
+.bracket-round {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	min-width: 220px;
+	flex: 1;
+	gap: 1.5rem;
+}
+
+.bracket-round-header {
+	font-family: var(--font-titulo);
+	font-size: 1.15rem;
+	color: #aaa;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-bottom: 2px solid #333;
+	padding-bottom: 6px;
+	margin-bottom: 8px;
+}
+
+.bracket-match {
+	background-color: var(--cinza-escuro);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.bracket-match-header {
+	background-color: #1c1c1c;
+	padding: 4px 10px;
+	font-size: 0.75rem;
+	color: var(--laranja-frenesy);
+	font-weight: 700;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bracket-team-slot {
+	padding: 10px 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.9rem;
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+	color: #eee;
+}
+
+.bracket-team-slot:last-child {
+	border-bottom: none;
+}
+
+/* CARDS DE CONFRONTOS E GRUPOS */
+.results-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.result-card {
+	background-color: var(--cinza-escuro);
+	border: 1px solid var(--cinza-borda);
+	border-radius: 10px;
+	padding: 1.5rem;
+}
+
+.result-card-title {
+	font-family: var(--font-titulo);
+	font-size: 1.4rem;
+	color: var(--laranja-frenesy);
+	border-bottom: 1px solid #333;
+	padding-bottom: 8px;
+	margin-bottom: 14px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.matchup-box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.team-block {
+	background-color: #202020;
+	padding: 10px 14px;
+	border-radius: 6px;
+	border-left: 3px solid var(--laranja-frenesy);
+}
+
+.team-block-title {
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--laranja-frenesy);
+	margin-bottom: 4px;
+	text-transform: uppercase;
+}
+
+.team-members-list {
+	list-style: none;
+	font-size: 0.95rem;
+	color: #eee;
+}
+
+.team-members-list li {
+	padding: 3px 0;
+}
+
+.matchup-vs {
+	text-align: center;
+	font-family: var(--font-titulo);
+	font-weight: 800;
+	font-size: 1.2rem;
+	color: var(--laranja-frenesy);
+}
+
+/* GANHADORES (PRÊMIOS) */
+.winners-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.winner-row {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	background-color: var(--cinza-escuro);
+	padding: 14px 20px;
+	border-radius: 8px;
+	border-left: 4px solid var(--laranja-frenesy);
+}
+
+.winner-rank {
+	font-family: var(--font-titulo);
+	font-size: 1.5rem;
+	font-weight: 800;
+	color: var(--laranja-frenesy);
+	min-width: 35px;
+}
+
+.winner-name {
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: var(--branco);
+	flex-grow: 1;
+}
+
+/* NOTIFICATION */
+#notification-container {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.notification {
+	background-color: #222;
+	color: var(--branco);
+	border-left: 4px solid var(--laranja-frenesy);
+	padding: 14px 20px;
+	border-radius: 6px;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+	font-size: 0.95rem;
+}
+
+/* FOOTER */
+.site-footer {
+	position: relative;
+	padding: 60px 5% 20px;
+	background-color: var(--preto);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	text-align: center;
+}
+
+@media print {
+	.navbar, .result-view-actions, .site-footer { display: none !important; }
+	body, main { background: #fff !important; color: #000 !important; padding: 0 !important; }
+	.official-badge-header { border-color: #000 !important; box-shadow: none !important; color: #000 !important; }
+	.official-title { color: #000 !important; }
+	.bracket-match { background: #f0f0f0 !important; border-color: #ccc !important; }
+	.bracket-team-slot { color: #000 !important; }
+}
+
+@media (max-width: 768px) {
+	.official-title { font-size: 2rem; }
+	.result-view-actions { flex-direction: column; }
+	.result-view-actions .btn { width: 100%; }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../" class="logo">
+                <img src="../assets/img/logo/Frenesy nb.png" alt="Logo Frenesy E-sports">
+                <h1>FRENESY</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../">Início</a></li>
+                <li><a href="times.html">Times</a></li>
+                <li><a href="sorteio.html">Sorteador</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="result-view-container">
+            <div id="loading-state" style="text-align: center; padding: 4rem 1rem;">
+                <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--laranja-frenesy); margin-bottom: 1rem;"></i>
+                <h2>Carregando resultado oficial do torneio...</h2>
+            </div>
+
+            <div id="result-content-wrapper" style="display: none;">
+                <!-- HEADER DO RESULTADO -->
+                <div class="official-badge-header">
+                    <div class="official-stamp"><i class="fas fa-certificate"></i> Sorteio Oficial Verificado</div>
+                    <h1 class="official-title" id="res-title">Torneio Frenesy Esports</h1>
+                    <div class="official-details-grid" id="res-details">
+                        <!-- Preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="result-view-actions">
+                    <button class="btn" onclick="copyFormattedResults()">
+                        <i class="fab fa-whatsapp"></i> Copiar para WhatsApp / Discord
+                    </button>
+                    <button class="btn btn-secondary" onclick="shareCurrentUrl()">
+                        <i class="fas fa-share-alt"></i> Compartilhar Link
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <i class="fas fa-print"></i> Imprimir / Salvar PDF
+                    </button>
+                    <a href="sorteio.html" class="btn btn-secondary">
+                        <i class="fas fa-plus-circle"></i> Criar Novo Sorteio
+                    </a>
+                </div>
+
+                <!-- CONTEÚDO DO SORTEIO -->
+                <div id="dynamic-brackets-container"></div>
+            </div>
+
+            <div id="error-state" style="display: none; text-align: center; padding: 4rem 1rem;">
+                <i class="fas fa-exclamation-triangle fa-3x" style="color: var(--laranja-frenesy); margin-bottom: 1rem;"></i>
+                <h2>Nenhum resultado encontrado</h2>
+                <p style="color: #aaa; margin: 1rem 0 2rem;">O link acessado pode estar corrompido ou incompleto.</p>
+                <a href="sorteio.html" class="btn"><i class="fas fa-arrow-left"></i> Ir para o Sorteador</a>
+            </div>
+        </div>
+
+        <div id="notification-container"></div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="copyright-text">&copy; 2026 Frenesy Esports. Todos os direitos reservados.</p>
+        <p style="color: #666; font-size: 0.85rem; margin-top: 6px;">Plataforma Oficial de Sorteios e Torneios de eSports</p>
+    </footer>
+
+    <script>
+        var currentData = null;
+
+        function showNotification(message) {
+            var container = document.getElementById("notification-container");
+            if (!container) return;
+            var notif = document.createElement("div");
+            notif.className = "notification";
+            notif.innerHTML = '<i class="fas fa-info-circle" style="color: var(--laranja-frenesy); margin-right: 8px;"></i> ' + message;
+            container.appendChild(notif);
+            setTimeout(function() {
+                if (notif.parentNode) notif.remove();
+            }, 3800);
+        }
+
+        function copyFormattedResults() {
+            if (!currentData) return;
+
+            var text = "";
+            if (currentData.type === "prize") {
+                text += "🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁\n";
+                text += "🏆 *Prêmio:* " + currentData.prizeName + "\n";
+                text += "📅 *Data do Sorteio:* " + currentData.timestamp + "\n";
+                text += "👥 *Participantes:* " + currentData.totalParticipants + "\n";
+                text += "────────────────────────────\n";
+                text += "👑 *GANHADORES:*\n";
+                currentData.winners.forEach(function(w, i) {
+                    text += (i + 1) + "º Lugar: 👉 *" + w + "*\n";
+                });
+            } else {
+                text += "🔥 *CHAVEAMENTO OFICIAL FRENESY ESPORTS* 🔥\n";
+                text += "🎮 *Jogo:* " + currentData.game + "\n";
+                text += "🏆 *Torneio:* " + currentData.tournamentName + "\n";
+                if (currentData.tournamentDate) text += "📅 *Data do Evento:* " + currentData.tournamentDate + "\n";
+                text += "🛡️ *Organizador:* " + (currentData.organizer || "Frenesy Esports") + "\n";
+                text += "────────────────────────────\n\n";
+
+                if (currentData.type === "groups") {
+                    currentData.groups.forEach(function(grp, gIdx) {
+                        var letter = String.fromCharCode(65 + gIdx);
+                        text += "🛡️ *GRUPO " + letter + ":*\n";
+                        grp.forEach(function(t, tIdx) {
+                            text += "🔹 Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
+                        });
+                        text += "\n";
+                    });
+                    text += "🏆 *PLAYOFFS MATA-MATA (COPA DO MUNDO)*\n";
+                    text += "⚔️ Jogo 1: 1º Grupo A vs 2º Grupo B\n";
+                    text += "⚔️ Jogo 2: 1º Grupo C vs 2º Grupo D\n";
+                    text += "⚔️ Jogo 3: 1º Grupo B vs 2º Grupo A\n";
+                    text += "⚔️ Jogo 4: 1º Grupo D vs 2º Grupo C\n";
+                } else {
+                    for (var i = 0; i < currentData.teams.length; i += 2) {
+                        var matchNum = Math.floor(i / 2) + 1;
+                        var t1 = currentData.teams[i];
+                        var t2 = currentData.teams[i + 1];
+                        text += "⚔️ *CONFRONTO " + matchNum + ":*\n";
+                        text += "🔵 Time 1: " + t1.join(", ") + "\n";
+                        if (t2) {
+                            text += "🔴 Time 2: " + t2.join(", ") + "\n";
+                        } else {
+                            text += "⭐ BYE (Passa direto)\n";
+                        }
+                        text += "\n";
+                    }
+                }
+            }
+
+            text += "────────────────────────────\n";
+            text += "✅ *Resultado auditado*: " + window.location.href + "\n";
+            text += "#GoFrenesy";
+
+            navigator.clipboard.writeText(text).then(function() {
+                showNotification("Resultado formatado copiado para WhatsApp/Discord!");
+            });
+        }
+
+        function shareCurrentUrl() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                showNotification("Link oficial do resultado copiado com sucesso!");
+            });
+        }
+
+        window.addEventListener("DOMContentLoaded", function() {
+            var params = new URLSearchParams(window.location.search);
+            var dataParam = params.get("data");
+
+            if (!dataParam) {
+                document.getElementById("loading-state").style.display = "none";
+                document.getElementById("error-state").style.display = "block";
+                return;
+            }
+
+            try {
+                var decoded = decodeURIComponent(escape(atob(dataParam)));
+                var data = JSON.parse(decoded);
+                currentData = data;
+
+                document.getElementById("loading-state").style.display = "none";
+                document.getElementById("result-content-wrapper").style.display = "block";
+
+                var titleElem = document.getElementById("res-title");
+                var detailsElem = document.getElementById("res-details");
+                var bracketsContainer = document.getElementById("dynamic-brackets-container");
+
+                if (data.type === "prize") {
+                    titleElem.textContent = "🎁 " + data.prizeName;
+                    detailsElem.innerHTML = '<div class="detail-item"><i class="fas fa-users"></i> ' + data.totalParticipants + ' Participantes</div><div class="detail-item"><i class="fas fa-clock"></i> Sorteado em: ' + data.timestamp + '</div><div class="detail-item"><i class="fas fa-shield-alt"></i> ID: ' + (data.hash || "OK") + '</div>';
+
+                    var pHtml = '<div class="bracket-box"><div class="bracket-title"><i class="fas fa-award"></i> GANHADORES OFICIAIS</div><ul class="winners-list">';
+                    var medals = ["🥇", "🥈", "🥉"];
+                    data.winners.forEach(function(winner, idx) {
+                        var badge = medals[idx] || ("#" + (idx + 1));
+                        pHtml += '<li class="winner-row"><span class="winner-rank">' + badge + '</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700;"><i class="fas fa-gift"></i> ' + data.prizeName + '</span></li>';
+                    });
+                    pHtml += '</ul></div>';
+                    bracketsContainer.innerHTML = pHtml;
+
+                } else {
+                    titleElem.textContent = "🏆 " + data.tournamentName;
+                    var dateInfo = data.tournamentDate ? '<div class="detail-item"><i class="fas fa-calendar-alt"></i> ' + data.tournamentDate + '</div>' : '';
+                    detailsElem.innerHTML = '<div class="detail-item"><i class="fas fa-gamepad"></i> ' + data.game + '</div>' + dateInfo + '<div class="detail-item"><i class="fas fa-user-shield"></i> Org: ' + (data.organizer || "Frenesy Esports") + '</div><div class="detail-item"><i class="fas fa-fingerprint"></i> ID: ' + (data.hash || "OK") + '</div>';
+
+                    var html = "";
+
+                    if (data.type === "groups" && data.groups) {
+                        // 1. Grupos
+                        html += '<div class="bracket-box"><div class="bracket-title"><i class="fas fa-layer-group"></i> FASE DE GRUPOS</div><div class="results-grid">';
+                        data.groups.forEach(function(grp, gIdx) {
+                            var letter = String.fromCharCode(65 + gIdx);
+                            html += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-shield-alt"></i> GRUPO ' + letter + '</span><span style="font-size: 0.85rem; color: #aaa;">' + grp.length + ' times</span></div><div class="matchup-box">';
+                            grp.forEach(function(t, tIdx) {
+                                html += '<div class="team-block"><div class="team-block-title">Time ' + (tIdx + 1) + ' (' + t.length + ' Jogadores)</div><ul class="team-members-list">';
+                                t.forEach(function(p) { html += '<li>• ' + p + '</li>'; });
+                                html += '</ul></div>';
+                            });
+                            html += '</div></div>';
+                        });
+                        html += '</div></div>';
+
+                        // 2. Chaveamento Copa do Mundo
+                        html += '<div class="bracket-box"><div class="bracket-title"><i class="fas fa-trophy"></i> CHAVEAMENTO MATA-MATA (PLAYOFFS COPA DO MUNDO)</div>';
+                        html += '<div class="bracket-tree">';
+
+                        // Quartas
+                        html += '<div class="bracket-round">';
+                        html += '<div class="bracket-round-header">Quartas de Final</div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 1 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo A</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo B</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 2 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo C</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo D</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 3 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo B</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo A</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 4 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo D</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo C</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '</div>';
+
+                        // Semifinais
+                        html += '<div class="bracket-round">';
+                        html += '<div class="bracket-round-header">Semifinais</div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 1 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 1</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 2</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 2 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 3</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 4</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '</div>';
+
+                        // Final
+                        html += '<div class="bracket-round">';
+                        html += '<div class="bracket-round-header" style="color: var(--laranja-frenesy); border-bottom-color: var(--laranja-frenesy);">🏆 Grande Final</div>';
+                        html += '<div class="bracket-match" style="border: 2px solid var(--laranja-frenesy);"><div class="bracket-match-header" style="background: var(--laranja-frenesy); color: #fff;">DECISÃO DO TÍTULO (MD5)</div><div class="bracket-team-slot"><span>Finalista 1</span><span>👑</span></div><div class="bracket-team-slot"><span>Finalista 2</span><span>👑</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Disputa 3º Lugar (MD3)</div><div class="bracket-team-slot"><span>Perdedor Semi 1</span><span>🥉</span></div><div class="bracket-team-slot"><span>Perdedor Semi 2</span><span>🥉</span></div></div>';
+                        html += '</div>';
+
+                        html += '</div></div>';
+
+                    } else if (data.teams) {
+                        html += '<div class="bracket-box"><div class="bracket-title"><i class="fas fa-swords"></i> CONFRONTOS DIRETOS</div><div class="results-grid">';
+                        for (var i = 0; i < data.teams.length; i += 2) {
+                            var matchNum = Math.floor(i / 2) + 1;
+                            var t1 = data.teams[i];
+                            var t2 = data.teams[i + 1];
+                            html += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">🔵 TIME 1</div><ul class="team-members-list">';
+                            t1.forEach(function(p) { html += '<li>• ' + p + '</li>'; });
+                            html += '</ul></div><div class="matchup-vs">VS</div>';
+                            if (t2) {
+                                html += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div><ul class="team-members-list">';
+                                t2.forEach(function(p) { html += '<li>• ' + p + '</li>'; });
+                                html += '</ul></div>';
+                            } else {
+                                html += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">⭐ BYE / PASSA DIRETO</div><p style="font-size: 0.85rem; color: #888;">Avança para a próxima fase.</p></div>';
+                            }
+                            html += '</div></div>';
+                        }
+                        html += '</div></div>';
+                    }
+
+                    bracketsContainer.innerHTML = html;
+                }
+
+            } catch(e) {
+                console.error("Erro ao decodificar resultado:", e);
+                document.getElementById("loading-state").style.display = "none";
+                document.getElementById("error-state").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

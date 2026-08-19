@@ -73,6 +73,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Resultado Oficial de Torneio -->
+  <url>
+    <loc>https://frenesy.com.br/pages/resultado.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Galeria da Comunidade -->
   <url>
     <loc>https://frenesy.com.br/pages/galeria.html</loc>
