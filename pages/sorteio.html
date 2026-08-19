@@ -496,11 +496,6 @@ main {
 	transition: border-color 0.3s, background-color 0.3s;
 }
 
-.excel-import-card.dragover {
-	border-color: #2ecc71;
-	background-color: rgba(46, 204, 113, 0.1);
-}
-
 .excel-header-row {
 	display: flex;
 	justify-content: space-between;
@@ -1613,135 +1608,152 @@ input:checked + .slider:before {
 
     <script>
         // MENU MOBILE
-        const menuToggle = document.getElementById("menu-toggle");
-        const navLinks = document.getElementById("nav-links");
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            menuToggle.innerHTML = navLinks.classList.contains("active") ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+        var menuToggle = document.getElementById("menu-toggle");
+        var navLinks = document.getElementById("nav-links");
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+                menuToggle.innerHTML = navLinks.classList.contains("active") ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+        }
 
         // ESTADO GLOBAL
-        let currentGame = 'freefire';
-        let currentTab = 'teams';
-        let currentDrawResult = null;
+        var currentGame = "freefire";
+        var currentTab = "teams";
+        var currentDrawResult = null;
 
-        const gamePresets = {
+        var gamePresets = {
             freefire: {
-                name: 'Free Fire',
+                name: "Free Fire",
                 modes: [
-                    { value: 1, label: '1x1 (X1 dos Crias)' },
-                    { value: 2, label: '2x2 (Duplas Apostadas)' },
-                    { value: 4, label: '4x4 (Squad vs Squad / Gladiadores)' },
-                    { value: 6, label: '6x6 (Sexteto / Formato Amplo)' },
-                    { value: 12, label: 'Tabela de Queda (12 por time)' }
+                    { value: 1, label: "1x1 (X1 dos Crias)" },
+                    { value: 2, label: "2x2 (Duplas Apostadas)" },
+                    { value: 4, label: "4x4 (Squad vs Squad / Gladiadores)" },
+                    { value: 6, label: "6x6 (Sexteto / Formato Amplo)" },
+                    { value: 12, label: "Tabela de Queda (12 por time)" }
                 ],
                 defaultMode: 4,
-                defaultTitle: '4x4 dos Crias Frenesy'
+                defaultTitle: "4x4 dos Crias Frenesy"
             },
             valorant: {
-                name: 'VALORANT',
+                name: "VALORANT",
                 modes: [
-                    { value: 1, label: '1v1 (Duelo de Mira / Deathmatch)' },
-                    { value: 2, label: '2v2 (Wingman / Spike Rush)' },
-                    { value: 5, label: '5v5 (Competitivo / Scrim)' }
+                    { value: 1, label: "1v1 (Duelo de Mira / Deathmatch)" },
+                    { value: 2, label: "2v2 (Wingman / Spike Rush)" },
+                    { value: 5, label: "5v5 (Competitivo / Scrim)" }
                 ],
                 defaultMode: 5,
-                defaultTitle: 'Mix Competitivo VALORANT'
+                defaultTitle: "Mix Competitivo VALORANT"
             },
             cs2: {
-                name: 'Counter-Strike 2',
+                name: "Counter-Strike 2",
                 modes: [
-                    { value: 1, label: '1v1 (Aim Map / AWP)' },
-                    { value: 2, label: '2v2 (Braço Direito / Wingman)' },
-                    { value: 5, label: '5v5 (Mix Competitivo CS2)' }
+                    { value: 1, label: "1v1 (Aim Map / AWP)" },
+                    { value: 2, label: "2v2 (Braço Direito / Wingman)" },
+                    { value: 5, label: "5v5 (Mix Competitivo CS2)" }
                 ],
                 defaultMode: 5,
-                defaultTitle: 'Torneio CS2 Frenesy'
+                defaultTitle: "Torneio CS2 Frenesy"
             },
             custom: {
-                name: 'Personalizado',
+                name: "Personalizado",
                 modes: [
-                    { value: 1, label: '1 vs 1' },
-                    { value: 2, label: '2 vs 2' },
-                    { value: 3, label: '3 vs 3' },
-                    { value: 4, label: '4 vs 4' },
-                    { value: 5, label: '5 vs 5' },
-                    { value: 6, label: '6 vs 6' },
-                    { value: 8, label: '8 vs 8' },
-                    { value: 10, label: '10 vs 10' }
+                    { value: 1, label: "1 vs 1" },
+                    { value: 2, label: "2 vs 2" },
+                    { value: 3, label: "3 vs 3" },
+                    { value: 4, label: "4 vs 4" },
+                    { value: 5, label: "5 vs 5" },
+                    { value: 6, label: "6 vs 6" },
+                    { value: 8, label: "8 vs 8" },
+                    { value: 10, label: "10 vs 10" }
                 ],
                 defaultMode: 2,
-                defaultTitle: 'Torneio de eSports Frenesy'
+                defaultTitle: "Torneio de eSports Frenesy"
             }
         };
 
         // NOTIFICAÇÃO
         function showNotification(message) {
-            const container = document.getElementById("notification-container");
-            const notif = document.createElement("div");
+            var container = document.getElementById("notification-container");
+            if (!container) return;
+            var notif = document.createElement("div");
             notif.className = "notification";
-            notif.innerHTML = `<i class="fas fa-info-circle" style="color: var(--laranja-frenesy); margin-right: 8px;"></i> ${message}`;
+            notif.innerHTML = '<i class="fas fa-info-circle" style="color: var(--laranja-frenesy); margin-right: 8px;"></i> ' + message;
             container.appendChild(notif);
-            setTimeout(() => notif.remove(), 3800);
+            setTimeout(function() {
+                if (notif.parentNode) notif.remove();
+            }, 3800);
         }
 
         // ALTERNAÇÃO DE ABAS
         function switchMainTab(tab) {
             currentTab = tab;
-            document.getElementById('tab-teams').classList.toggle('active', tab === 'teams');
-            document.getElementById('tab-prizes').classList.toggle('active', tab === 'prizes');
-            document.getElementById('section-teams-sorter').style.display = tab === 'teams' ? 'block' : 'none';
-            document.getElementById('section-prizes-sorter').style.display = tab === 'prizes' ? 'block' : 'none';
-            document.getElementById('results-wrapper').style.display = 'none';
+            var tabTeams = document.getElementById("tab-teams");
+            var tabPrizes = document.getElementById("tab-prizes");
+            var secTeams = document.getElementById("section-teams-sorter");
+            var secPrizes = document.getElementById("section-prizes-sorter");
+            var resWrapper = document.getElementById("results-wrapper");
+
+            if (tabTeams) tabTeams.classList.toggle("active", tab === "teams");
+            if (tabPrizes) tabPrizes.classList.toggle("active", tab === "prizes");
+            if (secTeams) secTeams.style.display = (tab === "teams") ? "block" : "none";
+            if (secPrizes) secPrizes.style.display = (tab === "prizes") ? "block" : "none";
+            if (resWrapper) resWrapper.style.display = "none";
         }
 
         // SELETOR DE JOGOS
         function selectGame(gameKey) {
             currentGame = gameKey;
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.classList.toggle('active', card.dataset.game === gameKey);
+            var cards = document.querySelectorAll(".game-card");
+            cards.forEach(function(card) {
+                card.classList.toggle("active", card.dataset.game === gameKey);
             });
 
-            const config = gamePresets[gameKey];
-            const modeSelect = document.getElementById('game-mode-select');
-            modeSelect.innerHTML = '';
-            config.modes.forEach(mode => {
-                const opt = document.createElement('option');
-                opt.value = mode.value;
-                opt.textContent = mode.label;
-                if (mode.value === config.defaultMode) opt.selected = true;
-                modeSelect.appendChild(opt);
-            });
+            var config = gamePresets[gameKey];
+            if (!config) return;
 
-            const nameInput = document.getElementById('tournament-name-input');
-            if (!nameInput.value || Object.values(gamePresets).some(p => p.defaultTitle === nameInput.value)) {
-                nameInput.value = config.defaultTitle;
+            var modeSelect = document.getElementById("game-mode-select");
+            if (modeSelect) {
+                modeSelect.innerHTML = "";
+                config.modes.forEach(function(mode) {
+                    var opt = document.createElement("option");
+                    opt.value = mode.value;
+                    opt.textContent = mode.label;
+                    if (mode.value === config.defaultMode) opt.selected = true;
+                    modeSelect.appendChild(opt);
+                });
+            }
+
+            var nameInput = document.getElementById("tournament-name-input");
+            if (nameInput) {
+                var currentVal = nameInput.value.trim();
+                var isPresetTitle = Object.values(gamePresets).some(function(p) { return p.defaultTitle === currentVal; });
+                if (!currentVal || isPresetTitle) {
+                    nameInput.value = config.defaultTitle;
+                }
             }
 
             handleGameModeChange();
         }
 
         function handleGameModeChange() {
-            const mode = parseInt(document.getElementById('game-mode-select').value);
-            const groupStageContainer = document.getElementById('group-stage-container');
-            const groupToggle = document.getElementById('group-stage-toggle');
-            
-            if (mode > 1) {
-                groupStageContainer.style.display = 'flex';
-            } else {
-                groupStageContainer.style.display = 'flex';
-            }
+            var groupStageContainer = document.getElementById("group-stage-container");
+            if (groupStageContainer) groupStageContainer.style.display = "flex";
             toggleGroupStage();
         }
 
         function toggleGroupStage() {
-            const isChecked = document.getElementById('group-stage-toggle').checked;
-            document.getElementById('num-groups-wrapper').style.display = isChecked ? 'block' : 'none';
+            var groupToggle = document.getElementById("group-stage-toggle");
+            var numGroupsWrapper = document.getElementById("num-groups-wrapper");
+            if (groupToggle && numGroupsWrapper) {
+                numGroupsWrapper.style.display = groupToggle.checked ? "block" : "none";
+            }
         }
 
         function stepCount(inputId, step, min, max) {
-            const input = document.getElementById(inputId);
-            let val = parseInt(input.value) || min;
+            var input = document.getElementById(inputId);
+            if (!input) return;
+            var val = parseInt(input.value) || min;
             val += step;
             if (val >= min && val <= max) input.value = val;
         }
@@ -1750,79 +1762,82 @@ input:checked + .slider:before {
         function parsePlayers(text) {
             if (!text) return [];
             return text
-                .split(/[
-,]+/)
-                .map(n => n.trim())
-                .filter(n => n.length > 0);
+                .split(/[\n,]+/)
+                .map(function(n) { return n.trim(); })
+                .filter(function(n) { return n.length > 0; });
         }
 
         function updatePlayersCount() {
-            const text = document.getElementById('players-raw-textarea').value;
-            const count = parsePlayers(text).length;
-            document.getElementById('players-count-indicator').textContent = `Total: ${count} jogadores identificados.`;
+            var textarea = document.getElementById("players-raw-textarea");
+            var countIndicator = document.getElementById("players-count-indicator");
+            if (textarea && countIndicator) {
+                var count = parsePlayers(textarea.value).length;
+                countIndicator.textContent = "Total: " + count + " jogadores identificados.";
+            }
         }
 
         function loadSamplePlayers() {
-            const samples = [
-                'FㅤNOBRU (Bruno Goes)', 'FㅤCEROL (Lucio Lima)', 'FㅤBAK (Gabriel Lessa)', 'FㅤGHOST (Arthur Ramos)',
-                'FㅤTWO9 (Victor Santos)', 'FㅤDACRUZ (Matheus Silva)', 'FㅤJORDAN (Jordan Silva)', 'FㅤSINCE (Rodrigo F.)',
-                'FㅤTHZIN (Thiago M.)', 'FㅤITACHI (Kaike Lima)', 'FㅤSANTT (Gustavo S.)', 'FㅤLEPPE (Filipe M.)',
-                'FㅤALIEN (Christopher R.)', 'FㅤAKASHI (Thiago P.)', 'FㅤEMANUEL (Emanuel F.)', 'FㅤMAGZX7 (Magsuel F.)'
+            var samples = [
+                "FㅤNOBRU (Bruno Goes)", "FㅤCEROL (Lucio Lima)", "FㅤBAK (Gabriel Lessa)", "FㅤGHOST (Arthur Ramos)",
+                "FㅤTWO9 (Victor Santos)", "FㅤDACRUZ (Matheus Silva)", "FㅤJORDAN (Jordan Silva)", "FㅤSINCE (Rodrigo F.)",
+                "FㅤTHZIN (Thiago M.)", "FㅤITACHI (Kaike Lima)", "FㅤSANTT (Gustavo S.)", "FㅤLEPPE (Filipe M.)",
+                "FㅤALIEN (Christopher R.)", "FㅤAKASHI (Thiago P.)", "FㅤEMANUEL (Emanuel F.)", "FㅤMAGZX7 (Magsuel F.)"
             ];
-            document.getElementById('players-raw-textarea').value = samples.join('
-');
-            updatePlayersCount();
-            showNotification('16 jogadores de exemplo carregados!');
+            var textarea = document.getElementById("players-raw-textarea");
+            if (textarea) {
+                textarea.value = samples.join("\n");
+                updatePlayersCount();
+                showNotification("16 jogadores de exemplo carregados!");
+            }
         }
 
         function clearPlayerList() {
-            document.getElementById('players-raw-textarea').value = '';
-            updatePlayersCount();
+            var textarea = document.getElementById("players-raw-textarea");
+            if (textarea) {
+                textarea.value = "";
+                updatePlayersCount();
+            }
         }
 
         // =========================================================================
         // IMPORTAÇÃO E EXPORTAÇÃO DE PLANILHAS (EXCEL .XLSX / .XLS / .CSV)
         // =========================================================================
         function handleFileUpload(event, targetType) {
-            const file = event.target.files[0];
+            var file = event.target.files[0];
             if (!file) return;
 
-            const fileName = file.name.toLowerCase();
-            const isExcel = fileName.endsWith('.xlsx') || fileName.endsWith('.xls') || fileName.endsWith('.csv');
+            var fileName = file.name.toLowerCase();
+            var isExcel = fileName.endsWith(".xlsx") || fileName.endsWith(".xls") || fileName.endsWith(".csv");
 
-            if (isExcel && typeof XLSX !== 'undefined') {
-                const reader = new FileReader();
+            if (isExcel && typeof XLSX !== "undefined") {
+                var reader = new FileReader();
                 reader.onload = function(e) {
                     try {
-                        const data = new Uint8Array(e.target.result);
-                        const workbook = XLSX.read(data, { type: 'array' });
-                        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-                        const rows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+                        var data = new Uint8Array(e.target.result);
+                        var workbook = XLSX.read(data, { type: "array" });
+                        var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                        var rows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
 
-                        const extractedList = [];
+                        var extractedList = [];
 
-                        rows.forEach((row, idx) => {
+                        rows.forEach(function(row, idx) {
                             if (!row || row.length === 0) return;
                             
-                            // Extrai os valores das primeiras 2 colunas
-                            const col1 = (row[0] !== undefined && row[0] !== null) ? String(row[0]).trim() : '';
-                            const col2 = (row[1] !== undefined && row[1] !== null) ? String(row[1]).trim() : '';
+                            var col1 = (row[0] !== undefined && row[0] !== null) ? String(row[0]).trim() : "";
+                            var col2 = (row[1] !== undefined && row[1] !== null) ? String(row[1]).trim() : "";
 
                             if (!col1 && !col2) return;
 
-                            // Ignora cabeçalho típico se for a 1ª linha
                             if (idx === 0) {
-                                const low1 = col1.toLowerCase();
-                                const low2 = col2.toLowerCase();
-                                if (low1 === 'nome' || low1 === 'name' || low1 === 'jogador' || low2 === 'nick' || low2 === 'nickname' || low2 === 'tag') {
-                                    return; // Pula cabeçalho
+                                var low1 = col1.toLowerCase();
+                                var low2 = col2.toLowerCase();
+                                if (low1 === "nome" || low1 === "name" || low1 === "jogador" || low2 === "nick" || low2 === "nickname" || low2 === "tag") {
+                                    return;
                                 }
                             }
 
-                            // Formatação inteligente
                             if (col1 && col2) {
-                                // Ex: Nickname (Nome) ou Nome - Nickname
-                                extractedList.push(`${col2} (${col1})`);
+                                extractedList.push(col2 + " (" + col1 + ")");
                             } else if (col1) {
                                 extractedList.push(col1);
                             } else if (col2) {
@@ -1831,57 +1846,54 @@ input:checked + .slider:before {
                         });
 
                         if (extractedList.length === 0) {
-                            showNotification('Nenhum jogador encontrado no arquivo selecionado.');
+                            showNotification("Nenhum jogador encontrado no arquivo selecionado.");
                             return;
                         }
 
-                        if (targetType === 'teams') {
-                            document.getElementById('players-raw-textarea').value = extractedList.join('
-');
+                        if (targetType === "teams") {
+                            var tArea = document.getElementById("players-raw-textarea");
+                            if (tArea) tArea.value = extractedList.join("\n");
                             updatePlayersCount();
-                            showNotification(`✅ Sucesso! ${extractedList.length} jogadores importados da planilha.`);
+                            showNotification("✅ Sucesso! " + extractedList.length + " jogadores importados da planilha.");
                         } else {
-                            document.getElementById('prizes-raw-textarea').value = extractedList.join('
-');
+                            var pArea = document.getElementById("prizes-raw-textarea");
+                            if (pArea) pArea.value = extractedList.join("\n");
                             updatePrizesCount();
-                            showNotification(`✅ Sucesso! ${extractedList.length} participantes importados da planilha.`);
+                            showNotification("✅ Sucesso! " + extractedList.length + " participantes importados da planilha.");
                         }
 
                     } catch(err) {
-                        console.error('Erro ao ler planilha:', err);
-                        showNotification('Erro ao processar planilha. Certifique-se de que o formato seja válido.');
+                        console.error("Erro ao ler planilha:", err);
+                        showNotification("Erro ao processar planilha. Verifique o formato do arquivo.");
                     }
                 };
                 reader.readAsArrayBuffer(file);
             } else {
-                // Fallback para arquivo TXT ou CSV simples via texto puro
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const text = e.target.result;
-                    const lines = text.split(/[
-]+/).map(l => l.trim()).filter(l => l.length > 0);
-                    if (targetType === 'teams') {
-                        document.getElementById('players-raw-textarea').value = lines.join('
-');
+                var txtReader = new FileReader();
+                txtReader.onload = function(e) {
+                    var text = e.target.result;
+                    var lines = text.split(/[\r\n]+/).map(function(l) { return l.trim(); }).filter(function(l) { return l.length > 0; });
+                    if (targetType === "teams") {
+                        var tArea = document.getElementById("players-raw-textarea");
+                        if (tArea) tArea.value = lines.join("\n");
                         updatePlayersCount();
-                        showNotification(`✅ ${lines.length} jogadores importados.`);
+                        showNotification("✅ " + lines.length + " jogadores importados.");
                     } else {
-                        document.getElementById('prizes-raw-textarea').value = lines.join('
-');
+                        var pArea = document.getElementById("prizes-raw-textarea");
+                        if (pArea) pArea.value = lines.join("\n");
                         updatePrizesCount();
-                        showNotification(`✅ ${lines.length} participantes importados.`);
+                        showNotification("✅ " + lines.length + " participantes importados.");
                     }
                 };
-                reader.readAsText(file);
+                txtReader.readAsText(file);
             }
 
-            // Limpa o input file para permitir selecionar o mesmo arquivo novamente se desejar
-            event.target.value = '';
+            event.target.value = "";
         }
 
         // DOWNLOAD DE MODELO DE PLANILHA PRONTO
         function downloadSpreadsheetTemplate(format) {
-            const templateData = [
+            var templateData = [
                 ["Nome", "Nickname", "Discord / WhatsApp (Opcional)"],
                 ["Bruno Goes", "FㅤNOBRUʷᵐ", "(11) 99999-9999"],
                 ["Lucio Lima", "FㅤCEROL.xp", "(21) 99999-9999"],
@@ -1897,132 +1909,112 @@ input:checked + .slider:before {
                 ["Christopher Rissardi", "FㅤALIEN", "@christopher"]
             ];
 
-            if (format === 'xlsx' && typeof XLSX !== 'undefined') {
-                const ws = XLSX.utils.aoa_to_sheet(templateData);
-                // Ajusta larguras de coluna
-                ws['!cols'] = [{ wch: 24 }, { wch: 20 }, { wch: 28 }];
-                const wb = XLSX.utils.book_new();
+            if (format === "xlsx" && typeof XLSX !== "undefined") {
+                var ws = XLSX.utils.aoa_to_sheet(templateData);
+                ws["!cols"] = [{ wch: 24 }, { wch: 20 }, { wch: 28 }];
+                var wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, "Jogadores");
                 XLSX.writeFile(wb, "modelo_sorteador_frenesy.xlsx");
-                showNotification('Modelo Excel (.xlsx) baixado com sucesso!');
+                showNotification("Modelo Excel (.xlsx) baixado com sucesso!");
             } else {
-                // Formato CSV
-                let csvContent = "Nome,Nickname,Contato
-";
-                templateData.slice(1).forEach(row => {
-                    csvContent += `"${row[0]}","${row[1]}","${row[2]}"
-`;
+                var csvContent = "Nome,Nickname,Contato\n";
+                templateData.slice(1).forEach(function(row) {
+                    csvContent += '"' + row[0] + '","' + row[1] + '","' + row[2] + '"\n';
                 });
-                const blob = new Blob(["﻿" + csvContent], { type: 'text/csv;charset=utf-8;' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
+                var blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement("a");
                 a.href = url;
                 a.download = "modelo_sorteador_frenesy.csv";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
-                showNotification('Modelo CSV (.csv) baixado com sucesso!');
+                showNotification("Modelo CSV (.csv) baixado com sucesso!");
             }
         }
 
         // EXECUÇÃO DO SORTEIO DE TIMES
         function executeTeamDraw() {
-            const tournamentName = document.getElementById('tournament-name-input').value.trim() || 'Torneio Frenesy Esports';
-            const rawText = document.getElementById('players-raw-textarea').value;
-            const players = parsePlayers(rawText);
+            var nameInput = document.getElementById("tournament-name-input");
+            var tournamentName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : "Torneio Frenesy Esports";
+            var rawTextarea = document.getElementById("players-raw-textarea");
+            var players = parsePlayers(rawTextarea ? rawTextarea.value : "");
 
             if (players.length < 2) {
-                showNotification('Adicione pelo menos 2 jogadores para realizar o sorteio.');
+                showNotification("Adicione pelo menos 2 jogadores para realizar o sorteio.");
                 return;
             }
 
-            const teamSize = parseInt(document.getElementById('game-mode-select').value);
-            const isGroupStage = document.getElementById('group-stage-toggle').checked;
-            const numGroups = parseInt(document.getElementById('num-groups').value);
+            var modeSelect = document.getElementById("game-mode-select");
+            var teamSize = modeSelect ? parseInt(modeSelect.value) : 4;
+            var groupToggle = document.getElementById("group-stage-toggle");
+            var isGroupStage = groupToggle ? groupToggle.checked : false;
+            var numGroupsInput = document.getElementById("num-groups");
+            var numGroups = numGroupsInput ? parseInt(numGroupsInput.value) : 2;
 
             // Embaralhamento seguro
-            const shuffled = [...players];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            var shuffled = players.slice();
+            for (var i = shuffled.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = shuffled[i];
+                shuffled[i] = shuffled[j];
+                shuffled[j] = temp;
             }
 
             // Divisão em times
-            const teams = [];
-            for (let i = 0; i < shuffled.length; i += teamSize) {
-                teams.push(shuffled.slice(i, i + teamSize));
+            var teams = [];
+            for (var k = 0; k < shuffled.length; k += teamSize) {
+                teams.push(shuffled.slice(k, k + teamSize));
             }
 
-            let htmlContent = '';
-            let drawData = {
-                type: isGroupStage ? 'groups' : 'teams',
-                game: gamePresets[currentGame].name,
-                tournamentName,
-                teamSize,
-                timestamp: new Date().toLocaleString('pt-BR'),
-                organizer: 'Frenesy Esports',
-                hash: 'FNY-' + Math.random().toString(36).substring(2, 9).toUpperCase()
+            var htmlContent = "";
+            var drawData = {
+                type: isGroupStage ? "groups" : "teams",
+                game: gamePresets[currentGame] ? gamePresets[currentGame].name : "Free Fire",
+                tournamentName: tournamentName,
+                teamSize: teamSize,
+                timestamp: new Date().toLocaleString("pt-BR"),
+                organizer: "Frenesy Esports",
+                hash: "FNY-" + Math.random().toString(36).substring(2, 9).toUpperCase()
             };
 
             if (isGroupStage) {
-                const groups = Array.from({ length: numGroups }, () => []);
-                teams.forEach((t, idx) => groups[idx % numGroups].push(t));
+                var groups = Array.from({ length: numGroups }, function() { return []; });
+                teams.forEach(function(t, idx) {
+                    groups[idx % numGroups].push(t);
+                });
 
-                groups.forEach((grp, gIdx) => {
-                    const letter = String.fromCharCode(65 + gIdx);
-                    htmlContent += `
-                        <div class="result-card">
-                            <div class="result-card-title">
-                                <span><i class="fas fa-shield-alt"></i> GRUPO ${letter}</span>
-                                <span style="font-size: 0.85rem; color: #aaa;">${grp.length} times</span>
-                            </div>
-                            <div class="matchup-box">
-                    `;
-                    grp.forEach((t, tIdx) => {
-                        htmlContent += `
-                            <div class="team-block">
-                                <div class="team-block-title">Time ${tIdx + 1} (${t.length} Jogadores)</div>
-                                <ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join('')}</ul>
-                            </div>
-                        `;
+                groups.forEach(function(grp, gIdx) {
+                    var letter = String.fromCharCode(65 + gIdx);
+                    htmlContent += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-shield-alt"></i> GRUPO ' + letter + '</span><span style="font-size: 0.85rem; color: #aaa;">' + grp.length + ' times</span></div><div class="matchup-box">';
+                    grp.forEach(function(t, tIdx) {
+                        htmlContent += '<div class="team-block"><div class="team-block-title">Time ' + (tIdx + 1) + ' (' + t.length + ' Jogadores)</div><ul class="team-members-list">';
+                        t.forEach(function(p) { htmlContent += '<li>• ' + p + '</li>'; });
+                        htmlContent += '</ul></div>';
                     });
-                    htmlContent += `</div></div>`;
+                    htmlContent += '</div></div>';
                 });
                 drawData.groups = groups;
             } else {
-                // Confrontos Diretos
-                for (let i = 0; i < teams.length; i += 2) {
-                    const matchNum = Math.floor(i / 2) + 1;
-                    const teamA = teams[i];
-                    const teamB = teams[i + 1];
+                for (var m = 0; m < teams.length; m += 2) {
+                    var matchNum = Math.floor(m / 2) + 1;
+                    var teamA = teams[m];
+                    var teamB = teams[m + 1];
 
-                    htmlContent += `
-                        <div class="result-card">
-                            <div class="result-card-title">
-                                <span><i class="fas fa-swords"></i> CONFRONTO ${matchNum}</span>
-                                <span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span>
-                            </div>
-                            <div class="matchup-box">
-                                <div class="team-block">
-                                    <div class="team-block-title">🔵 TIME 1</div>
-                                    <ul class="team-members-list">${teamA.map(p => `<li>• ${p}</li>`).join('')}</ul>
-                                </div>
-                                <div class="matchup-vs">VS</div>
-                                ${teamB ? `
-                                <div class="team-block" style="border-left-color: #388bfd;">
-                                    <div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div>
-                                    <ul class="team-members-list">${teamB.map(p => `<li>• ${p}</li>`).join('')}</ul>
-                                </div>
-                                ` : `
-                                <div class="team-block">
-                                    <div class="team-block-title" style="color: #4cd137;">⭐ BYE / PASSA DIRETO</div>
-                                    <p style="font-size: 0.85rem; color: #888;">Avança para a próxima fase.</p>
-                                </div>
-                                `}
-                            </div>
-                        </div>
-                    `;
+                    htmlContent += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">🔵 TIME 1</div><ul class="team-members-list">';
+                    teamA.forEach(function(p) { htmlContent += '<li>• ' + p + '</li>'; });
+                    htmlContent += '</ul></div><div class="matchup-vs">VS</div>';
+
+                    if (teamB) {
+                        htmlContent += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div><ul class="team-members-list">';
+                        teamB.forEach(function(p) { htmlContent += '<li>• ' + p + '</li>'; });
+                        htmlContent += '</ul></div>';
+                    } else {
+                        htmlContent += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">⭐ BYE / PASSA DIRETO</div><p style="font-size: 0.85rem; color: #888;">Avança para a próxima fase.</p></div>';
+                    }
+
+                    htmlContent += '</div></div>';
                 }
                 drawData.teams = teams;
             }
@@ -2032,79 +2024,79 @@ input:checked + .slider:before {
 
         // PRÊMIOS
         function setPrizePreset(preset) {
-            document.getElementById('prize-name-input').value = preset;
+            var input = document.getElementById("prize-name-input");
+            if (input) input.value = preset;
         }
 
         function updatePrizesCount() {
-            const text = document.getElementById('prizes-raw-textarea').value;
-            const count = parsePlayers(text).length;
-            document.getElementById('prizes-count-indicator').textContent = `Total: ${count} participantes.`;
+            var textarea = document.getElementById("prizes-raw-textarea");
+            var countIndicator = document.getElementById("prizes-count-indicator");
+            if (textarea && countIndicator) {
+                var count = parsePlayers(textarea.value).length;
+                countIndicator.textContent = "Total: " + count + " participantes.";
+            }
         }
 
         function resetPrizeForm() {
-            document.getElementById('prize-name-input').value = '';
-            document.getElementById('prizes-raw-textarea').value = '';
-            document.getElementById('num-winners').value = '1';
+            var pName = document.getElementById("prize-name-input");
+            var pArea = document.getElementById("prizes-raw-textarea");
+            var numWin = document.getElementById("num-winners");
+            var resWrap = document.getElementById("results-wrapper");
+
+            if (pName) pName.value = "";
+            if (pArea) pArea.value = "";
+            if (numWin) numWin.value = "1";
             updatePrizesCount();
-            document.getElementById('results-wrapper').style.display = 'none';
+            if (resWrap) resWrap.style.display = "none";
         }
 
         function executePrizeDraw() {
-            const prizeName = document.getElementById('prize-name-input').value.trim() || 'Prêmio Oficial Frenesy Esports';
-            const rawText = document.getElementById('prizes-raw-textarea').value;
-            let participants = parsePlayers(rawText);
+            var nameInput = document.getElementById("prize-name-input");
+            var prizeName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : "Prêmio Oficial Frenesy Esports";
+            var rawTextarea = document.getElementById("prizes-raw-textarea");
+            var participants = parsePlayers(rawTextarea ? rawTextarea.value : "");
 
             if (participants.length === 0) {
-                showNotification('Por favor, cole ou importe a lista de participantes do sorteio.');
+                showNotification("Por favor, cole ou importe a lista de participantes do sorteio.");
                 return;
             }
 
-            const uniqueWinners = document.getElementById('unique-winners-toggle').checked;
-            if (uniqueWinners) {
-                participants = [...new Set(participants)];
+            var uniqueToggle = document.getElementById("unique-winners-toggle");
+            if (uniqueToggle && uniqueToggle.checked) {
+                participants = Array.from(new Set(participants));
             }
 
-            const numWinners = Math.min(parseInt(document.getElementById('num-winners').value) || 1, participants.length);
+            var numWinInput = document.getElementById("num-winners");
+            var reqWinners = numWinInput ? parseInt(numWinInput.value) : 1;
+            var numWinners = Math.min(reqWinners || 1, participants.length);
 
-            // Shuffling
-            const shuffled = [...participants];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            var shuffled = participants.slice();
+            for (var i = shuffled.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = shuffled[i];
+                shuffled[i] = shuffled[j];
+                shuffled[j] = temp;
             }
 
-            const winners = shuffled.slice(0, numWinners);
+            var winners = shuffled.slice(0, numWinners);
 
-            let htmlContent = `
-                <div class="result-card" style="grid-column: 1 / -1;">
-                    <div class="result-card-title">
-                        <span><i class="fas fa-award"></i> GANHADORES OFICIAIS</span>
-                        <span style="font-size: 0.9rem; color: #4cd137;"><i class="fas fa-check-circle"></i> Sorteio Concluído</span>
-                    </div>
-                    <ul class="winners-list">
-            `;
+            var htmlContent = '<div class="result-card" style="grid-column: 1 / -1;"><div class="result-card-title"><span><i class="fas fa-award"></i> GANHADORES OFICIAIS</span><span style="font-size: 0.9rem; color: #4cd137;"><i class="fas fa-check-circle"></i> Sorteio Concluído</span></div><ul class="winners-list">';
 
-            const medals = ['🥇', '🥈', '🥉'];
-            winners.forEach((winner, idx) => {
-                const badge = medals[idx] || `#${idx + 1}`;
-                htmlContent += `
-                    <li class="winner-row">
-                        <span class="winner-rank">${badge}</span>
-                        <span class="winner-name">${winner}</span>
-                        <span style="color: var(--laranja-frenesy); font-weight: 700; font-size: 0.9rem;"><i class="fas fa-gift"></i> ${prizeName}</span>
-                    </li>
-                `;
+            var medals = ["🥇", "🥈", "🥉"];
+            winners.forEach(function(winner, idx) {
+                var badge = medals[idx] || ("#" + (idx + 1));
+                htmlContent += '<li class="winner-row"><span class="winner-rank">' + badge + '</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700; font-size: 0.9rem;"><i class="fas fa-gift"></i> ' + prizeName + '</span></li>';
             });
 
-            htmlContent += `</ul></div>`;
+            htmlContent += "</ul></div>";
 
-            const drawData = {
-                type: 'prize',
-                prizeName,
-                winners,
+            var drawData = {
+                type: "prize",
+                prizeName: prizeName,
+                winners: winners,
                 totalParticipants: participants.length,
-                timestamp: new Date().toLocaleString('pt-BR'),
-                hash: 'GIVEAWAY-' + Math.random().toString(36).substring(2, 9).toUpperCase()
+                timestamp: new Date().toLocaleString("pt-BR"),
+                hash: "GIVEAWAY-" + Math.random().toString(36).substring(2, 9).toUpperCase()
             };
 
             renderResults(drawData, htmlContent);
@@ -2113,203 +2105,187 @@ input:checked + .slider:before {
         // RENDERIZAÇÃO DE RESULTADOS
         function renderResults(drawData, htmlContent) {
             currentDrawResult = drawData;
-            const header = document.getElementById('draw-info-header');
-            
-            if (drawData.type === 'prize') {
-                header.innerHTML = `
-                    <h3>🎁 ${drawData.prizeName}</h3>
-                    <p><i class="fas fa-users"></i> ${drawData.totalParticipants} Participantes • <i class="fas fa-clock"></i> Sorteado em ${drawData.timestamp}</p>
-                `;
-            } else {
-                header.innerHTML = `
-                    <h3>🏆 ${drawData.tournamentName}</h3>
-                    <p><i class="fas fa-gamepad"></i> ${drawData.game} • <i class="fas fa-clock"></i> Realizado em ${drawData.timestamp}</p>
-                `;
+            var header = document.getElementById("draw-info-header");
+            var container = document.getElementById("results-container");
+            var wrapper = document.getElementById("results-wrapper");
+            var shareBox = document.getElementById("share-box");
+
+            if (header) {
+                if (drawData.type === "prize") {
+                    header.innerHTML = "<h3>🎁 " + drawData.prizeName + "</h3><p><i class='fas fa-users'></i> " + drawData.totalParticipants + " Participantes • <i class='fas fa-clock'></i> Sorteado em " + drawData.timestamp + "</p>";
+                } else {
+                    header.innerHTML = "<h3>🏆 " + drawData.tournamentName + "</h3><p><i class='fas fa-gamepad'></i> " + drawData.game + " • <i class='fas fa-clock'></i> Realizado em " + drawData.timestamp + "</p>";
+                }
             }
 
-            document.getElementById('results-container').innerHTML = `<div class="results-grid">${htmlContent}</div>`;
-            document.getElementById('results-wrapper').style.display = 'block';
-            document.getElementById('share-box').style.display = 'none';
+            if (container) container.innerHTML = '<div class="results-grid">' + htmlContent + '</div>';
+            if (wrapper) wrapper.style.display = "block";
+            if (shareBox) shareBox.style.display = "none";
 
-            // Scroll suave
-            document.getElementById('results-wrapper').scrollIntoView({ behavior: 'smooth' });
-            showNotification('Sorteio realizado com sucesso!');
+            if (wrapper) wrapper.scrollIntoView({ behavior: "smooth" });
+            showNotification("Sorteio realizado com sucesso!");
         }
 
         function resetAllTeams() {
-            document.getElementById('tournament-name-input').value = '';
-            document.getElementById('players-raw-textarea').value = '';
+            var nameInput = document.getElementById("tournament-name-input");
+            var rawTextarea = document.getElementById("players-raw-textarea");
+            var resWrap = document.getElementById("results-wrapper");
+
+            if (nameInput) nameInput.value = "";
+            if (rawTextarea) rawTextarea.value = "";
             updatePlayersCount();
-            document.getElementById('results-wrapper').style.display = 'none';
+            if (resWrap) resWrap.style.display = "none";
         }
 
         // COPIAR FORMATAÇÃO PARA WHATSAPP / DISCORD
         function copyFormattedResults() {
             if (!currentDrawResult) return;
 
-            let text = ``;
-            if (currentDrawResult.type === 'prize') {
-                text += `🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁
-`;
-                text += `🏆 *Prêmio:* ${currentDrawResult.prizeName}
-`;
-                text += `📅 *Data:* ${currentDrawResult.timestamp}
-`;
-                text += `👥 *Total de Participantes:* ${currentDrawResult.totalParticipants}
-`;
-                text += `────────────────────────────
-`;
-                text += `👑 *GANHADORES:*
-`;
-                currentDrawResult.winners.forEach((w, i) => {
-                    text += `${i + 1}º Lugar: 👉 *${w}*
-`;
+            var text = "";
+            if (currentDrawResult.type === "prize") {
+                text += "🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁\n";
+                text += "🏆 *Prêmio:* " + currentDrawResult.prizeName + "\n";
+                text += "📅 *Data:* " + currentDrawResult.timestamp + "\n";
+                text += "👥 *Total de Participantes:* " + currentDrawResult.totalParticipants + "\n";
+                text += "────────────────────────────\n";
+                text += "👑 *GANHADORES:*\n";
+                currentDrawResult.winners.forEach(function(w, i) {
+                    text += (i + 1) + "º Lugar: 👉 *" + w + "*\n";
                 });
             } else {
-                text += `🔥 *SORTEIO OFICIAL FRENESY ESPORTS* 🔥
-`;
-                text += `🎮 *Jogo:* ${currentDrawResult.game}
-`;
-                text += `🏆 *Torneio:* ${currentDrawResult.tournamentName}
-`;
-                text += `📅 *Horário:* ${currentDrawResult.timestamp}
-`;
-                text += `────────────────────────────
+                text += "🔥 *SORTEIO OFICIAL FRENESY ESPORTS* 🔥\n";
+                text += "🎮 *Jogo:* " + currentDrawResult.game + "\n";
+                text += "🏆 *Torneio:* " + currentDrawResult.tournamentName + "\n";
+                text += "📅 *Horário:* " + currentDrawResult.timestamp + "\n";
+                text += "────────────────────────────\n\n";
 
-`;
-
-                if (currentDrawResult.type === 'groups') {
-                    currentDrawResult.groups.forEach((grp, gIdx) => {
-                        const letter = String.fromCharCode(65 + gIdx);
-                        text += `🛡️ *GRUPO ${letter}:*
-`;
-                        grp.forEach((t, tIdx) => {
-                            text += `🔹 Time ${tIdx + 1}: ${t.join(', ')}
-`;
+                if (currentDrawResult.type === "groups") {
+                    currentDrawResult.groups.forEach(function(grp, gIdx) {
+                        var letter = String.fromCharCode(65 + gIdx);
+                        text += "🛡️ *GRUPO " + letter + ":*\n";
+                        grp.forEach(function(t, tIdx) {
+                            text += "🔹 Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
                         });
-                        text += `
-`;
+                        text += "\n";
                     });
                 } else {
-                    for (let i = 0; i < currentDrawResult.teams.length; i += 2) {
-                        const matchNum = Math.floor(i / 2) + 1;
-                        const t1 = currentDrawResult.teams[i];
-                        const t2 = currentDrawResult.teams[i + 1];
-                        text += `⚔️ *CONFRONTO ${matchNum}:*
-`;
-                        text += `🔵 Time 1: ${t1.join(', ')}
-`;
+                    for (var i = 0; i < currentDrawResult.teams.length; i += 2) {
+                        var matchNum = Math.floor(i / 2) + 1;
+                        var t1 = currentDrawResult.teams[i];
+                        var t2 = currentDrawResult.teams[i + 1];
+                        text += "⚔️ *CONFRONTO " + matchNum + ":*\n";
+                        text += "🔵 Time 1: " + t1.join(", ") + "\n";
                         if (t2) {
-                            text += `🔴 Time 2: ${t2.join(', ')}
-`;
+                            text += "🔴 Time 2: " + t2.join(", ") + "\n";
                         } else {
-                            text += `⭐ BYE (Passa direto)
-`;
+                            text += "⭐ BYE (Passa direto)\n";
                         }
-                        text += `
-`;
+                        text += "\n";
                     }
                 }
             }
 
-            text += `────────────────────────────
-`;
-            text += `✅ *Sorteio verificado por Frenesy Esports*
-`;
-            text += `🌐 Acesse o sorteador: https://frenesy.com.br/pages/sorteio.html
-`;
-            text += `#GoFrenesy`;
+            text += "────────────────────────────\n";
+            text += "✅ *Sorteio verificado por Frenesy Esports*\n";
+            text += "🌐 Acesse o sorteador: https://frenesy.com.br/pages/sorteio.html\n";
+            text += "#GoFrenesy";
 
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification('Resultados copiados! Pronto para colar no WhatsApp ou Discord.');
+            navigator.clipboard.writeText(text).then(function() {
+                showNotification("Resultados copiados! Pronto para colar no WhatsApp ou Discord.");
             });
         }
 
         // COMPARTILHAR LINK
         function generateShareLink() {
             if (!currentDrawResult) return;
-            const dataStr = JSON.stringify(currentDrawResult);
-            const token = btoa(unescape(encodeURIComponent(dataStr)));
-            const url = `${window.location.origin}${window.location.pathname}?data=${token}`;
+            var dataStr = JSON.stringify(currentDrawResult);
+            var token = btoa(unescape(encodeURIComponent(dataStr)));
+            var url = window.location.origin + window.location.pathname + "?data=" + token;
             
-            document.getElementById('share-link-input').value = url;
-            document.getElementById('token-id-preview').textContent = currentDrawResult.hash || token.substring(0, 10);
-            document.getElementById('share-box').style.display = 'block';
-            document.getElementById('share-box').scrollIntoView({ behavior: 'smooth' });
+            var shareInput = document.getElementById("share-link-input");
+            var tokenPreview = document.getElementById("token-id-preview");
+            var shareBox = document.getElementById("share-box");
+
+            if (shareInput) shareInput.value = url;
+            if (tokenPreview) tokenPreview.textContent = currentDrawResult.hash || token.substring(0, 10);
+            if (shareBox) {
+                shareBox.style.display = "block";
+                shareBox.scrollIntoView({ behavior: "smooth" });
+            }
         }
 
         function copyShareUrl() {
-            const input = document.getElementById('share-link-input');
+            var input = document.getElementById("share-link-input");
+            if (!input) return;
             input.select();
-            navigator.clipboard.writeText(input.value).then(() => {
-                const btn = document.getElementById('copy-link-btn');
-                btn.textContent = 'Copiado!';
-                setTimeout(() => btn.textContent = 'Copiar Link', 2000);
-                showNotification('Link verificado copiado!');
+            navigator.clipboard.writeText(input.value).then(function() {
+                var btn = document.getElementById("copy-link-btn");
+                if (btn) {
+                    btn.textContent = "Copiado!";
+                    setTimeout(function() { btn.textContent = "Copiar Link"; }, 2000);
+                }
+                showNotification("Link verificado copiado!");
             });
         }
 
         // FAQ ACCORDION
         function toggleFaq(element) {
-            element.classList.toggle('active');
+            if (element) element.classList.toggle("active");
         }
 
         // CARREGAR VIA URL (DEEP LINKING)
-        window.addEventListener('DOMContentLoaded', () => {
-            selectGame('freefire');
+        window.addEventListener("DOMContentLoaded", function() {
+            selectGame("freefire");
 
-            const params = new URLSearchParams(window.location.search);
-            const tabParam = params.get('tab');
-            if (tabParam === 'premio' || tabParam === 'prizes') {
-                switchMainTab('prizes');
+            var params = new URLSearchParams(window.location.search);
+            var tabParam = params.get("tab");
+            if (tabParam === "premio" || tabParam === "prizes") {
+                switchMainTab("prizes");
             }
 
-            const dataParam = params.get('data');
+            var dataParam = params.get("data");
             if (dataParam) {
                 try {
-                    const decoded = decodeURIComponent(escape(atob(dataParam)));
-                    const drawData = JSON.parse(decoded);
-                    if (drawData.type === 'prize') {
-                        let html = `<div class="result-card" style="grid-column: 1 / -1;"><ul class="winners-list">`;
-                        drawData.winners.forEach((w, i) => {
-                            html += `
-                                <li class="winner-row">
-                                    <span class="winner-rank">#${i+1}</span>
-                                    <span class="winner-name">${w}</span>
-                                    <span style="color: var(--laranja-frenesy);"><i class="fas fa-gift"></i> ${drawData.prizeName}</span>
-                                </li>
-                            `;
+                    var decoded = decodeURIComponent(escape(atob(dataParam)));
+                    var drawData = JSON.parse(decoded);
+                    if (drawData.type === "prize") {
+                        var html = '<div class="result-card" style="grid-column: 1 / -1;"><ul class="winners-list">';
+                        drawData.winners.forEach(function(w, i) {
+                            html += '<li class="winner-row"><span class="winner-rank">#' + (i+1) + '</span><span class="winner-name">' + w + '</span><span style="color: var(--laranja-frenesy);"><i class="fas fa-gift"></i> ' + drawData.prizeName + '</span></li>';
                         });
-                        html += `</ul></div>`;
+                        html += "</ul></div>";
                         renderResults(drawData, html);
-                    } else if (drawData.type === 'teams' || drawData.type === 'groups') {
-                        let html = '';
+                    } else if (drawData.type === "teams" || drawData.type === "groups") {
+                        var teamHtml = "";
                         if (drawData.groups) {
-                            drawData.groups.forEach((grp, gIdx) => {
-                                const letter = String.fromCharCode(65 + gIdx);
-                                html += `<div class="result-card"><div class="result-card-title"><span>GRUPO ${letter}</span></div><div class="matchup-box">`;
-                                grp.forEach((t, tIdx) => {
-                                    html += `<div class="team-block"><div class="team-block-title">Time ${tIdx+1}</div><ul class="team-members-list">${t.map(p => `<li>• ${p}</li>`).join('')}</ul></div>`;
+                            drawData.groups.forEach(function(grp, gIdx) {
+                                var letter = String.fromCharCode(65 + gIdx);
+                                teamHtml += '<div class="result-card"><div class="result-card-title"><span>GRUPO ' + letter + '</span></div><div class="matchup-box">';
+                                grp.forEach(function(t, tIdx) {
+                                    teamHtml += '<div class="team-block"><div class="team-block-title">Time ' + (tIdx+1) + '</div><ul class="team-members-list">';
+                                    t.forEach(function(p) { teamHtml += '<li>• ' + p + '</li>'; });
+                                    teamHtml += "</ul></div>";
                                 });
-                                html += `</div></div>`;
+                                teamHtml += "</div></div>";
                             });
                         } else if (drawData.teams) {
-                            for (let i = 0; i < drawData.teams.length; i += 2) {
-                                const t1 = drawData.teams[i];
-                                const t2 = drawData.teams[i + 1];
-                                html += `
-                                    <div class="result-card">
-                                        <div class="result-card-title"><span>CONFRONTO ${Math.floor(i/2)+1}</span></div>
-                                        <div class="matchup-box">
-                                            <div class="team-block"><div class="team-block-title">TIME 1</div><ul class="team-members-list">${t1.map(p => `<li>• ${p}</li>`).join('')}</ul></div>
-                                            <div class="matchup-vs">VS</div>
-                                            ${t2 ? `<div class="team-block"><div class="team-block-title">TIME 2</div><ul class="team-members-list">${t2.map(p => `<li>• ${p}</li>`).join('')}</ul></div>` : `<div class="team-block">BYE</div>`}
-                                        </div>
-                                    </div>
-                                `;
+                            for (var i = 0; i < drawData.teams.length; i += 2) {
+                                var t1 = drawData.teams[i];
+                                var t2 = drawData.teams[i + 1];
+                                teamHtml += '<div class="result-card"><div class="result-card-title"><span>CONFRONTO ' + (Math.floor(i/2)+1) + '</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">TIME 1</div><ul class="team-members-list">';
+                                t1.forEach(function(p) { teamHtml += '<li>• ' + p + '</li>'; });
+                                teamHtml += '</ul></div><div class="matchup-vs">VS</div>';
+                                if (t2) {
+                                    teamHtml += '<div class="team-block"><div class="team-block-title">TIME 2</div><ul class="team-members-list">';
+                                    t2.forEach(function(p) { teamHtml += '<li>• ' + p + '</li>'; });
+                                    teamHtml += "</ul></div>";
+                                } else {
+                                    teamHtml += '<div class="team-block">BYE</div>';
+                                }
+                                teamHtml += "</div></div>";
                             }
                         }
-                        renderResults(drawData, html);
+                        renderResults(drawData, teamHtml);
                     }
                 } catch(e) {
                     console.error("Erro ao carregar dados compartilhados:", e);
