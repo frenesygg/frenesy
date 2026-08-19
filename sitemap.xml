@@ -1,106 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Página Principal -->
   <url>
-    <loc>https://www.frenesy.com.br/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://frenesy.com.br/</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Nossos Times -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/doacao.html</loc>
-    <lastmod>2025-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.frenesy.com.br/pages/galeria.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.frenesy.com.br/pages/sorteio.html</loc>
-    <lastmod>2025-10-01</lastmod>
+    <loc>https://frenesy.com.br/pages/times.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Notícias -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/noticias.html</loc>
-    <lastmod>2025-09-30</lastmod>
+    <loc>https://frenesy.com.br/pages/noticias.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Loja Oficial -->
+  <url>
+    <loc>https://frenesy.com.br/pages/loja.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Sobre Nós -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/loja.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/pages/sobre-nos.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Peneira Free Fire -->
+  <url>
+    <loc>https://frenesy.com.br/pages/peneira-ff.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.frenesy.com.br/pages/eventos.html</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
-    <loc>https://www.frenesy.com.br/pages/sobre-nos.html</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>monthly</changefreq>
+
+  <!-- Eventos e Calendário -->
+  <url>
+    <loc>https://frenesy.com.br/pages/eventos.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Sorteador de Times e Grupos -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/times.html</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://frenesy.com.br/pages/sorteio.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Sorteador de Prêmios e Passe de Elite -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/parceiros.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/pages/sorteio-premio.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Galeria da Comunidade -->
+  <url>
+    <loc>https://frenesy.com.br/pages/galeria.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Wallpapers Oficiais -->
+  <url>
+    <loc>https://frenesy.com.br/pages/wallpapers.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Parceiros e Patrocinadores -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/contato.html</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.frenesy.com.br/pages/wallpapers.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/pages/parceiros.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-    <url>
-    <loc>https://www.frenesy.com.br/pages/peneira-ff.html</loc>
-    <lastmod>2025-09-17</lastmod>
+
+  <!-- Contato -->
+  <url>
+    <loc>https://frenesy.com.br/pages/contato.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Doação e Apoio -->
+  <url>
+    <loc>https://frenesy.com.br/pages/doacao.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Regulamento da Peneira -->
   <url>
-    <loc>https://www.frenesy.com.br/bem-vindo.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/pages/regulamento.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Políticas de Privacidade e Termos -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/regulamento.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/pages/politicas.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- Boas-vindas -->
   <url>
-    <loc>https://www.frenesy.com.br/pages/article.html</loc>
-    <lastmod>2025-09-17</lastmod>
+    <loc>https://frenesy.com.br/bem-vindo.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
+    <priority>0.4</priority>
   </url>
-  <url>
-    <loc>https://www.frenesy.com.br/pages/thanks.html</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
-  </url>
+
 </urlset>

@@ -3,10 +3,7 @@ User-agent: *
 # Permite o acesso a todo o site
 Allow: /
 
-# Nenhuma página é bloqueada
-# Disallow: 
-
 # ===============================================================
-# Localização do Sitemap
+# Localização do Sitemap Oficial
 # ===============================================================
-Sitemap: https://www.frenesy.com.br/sitemap.xml
+Sitemap: https://frenesy.com.br/sitemap.xml

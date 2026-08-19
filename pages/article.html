@@ -12,18 +12,21 @@
 
 	<link rel="icon" href="../assets/img/logo/favicon.ico" type="image/ico">
 
-	<!-- SEO DINÂMICO (será preenchido via JavaScript) -->
-	<meta name="description" content="">
+	<!-- SEO DINÂMICO (preenchido dinamicamente via JavaScript) -->
+	<meta name="description" content="Artigo e notícia oficial da Frenesy Esports. Acompanhe todas as novidades do cenário gamer e competitivo. #GoFrenesy">
 	<meta name="author" content="Frenesy Esports">
-	<link rel="canonical" href="">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<link rel="canonical" href="https://frenesy.com.br/pages/article.html">
 	<meta property="og:type" content="article">
+	<meta property="og:locale" content="pt_BR">
 	<meta property="og:site_name" content="Frenesy Esports">
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
-	<meta property="og:url" content="">
-	<meta property="og:image" content="">
+	<meta property="og:title" content="Notícia Oficial - Frenesy Esports">
+	<meta property="og:description" content="Acompanhe as últimas novidades e artigos da Frenesy Esports.">
+	<meta property="og:url" content="https://frenesy.com.br/pages/article.html">
+	<meta property="og:image" content="https://frenesy.com.br/assets/media/noticias_banner.png">
 	<meta name="twitter:card" content="summary_large_image">
-	<!-- Outras tags OG e Twitter serão preenchidas via JS -->
+	<meta name="twitter:site" content="@frenesygg">
+	<meta name="twitter:creator" content="@frenesygg">
 	<script type="application/ld+json" id="article-schema"></script>
 
     <style>
@@ -492,15 +495,23 @@
                 updateMetaTag('meta[name="twitter:url"]', 'content', pageUrl);
 
                 // 5. Cria e insere os Dados Estruturados (Schema.org) para o artigo
-                const monthMap = {
-                    'Janeiro': 'January', 'Fevereiro': 'February', 'Março': 'March', 'Abril': 'April', 'Maio': 'May', 'Junho': 'June',
-                    'Julho': 'July', 'Agosto': 'August', 'Setembro': 'September', 'Outubro': 'October', 'Novembro': 'November', 'Dezembro': 'December'
-                };
-                const dateString = article.date.replace(/(\d+)\s+de\s+(\w+),\s+(\d+)/, (match, day, month, year) => {
-                    const englishMonth = monthMap[month];
-                    return `${englishMonth} ${day}, ${year}`;
-                });
-                const isoDate = new Date(dateString).toISOString();
+                let isoDate = new Date().toISOString();
+                try {
+                    const monthMap = {
+                        'Janeiro': 'January', 'Fevereiro': 'February', 'Março': 'March', 'Abril': 'April', 'Maio': 'May', 'Junho': 'June',
+                        'Julho': 'July', 'Agosto': 'August', 'Setembro': 'September', 'Outubro': 'October', 'Novembro': 'November', 'Dezembro': 'December'
+                    };
+                    const dateString = article.date.replace(/(\d+)\s+de\s+(\w+),\s+(\d+)/, (match, day, month, year) => {
+                        const englishMonth = monthMap[month] || month;
+                        return `${englishMonth} ${day}, ${year}`;
+                    });
+                    const parsed = new Date(dateString);
+                    if (!isNaN(parsed.getTime())) {
+                        isoDate = parsed.toISOString();
+                    }
+                } catch(e) {
+                    console.warn('Data parse error:', e);
+                }
 
                 const schema = {
                     "@context": "https://schema.org",
