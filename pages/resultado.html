@@ -21,17 +21,20 @@
 
     <style>
 :root {
-	--preto: #000000;
+	--preto: #0c0c0c;
+	--preto-fundo: #050505;
 	--laranja-frenesy: #f96001;
 	--laranja-hover: #ff7722;
 	--branco: #ffffff;
 	--cinza-escuro: #141414;
-	--cinza-card: #1a1a1a;
-	--cinza-borda: #2d2d2d;
-	--cinza-claro: #a0a0a0;
+	--cinza-card: #181818;
+	--cinza-borda: #2a2a2a;
+	--cinza-hover: #333333;
+	--cinza-texto: #a5a5a5;
 	--font-titulo: 'Rajdhani', sans-serif;
 	--font-texto: 'Poppins', sans-serif;
-	--input-height: 48px;
+	--input-height: 50px;
+	--radius: 8px;
 }
 
 * {
@@ -42,10 +45,10 @@
 
 body {
 	font-family: var(--font-texto);
-	background-color: var(--preto);
+	background-color: var(--preto-fundo);
 	color: var(--branco);
 	overflow-x: hidden;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");
+	background-image: radial-gradient(circle at top center, rgba(249, 96, 1, 0.05) 0%, transparent 60%);
 }
 
 a {
@@ -58,14 +61,14 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 5%;
-	background-color: rgba(0, 0, 0, 0.85);
+	padding: 1.1rem 6%;
+	background-color: rgba(10, 10, 10, 0.95);
 	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 1000;
-	backdrop-filter: blur(10px);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--cinza-borda);
 }
 
 .logo {
@@ -74,13 +77,13 @@ a {
 }
 
 .logo img {
-	height: 48px;
+	height: 44px;
 	margin-right: 12px;
 }
 
 .logo h1 {
 	font-family: var(--font-titulo);
-	font-size: 2rem;
+	font-size: 1.9rem;
 	color: var(--branco);
 	letter-spacing: 2px;
 }
@@ -95,37 +98,36 @@ a {
 }
 
 .nav-links a {
-	color: var(--branco);
+	color: var(--cinza-texto);
 	font-weight: 600;
-	transition: color 0.3s ease;
-	position: relative;
-	padding-bottom: 5px;
+	transition: color 0.25s ease;
+	font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-	color: var(--laranja-frenesy);
+	color: var(--branco);
 }
 
 main {
-	padding-top: 110px;
+	padding-top: 115px;
 	min-height: 80vh;
 }
 
 .result-view-container {
-	max-width: 1100px;
+	max-width: 1080px;
 	margin: 0 auto;
-	padding: 0 5% 4rem;
+	padding: 0 5% 5rem;
 }
 
 /* CARD DE CABEÇALHO DO RESULTADO */
 .official-badge-header {
-	background: linear-gradient(145deg, #1c1511 0%, #151515 100%);
-	border: 2px solid var(--laranja-frenesy);
+	background: linear-gradient(145deg, #181310 0%, #161616 100%);
+	border: 1px solid rgba(249, 96, 1, 0.4);
 	border-radius: 12px;
-	padding: 2.5rem;
+	padding: 2.8rem 2rem;
 	text-align: center;
-	box-shadow: 0 15px 35px rgba(249, 96, 1, 0.2);
-	margin-bottom: 2rem;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+	margin-bottom: 2.2rem;
 	position: relative;
 }
 
@@ -137,7 +139,7 @@ main {
 	color: var(--branco);
 	padding: 6px 18px;
 	border-radius: 20px;
-	font-size: 0.85rem;
+	font-size: 0.82rem;
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -158,10 +160,10 @@ main {
 	justify-content: center;
 	gap: 2rem;
 	flex-wrap: wrap;
-	color: #ccc;
-	font-size: 1rem;
-	margin-top: 1rem;
-	padding-top: 1rem;
+	color: var(--cinza-texto);
+	font-size: 0.95rem;
+	margin-top: 1.2rem;
+	padding-top: 1.2rem;
 	border-top: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -181,7 +183,7 @@ main {
 	justify-content: center;
 	gap: 12px;
 	flex-wrap: wrap;
-	margin-bottom: 2.5rem;
+	margin-bottom: 2.8rem;
 }
 
 .btn {
@@ -192,8 +194,8 @@ main {
 	gap: 10px;
 	background-color: var(--laranja-frenesy);
 	color: var(--branco);
-	padding: 12px 24px;
-	border-radius: 6px;
+	padding: 0 24px;
+	border-radius: var(--radius);
 	font-weight: 700;
 	font-family: var(--font-titulo);
 	font-size: 1.05rem;
@@ -201,7 +203,7 @@ main {
 	text-transform: uppercase;
 	border: none;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 }
 
 .btn:hover {
@@ -211,12 +213,12 @@ main {
 }
 
 .btn-secondary {
-	background-color: #2a2a2a;
-	border: 1px solid #3d3d3d;
+	background-color: #242424;
+	border: 1px solid #383838;
 }
 
 .btn-secondary:hover {
-	background-color: #383838;
+	background-color: #303030;
 }
 
 /* SEÇÃO DE CHAVEAMENTO ESTILO COPA DO MUNDO */
@@ -224,14 +226,14 @@ main {
 	background-color: var(--cinza-card);
 	border: 1px solid var(--cinza-borda);
 	border-radius: 12px;
-	padding: 2rem;
+	padding: 2.2rem;
 	margin-bottom: 2.5rem;
 	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .bracket-title {
 	font-family: var(--font-titulo);
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: var(--laranja-frenesy);
 	margin-bottom: 1.5rem;
 	display: flex;
@@ -239,6 +241,7 @@ main {
 	gap: 10px;
 	border-bottom: 1px solid var(--cinza-borda);
 	padding-bottom: 10px;
+	text-transform: uppercase;
 }
 
 .bracket-tree {
@@ -253,7 +256,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	min-width: 220px;
+	min-width: 230px;
 	flex: 1;
 	gap: 1.5rem;
 }
@@ -273,14 +276,14 @@ main {
 .bracket-match {
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 8px;
+	border-radius: var(--radius);
 	overflow: hidden;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .bracket-match-header {
-	background-color: #1c1c1c;
-	padding: 4px 10px;
+	background-color: #1f1f1f;
+	padding: 6px 12px;
 	font-size: 0.75rem;
 	color: var(--laranja-frenesy);
 	font-weight: 700;
@@ -290,11 +293,11 @@ main {
 }
 
 .bracket-team-slot {
-	padding: 10px 12px;
+	padding: 10px 14px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 0.9rem;
+	font-size: 0.88rem;
 	border-bottom: 1px solid rgba(255,255,255,0.05);
 	color: #eee;
 }
@@ -314,20 +317,21 @@ main {
 .result-card {
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 10px;
+	border-radius: var(--radius);
 	padding: 1.5rem;
 }
 
 .result-card-title {
 	font-family: var(--font-titulo);
-	font-size: 1.4rem;
+	font-size: 1.35rem;
 	color: var(--laranja-frenesy);
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #2a2a2a;
 	padding-bottom: 8px;
 	margin-bottom: 14px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	text-transform: uppercase;
 }
 
 .matchup-box {
@@ -337,7 +341,7 @@ main {
 }
 
 .team-block {
-	background-color: #202020;
+	background-color: #1c1c1c;
 	padding: 10px 14px;
 	border-radius: 6px;
 	border-left: 3px solid var(--laranja-frenesy);
@@ -353,7 +357,7 @@ main {
 
 .team-members-list {
 	list-style: none;
-	font-size: 0.95rem;
+	font-size: 0.92rem;
 	color: #eee;
 }
 
@@ -365,16 +369,16 @@ main {
 	text-align: center;
 	font-family: var(--font-titulo);
 	font-weight: 800;
-	font-size: 1.2rem;
+	font-size: 1.15rem;
 	color: var(--laranja-frenesy);
 }
 
-/* GANHADORES (PRÊMIOS) */
+/* GANHADORES */
 .winners-list {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 10px;
 }
 
 .winner-row {
@@ -383,23 +387,140 @@ main {
 	gap: 15px;
 	background-color: var(--cinza-escuro);
 	padding: 14px 20px;
-	border-radius: 8px;
+	border-radius: var(--radius);
 	border-left: 4px solid var(--laranja-frenesy);
 }
 
 .winner-rank {
 	font-family: var(--font-titulo);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 800;
 	color: var(--laranja-frenesy);
 	min-width: 35px;
 }
 
 .winner-name {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--branco);
 	flex-grow: 1;
+}
+
+/* CAMPO DE COPIAR LINK PERSONALIZADO NA PÁGINA DE RESULTADO */
+.share-box-custom {
+	background-color: #121212;
+	border: 1px solid var(--cinza-borda);
+	border-radius: 10px;
+	padding: 1.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.share-box-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.share-box-title {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--laranja-frenesy);
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.share-badge-verified {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #4cd137;
+	background-color: rgba(76, 209, 55, 0.1);
+	border: 1px solid rgba(76, 209, 55, 0.3);
+	padding: 3px 10px;
+	border-radius: 20px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.custom-copy-group {
+	display: flex;
+	gap: 10px;
+	align-items: stretch;
+}
+
+.copy-input-wrapper {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+
+.copy-icon-left {
+	position: absolute;
+	left: 16px;
+	color: #666;
+	font-size: 0.9rem;
+}
+
+.custom-link-input {
+	width: 100%;
+	height: var(--input-height);
+	background-color: #1c1c1c;
+	border: 1px solid #333;
+	border-radius: var(--radius);
+	padding: 0 16px 0 42px;
+	color: #eee;
+	font-family: monospace;
+	font-size: 0.88rem;
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.custom-link-input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.btn-copy-action {
+	height: var(--input-height);
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius);
+	padding: 0 22px;
+	font-family: var(--font-titulo);
+	font-size: 1.05rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+	transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-copy-action:hover {
+	background-color: var(--laranja-hover);
+	transform: translateY(-1px);
+}
+
+.share-footer-info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	font-size: 0.8rem;
+	color: #777;
+}
+
+.share-footer-info code {
+	color: var(--laranja-frenesy);
+	background-color: rgba(249, 96, 1, 0.08);
+	padding: 2px 6px;
+	border-radius: 4px;
 }
 
 /* NOTIFICATION */
@@ -414,13 +535,13 @@ main {
 }
 
 .notification {
-	background-color: #222;
+	background-color: #1f1f1f;
 	color: var(--branco);
 	border-left: 4px solid var(--laranja-frenesy);
 	padding: 14px 20px;
-	border-radius: 6px;
-	box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-	font-size: 0.95rem;
+	border-radius: var(--radius);
+	box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+	font-size: 0.92rem;
 }
 
 /* FOOTER */
@@ -428,12 +549,12 @@ main {
 	position: relative;
 	padding: 60px 5% 20px;
 	background-color: var(--preto);
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-top: 1px solid var(--cinza-borda);
 	text-align: center;
 }
 
 @media print {
-	.navbar, .result-view-actions, .site-footer { display: none !important; }
+	.navbar, .result-view-actions, .site-footer, .share-box-custom { display: none !important; }
 	body, main { background: #fff !important; color: #000 !important; padding: 0 !important; }
 	.official-badge-header { border-color: #000 !important; box-shadow: none !important; color: #000 !important; }
 	.official-title { color: #000 !important; }
@@ -445,6 +566,8 @@ main {
 	.official-title { font-size: 2rem; }
 	.result-view-actions { flex-direction: column; }
 	.result-view-actions .btn { width: 100%; }
+	.custom-copy-group { flex-direction: column; }
+	.btn-copy-action { width: 100%; justify-content: center; }
 }
     </style>
 </head>
@@ -497,6 +620,27 @@ main {
                     </a>
                 </div>
 
+                <!-- CAMPO PERSONALIZADO PARA COPIAR O LINK -->
+                <div class="share-box-custom" id="share-box-res">
+                    <div class="share-box-header">
+                        <span class="share-box-title"><i class="fas fa-link"></i> Link Direto Desta Página de Resultado</span>
+                        <span class="share-badge-verified"><i class="fas fa-check-circle"></i> Verificado</span>
+                    </div>
+                    <div class="custom-copy-group">
+                        <div class="copy-input-wrapper">
+                            <i class="fas fa-link copy-icon-left"></i>
+                            <input type="text" id="res-share-link-input" class="custom-link-input" readonly>
+                        </div>
+                        <button type="button" class="btn-copy-action" id="res-copy-link-btn" onclick="copyResultShareUrl()">
+                            <i class="fas fa-copy"></i> <span>Copiar Link</span>
+                        </button>
+                    </div>
+                    <div class="share-footer-info">
+                        <span>Código do Sorteio: <code id="res-token-id-preview">FNY-OK</code></span>
+                        <span>Auditoria transparente Frenesy Esports</span>
+                    </div>
+                </div>
+
                 <!-- CONTEÚDO DO SORTEIO -->
                 <div id="dynamic-brackets-container"></div>
             </div>
@@ -537,48 +681,48 @@ main {
 
             var text = "";
             if (currentData.type === "prize") {
-                text += "🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁\n";
-                text += "🏆 *Prêmio:* " + currentData.prizeName + "\n";
-                text += "📅 *Data do Sorteio:* " + currentData.timestamp + "\n";
-                text += "👥 *Participantes:* " + currentData.totalParticipants + "\n";
+                text += "*SORTEIO OFICIAL FRENESY ESPORTS*\n";
+                text += "*Prêmio:* " + currentData.prizeName + "\n";
+                text += "*Data do Sorteio:* " + currentData.timestamp + "\n";
+                text += "*Participantes:* " + currentData.totalParticipants + "\n";
                 text += "────────────────────────────\n";
-                text += "👑 *GANHADORES:*\n";
+                text += "*GANHADORES:*\n";
                 currentData.winners.forEach(function(w, i) {
-                    text += (i + 1) + "º Lugar: 👉 *" + w + "*\n";
+                    text += (i + 1) + "º Lugar: *" + w + "*\n";
                 });
             } else {
-                text += "🔥 *CHAVEAMENTO OFICIAL FRENESY ESPORTS* 🔥\n";
-                text += "🎮 *Jogo:* " + currentData.game + "\n";
-                text += "🏆 *Torneio:* " + currentData.tournamentName + "\n";
-                if (currentData.tournamentDate) text += "📅 *Data do Evento:* " + currentData.tournamentDate + "\n";
-                text += "🛡️ *Organizador:* " + (currentData.organizer || "Frenesy Esports") + "\n";
+                text += "*CHAVEAMENTO OFICIAL FRENESY ESPORTS*\n";
+                text += "*Jogo:* " + currentData.game + "\n";
+                text += "*Torneio:* " + currentData.tournamentName + "\n";
+                if (currentData.tournamentDate) text += "*Data do Evento:* " + currentData.tournamentDate + "\n";
+                text += "*Organizador:* " + (currentData.organizer || "Frenesy Esports") + "\n";
                 text += "────────────────────────────\n\n";
 
                 if (currentData.type === "groups") {
                     currentData.groups.forEach(function(grp, gIdx) {
                         var letter = String.fromCharCode(65 + gIdx);
-                        text += "🛡️ *GRUPO " + letter + ":*\n";
+                        text += "*GRUPO " + letter + ":*\n";
                         grp.forEach(function(t, tIdx) {
-                            text += "🔹 Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
+                            text += "• Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
                         });
                         text += "\n";
                     });
-                    text += "🏆 *PLAYOFFS MATA-MATA (COPA DO MUNDO)*\n";
-                    text += "⚔️ Jogo 1: 1º Grupo A vs 2º Grupo B\n";
-                    text += "⚔️ Jogo 2: 1º Grupo C vs 2º Grupo D\n";
-                    text += "⚔️ Jogo 3: 1º Grupo B vs 2º Grupo A\n";
-                    text += "⚔️ Jogo 4: 1º Grupo D vs 2º Grupo C\n";
+                    text += "*PLAYOFFS MATA-MATA (COPA DO MUNDO)*\n";
+                    text += "Jogo 1: 1º Grupo A vs 2º Grupo B\n";
+                    text += "Jogo 2: 1º Grupo C vs 2º Grupo D\n";
+                    text += "Jogo 3: 1º Grupo B vs 2º Grupo A\n";
+                    text += "Jogo 4: 1º Grupo D vs 2º Grupo C\n";
                 } else {
                     for (var i = 0; i < currentData.teams.length; i += 2) {
                         var matchNum = Math.floor(i / 2) + 1;
                         var t1 = currentData.teams[i];
                         var t2 = currentData.teams[i + 1];
-                        text += "⚔️ *CONFRONTO " + matchNum + ":*\n";
-                        text += "🔵 Time 1: " + t1.join(", ") + "\n";
+                        text += "*CONFRONTO " + matchNum + ":*\n";
+                        text += "Time 1: " + t1.join(", ") + "\n";
                         if (t2) {
-                            text += "🔴 Time 2: " + t2.join(", ") + "\n";
+                            text += "Time 2: " + t2.join(", ") + "\n";
                         } else {
-                            text += "⭐ BYE (Passa direto)\n";
+                            text += "BYE (Classificado direto)\n";
                         }
                         text += "\n";
                     }
@@ -586,7 +730,7 @@ main {
             }
 
             text += "────────────────────────────\n";
-            text += "✅ *Resultado auditado*: " + window.location.href + "\n";
+            text += "Resultado auditado: " + window.location.href + "\n";
             text += "#GoFrenesy";
 
             navigator.clipboard.writeText(text).then(function() {
@@ -597,6 +741,20 @@ main {
         function shareCurrentUrl() {
             navigator.clipboard.writeText(window.location.href).then(function() {
                 showNotification("Link oficial do resultado copiado com sucesso!");
+            });
+        }
+
+        function copyResultShareUrl() {
+            var input = document.getElementById("res-share-link-input");
+            if (!input) return;
+            input.select();
+            navigator.clipboard.writeText(input.value).then(function() {
+                var btn = document.getElementById("res-copy-link-btn");
+                if (btn) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> <span>Copiado!</span>';
+                    setTimeout(function() { btn.innerHTML = '<i class="fas fa-copy"></i> <span>Copiar Link</span>'; }, 2000);
+                }
+                showNotification("Link do resultado copiado!");
             });
         }
 
@@ -621,22 +779,25 @@ main {
                 var titleElem = document.getElementById("res-title");
                 var detailsElem = document.getElementById("res-details");
                 var bracketsContainer = document.getElementById("dynamic-brackets-container");
+                var shareInput = document.getElementById("res-share-link-input");
+                var tokenPreview = document.getElementById("res-token-id-preview");
+
+                if (shareInput) shareInput.value = window.location.href;
+                if (tokenPreview) tokenPreview.textContent = data.hash || "FNY-OK";
 
                 if (data.type === "prize") {
-                    titleElem.textContent = "🎁 " + data.prizeName;
+                    titleElem.textContent = data.prizeName;
                     detailsElem.innerHTML = '<div class="detail-item"><i class="fas fa-users"></i> ' + data.totalParticipants + ' Participantes</div><div class="detail-item"><i class="fas fa-clock"></i> Sorteado em: ' + data.timestamp + '</div><div class="detail-item"><i class="fas fa-shield-alt"></i> ID: ' + (data.hash || "OK") + '</div>';
 
                     var pHtml = '<div class="bracket-box"><div class="bracket-title"><i class="fas fa-award"></i> GANHADORES OFICIAIS</div><ul class="winners-list">';
-                    var medals = ["🥇", "🥈", "🥉"];
                     data.winners.forEach(function(winner, idx) {
-                        var badge = medals[idx] || ("#" + (idx + 1));
-                        pHtml += '<li class="winner-row"><span class="winner-rank">' + badge + '</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700;"><i class="fas fa-gift"></i> ' + data.prizeName + '</span></li>';
+                        pHtml += '<li class="winner-row"><span class="winner-rank">' + (idx + 1) + 'º</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700;"><i class="fas fa-gift"></i> ' + data.prizeName + '</span></li>';
                     });
                     pHtml += '</ul></div>';
                     bracketsContainer.innerHTML = pHtml;
 
                 } else {
-                    titleElem.textContent = "🏆 " + data.tournamentName;
+                    titleElem.textContent = data.tournamentName;
                     var dateInfo = data.tournamentDate ? '<div class="detail-item"><i class="fas fa-calendar-alt"></i> ' + data.tournamentDate + '</div>' : '';
                     detailsElem.innerHTML = '<div class="detail-item"><i class="fas fa-gamepad"></i> ' + data.game + '</div>' + dateInfo + '<div class="detail-item"><i class="fas fa-user-shield"></i> Org: ' + (data.organizer || "Frenesy Esports") + '</div><div class="detail-item"><i class="fas fa-fingerprint"></i> ID: ' + (data.hash || "OK") + '</div>';
 
@@ -664,24 +825,24 @@ main {
                         // Quartas
                         html += '<div class="bracket-round">';
                         html += '<div class="bracket-round-header">Quartas de Final</div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 1 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo A</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo B</span><span style="color:#aaa;">-</span></div></div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 2 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo C</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo D</span><span style="color:#aaa;">-</span></div></div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 3 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo B</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo A</span><span style="color:#aaa;">-</span></div></div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 4 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo D</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo C</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 1 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo A</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo B</span><span style="color:#777;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 2 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo C</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo D</span><span style="color:#777;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 3 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo B</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo A</span><span style="color:#777;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Jogo 4 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo D</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo C</span><span style="color:#777;">-</span></div></div>';
                         html += '</div>';
 
                         // Semifinais
                         html += '<div class="bracket-round">';
                         html += '<div class="bracket-round-header">Semifinais</div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 1 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 1</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 2</span><span style="color:#aaa;">-</span></div></div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 2 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 3</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 4</span><span style="color:#aaa;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 1 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 1</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 2</span><span style="color:#777;">-</span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Semi 2 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 3</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 4</span><span style="color:#777;">-</span></div></div>';
                         html += '</div>';
 
                         // Final
                         html += '<div class="bracket-round">';
-                        html += '<div class="bracket-round-header" style="color: var(--laranja-frenesy); border-bottom-color: var(--laranja-frenesy);">🏆 Grande Final</div>';
-                        html += '<div class="bracket-match" style="border: 2px solid var(--laranja-frenesy);"><div class="bracket-match-header" style="background: var(--laranja-frenesy); color: #fff;">DECISÃO DO TÍTULO (MD5)</div><div class="bracket-team-slot"><span>Finalista 1</span><span>👑</span></div><div class="bracket-team-slot"><span>Finalista 2</span><span>👑</span></div></div>';
-                        html += '<div class="bracket-match"><div class="bracket-match-header">Disputa 3º Lugar (MD3)</div><div class="bracket-team-slot"><span>Perdedor Semi 1</span><span>🥉</span></div><div class="bracket-team-slot"><span>Perdedor Semi 2</span><span>🥉</span></div></div>';
+                        html += '<div class="bracket-round-header" style="color: var(--laranja-frenesy); border-bottom-color: var(--laranja-frenesy);">Grande Final</div>';
+                        html += '<div class="bracket-match" style="border: 2px solid var(--laranja-frenesy);"><div class="bracket-match-header" style="background: var(--laranja-frenesy); color: #fff;">DECISÃO DO TITULO (MD5)</div><div class="bracket-team-slot"><span>Finalista 1</span><span style="color: var(--laranja-frenesy); font-weight: bold;"><i class="fas fa-trophy"></i></span></div><div class="bracket-team-slot"><span>Finalista 2</span><span style="color: var(--laranja-frenesy); font-weight: bold;"><i class="fas fa-trophy"></i></span></div></div>';
+                        html += '<div class="bracket-match"><div class="bracket-match-header">Disputa 3º Lugar (MD3)</div><div class="bracket-team-slot"><span>Perdedor Semi 1</span><span style="color: #cd7f32; font-weight: bold;"><i class="fas fa-medal"></i></span></div><div class="bracket-team-slot"><span>Perdedor Semi 2</span><span style="color: #cd7f32; font-weight: bold;"><i class="fas fa-medal"></i></span></div></div>';
                         html += '</div>';
 
                         html += '</div></div>';
@@ -692,15 +853,15 @@ main {
                             var matchNum = Math.floor(i / 2) + 1;
                             var t1 = data.teams[i];
                             var t2 = data.teams[i + 1];
-                            html += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">🔵 TIME 1</div><ul class="team-members-list">';
+                            html += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">Time 1</div><ul class="team-members-list">';
                             t1.forEach(function(p) { html += '<li>• ' + p + '</li>'; });
                             html += '</ul></div><div class="matchup-vs">VS</div>';
                             if (t2) {
-                                html += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div><ul class="team-members-list">';
+                                html += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">Time 2</div><ul class="team-members-list">';
                                 t2.forEach(function(p) { html += '<li>• ' + p + '</li>'; });
                                 html += '</ul></div>';
                             } else {
-                                html += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">⭐ BYE / PASSA DIRETO</div><p style="font-size: 0.85rem; color: #888;">Avança para a próxima fase.</p></div>';
+                                html += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">BYE (Classificado direto)</div><p style="font-size: 0.85rem; color: #888;">Classificado para a próxima fase.</p></div>';
                             }
                             html += '</div></div>';
                         }

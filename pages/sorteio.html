@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteador Free Fire e Times de eSports | Sorteio 1x1, 4x4, Copa e Prêmios Oficial Frenesy</title>
+    <title>Sorteador Oficial Free Fire e eSports | Chaveamentos, Grupos e Importação Excel - Frenesy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
     <!-- SEO COMPLETO -->
-    <meta name="description" content="Sorteador oficial de times e prêmios de eSports! Crie sorteios e chaveamentos de Free Fire estilo Copa do Mundo (X1 dos Crias, 4x4, grupos), Valorant, CS2 e prêmios. Importe planilhas Excel e CSV facilmente.">
+    <meta name="description" content="Plataforma profissional de sorteios e chaveamentos de eSports para Free Fire (X1 dos Crias, 4x4, Fase de Grupos com Playoffs), Valorant e CS2. Importação de planilhas com Squads e IDs.">
     <meta name="author" content="Frenesy Esports">
-    <meta name="keywords" content="sorteador free fire, sorteador esports, chaveamento copa do mundo free fire, tabela torneio ff, importar excel free fire, sorteador de times, sorteador de grupos ff, sorteador x1, sorteador 4x4, gerador de line ff, sorteador de passe de elite, sorteio de diamantes, frenesy esports sorteador">
+    <meta name="keywords" content="sorteador free fire, chaveamento copa do mundo free fire, tabela torneio ff, sorteador esports, importar planilha free fire id squad, gerador de chaves ff, sorteador 4x4, frenesy esports">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="Portuguese">
     <meta name="revisit-after" content="3 days">
@@ -26,16 +26,16 @@
     <!-- CANONICAL -->
     <link rel="canonical" href="https://frenesy.com.br/pages/sorteio.html">
 
-    <!-- OPEN GRAPH (FACEBOOK / LINKEDIN / WHATSAPP) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Frenesy Esports">
     <meta property="og:url" content="https://frenesy.com.br/pages/sorteio.html">
-    <meta property="og:title" content="Sorteador Free Fire e Times de eSports | Frenesy Oficial">
-    <meta property="og:description" content="Sorteie times de Free Fire com chaveamento estilo Copa do Mundo, Valorant, CS2 e sorteios de Passes de Elite com suporte a planilhas Excel / CSV.">
+    <meta property="og:title" content="Sorteador Oficial Free Fire e eSports | Frenesy">
+    <meta property="og:description" content="Crie sorteios e chaveamentos de campeonatos de Free Fire, Valorant e CS2 com suporte a planilhas Excel (Squad, Nickname e ID).">
     <meta property="og:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
     <meta property="og:image:secure_url" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
-    <meta property="og:image:alt" content="Sorteador de Times e Prêmios de eSports Frenesy">
+    <meta property="og:image:alt" content="Sorteador Oficial Frenesy Esports">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -44,22 +44,20 @@
     <meta name="twitter:site" content="@frenesygg">
     <meta name="twitter:creator" content="@frenesygg">
     <meta name="twitter:url" content="https://frenesy.com.br/pages/sorteio.html">
-    <meta name="twitter:title" content="Sorteador Free Fire e Times de eSports | Frenesy Oficial">
-    <meta name="twitter:description" content="O melhor sorteador de eSports com chaveamento de torneio estilo Copa do Mundo e importação de planilhas Excel.">
+    <meta name="twitter:title" content="Sorteador Oficial Free Fire e eSports | Frenesy">
+    <meta name="twitter:description" content="Plataforma de sorteios e chaveamentos de eSports com importação automática de planilhas Excel e modelo com ID do Free Fire.">
     <meta name="twitter:image" content="https://frenesy.com.br/assets/img/wallpapers/Desktop/Wallpaper%20Official%20Desktop.png">
-    <meta name="twitter:image:alt" content="Sorteador de Times e Prêmios de eSports Frenesy">
 
-    <!-- SCHEMA.ORG (DADOS ESTRUTURADOS) -->
+    <!-- SCHEMA.ORG -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Sorteador de Times e Prêmios de eSports - Frenesy",
-        "alternateName": ["Sorteador Free Fire", "Sorteador Frenesy", "Sorteador 4x4 FF Copa do Mundo"],
+        "name": "Sorteador de Times e Chaveamentos de eSports - Frenesy",
         "applicationCategory": "GameApplication",
         "operatingSystem": "All",
         "url": "https://frenesy.com.br/pages/sorteio.html",
-        "description": "Ferramenta oficial e gratuita de sorteio de times para Free Fire, Valorant, CS2 e sorteios de Passes de Elite com chaveamento estilo Copa do Mundo e importação de planilhas Excel.",
+        "description": "Ferramenta profissional e gratuita de sorteio de times para Free Fire, Valorant, CS2 e sorteios de Passes com suporte a importação de arquivos Excel e chaveamentos de playoffs.",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -75,17 +73,20 @@
 
     <style>
 :root {
-	--preto: #000000;
+	--preto: #0c0c0c;
+	--preto-fundo: #050505;
 	--laranja-frenesy: #f96001;
 	--laranja-hover: #ff7722;
 	--branco: #ffffff;
 	--cinza-escuro: #141414;
-	--cinza-card: #1a1a1a;
-	--cinza-borda: #2d2d2d;
-	--cinza-claro: #a0a0a0;
+	--cinza-card: #181818;
+	--cinza-borda: #2a2a2a;
+	--cinza-hover: #333333;
+	--cinza-texto: #a5a5a5;
 	--font-titulo: 'Rajdhani', sans-serif;
 	--font-texto: 'Poppins', sans-serif;
-	--input-height: 48px;
+	--input-height: 50px;
+	--radius: 8px;
 }
 
 * {
@@ -96,10 +97,10 @@
 
 body {
 	font-family: var(--font-texto);
-	background-color: var(--preto);
+	background-color: var(--preto-fundo);
 	color: var(--branco);
 	overflow-x: hidden;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='2' cy='2' r='2' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");
+	background-image: radial-gradient(circle at top center, rgba(249, 96, 1, 0.05) 0%, transparent 60%);
 }
 
 a {
@@ -112,14 +113,14 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 5%;
-	background-color: rgba(0, 0, 0, 0.85);
+	padding: 1.1rem 6%;
+	background-color: rgba(10, 10, 10, 0.95);
 	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 1000;
-	backdrop-filter: blur(10px);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--cinza-borda);
 }
 
 .logo {
@@ -128,13 +129,13 @@ a {
 }
 
 .logo img {
-	height: 48px;
+	height: 44px;
 	margin-right: 12px;
 }
 
 .logo h1 {
 	font-family: var(--font-titulo);
-	font-size: 2rem;
+	font-size: 1.9rem;
 	color: var(--branco);
 	letter-spacing: 2px;
 }
@@ -149,72 +150,63 @@ a {
 }
 
 .nav-links a {
-	color: var(--branco);
+	color: var(--cinza-texto);
 	font-weight: 600;
-	transition: color 0.3s ease;
+	transition: color 0.25s ease;
 	position: relative;
 	padding-bottom: 5px;
-}
-
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 3px;
-	background-color: var(--laranja-frenesy);
-	bottom: 0;
-	left: 0;
-	transition: width 0.3s ease;
+	font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-	color: var(--laranja-frenesy);
+	color: var(--branco);
 }
 
-.nav-links a:hover::after {
-	width: 100%;
+.nav-links a.active-link {
+	color: var(--laranja-frenesy);
 }
 
 .menu-toggle {
 	display: none;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: var(--branco);
 	cursor: pointer;
 }
 
 main {
-	padding-top: 100px;
+	padding-top: 110px;
 }
 
 /* HEADER DO SORTEADOR */
 .sorter-header {
 	text-align: center;
-	padding: 2rem 5% 1.5rem;
+	padding: 2.5rem 5% 1.5rem;
 }
 
 .sorter-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	background-color: rgba(249, 96, 1, 0.15);
+	background-color: rgba(249, 96, 1, 0.1);
 	color: var(--laranja-frenesy);
-	border: 1px solid rgba(249, 96, 1, 0.4);
-	padding: 6px 16px;
-	border-radius: 20px;
-	font-size: 0.85rem;
+	border: 1px solid rgba(249, 96, 1, 0.3);
+	padding: 6px 18px;
+	border-radius: 30px;
+	font-size: 0.8rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	margin-bottom: 1rem;
+	margin-bottom: 1.2rem;
 }
 
 .section-title {
 	font-family: var(--font-titulo);
 	font-size: 3.2rem;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 1.5px;
 	color: var(--branco);
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.6rem;
+	line-height: 1.15;
 }
 
 .section-title span {
@@ -222,28 +214,28 @@ main {
 }
 
 .section-subtitle {
-	max-width: 850px;
-	margin: 0 auto 2rem auto;
-	color: #aaa;
-	line-height: 1.6;
-	font-size: 1.05rem;
+	max-width: 820px;
+	margin: 0 auto 2.2rem auto;
+	color: var(--cinza-texto);
+	line-height: 1.65;
+	font-size: 1rem;
 }
 
-/* TAB NAVIGATION (TIMES vs PRÊMIOS) */
+/* TABS DE NAVEGAÇÃO */
 .sorter-tabs {
 	display: flex;
 	justify-content: center;
 	gap: 12px;
-	margin-bottom: 2.5rem;
+	margin-bottom: 3rem;
 	padding: 0 5%;
 }
 
 .tab-btn {
 	background-color: var(--cinza-card);
-	color: #ccc;
+	color: var(--cinza-texto);
 	border: 1px solid var(--cinza-borda);
 	padding: 14px 28px;
-	border-radius: 8px;
+	border-radius: var(--radius);
 	cursor: pointer;
 	font-family: var(--font-titulo);
 	font-size: 1.15rem;
@@ -253,62 +245,64 @@ main {
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 }
 
 .tab-btn:hover {
 	color: var(--branco);
-	border-color: var(--laranja-frenesy);
-	background-color: #222;
+	border-color: #444;
+	background-color: #202020;
 }
 
 .tab-btn.active {
 	background-color: var(--laranja-frenesy);
 	color: var(--branco);
 	border-color: var(--laranja-frenesy);
-	box-shadow: 0 0 20px rgba(249, 96, 1, 0.4);
+	box-shadow: 0 4px 20px rgba(249, 96, 1, 0.35);
 }
 
 /* CONTAINER PRINCIPAL */
 .sorter-container {
-	max-width: 1080px;
+	max-width: 1060px;
 	margin: 0 auto;
-	padding: 0 5% 4rem;
+	padding: 0 5% 5rem;
 }
 
 .sorter-card-box {
 	background-color: var(--cinza-card);
 	border: 1px solid var(--cinza-borda);
 	border-radius: 12px;
-	padding: 2.5rem;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+	padding: 2.8rem;
+	box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
 }
 
-/* SELETOR DE JOGOS (ESPORTS) */
+/* SELETOR DE JOGOS */
 .game-selector-title {
 	font-family: var(--font-titulo);
-	font-size: 1.4rem;
+	font-size: 1.35rem;
 	color: var(--branco);
-	margin-bottom: 1rem;
+	margin-bottom: 1.2rem;
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
 }
 
 .game-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 1rem;
-	margin-bottom: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 1.2rem;
+	margin-bottom: 2.5rem;
 }
 
 .game-card {
 	background-color: var(--cinza-escuro);
-	border: 2px solid var(--cinza-borda);
+	border: 1px solid var(--cinza-borda);
 	border-radius: 10px;
-	padding: 15px;
+	padding: 18px 14px;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -317,18 +311,19 @@ main {
 }
 
 .game-card:hover {
-	border-color: rgba(249, 96, 1, 0.6);
+	border-color: #444;
 	transform: translateY(-3px);
+	background-color: #1a1a1a;
 }
 
 .game-card.active {
 	border-color: var(--laranja-frenesy);
-	background-color: rgba(249, 96, 1, 0.08);
-	box-shadow: 0 0 15px rgba(249, 96, 1, 0.25);
+	background-color: rgba(249, 96, 1, 0.06);
+	box-shadow: 0 0 0 1px var(--laranja-frenesy);
 }
 
 .game-card-img {
-	height: 48px;
+	height: 46px;
 	width: auto;
 	object-fit: contain;
 	margin-bottom: 10px;
@@ -336,9 +331,10 @@ main {
 
 .game-card-name {
 	font-family: var(--font-titulo);
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 	font-weight: 700;
 	color: var(--branco);
+	letter-spacing: 0.5px;
 }
 
 .game-card-tag {
@@ -350,8 +346,8 @@ main {
 
 /* ETAPAS DE CONTROLE */
 .control-step {
-	margin-bottom: 2rem;
-	padding-bottom: 1.5rem;
+	margin-bottom: 2.5rem;
+	padding-bottom: 2.2rem;
 	border-bottom: 1px solid var(--cinza-borda);
 }
 
@@ -364,8 +360,8 @@ main {
 .control-step-header {
 	display: flex;
 	align-items: center;
-	gap: 12px;
-	margin-bottom: 1.2rem;
+	gap: 14px;
+	margin-bottom: 1.6rem;
 }
 
 .step-number {
@@ -384,14 +380,16 @@ main {
 
 .control-step-header h4 {
 	font-family: var(--font-titulo);
-	font-size: 1.4rem;
+	font-size: 1.45rem;
 	color: var(--branco);
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
 }
 
 .step-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.6rem;
 }
 
 .control-group {
@@ -401,9 +399,9 @@ main {
 }
 
 .control-group label {
-	font-size: 0.9rem;
+	font-size: 0.88rem;
 	font-weight: 600;
-	color: #ccc;
+	color: var(--cinza-texto);
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -411,20 +409,21 @@ main {
 
 .control-group label i {
 	color: var(--laranja-frenesy);
+	font-size: 0.95rem;
 }
 
 .control-group input,
 .control-group select,
 .control-group textarea {
-	padding: 12px 15px;
+	padding: 0 16px;
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 6px;
+	border-radius: var(--radius);
 	color: var(--branco);
 	font-family: var(--font-texto);
-	font-size: 0.95rem;
+	font-size: 0.92rem;
 	outline: none;
-	transition: border-color 0.3s;
+	transition: border-color 0.25s, box-shadow 0.25s;
 	width: 100%;
 }
 
@@ -433,48 +432,50 @@ main {
 }
 
 .control-group textarea {
+	padding: 14px 16px;
 	resize: vertical;
-	min-height: 140px;
-	line-height: 1.5;
+	min-height: 145px;
+	line-height: 1.6;
 }
 
 .control-group input:focus,
 .control-group select:focus,
 .control-group textarea:focus {
 	border-color: var(--laranja-frenesy);
+	box-shadow: 0 0 0 1px rgba(249, 96, 1, 0.3);
 }
 
 .input-hint {
 	font-size: 0.82rem;
-	color: #888;
+	color: #777;
 	margin-top: 4px;
 }
 
 /* MINIMALIST ORANGE EXCEL IMPORT BAR */
 .excel-minimal-box {
-	background: rgba(249, 96, 1, 0.05);
-	border: 1px dashed rgba(249, 96, 1, 0.35);
-	border-radius: 8px;
-	padding: 12px 16px;
-	margin-bottom: 1.25rem;
+	background: rgba(249, 96, 1, 0.04);
+	border: 1px dashed rgba(249, 96, 1, 0.3);
+	border-radius: var(--radius);
+	padding: 14px 18px;
+	margin-bottom: 1.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: 10px;
+	gap: 12px;
 }
 
 .excel-minimal-left {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 10px;
 	font-size: 0.85rem;
 	color: #ccc;
 }
 
 .excel-minimal-left i {
 	color: var(--laranja-frenesy);
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 }
 
 .excel-minimal-actions {
@@ -487,8 +488,8 @@ main {
 	background-color: var(--laranja-frenesy);
 	color: var(--branco);
 	border: none;
-	padding: 6px 14px;
-	border-radius: 5px;
+	padding: 8px 16px;
+	border-radius: 6px;
 	font-size: 0.82rem;
 	font-weight: 600;
 	cursor: pointer;
@@ -506,9 +507,9 @@ main {
 .btn-mini-dark {
 	background-color: #222;
 	color: #bbb;
-	border: 1px solid #3d3d3d;
-	padding: 6px 12px;
-	border-radius: 5px;
+	border: 1px solid var(--cinza-borda);
+	padding: 8px 14px;
+	border-radius: 6px;
 	font-size: 0.82rem;
 	font-weight: 600;
 	cursor: pointer;
@@ -521,7 +522,7 @@ main {
 .btn-mini-dark:hover {
 	color: var(--branco);
 	border-color: #555;
-	background-color: #2a2a2a;
+	background-color: #2c2c2c;
 }
 
 /* NUMBER CONTROLS */
@@ -543,11 +544,11 @@ main {
 	background-color: var(--laranja-frenesy);
 	border: none;
 	color: white;
-	width: 48px;
+	width: 50px;
 	height: 100%;
-	font-size: 1.3rem;
+	font-size: 1.25rem;
 	cursor: pointer;
-	transition: background-color 0.3s;
+	transition: background-color 0.2s;
 }
 
 .num-btn:hover {
@@ -555,11 +556,11 @@ main {
 }
 
 .num-btn.minus {
-	border-radius: 6px 0 0 6px;
+	border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .num-btn.plus {
-	border-radius: 0 6px 6px 0;
+	border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 /* TOGGLE SWITCH */
@@ -568,18 +569,18 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 12px 15px;
+	padding: 0 16px;
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 6px;
+	border-radius: var(--radius);
 	cursor: pointer;
 }
 
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 48px;
-	height: 26px;
+	width: 46px;
+	height: 24px;
 }
 
 .switch input {
@@ -593,19 +594,19 @@ main {
 	cursor: pointer;
 	top: 0; left: 0; right: 0; bottom: 0;
 	background-color: #333;
-	transition: .3s;
-	border-radius: 26px;
+	transition: .25s;
+	border-radius: 24px;
 }
 
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 18px;
-	width: 18px;
+	height: 16px;
+	width: 16px;
 	left: 4px;
 	bottom: 4px;
 	background-color: white;
-	transition: .3s;
+	transition: .25s;
 	border-radius: 50%;
 }
 
@@ -617,7 +618,7 @@ input:checked + .slider:before {
 	transform: translateX(22px);
 }
 
-/* BOTÕES */
+/* BOTÕES PRINCIPAIS */
 .btn {
 	height: var(--input-height);
 	display: inline-flex;
@@ -626,23 +627,23 @@ input:checked + .slider:before {
 	gap: 10px;
 	background-color: var(--laranja-frenesy);
 	color: var(--branco);
-	padding: 12px 24px;
-	border-radius: 6px;
+	padding: 0 24px;
+	border-radius: var(--radius);
 	font-weight: 700;
 	font-family: var(--font-titulo);
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
 	border: none;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all 0.25s ease;
 	width: 100%;
 }
 
 .btn:hover {
 	background-color: var(--laranja-hover);
 	transform: translateY(-2px);
-	box-shadow: 0 6px 15px rgba(249, 96, 1, 0.3);
+	box-shadow: 0 6px 16px rgba(249, 96, 1, 0.3);
 }
 
 .btn:active {
@@ -650,50 +651,59 @@ input:checked + .slider:before {
 }
 
 .btn-secondary {
-	background-color: #2a2a2a;
-	border: 1px solid #3d3d3d;
+	background-color: #242424;
+	border: 1px solid #383838;
 }
 
 .btn-secondary:hover {
-	background-color: #383838;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	background-color: #303030;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ACTIONS */
 .sorter-actions {
-	margin-top: 2rem;
+	margin-top: 2.2rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.2rem;
 }
 
-/* LISTA DE PRESETS DE PRÊMIOS */
+/* PRESETS DE PRÊMIOS */
 .prize-presets {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
-	margin-top: 8px;
+	gap: 10px;
+	margin-top: 10px;
 }
 
 .preset-chip {
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	color: #ccc;
-	padding: 6px 12px;
-	border-radius: 20px;
-	font-size: 0.8rem;
+	color: #bbb;
+	padding: 8px 14px;
+	border-radius: 6px;
+	font-size: 0.82rem;
+	font-weight: 500;
 	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
 	transition: all 0.2s;
+}
+
+.preset-chip i {
+	color: var(--laranja-frenesy);
 }
 
 .preset-chip:hover {
 	border-color: var(--laranja-frenesy);
 	color: var(--branco);
+	background-color: #222;
 }
 
-/* RESULTADOS INTERNOS (COM LINK PARA PÁGINA DEDICADA) */
+/* RESULTADOS INTERNOS */
 #results-wrapper {
-	margin-top: 2.5rem;
+	margin-top: 3rem;
 	background-color: var(--cinza-card);
 	border: 1px solid var(--cinza-borda);
 	border-radius: 12px;
@@ -715,9 +725,9 @@ input:checked + .slider:before {
 }
 
 .draw-info-header p {
-	color: #bbb;
-	font-size: 1rem;
-	margin-top: 4px;
+	color: var(--cinza-texto);
+	font-size: 0.95rem;
+	margin-top: 6px;
 }
 
 .results-header {
@@ -725,14 +735,15 @@ input:checked + .slider:before {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: 1.2rem;
 	margin-bottom: 2rem;
 }
 
 .results-header h4 {
 	font-family: var(--font-titulo);
-	font-size: 1.8rem;
+	font-size: 1.7rem;
 	color: var(--branco);
+	text-transform: uppercase;
 }
 
 .results-actions {
@@ -743,11 +754,12 @@ input:checked + .slider:before {
 
 .results-actions .btn {
 	width: auto;
-	padding: 10px 18px;
+	padding: 0 20px;
 	font-size: 0.95rem;
+	height: 44px;
 }
 
-/* CHAVEAMENTO ESTILO COPA DO MUNDO / PLAYOFFS BRACKET */
+/* CHAVEAMENTO ESTILO COPA DO MUNDO */
 .bracket-wrapper {
 	margin-top: 2rem;
 	overflow-x: auto;
@@ -762,6 +774,7 @@ input:checked + .slider:before {
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	text-transform: uppercase;
 }
 
 .bracket-tree {
@@ -795,19 +808,14 @@ input:checked + .slider:before {
 .bracket-match {
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 8px;
+	border-radius: var(--radius);
 	overflow: hidden;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-	transition: border-color 0.2s;
-}
-
-.bracket-match:hover {
-	border-color: var(--laranja-frenesy);
 }
 
 .bracket-match-header {
-	background-color: #1c1c1c;
-	padding: 4px 10px;
+	background-color: #1f1f1f;
+	padding: 6px 12px;
 	font-size: 0.75rem;
 	color: var(--laranja-frenesy);
 	font-weight: 700;
@@ -817,25 +825,20 @@ input:checked + .slider:before {
 }
 
 .bracket-team-slot {
-	padding: 8px 12px;
+	padding: 10px 14px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 0.88rem;
 	border-bottom: 1px solid rgba(255,255,255,0.05);
-	color: #ddd;
+	color: #eee;
 }
 
 .bracket-team-slot:last-child {
 	border-bottom: none;
 }
 
-.bracket-team-slot.winner {
-	background-color: rgba(249, 96, 1, 0.12);
-	color: #fff;
-	font-weight: 700;
-}
-
+/* CARDS DE RESULTADO */
 .results-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -845,26 +848,21 @@ input:checked + .slider:before {
 .result-card {
 	background-color: var(--cinza-escuro);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 10px;
+	border-radius: var(--radius);
 	padding: 1.5rem;
-	transition: transform 0.3s ease, border-color 0.3s;
-}
-
-.result-card:hover {
-	transform: translateY(-4px);
-	border-color: rgba(249, 96, 1, 0.5);
 }
 
 .result-card-title {
 	font-family: var(--font-titulo);
-	font-size: 1.4rem;
+	font-size: 1.35rem;
 	color: var(--laranja-frenesy);
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #2a2a2a;
 	padding-bottom: 8px;
 	margin-bottom: 14px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	text-transform: uppercase;
 }
 
 .matchup-box {
@@ -874,7 +872,7 @@ input:checked + .slider:before {
 }
 
 .team-block {
-	background-color: #202020;
+	background-color: #1c1c1c;
 	padding: 10px 14px;
 	border-radius: 6px;
 	border-left: 3px solid var(--laranja-frenesy);
@@ -890,7 +888,7 @@ input:checked + .slider:before {
 
 .team-members-list {
 	list-style: none;
-	font-size: 0.95rem;
+	font-size: 0.92rem;
 	color: #eee;
 }
 
@@ -902,7 +900,7 @@ input:checked + .slider:before {
 	text-align: center;
 	font-family: var(--font-titulo);
 	font-weight: 800;
-	font-size: 1.2rem;
+	font-size: 1.15rem;
 	color: var(--laranja-frenesy);
 }
 
@@ -911,7 +909,7 @@ input:checked + .slider:before {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 10px;
 }
 
 .winner-row {
@@ -920,50 +918,140 @@ input:checked + .slider:before {
 	gap: 15px;
 	background-color: var(--cinza-escuro);
 	padding: 14px 20px;
-	border-radius: 8px;
+	border-radius: var(--radius);
 	border-left: 4px solid var(--laranja-frenesy);
 }
 
 .winner-rank {
 	font-family: var(--font-titulo);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-weight: 800;
 	color: var(--laranja-frenesy);
 	min-width: 35px;
 }
 
 .winner-name {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
 	font-weight: 600;
 	color: var(--branco);
 	flex-grow: 1;
 }
 
-/* SHARE CONTAINER */
-.share-box {
+/* CAMPO DE COPIAR LINK TOTALMENTE PERSONALIZADO */
+.share-box-custom {
 	margin-top: 2rem;
-	background-color: var(--cinza-escuro);
+	background-color: #121212;
 	border: 1px solid var(--cinza-borda);
-	border-radius: 8px;
+	border-radius: 10px;
 	padding: 1.5rem;
 }
 
-.share-link-wrapper {
+.share-box-header {
 	display: flex;
-	gap: 10px;
-	margin-top: 10px;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
 }
 
-.share-token-preview {
-	margin-top: 1rem;
-	background-color: #0c0c0c;
-	padding: 10px 14px;
-	border-radius: 5px;
-	font-size: 0.85rem;
-	color: #aaa;
+.share-box-title {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--laranja-frenesy);
+	text-transform: uppercase;
 	display: flex;
 	align-items: center;
+	gap: 8px;
+}
+
+.share-badge-verified {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #4cd137;
+	background-color: rgba(76, 209, 55, 0.1);
+	border: 1px solid rgba(76, 209, 55, 0.3);
+	padding: 3px 10px;
+	border-radius: 20px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.custom-copy-group {
+	display: flex;
+	gap: 10px;
+	align-items: stretch;
+}
+
+.copy-input-wrapper {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+}
+
+.copy-icon-left {
+	position: absolute;
+	left: 16px;
+	color: #666;
+	font-size: 0.9rem;
+}
+
+.custom-link-input {
+	width: 100%;
+	height: var(--input-height);
+	background-color: #1c1c1c;
+	border: 1px solid #333;
+	border-radius: var(--radius);
+	padding: 0 16px 0 42px;
+	color: #eee;
+	font-family: monospace;
+	font-size: 0.88rem;
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.custom-link-input:focus {
+	border-color: var(--laranja-frenesy);
+}
+
+.btn-copy-action {
+	height: var(--input-height);
+	background-color: var(--laranja-frenesy);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius);
+	padding: 0 22px;
+	font-family: var(--font-titulo);
+	font-size: 1.05rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+	transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-copy-action:hover {
+	background-color: var(--laranja-hover);
+	transform: translateY(-1px);
+}
+
+.share-footer-info {
+	display: flex;
 	justify-content: space-between;
+	margin-top: 10px;
+	font-size: 0.8rem;
+	color: #777;
+}
+
+.share-footer-info code {
+	color: var(--laranja-frenesy);
+	background-color: rgba(249, 96, 1, 0.08);
+	padding: 2px 6px;
+	border-radius: 4px;
 }
 
 /* NOTIFICATION */
@@ -978,14 +1066,14 @@ input:checked + .slider:before {
 }
 
 .notification {
-	background-color: #222;
+	background-color: #1f1f1f;
 	color: var(--branco);
 	border-left: 4px solid var(--laranja-frenesy);
 	padding: 14px 20px;
-	border-radius: 6px;
-	box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-	font-size: 0.95rem;
-	animation: slideIn 0.3s ease;
+	border-radius: var(--radius);
+	box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+	font-size: 0.92rem;
+	animation: slideIn 0.25s ease;
 }
 
 @keyframes slideIn {
@@ -995,7 +1083,7 @@ input:checked + .slider:before {
 
 /* FAQ SECTION */
 .faq-section {
-	max-width: 1080px;
+	max-width: 1060px;
 	margin: 2rem auto 5rem;
 	padding: 0 5%;
 }
@@ -1006,6 +1094,7 @@ input:checked + .slider:before {
 	color: var(--branco);
 	text-align: center;
 	margin-bottom: 2rem;
+	text-transform: uppercase;
 }
 
 .faq-grid {
@@ -1016,7 +1105,7 @@ input:checked + .slider:before {
 .faq-item {
 	background-color: var(--cinza-card);
 	border: 1px solid var(--cinza-borda);
-	border-radius: 8px;
+	border-radius: var(--radius);
 	overflow: hidden;
 }
 
@@ -1042,11 +1131,12 @@ input:checked + .slider:before {
 
 .faq-answer {
 	padding: 0 20px 18px;
-	color: #aaa;
-	line-height: 1.6;
+	color: var(--cinza-texto);
+	line-height: 1.65;
 	display: none;
 	border-top: 1px solid rgba(255,255,255,0.05);
 	padding-top: 14px;
+	font-size: 0.95rem;
 }
 
 .faq-item.active .faq-answer {
@@ -1058,7 +1148,7 @@ input:checked + .slider:before {
 	position: relative;
 	padding: 80px 5% 20px;
 	background-color: var(--preto);
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-top: 1px solid var(--cinza-borda);
 }
 
 .footer-main {
@@ -1209,14 +1299,15 @@ input:checked + .slider:before {
 	.nav-links.active { right: 0; }
 	.section-title { font-size: 2.2rem; }
 	.sorter-tabs { flex-direction: column; }
-	.sorter-card-box { padding: 1.5rem; }
+	.sorter-card-box { padding: 1.6rem; }
 	.excel-minimal-box { flex-direction: column; align-items: flex-start; }
 	.excel-minimal-actions { width: 100%; }
 	.excel-minimal-actions button { flex-grow: 1; justify-content: center; }
+	.custom-copy-group { flex-direction: column; }
+	.btn-copy-action { width: 100%; justify-content: center; }
 	.results-header { flex-direction: column; align-items: stretch; text-align: center; }
 	.results-actions { justify-content: center; }
 	.results-actions .btn { width: 100%; }
-	.share-link-wrapper { flex-direction: column; }
 }
     </style>
 </head>
@@ -1232,7 +1323,7 @@ input:checked + .slider:before {
             <ul class="nav-links" id="nav-links">
                 <li><a href="../">Início</a></li>
                 <li><a href="times.html">Times</a></li>
-                <li><a href="sorteio.html" style="color: var(--laranja-frenesy);">Sorteador</a></li>
+                <li><a href="sorteio.html" class="active-link">Sorteador</a></li>
                 <li><a href="noticias.html">Notícias</a></li>
                 <li><a href="loja.html">Loja</a></li>
                 <li><a href="contato.html">Contato</a></li>
@@ -1245,7 +1336,7 @@ input:checked + .slider:before {
             <div class="sorter-badge"><i class="fas fa-shield-alt"></i> Ferramenta Oficial Gamer</div>
             <h1 class="section-title">SORTEADOR DE <span>E-SPORTS</span></h1>
             <p class="section-subtitle">
-                A plataforma oficial da <strong>Frenesy Esports</strong> para sorteio de times, chaveamentos de torneio estilo Copa do Mundo (X1, 4x4, grupos), Valorant, CS2 e sorteios de Passes de Elite com suporte a planilhas Excel e CSV.
+                Plataforma profissional da <strong>Frenesy Esports</strong> para sorteios de times, chaveamentos de mata-mata estilo Copa do Mundo, Valorant, CS2 e sorteios de Passes com importação de planilhas e IDs.
             </p>
 
             <!-- TABS DE NAVEGAÇÃO -->
@@ -1266,7 +1357,7 @@ input:checked + .slider:before {
                 
                 <!-- SELETOR DE JOGOS -->
                 <div class="game-selector-title">
-                    <i class="fas fa-gamepad" style="color: var(--laranja-frenesy);"></i> 1. Escolha o Jogo / Modalidade
+                    <i class="fas fa-gamepad" style="color: var(--laranja-frenesy);"></i> 1. Modalidade e Jogo
                 </div>
 
                 <div class="game-grid">
@@ -1299,13 +1390,13 @@ input:checked + .slider:before {
                 <div class="control-step">
                     <div class="control-step-header">
                         <span class="step-number">2</span>
-                        <h4>Configurações da Partida e Data</h4>
+                        <h4>Configurações do Campeonato</h4>
                     </div>
 
                     <div class="step-grid">
                         <div class="control-group">
                             <label for="tournament-name-input"><i class="fas fa-trophy"></i> Nome do Torneio / Campeonato</label>
-                            <input type="text" id="tournament-name-input" placeholder="Digite o nome do torneio (Ex: 4x4 dos Crias)">
+                            <input type="text" id="tournament-name-input" placeholder="Ex: 4x4 dos Crias Frenesy">
                         </div>
 
                         <div class="control-group">
@@ -1328,7 +1419,7 @@ input:checked + .slider:before {
                         <div class="control-group" id="group-stage-container">
                             <label><i class="fas fa-sitemap"></i> Fase de Grupos + Chaveamento Copa?</label>
                             <label class="toggle-switch">
-                                <span style="font-size: 0.9rem; color: #ccc;" id="group-toggle-text">Ativar Grupos e Playoffs</span>
+                                <span style="font-size: 0.88rem; color: #ccc;" id="group-toggle-text">Ativar Grupos e Playoffs</span>
                                 <div class="switch">
                                     <input type="checkbox" id="group-stage-toggle" onchange="toggleGroupStage()">
                                     <span class="slider"></span>
@@ -1351,34 +1442,34 @@ input:checked + .slider:before {
                 <div class="control-step">
                     <div class="control-step-header">
                         <span class="step-number">3</span>
-                        <h4>Jogadores Participantes</h4>
+                        <h4>Jogadores Participantes e Squads</h4>
                     </div>
 
-                    <!-- MINIMALIST ORANGE EXCEL IMPORT BAR -->
+                    <!-- MINIMALIST ORANGE EXCEL IMPORT BAR COM MODELO FREE FIRE OFICIAL -->
                     <div class="excel-minimal-box">
                         <div class="excel-minimal-left">
                             <i class="fas fa-file-excel"></i>
-                            <span>Importar planilha: colunas <strong>Nome</strong> e <strong>Nickname</strong></span>
+                            <span>Importação de Planilhas: modelo com <strong>Time/Squad</strong>, <strong>Nickname</strong> e <strong>ID Free Fire</strong></span>
                         </div>
                         <div class="excel-minimal-actions">
                             <input type="file" id="excel-file-teams" accept=".xlsx, .xls, .csv, .txt" style="display: none;" onchange="handleFileUpload(event, 'teams')">
                             <button type="button" class="btn-mini-orange" onclick="document.getElementById('excel-file-teams').click()">
-                                <i class="fas fa-upload"></i> Importar (.XLSX / .CSV)
+                                <i class="fas fa-upload"></i> Importar Planilha
                             </button>
-                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('xlsx')">
-                                <i class="fas fa-download"></i> Modelo .xlsx
+                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('ff_xlsx')">
+                                <i class="fas fa-download"></i> Modelo Free Fire (.xlsx)
                             </button>
-                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('csv')">
-                                <i class="fas fa-file-csv"></i> .csv
+                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('ff_csv')">
+                                <i class="fas fa-file-csv"></i> Modelo (.csv)
                             </button>
                         </div>
                     </div>
 
                     <div style="display: flex; gap: 10px; margin-bottom: 1rem; flex-wrap: wrap;">
-                        <button class="btn btn-secondary" style="width: auto; height: 38px; font-size: 0.85rem;" onclick="loadSamplePlayers()">
-                            <i class="fas fa-magic"></i> Carregar Exemplo Free Fire
+                        <button class="btn btn-secondary" style="width: auto; height: 40px; font-size: 0.85rem;" onclick="loadSamplePlayers()">
+                            <i class="fas fa-magic"></i> Carregar Exemplo Free Fire (Com IDs)
                         </button>
-                        <button class="btn btn-secondary" style="width: auto; height: 38px; font-size: 0.85rem;" onclick="clearPlayerList()">
+                        <button class="btn btn-secondary" style="width: auto; height: 40px; font-size: 0.85rem;" onclick="clearPlayerList()">
                             <i class="fas fa-trash-alt"></i> Limpar Lista
                         </button>
                     </div>
@@ -1387,7 +1478,7 @@ input:checked + .slider:before {
                         <label for="players-raw-textarea">
                             <i class="fas fa-clipboard-list"></i> Lista de jogadores / nicks (1 por linha):
                         </label>
-                        <textarea id="players-raw-textarea" placeholder="Cole os nicks dos jogadores ou importe uma planilha acima...&#10;FㅤNOBRU&#10;FㅤCEROL&#10;FㅤBAK&#10;FㅤGHOST" oninput="updatePlayersCount()"></textarea>
+                        <textarea id="players-raw-textarea" placeholder="Cole os nicks dos jogadores ou use a importação de planilha acima...&#10;FㅤNOBRU (ID: 145829104) - [Squad Alpha]&#10;FㅤCEROL (ID: 284910283) - [Squad Alpha]&#10;FㅤBAK (ID: 948192049) - [Squad Beta]&#10;FㅤGHOST (ID: 482910394) - [Squad Beta]" oninput="updatePlayersCount()"></textarea>
                         <div class="input-hint" id="players-count-indicator">Total: 0 jogadores identificados.</div>
                     </div>
 
@@ -1414,16 +1505,16 @@ input:checked + .slider:before {
 
                     <div class="control-group">
                         <label for="prize-name-input"><i class="fas fa-gift"></i> Nome do Prêmio / Giveaway</label>
-                        <input type="text" id="prize-name-input" placeholder="Digite o prêmio (Ex: Booyah Pass Free Fire + 1080 Dimas)">
+                        <input type="text" id="prize-name-input" placeholder="Ex: Booyah Pass Free Fire + 1080 Diamantes">
                     </div>
 
                     <div class="prize-presets">
-                        <span class="preset-chip" onclick="setPrizePreset('🔥 Booyah Pass / Passe de Elite FF')">🔥 Booyah Pass FF</span>
-                        <span class="preset-chip" onclick="setPrizePreset('💎 1080 Diamantes Free Fire')">💎 1080 Diamantes</span>
-                        <span class="preset-chip" onclick="setPrizePreset('🏆 Vaga na Lineup Oficial Frenesy')">🏆 Vaga na Lineup</span>
-                        <span class="preset-chip" onclick="setPrizePreset('🎮 1 Mês de Discord Nitro')">🎮 Discord Nitro</span>
-                        <span class="preset-chip" onclick="setPrizePreset('👕 Camisa Oficial Frenesy Esports')">👕 Camisa Oficial</span>
-                        <span class="preset-chip" onclick="setPrizePreset('💰 Chave Pix R$ 50,00 Saldo Gamer')">💰 Pix R$ 50</span>
+                        <span class="preset-chip" onclick="setPrizePreset('Booyah Pass Free Fire')"><i class="fas fa-ticket-alt"></i> Booyah Pass FF</span>
+                        <span class="preset-chip" onclick="setPrizePreset('1080 Diamantes Free Fire')"><i class="fas fa-gem"></i> 1080 Diamantes</span>
+                        <span class="preset-chip" onclick="setPrizePreset('Vaga na Lineup Oficial Frenesy')"><i class="fas fa-user-plus"></i> Vaga na Lineup</span>
+                        <span class="preset-chip" onclick="setPrizePreset('1 Mes de Discord Nitro')"><i class="fab fa-discord"></i> Discord Nitro</span>
+                        <span class="preset-chip" onclick="setPrizePreset('Camisa Oficial Frenesy Esports')"><i class="fas fa-tshirt"></i> Camisa Oficial</span>
+                        <span class="preset-chip" onclick="setPrizePreset('Chave Pix R$ 50,00 Saldo Gamer')"><i class="fas fa-coins"></i> Pix R$ 50</span>
                     </div>
                 </div>
 
@@ -1446,7 +1537,7 @@ input:checked + .slider:before {
                         <div class="control-group">
                             <label><i class="fas fa-user-shield"></i> Evitar Ganhadores Repetidos?</label>
                             <label class="toggle-switch">
-                                <span style="font-size: 0.9rem; color: #ccc;">Apenas 1 prêmio por pessoa</span>
+                                <span style="font-size: 0.88rem; color: #ccc;">Apenas 1 prêmio por participante</span>
                                 <div class="switch">
                                     <input type="checkbox" id="unique-winners-toggle" checked>
                                     <span class="slider"></span>
@@ -1462,18 +1553,17 @@ input:checked + .slider:before {
                         <h4>Participantes</h4>
                     </div>
 
-                    <!-- MINIMALIST ORANGE EXCEL IMPORT BAR PARA PRÊMIOS -->
                     <div class="excel-minimal-box">
                         <div class="excel-minimal-left">
                             <i class="fas fa-file-excel"></i>
-                            <span>Importar lista de inscritos via planilha</span>
+                            <span>Importar lista de inscritos do sorteio via planilha</span>
                         </div>
                         <div class="excel-minimal-actions">
                             <input type="file" id="excel-file-prizes" accept=".xlsx, .xls, .csv, .txt" style="display: none;" onchange="handleFileUpload(event, 'prizes')">
                             <button type="button" class="btn-mini-orange" onclick="document.getElementById('excel-file-prizes').click()">
-                                <i class="fas fa-upload"></i> Importar (.XLSX / .CSV)
+                                <i class="fas fa-upload"></i> Importar Planilha
                             </button>
-                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('xlsx')">
+                            <button type="button" class="btn-mini-dark" onclick="downloadSpreadsheetTemplate('ff_xlsx')">
                                 <i class="fas fa-download"></i> Modelo .xlsx
                             </button>
                         </div>
@@ -1483,7 +1573,7 @@ input:checked + .slider:before {
                         <label for="prizes-raw-textarea">
                             <i class="fas fa-users"></i> Lista de participantes (1 por linha ou importados):
                         </label>
-                        <textarea id="prizes-raw-textarea" placeholder="Cole os nicks dos participantes ou importe uma planilha acima...&#10;Player1&#10;Player2&#10;Player3..." oninput="updatePrizesCount()"></textarea>
+                        <textarea id="prizes-raw-textarea" placeholder="Cole a lista de inscritos ou importe uma planilha acima...&#10;Player1&#10;Player2&#10;Player3..." oninput="updatePrizesCount()"></textarea>
                         <div class="input-hint" id="prizes-count-indicator">Total: 0 participantes.</div>
                     </div>
 
@@ -1520,22 +1610,31 @@ input:checked + .slider:before {
 
                 <div id="results-container"></div>
 
-                <div class="share-box" id="share-box" style="display: none;">
-                    <label style="font-weight: 700; color: var(--laranja-frenesy);"><i class="fas fa-check-circle"></i> Link da Página Oficial do Resultado</label>
-                    <div class="share-link-wrapper">
-                        <input type="text" id="share-link-input" readonly>
-                        <button class="btn" style="width: 140px;" id="copy-link-btn" onclick="copyShareUrl()">Copiar Link</button>
+                <!-- CAMPO DE COPIAR LINK PERSONALIZADO -->
+                <div class="share-box-custom" id="share-box" style="display: none;">
+                    <div class="share-box-header">
+                        <span class="share-box-title"><i class="fas fa-shield-alt"></i> Link Oficial de Validação do Campeonato</span>
+                        <span class="share-badge-verified"><i class="fas fa-check-circle"></i> Autenticado</span>
                     </div>
-                    <div class="share-token-preview">
-                        <span>Código do Sorteio: <code id="token-id-preview"></code></span>
-                        <span style="color: var(--laranja-frenesy); font-weight: bold;"><i class="fas fa-certificate"></i> Autenticado</span>
+                    <div class="custom-copy-group">
+                        <div class="copy-input-wrapper">
+                            <i class="fas fa-link copy-icon-left"></i>
+                            <input type="text" id="share-link-input" class="custom-link-input" readonly>
+                        </div>
+                        <button type="button" class="btn-copy-action" id="copy-link-btn" onclick="copyShareUrl()">
+                            <i class="fas fa-copy"></i> <span>Copiar Link</span>
+                        </button>
+                    </div>
+                    <div class="share-footer-info">
+                        <span>Código do Sorteio: <code id="token-id-preview">FNY-123456</code></span>
+                        <span>Envie para capitães e jogadores para conferência</span>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- SEÇÃO FAQ (OTIMIZAÇÃO SEO GOOGLE) -->
+        <!-- SEÇÃO FAQ (SEO) -->
         <section class="faq-section">
             <h3 class="faq-title">Perguntas Frequentes sobre Sorteios e Chaveamentos</h3>
             
@@ -1552,11 +1651,11 @@ input:checked + .slider:before {
 
                 <div class="faq-item" onclick="toggleFaq(this)">
                     <div class="faq-question">
-                        <span>Como importar uma planilha Excel (.XLSX / .CSV) de jogadores?</span>
+                        <span>Como importar a planilha oficial com Nome do Time e ID do Free Fire?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Basta clicar no botão <strong>Importar (.XLSX / .CSV)</strong> ou baixar nosso modelo pronto em <strong>Modelo .xlsx</strong>. A planilha pode ter as colunas <code>Nome</code> e <code>Nickname</code> (ou apenas nicks). O sorteador processa instantaneamente todos os inscritos e faz a contagem automática.
+                        Basta clicar no botão <strong>Modelo Free Fire (.xlsx)</strong> para baixar a planilha padrão. Preencha as colunas com o <code>Nome do Time / Squad</code>, <code>Nickname</code> e <code>ID do Free Fire (UID)</code>. Em seguida, clique em <strong>Importar Planilha</strong> para carregar todos os dados automaticamente.
                     </div>
                 </div>
 
@@ -1566,7 +1665,7 @@ input:checked + .slider:before {
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Após realizar o sorteio, clique em <strong>Ver Página Oficial do Resultado</strong> ou <strong>Gerar Link</strong>. O link gerado direciona a comunidade para uma página dedicada, limpa e verificada contendo apenas o chaveamento e confrontos do campeonato, sem os formulários de criação.
+                        Após realizar o sorteio, clique em <strong>Ver Página Oficial do Resultado</strong> ou <strong>Gerar Link</strong>. O link gerado direciona a comunidade para uma página dedicada, limpa e verificada contendo apenas o chaveamento e confrontos do campeonato.
                     </div>
                 </div>
             </div>
@@ -1787,16 +1886,28 @@ input:checked + .slider:before {
 
         function loadSamplePlayers() {
             var samples = [
-                "FㅤNOBRU (Bruno Goes)", "FㅤCEROL (Lucio Lima)", "FㅤBAK (Gabriel Lessa)", "FㅤGHOST (Arthur Ramos)",
-                "FㅤTWO9 (Victor Santos)", "FㅤDACRUZ (Matheus Silva)", "FㅤJORDAN (Jordan Silva)", "FㅤSINCE (Rodrigo F.)",
-                "FㅤTHZIN (Thiago M.)", "FㅤITACHI (Kaike Lima)", "FㅤSANTT (Gustavo S.)", "FㅤLEPPE (Filipe M.)",
-                "FㅤALIEN (Christopher R.)", "FㅤAKASHI (Thiago P.)", "FㅤEMANUEL (Emanuel F.)", "FㅤMAGZX7 (Magsuel F.)"
+                "FㅤNOBRU (ID: 145829104) - [Squad Alpha]",
+                "FㅤCEROL (ID: 284910283) - [Squad Alpha]",
+                "FㅤBAK (ID: 948192049) - [Squad Alpha]",
+                "FㅤGHOST (ID: 482910394) - [Squad Alpha]",
+                "FㅤTWO9 (ID: 593810294) - [Squad Beta]",
+                "FㅤDACRUZ (ID: 692810482) - [Squad Beta]",
+                "FㅤJORDAN (ID: 382910482) - [Squad Beta]",
+                "FㅤSINCE (ID: 719284019) - [Squad Beta]",
+                "FㅤTHZIN (ID: 839102847) - [Squad Gama]",
+                "FㅤITACHI (ID: 192840182) - [Squad Gama]",
+                "FㅤSANTT (ID: 492810482) - [Squad Gama]",
+                "FㅤLEPPE (ID: 682910384) - [Squad Gama]",
+                "FㅤALIEN (ID: 739182049) - [Squad Delta]",
+                "FㅤAKASHI (ID: 839201948) - [Squad Delta]",
+                "FㅤEMANUEL (ID: 948201948) - [Squad Delta]",
+                "FㅤMAGZX7 (ID: 182940193) - [Squad Delta]"
             ];
             var textarea = document.getElementById("players-raw-textarea");
             if (textarea) {
                 textarea.value = samples.join("\n");
                 updatePlayersCount();
-                showNotification("16 jogadores de exemplo carregados!");
+                showNotification("16 jogadores de exemplo carregados com Squad e ID!");
             }
         }
 
@@ -1808,7 +1919,9 @@ input:checked + .slider:before {
             }
         }
 
-        // IMPORTAÇÃO E EXPORTAÇÃO DE PLANILHAS
+        // =========================================================================
+        // IMPORTAÇÃO E EXPORTAÇÃO DE PLANILHAS (EXCEL .XLSX / .CSV COM ID E SQUAD)
+        // =========================================================================
         function handleFileUpload(event, targetType) {
             var file = event.target.files[0];
             if (!file) return;
@@ -1830,25 +1943,34 @@ input:checked + .slider:before {
                         rows.forEach(function(row, idx) {
                             if (!row || row.length === 0) return;
                             
-                            var col1 = (row[0] !== undefined && row[0] !== null) ? String(row[0]).trim() : "";
-                            var col2 = (row[1] !== undefined && row[1] !== null) ? String(row[1]).trim() : "";
+                            // Analisa colunas: Time, Nome, Nick, ID, Contato
+                            var c0 = (row[0] !== undefined && row[0] !== null) ? String(row[0]).trim() : "";
+                            var c1 = (row[1] !== undefined && row[1] !== null) ? String(row[1]).trim() : "";
+                            var c2 = (row[2] !== undefined && row[2] !== null) ? String(row[2]).trim() : "";
+                            var c3 = (row[3] !== undefined && row[3] !== null) ? String(row[3]).trim() : "";
 
-                            if (!col1 && !col2) return;
+                            if (!c0 && !c1 && !c2 && !c3) return;
 
+                            // Ignora cabeçalho
                             if (idx === 0) {
-                                var low1 = col1.toLowerCase();
-                                var low2 = col2.toLowerCase();
-                                if (low1 === "nome" || low1 === "name" || low1 === "jogador" || low2 === "nick" || low2 === "nickname" || low2 === "tag") {
+                                var rowStr = (c0 + " " + c1 + " " + c2 + " " + c3).toLowerCase();
+                                if (rowStr.includes("time") || rowStr.includes("squad") || rowStr.includes("nome") || rowStr.includes("nick") || rowStr.includes("jogador") || rowStr.includes("id")) {
                                     return;
                                 }
                             }
 
-                            if (col1 && col2) {
-                                extractedList.push(col2 + " (" + col1 + ")");
-                            } else if (col1) {
-                                extractedList.push(col1);
-                            } else if (col2) {
-                                extractedList.push(col2);
+                            // Formatação inteligente
+                            // Formato padrão 4 colunas: [Time, Nome, Nickname, ID FF]
+                            if (c0 && c1 && c2 && c3) {
+                                extractedList.push(c2 + " (ID: " + c3 + ") - [" + c0 + "]");
+                            } else if (c1 && c2 && c3) {
+                                extractedList.push(c1 + " (ID: " + c2 + ") - [" + c0 + "]");
+                            } else if (c0 && c1 && c2) {
+                                extractedList.push(c1 + " (ID: " + c2 + ") - [" + c0 + "]");
+                            } else if (c0 && c1) {
+                                extractedList.push(c1 + " (" + c0 + ")");
+                            } else if (c0) {
+                                extractedList.push(c0);
                             }
                         });
 
@@ -1861,12 +1983,12 @@ input:checked + .slider:before {
                             var tArea = document.getElementById("players-raw-textarea");
                             if (tArea) tArea.value = extractedList.join("\n");
                             updatePlayersCount();
-                            showNotification("✅ Sucesso! " + extractedList.length + " jogadores importados da planilha.");
+                            showNotification("Sucesso: " + extractedList.length + " jogadores importados da planilha.");
                         } else {
                             var pArea = document.getElementById("prizes-raw-textarea");
                             if (pArea) pArea.value = extractedList.join("\n");
                             updatePrizesCount();
-                            showNotification("✅ Sucesso! " + extractedList.length + " participantes importados da planilha.");
+                            showNotification("Sucesso: " + extractedList.length + " participantes importados da planilha.");
                         }
 
                     } catch(err) {
@@ -1884,12 +2006,12 @@ input:checked + .slider:before {
                         var tArea = document.getElementById("players-raw-textarea");
                         if (tArea) tArea.value = lines.join("\n");
                         updatePlayersCount();
-                        showNotification("✅ " + lines.length + " jogadores importados.");
+                        showNotification(lines.length + " jogadores importados.");
                     } else {
                         var pArea = document.getElementById("prizes-raw-textarea");
                         if (pArea) pArea.value = lines.join("\n");
                         updatePrizesCount();
-                        showNotification("✅ " + lines.length + " participantes importados.");
+                        showNotification(lines.length + " participantes importados.");
                     }
                 };
                 txtReader.readAsText(file);
@@ -1898,37 +2020,45 @@ input:checked + .slider:before {
             event.target.value = "";
         }
 
-        // DOWNLOAD DE MODELO DE PLANILHA PRONTO
+        // DOWNLOAD DE MODELO DE PLANILHA FREE FIRE COM ID E SQUAD
         function downloadSpreadsheetTemplate(format) {
             var templateData = [
-                ["Nome", "Nickname", "Discord / WhatsApp (Opcional)"],
-                ["Bruno Goes", "FㅤNOBRUʷᵐ", "(11) 99999-9999"],
-                ["Lucio Lima", "FㅤCEROL.xp", "(21) 99999-9999"],
-                ["Gabriel Lessa", "FㅤBAK9", "bak#1234"],
-                ["Arthur Ramos", "FㅤGHOST", "@ghost_ff"],
-                ["Victor Santos", "FㅤTWO9", "(11) 98888-8888"],
-                ["Matheus Silva", "FㅤDACRUZ", "(31) 97777-7777"],
-                ["Jordan Silva", "FㅤJORDAN", "(41) 96666-6666"],
-                ["Rodrigo Fernandes", "FㅤSINCE", "since#0001"]
+                ["Nome do Time / Squad", "Nome do Jogador", "Nickname Free Fire", "ID Free Fire (UID)", "WhatsApp / Discord"],
+                ["Frenesy Alpha", "Bruno Goes", "FㅤNOBRU", "145829104", "(11) 99999-9999"],
+                ["Frenesy Alpha", "Lucio Lima", "FㅤCEROL", "284910283", "(21) 99999-9999"],
+                ["Frenesy Alpha", "Gabriel Lessa", "FㅤBAK", "948192049", "@bak"],
+                ["Frenesy Alpha", "Arthur Ramos", "FㅤGHOST", "482910394", "@ghost"],
+                ["Frenesy Beta", "Victor Santos", "FㅤTWO9", "593810294", "(11) 98888-8888"],
+                ["Frenesy Beta", "Matheus Silva", "FㅤDACRUZ", "692810482", "(31) 97777-7777"],
+                ["Frenesy Beta", "Jordan Silva", "FㅤJORDAN", "382910482", "(41) 96666-6666"],
+                ["Frenesy Beta", "Rodrigo Fernandes", "FㅤSINCE", "719284019", "@since"],
+                ["Squad Gama", "Thiago Moura", "FㅤTHZIN", "839102847", "(11) 91234-5678"],
+                ["Squad Gama", "Kaike Lima", "FㅤITACHI", "192840182", "@kaikelhp"],
+                ["Squad Gama", "Gustavo Santiago", "FㅤSANTT", "492810482", "@santtsz"],
+                ["Squad Gama", "Filipe Medeiros", "FㅤLEPPE", "682910384", "@leppe"],
+                ["Squad Delta", "Christopher Rissardi", "FㅤALIEN", "739182049", "@christopher"],
+                ["Squad Delta", "Thiago Pereira", "FㅤAKASHI", "839201948", "@akashi"],
+                ["Squad Delta", "Emanuel Fonseca", "FㅤEMANUEL", "948201948", "@emanuel"],
+                ["Squad Delta", "Magsuel Ferreira", "FㅤMAGZX7", "182940193", "@magzx7"]
             ];
 
-            if (format === "xlsx" && typeof XLSX !== "undefined") {
+            if (format.includes("xlsx") && typeof XLSX !== "undefined") {
                 var ws = XLSX.utils.aoa_to_sheet(templateData);
-                ws["!cols"] = [{ wch: 24 }, { wch: 20 }, { wch: 28 }];
+                ws["!cols"] = [{ wch: 22 }, { wch: 22 }, { wch: 20 }, { wch: 20 }, { wch: 22 }];
                 var wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, "Jogadores");
-                XLSX.writeFile(wb, "modelo_sorteador_frenesy.xlsx");
-                showNotification("Modelo Excel (.xlsx) baixado com sucesso!");
+                XLSX.utils.book_append_sheet(wb, ws, "Inscricoes_FreeFire");
+                XLSX.writeFile(wb, "modelo_inscricoes_freefire_frenesy.xlsx");
+                showNotification("Modelo Oficial Free Fire (.xlsx) baixado com sucesso!");
             } else {
-                var csvContent = "Nome,Nickname,Contato\n";
+                var csvContent = "Nome do Time / Squad,Nome do Jogador,Nickname Free Fire,ID Free Fire (UID),WhatsApp / Discord\n";
                 templateData.slice(1).forEach(function(row) {
-                    csvContent += '"' + row[0] + '","' + row[1] + '","' + row[2] + '"\n';
+                    csvContent += '"' + row[0] + '","' + row[1] + '","' + row[2] + '","' + row[3] + '","' + row[4] + '"\n';
                 });
                 var blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" });
                 var url = URL.createObjectURL(blob);
                 var a = document.createElement("a");
                 a.href = url;
-                a.download = "modelo_sorteador_frenesy.csv";
+                a.download = "modelo_inscricoes_freefire_frenesy.csv";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -1961,7 +2091,7 @@ input:checked + .slider:before {
             var numGroupsInput = document.getElementById("num-groups");
             var numGroups = numGroupsInput ? parseInt(numGroupsInput.value) : 2;
 
-            // Embaralhamento seguro
+            // Embaralhamento seguro Fisher-Yates
             var shuffled = players.slice();
             for (var i = shuffled.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
@@ -1996,9 +2126,9 @@ input:checked + .slider:before {
                 });
                 drawData.groups = groups;
 
-                // 1. Grupos
-                htmlContent += '<h4 style="font-family: var(--font-titulo); font-size: 1.6rem; color: var(--laranja-frenesy); margin-bottom: 1rem; width: 100%;"><i class="fas fa-layer-group"></i> FASE DE GRUPOS</h4>';
-                htmlContent += '<div class="results-grid" style="width: 100%; margin-bottom: 2rem;">';
+                // 1. Fase de Grupos
+                htmlContent += '<h4 style="font-family: var(--font-titulo); font-size: 1.6rem; color: var(--laranja-frenesy); margin-bottom: 1.2rem; width: 100%; text-transform: uppercase;"><i class="fas fa-layer-group"></i> FASE DE GRUPOS</h4>';
+                htmlContent += '<div class="results-grid" style="width: 100%; margin-bottom: 2.5rem;">';
                 groups.forEach(function(grp, gIdx) {
                     var letter = String.fromCharCode(65 + gIdx);
                     htmlContent += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-shield-alt"></i> GRUPO ' + letter + '</span><span style="font-size: 0.85rem; color: #aaa;">' + grp.length + ' times</span></div><div class="matchup-box">';
@@ -2019,24 +2149,24 @@ input:checked + .slider:before {
                 // Quartas de final
                 htmlContent += '<div class="bracket-round">';
                 htmlContent += '<div class="bracket-round-header">Quartas de Final</div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 1 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo A</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo B</span><span style="color:#aaa;">-</span></div></div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 2 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo C</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo D</span><span style="color:#aaa;">-</span></div></div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 3 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo B</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo A</span><span style="color:#aaa;">-</span></div></div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 4 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo D</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo C</span><span style="color:#aaa;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 1 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo A</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo B</span><span style="color:#777;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 2 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo C</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo D</span><span style="color:#777;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 3 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo B</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo A</span><span style="color:#777;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Jogo 4 (MD3)</div><div class="bracket-team-slot"><span>1º do Grupo D</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>2º do Grupo C</span><span style="color:#777;">-</span></div></div>';
                 htmlContent += '</div>';
 
                 // Semifinais
                 htmlContent += '<div class="bracket-round">';
                 htmlContent += '<div class="bracket-round-header">Semifinais</div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Semi 1 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 1</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 2</span><span style="color:#aaa;">-</span></div></div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Semi 2 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 3</span><span style="color:#aaa;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 4</span><span style="color:#aaa;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Semi 1 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 1</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 2</span><span style="color:#777;">-</span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Semi 2 (MD3)</div><div class="bracket-team-slot"><span>Venc. Jogo 3</span><span style="color:#777;">-</span></div><div class="bracket-team-slot"><span>Venc. Jogo 4</span><span style="color:#777;">-</span></div></div>';
                 htmlContent += '</div>';
 
                 // Grande Final
                 htmlContent += '<div class="bracket-round">';
-                htmlContent += '<div class="bracket-round-header" style="color: var(--laranja-frenesy); border-bottom-color: var(--laranja-frenesy);">🏆 Grande Final</div>';
-                htmlContent += '<div class="bracket-match" style="border: 2px solid var(--laranja-frenesy);"><div class="bracket-match-header" style="background: var(--laranja-frenesy); color: #fff;">DECISÃO DO TÍTULO (MD5)</div><div class="bracket-team-slot"><span>Finalista 1</span><span>👑</span></div><div class="bracket-team-slot"><span>Finalista 2</span><span>👑</span></div></div>';
-                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Disputa 3º Lugar (MD3)</div><div class="bracket-team-slot"><span>Perdedor Semi 1</span><span>🥉</span></div><div class="bracket-team-slot"><span>Perdedor Semi 2</span><span>🥉</span></div></div>';
+                htmlContent += '<div class="bracket-round-header" style="color: var(--laranja-frenesy); border-bottom-color: var(--laranja-frenesy);">Grande Final</div>';
+                htmlContent += '<div class="bracket-match" style="border: 2px solid var(--laranja-frenesy);"><div class="bracket-match-header" style="background: var(--laranja-frenesy); color: #fff;">DECISÃO DO TITULO (MD5)</div><div class="bracket-team-slot"><span>Finalista 1</span><span style="color: var(--laranja-frenesy); font-weight: bold;"><i class="fas fa-trophy"></i></span></div><div class="bracket-team-slot"><span>Finalista 2</span><span style="color: var(--laranja-frenesy); font-weight: bold;"><i class="fas fa-trophy"></i></span></div></div>';
+                htmlContent += '<div class="bracket-match"><div class="bracket-match-header">Disputa 3º Lugar (MD3)</div><div class="bracket-team-slot"><span>Perdedor Semi 1</span><span style="color: #cd7f32; font-weight: bold;"><i class="fas fa-medal"></i></span></div><div class="bracket-team-slot"><span>Perdedor Semi 2</span><span style="color: #cd7f32; font-weight: bold;"><i class="fas fa-medal"></i></span></div></div>';
                 htmlContent += '</div>';
 
                 htmlContent += '</div></div>';
@@ -2049,16 +2179,16 @@ input:checked + .slider:before {
                     var teamA = teams[m];
                     var teamB = teams[m + 1];
 
-                    htmlContent += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">🔵 TIME 1</div><ul class="team-members-list">';
+                    htmlContent += '<div class="result-card"><div class="result-card-title"><span><i class="fas fa-swords"></i> CONFRONTO ' + matchNum + '</span><span style="font-size: 0.85rem; color: var(--laranja-frenesy);">MD1 / MD3</span></div><div class="matchup-box"><div class="team-block"><div class="team-block-title">Time 1</div><ul class="team-members-list">';
                     teamA.forEach(function(p) { htmlContent += '<li>• ' + p + '</li>'; });
                     htmlContent += '</ul></div><div class="matchup-vs">VS</div>';
 
                     if (teamB) {
-                        htmlContent += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">🔴 TIME 2</div><ul class="team-members-list">';
+                        htmlContent += '<div class="team-block" style="border-left-color: #388bfd;"><div class="team-block-title" style="color: #388bfd;">Time 2</div><ul class="team-members-list">';
                         teamB.forEach(function(p) { htmlContent += '<li>• ' + p + '</li>'; });
                         htmlContent += '</ul></div>';
                     } else {
-                        htmlContent += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">⭐ BYE / PASSA DIRETO</div><p style="font-size: 0.85rem; color: #888;">Avança para a próxima fase.</p></div>';
+                        htmlContent += '<div class="team-block"><div class="team-block-title" style="color: #4cd137;">BYE (Avança Direto)</div><p style="font-size: 0.85rem; color: #888;">Classificado para a próxima fase.</p></div>';
                     }
 
                     htmlContent += '</div></div>';
@@ -2129,10 +2259,9 @@ input:checked + .slider:before {
 
             var htmlContent = '<div class="result-card" style="width: 100%;"><div class="result-card-title"><span><i class="fas fa-award"></i> GANHADORES OFICIAIS</span><span style="font-size: 0.9rem; color: #4cd137;"><i class="fas fa-check-circle"></i> Sorteio Concluído</span></div><ul class="winners-list">';
 
-            var medals = ["🥇", "🥈", "🥉"];
             winners.forEach(function(winner, idx) {
-                var badge = medals[idx] || ("#" + (idx + 1));
-                htmlContent += '<li class="winner-row"><span class="winner-rank">' + badge + '</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700; font-size: 0.9rem;"><i class="fas fa-gift"></i> ' + prizeName + '</span></li>';
+                var posLabel = (idx + 1) + "º Lugar";
+                htmlContent += '<li class="winner-row"><span class="winner-rank">' + (idx + 1) + 'º</span><span class="winner-name">' + winner + '</span><span style="color: var(--laranja-frenesy); font-weight: 700; font-size: 0.9rem;"><i class="fas fa-gift"></i> ' + prizeName + '</span></li>';
             });
 
             htmlContent += "</ul></div>";
@@ -2159,10 +2288,10 @@ input:checked + .slider:before {
 
             if (header) {
                 if (drawData.type === "prize") {
-                    header.innerHTML = "<h3>🎁 " + drawData.prizeName + "</h3><p><i class='fas fa-users'></i> " + drawData.totalParticipants + " Participantes • <i class='fas fa-clock'></i> Sorteado em " + drawData.timestamp + "</p>";
+                    header.innerHTML = "<h3>" + drawData.prizeName + "</h3><p><i class='fas fa-users'></i> " + drawData.totalParticipants + " Participantes • <i class='fas fa-clock'></i> Sorteado em " + drawData.timestamp + "</p>";
                 } else {
                     var dateInfo = drawData.tournamentDate ? " • <i class='fas fa-calendar-alt'></i> Evento: " + drawData.tournamentDate : "";
-                    header.innerHTML = "<h3>🏆 " + drawData.tournamentName + "</h3><p><i class='fas fa-gamepad'></i> " + drawData.game + dateInfo + " • <i class='fas fa-user-shield'></i> " + drawData.organizer + "</p>";
+                    header.innerHTML = "<h3>" + drawData.tournamentName + "</h3><p><i class='fas fa-gamepad'></i> " + drawData.game + dateInfo + " • <i class='fas fa-user-shield'></i> " + drawData.organizer + "</p>";
                 }
             }
 
@@ -2195,48 +2324,48 @@ input:checked + .slider:before {
 
             var text = "";
             if (currentDrawResult.type === "prize") {
-                text += "🎁 *SORTEIO OFICIAL FRENESY ESPORTS* 🎁\n";
-                text += "🏆 *Prêmio:* " + currentDrawResult.prizeName + "\n";
-                text += "📅 *Data:* " + currentDrawResult.timestamp + "\n";
-                text += "👥 *Total de Participantes:* " + currentDrawResult.totalParticipants + "\n";
+                text += "*SORTEIO OFICIAL FRENESY ESPORTS*\n";
+                text += "*Prêmio:* " + currentDrawResult.prizeName + "\n";
+                text += "*Data:* " + currentDrawResult.timestamp + "\n";
+                text += "*Total de Participantes:* " + currentDrawResult.totalParticipants + "\n";
                 text += "────────────────────────────\n";
-                text += "👑 *GANHADORES:*\n";
+                text += "*GANHADORES:*\n";
                 currentDrawResult.winners.forEach(function(w, i) {
-                    text += (i + 1) + "º Lugar: 👉 *" + w + "*\n";
+                    text += (i + 1) + "º Lugar: *" + w + "*\n";
                 });
             } else {
-                text += "🔥 *CHAVEAMENTO OFICIAL FRENESY ESPORTS* 🔥\n";
-                text += "🎮 *Jogo:* " + currentDrawResult.game + "\n";
-                text += "🏆 *Torneio:* " + currentDrawResult.tournamentName + "\n";
-                if (currentDrawResult.tournamentDate) text += "📅 *Data do Evento:* " + currentDrawResult.tournamentDate + "\n";
-                text += "🛡️ *Organizador:* " + currentDrawResult.organizer + "\n";
+                text += "*CHAVEAMENTO OFICIAL FRENESY ESPORTS*\n";
+                text += "*Jogo:* " + currentDrawResult.game + "\n";
+                text += "*Torneio:* " + currentDrawResult.tournamentName + "\n";
+                if (currentDrawResult.tournamentDate) text += "*Data do Evento:* " + currentDrawResult.tournamentDate + "\n";
+                text += "*Organizador:* " + currentDrawResult.organizer + "\n";
                 text += "────────────────────────────\n\n";
 
                 if (currentDrawResult.type === "groups") {
                     currentDrawResult.groups.forEach(function(grp, gIdx) {
                         var letter = String.fromCharCode(65 + gIdx);
-                        text += "🛡️ *GRUPO " + letter + ":*\n";
+                        text += "*GRUPO " + letter + ":*\n";
                         grp.forEach(function(t, tIdx) {
-                            text += "🔹 Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
+                            text += "• Time " + (tIdx + 1) + ": " + t.join(", ") + "\n";
                         });
                         text += "\n";
                     });
-                    text += "🏆 *PLAYOFFS MATA-MATA (COPA DO MUNDO)*\n";
-                    text += "⚔️ Jogo 1: 1º Grupo A vs 2º Grupo B\n";
-                    text += "⚔️ Jogo 2: 1º Grupo C vs 2º Grupo D\n";
-                    text += "⚔️ Jogo 3: 1º Grupo B vs 2º Grupo A\n";
-                    text += "⚔️ Jogo 4: 1º Grupo D vs 2º Grupo C\n";
+                    text += "*PLAYOFFS MATA-MATA (COPA DO MUNDO)*\n";
+                    text += "Jogo 1: 1º Grupo A vs 2º Grupo B\n";
+                    text += "Jogo 2: 1º Grupo C vs 2º Grupo D\n";
+                    text += "Jogo 3: 1º Grupo B vs 2º Grupo A\n";
+                    text += "Jogo 4: 1º Grupo D vs 2º Grupo C\n";
                 } else {
                     for (var i = 0; i < currentDrawResult.teams.length; i += 2) {
                         var matchNum = Math.floor(i / 2) + 1;
                         var t1 = currentDrawResult.teams[i];
                         var t2 = currentDrawResult.teams[i + 1];
-                        text += "⚔️ *CONFRONTO " + matchNum + ":*\n";
-                        text += "🔵 Time 1: " + t1.join(", ") + "\n";
+                        text += "*CONFRONTO " + matchNum + ":*\n";
+                        text += "Time 1: " + t1.join(", ") + "\n";
                         if (t2) {
-                            text += "🔴 Time 2: " + t2.join(", ") + "\n";
+                            text += "Time 2: " + t2.join(", ") + "\n";
                         } else {
-                            text += "⭐ BYE (Passa direto)\n";
+                            text += "BYE (Classificado direto)\n";
                         }
                         text += "\n";
                     }
@@ -2244,8 +2373,7 @@ input:checked + .slider:before {
             }
 
             text += "────────────────────────────\n";
-            text += "✅ *Resultado oficial auditado por Frenesy Esports*\n";
-            text += "🌐 Acesse a página do resultado: " + getDedicatedResultUrl() + "\n";
+            text += "Resultado oficial verificado: " + getDedicatedResultUrl() + "\n";
             text += "#GoFrenesy";
 
             navigator.clipboard.writeText(text).then(function() {
@@ -2278,7 +2406,7 @@ input:checked + .slider:before {
             var shareBox = document.getElementById("share-box");
 
             if (shareInput) shareInput.value = url;
-            if (tokenPreview) tokenPreview.textContent = currentDrawResult.hash || "FRENESY-OK";
+            if (tokenPreview) tokenPreview.textContent = currentDrawResult.hash || "FNY-OK";
             if (shareBox) {
                 shareBox.style.display = "block";
                 shareBox.scrollIntoView({ behavior: "smooth" });
@@ -2292,10 +2420,10 @@ input:checked + .slider:before {
             navigator.clipboard.writeText(input.value).then(function() {
                 var btn = document.getElementById("copy-link-btn");
                 if (btn) {
-                    btn.textContent = "Copiado!";
-                    setTimeout(function() { btn.textContent = "Copiar Link"; }, 2000);
+                    btn.innerHTML = '<i class="fas fa-check"></i> <span>Copiado!</span>';
+                    setTimeout(function() { btn.innerHTML = '<i class="fas fa-copy"></i> <span>Copiar Link</span>'; }, 2000);
                 }
-                showNotification("Link verificado copiado!");
+                showNotification("Link verificado copiado com sucesso!");
             });
         }
 
@@ -2314,7 +2442,6 @@ input:checked + .slider:before {
                 switchMainTab("prizes");
             }
 
-            // Se for aberto com ?data=..., redireciona para a página dedicada de resultado
             var dataParam = params.get("data");
             if (dataParam) {
                 window.location.href = "resultado.html?data=" + dataParam;
